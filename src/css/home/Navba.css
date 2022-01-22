@@ -3,27 +3,38 @@
     display: flex;
     flex-direction: row;
     height: auto;
-    background-color:rgb(24, 24, 24) ;
+    /* background-color: rgb(54, 44, 44); */
+    background-color: white;
     overflow: hidden;
-    /* position: fixed;
-    z-index: 6; */ 
+    /* /* position: fixed; */
+    z-index: 11; 
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 1px 8px 1px rgb(167, 165, 165) ;
 }
 .logo-cont{
-    width: 30%;
+    width: 100%;
     float: left;
 }
 .logo{
-    width: 50%;
-    height: auto;
-    margin: 2px 0 2px 20px;
+    font-size: 200%;
+    font-family: 'Fredoka One', cursive;
+    background: -webkit-linear-gradient(60deg,#2596be , rgb(202, 69, 202) 40%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    /* color: rgb(170, 39, 170); */
+    margin: 1% 0 1% 4%;
     float: left;
+}
+.v{
+    color: rebeccapurple;
 }
 .top-cont{
     width: 100%;
     display: flex;
     flex-direction: row;
     position: relative;
-    padding-right: 10px;
+    padding-right: 3%;
     float: right;
     text-align: right;
     justify-content: right;
@@ -31,24 +42,26 @@
 .top-icon{
     font-size: 18px;
     margin:auto 0 auto 20px;
-    color: rgb(165, 164, 164);
+    color: rgb(121, 120, 120);
     text-align: right;
 }
 .top-icon p{
     margin-top: 12px;
 }
 .top-icon:hover{
-    color: white;
+    color: black;
 }
 @media only screen and (max-width:480px) {
     .top{
         width: 100%;
     }
     .logo-cont{
-        width: 30%;    
+        width: 30%;   
     }
     .logo{
-        width: 80%;
+        /* width: 100%; */
+        margin: 7% 0 0 10%;
+        font-size: x-large;
     }
     .top-cont{
         width: 70%;

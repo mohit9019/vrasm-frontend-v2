@@ -1,3 +1,8 @@
+/* .crtcont{
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
 .searchbar{
     width: 70%;
     margin: 20px auto 0 250px;}
@@ -12,12 +17,14 @@
 .oops{
     width: 100%;
     margin: 0 auto 0 auto;
-}
+}*/
 .msg{
-    font-size: 30px;
+    margin-top: 6%;
+    font-size: 50px;
     color: rgb(24, 24, 24);
     text-align: center;
 }
+/*
 .home{
     text-decoration: none;
 }
@@ -35,5 +42,205 @@
     }
     .msg{
         font-size: 20px;
+    }
+    .crtcont{
+        margin: 18% auto 10% auto;
+    }
+} */
+.cart-cont{
+    display: flex;
+    height: auto;
+}
+.crt-my-order{
+    width: 50%;
+    height: auto;
+    margin-left: 11%;
+    margin-top: 2%;
+    margin-bottom: 7%;
+    
+}
+.crt-order-card{ 
+    margin:2% 5% 0 5%;
+    padding:0 0 3% 0;
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    background-color: whitesmoke;
+    border-radius: 2px;
+    box-shadow:2px 2px 15px rgb(165, 164, 164);
+}
+.crt-order-img{
+    width: 20%;
+    margin-left: 2%; 
+}
+.crt-order-img img{
+    width: 100%;
+    height: 100%;
+    border-radius:3px ;
+}
+.crt-order-date{
+    width: 100%;
+    height: 20px;
+    text-align: right;
+    /* background-color: rgb(163, 162, 162); */
+}
+.crt-order-date p{
+    margin:1% 2%;
+    font-size: 13px;
+}
+.crt-order-cont{
+    display: flex;
+    flex-direction: row;
+}
+.crt-order-details{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    width: 60%;
+}
+.crt-order-name{
+    font-size: 20px;
+}
+.crt-order-desc{
+    margin-top: 1.5%;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    overflow:clip;
+}
+.crt-order-id{
+    font-size: 12px;
+    margin-top: 1.5%;
+}
+.crt-order-price{
+    width: 10%;
+    margin-top: 5%;
+    margin-left: 8%;
+    font-size: 25px;
+}
+.checkout{
+    width: 24%;
+    height: 50%;
+    background-color: whitesmoke;
+    margin-top: 3%;
+    margin-left: 3%;
+    border-radius: 3px;
+    box-shadow:2px 2px 15px rgb(165, 164, 164);
+}
+ .checkout h5{
+    margin-left: 10%;
+    margin-top: 3%;
+    font-weight: bold;
+    font-size: 17px;
+    color: rgb(99, 97, 97);
+    /* border: 1px solid blue; */
+    width: 80%;
+    padding-top: 3%;
+}
+.pr{
+    text-align: right;
+    /* border: 1px solid black; */
+    width: 10%;
+    margin-top: 1%;
+    float: right;
+    margin-left: 100px;
+    color: rgb(97, 96, 96);
+    font-weight: bold;
+    font-size: 14px;
+
+} 
+.checkout p{
+    margin-left: 10%;
+
+}
+strike{
+    margin-left: 27px;
+}
+.chout{
+    background-color: blue;
+    width: 70%;
+    color: white;
+    border: transparent;
+    border-radius: 2px;
+    padding: 2% 0 2% 0;
+    margin:4% 0 7% 15%;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.tempamt{
+    display: flex;
+    /* border: 1px solid black; */
+    margin-top: 3%;
+    font-size: 15px;
+}
+#del{
+    margin-left:-30px;
+    margin-top: 90px;
+}
+@media only screen and (max-width: 500px) {
+    .cart-cont{
+        display: block;
+        height: auto;
+        
+    }
+    .crt-my-order{
+        width: 94%;
+        height: auto;
+        margin:15% 0% 7% -1%;
+       
+    } 
+    .crt-order-card{
+    
+        border: 1px solid blue;
+    }
+    #del{
+        margin-left:-30px;
+        margin-top: 130px;
+    }
+    .crt-order-date p{
+        font-size:10px ;
+    }
+    .crt-order-price{
+        font-size: 19px;
+        margin-left: 5%;
+        margin-top: 20%;
+    }
+    .crt-order-name{
+        font-size: 15px;
+        /* border: 1px solid black; */
+        margin-left: 27%;
+    }
+    .crt-order-desc{
+        font-size: 9px;
+        /* border:1px solid black; */
+        width: 98%;
+        margin-left: 27%;
+        text-align: justify;
+    }
+    .crt-order-id{
+        font-size: 10px;
+        margin-left: 27%;
+    }
+    .crt-order-img img{
+        width: 170%;
+        height: auto;
+    }
+    .checkout{
+        width: 90%;
+        height: auto;
+        padding-top: 3%;
+        margin-left: 5.5%;
+
+    }
+    .checkout h5{
+        margin-left: 12%;
+        margin-top: 7%;
+        width: 67%;
+    }
+    .checkout p{
+        margin-left: 7%;
+    }
+    .tempamt{
+        margin-left: 5.8%;
     }
 }

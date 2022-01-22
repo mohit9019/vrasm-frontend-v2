@@ -2,62 +2,96 @@
     padding: 0;
     margin: 0;
 }
-.banner{
-    display: inline-block;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.ban img{
-    width: 65%;
-    height: auto;
-}
-.ban p{
-    background-color: rgb(24, 24, 24);
-    color: whitesmoke;
-    font-size: 30px;
-    padding: 5px 0 5px 0;
-}
-
 .templetes{
     width: 30%;
     display: inline-flex;
     flex-direction: row;
-    margin:5% 0 0 2.5% ;  
+    margin:2.5% 0 0 3% ;  
+ }
+.banner{
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    margin: 3.5% 0 2% 0;
+    z-index: 9;
+}
+ .clip{
+     width: 60%;
+     height: auto;
+     position: fixed;
+     transform: translateY(0px);
+     animation: float 3.5s ease-in-out infinite;
+ }
+ .ban-text{
+     width: 40%;
+    margin-top: 4%;
+    margin-left: auto;
+    padding:3% 0 4% 0 ;
+    color:rgb(202, 69, 202);
+    position: relative  ;
+    text-align: center;
+ }
+ .ban-text button{
+     border: rgb(202, 69, 202,.9) 2px solid;
+     color:rgb(202, 69, 202);
+     background-color: transparent;
+     border-radius:25px;
+     font-size: larger;
+     margin-top: 4%;
+     padding:2% 3% 2% 3%;
+     float: bottom;
+     font-weight: bold;
+ }
+ .ban-text button:hover{
+    background-color: rgb(202, 69, 202) ;
+    color: white;
+ }
+ .ban-title{
+     margin: 17% 0 4% 0 ;
+     font-weight: bold;
  }
 
+@keyframes float {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(25px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+
+}
   @media only screen and (max-width: 480px) {
-    .tab{
-        margin-right: 0;
-    }
-    .tab i{
-        font-size: 20px;
-        width: 100%;
-    }
-    .logo-cont{
-        width: 20%;
-    }
-    .categories ul li{
-        display: inline;
-        margin-right: 25px;
-    }
-    .categories li{
-        font-size: 17px;
-    }
     .banner{
         width: 100%;
-        margin-top: 5px;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
     }
-    .banner p{
-        font-size: 20px;
-    }
-    /* li{
-        font-size: 23px;
-    } */
     .templetes{
         width: 80%;
         margin:5% 0 0 10%;
+    }
+    .clip{
+        width: 100%;
+        margin-top: 4%;
+        z-index: 9;
+    }
+    .ban-text{
+        width: 100%;
+        margin-top: 70%;
+        font-size: smaller;
+        z-index: 8;
+    }
+    .ban-title{
+        margin-top:0 ;
+        font-size:  large;
+    }
+    .ban-text button{
+        font-size: small;
     }
   }
   @media only screen and (min-width:480px) and (max-width:768px){
@@ -66,9 +100,16 @@
       } */
       .banner{
         width: 100%;
-        margin-top: 5px;
+        margin-top: 15%;
+        display:    flex;
+        flex-direction: column;
     }
-    .banner p{
-        font-size: 20px;
+    .ban-text{
+        margin-top: 2%;
+        font-size: smaller;
+    }
+    .ban-title{
+        margin-top:0 ;
+        font-size: x-large;
     }
   }

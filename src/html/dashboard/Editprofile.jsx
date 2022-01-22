@@ -32,12 +32,12 @@ function Editprofile() {
 
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridCity">
-                <Form.Label className="label">State</Form.Label>
+                <Form.Label className="label">City</Form.Label>
                 <Form.Control className="value" type="text" placeholder="New York" />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridCity">
-                <Form.Label className="label">Country</Form.Label>
+                <Form.Label className="label">Pincode</Form.Label>
                 <Form.Control className="value" type="text" placeholder="U.S.A" />
               </Form.Group>
 

@@ -17,12 +17,12 @@ function Editprofile(){
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label >First Name</Form.Label>
-      <Form.Control  type="text" placeholder="Mohit" />
+      <Form.Control  type="text" placeholder="Tony" />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label  >Last Name</Form.Label>
-      <Form.Control  type="text" placeholder="Chauhan" />
+      <Form.Control  type="text" placeholder="Stark" />
     </Form.Group>
   </Row>
 
@@ -33,13 +33,13 @@ function Editprofile(){
 
   <Row className="mb-3">
   <Form.Group as={Col} controlId="formGridCity">
-      <Form.Label >State</Form.Label>
+      <Form.Label >City</Form.Label>
       <Form.Control type="text" placeholder="New York" />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridCity">
-      <Form.Label >Country</Form.Label>
-      <Form.Control type="text" placeholder="U.S.A" />
+      <Form.Label >Pincode</Form.Label>
+      <Form.Control type="text" placeholder="12345" />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridZip">

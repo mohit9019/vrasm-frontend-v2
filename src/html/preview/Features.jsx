@@ -1,7 +1,9 @@
+
+
 function Features(){
     return(
         <>
-                    <div className="descrition">
+                    <div className="f_descrition">
                         <p className="temp-desc">Template Name : Family Restaurent</p>
                         <p className="temp-desc">Version : 1.3</p>
                         <p className="temp-desc">Category : Hotels & Restaurents</p>

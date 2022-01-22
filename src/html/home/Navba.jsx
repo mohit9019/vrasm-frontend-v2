@@ -6,7 +6,9 @@ function Navba() {
         <div className="top">
           <div className="logo-cont">
             <Link to="/">
-              <img src="/Images/logo.svg" className="logo" /></Link>
+              {/* <img src="/Images/black.png" className="logo" /> */}
+              <p className="logo"><span className="v">V</span>RASM</p>
+              </Link>
           </div>
           <div className="top-cont">
           <Link to="/Creatordash/Personalinfo" className="top-icon" style={{ textDecoration: "none" }}><p className="reg-but" >Creator</p></Link>

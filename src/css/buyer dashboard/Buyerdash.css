@@ -21,6 +21,10 @@
     position: absolute;
     background-color:rgb(24, 24, 24) ;
     height: 100%;
+    border-top: 1px solid white ;
+    position: fixed;
+    margin-top: 4.7%;
+    z-index: 10;
 }
 .side-bar .info{
     width: auto;
@@ -46,6 +50,7 @@
         width: 100%;
         position: relative;
         z-index: 2;
+        margin-top: 13.5%;
     }
     .pic{
         width: 30%;

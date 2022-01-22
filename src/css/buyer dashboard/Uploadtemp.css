@@ -2,6 +2,8 @@
     width: 72%;
     height: auto;
     margin-left: 18%;
+    margin-top: 7%;
+    margin-bottom: 7%;
 } 
 .form1 , .documents{
     margin-top: 15px;
@@ -11,10 +13,19 @@
 }
 .n{
     margin-top: 10px;
+    margin-left: 15%;
 }
 .save{
     float: right;
 }
 .previous{
     float: left;
+}
+@media only screen and (max-width: 500px) {
+    .upload-template{
+        width: 100%;
+        margin-left: 1%;
+        margin-bottom: 20%;
+    }
+
 }

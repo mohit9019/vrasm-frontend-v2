@@ -24,7 +24,7 @@ const Card=(props)=>{
         <Link className="pre" to="Preview/Overview"  style={{textDecoration:"none", color:"darkgray"}} >
         <i class="fas fa-eye"></i>
         </Link>
-        </div>  
+        </div>   
       </div>
     </div>
   </>);

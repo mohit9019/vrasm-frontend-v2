@@ -5,5 +5,11 @@
 }
 .change{
     width: 50%;
-    margin:30px auto 0 auto;
+    margin:13% auto 0 auto;
+    /* border: black 1px solid; */
+}
+@media only screen and (max-width: 500px) {
+    .change{
+        width: 100%;
+    }
 }

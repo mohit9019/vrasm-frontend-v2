@@ -1,21 +1,18 @@
-
 import "../../css/home/Banner.css";
-import Categories from "../categories/Categories";
-import Navba from "./Navba";
+// import Categories from "../categories/Categories";
+// import Navba from "./Navba";
 function Banner(){
     return(
         <>
         {/* <Categories /> */}
-        <center>
         <div className="banner">
-            <div className="ban"><img src="/Images/banner-left.png" className="ban" />
-            <p className="ban-text">FRONT-END DESIGNER</p></div>
+            <img src="/Images/clip.jpg" className="clip"></img>
+            <div className="ban-text">
+                <h1 className="ban-title">Vrasm Templates</h1>
+                <p>Designers are meant to be loved, not to be understood.</p>
+                <button>&lt; Be a Creator /&gt;</button>
+            </div>
         </div>
-        <div className="banner">
-        <div className="ban">
-            <img src="/Images/banner-right.png" className="ban" />
-            <p className="ban-text">FRONT-END DEVELOPER</p></div>
-        </div></center>
         </>
     );
 }

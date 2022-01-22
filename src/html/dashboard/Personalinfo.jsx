@@ -8,7 +8,7 @@ function Personalinfo(){
         <>
             <div className="personal-info">
             <div className="info"><div className="edit-icon">
-            <h2 className="n">Account Information</h2>
+            <h2 className="n">Buyers Information</h2>
             <Link to="/Buyerdash/Editprofile" style={{color:"rgb(49, 49, 49)"}} className="edit"><i class="fas fa-edit"></i></Link></div>
 
 
@@ -32,12 +32,12 @@ function Personalinfo(){
 
   <Row className="mb-3">
   <Form.Group as={Col} controlId="formGridCity">
-      <Form.Label>State</Form.Label>
+      <Form.Label>City</Form.Label>
       <Form.Control type="text" placeholder="New York" readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridCity">
-      <Form.Label>Country</Form.Label>
+      <Form.Label>Pincode</Form.Label>
       <Form.Control type="text" placeholder="U.S.A" readOnly />
     </Form.Group>
 

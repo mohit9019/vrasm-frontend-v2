@@ -7,7 +7,7 @@ function Sidebar(){
                     <p>Tony Stark</p></center></div>
                     <div className="bar"></div>
                     <div className="info">
-                    <Link to="Personalinfo" style={{textDecoration:"none"}}><p>Personal Information</p><div className="bar"></div></Link>
+                    <Link to="Personalinfo" style={{textDecoration:"none"}}><p>Buyers Information</p><div className="bar"></div></Link>
                     {/* <Link to="/Editprofile" style={{textDecoration:"none"}}><p>Edit Profile</p><div className="bar"></div></Link> */}
                     <Link to="/Buyerdash/Myorder" style={{textDecoration:"none"}}><p>My Orders</p><div className="bar"></div></Link>
                     <Link to="/Buyerdash/Changepass" style={{textDecoration:"none"}}><p>Change Password</p><div className="bar"></div></Link>

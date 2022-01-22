@@ -3,6 +3,7 @@
     height: 100%;
     margin-left: 20%;
     overflow: hidden;
+    margin-top: 5%;
 }
 .row{
     margin-top: 1%;
@@ -19,6 +20,7 @@
     border-radius: 3px;
     /* box-shadow: 1px 1px 10px rgb(46, 46, 46); */
     text-align: center;
+    margin-left: 1%;
 }
 .circle svg circle{
     fill: none;
@@ -27,15 +29,20 @@
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
     animation: animate 2s forwards;
+
 }
 .stat-n{
     text-align: center;
     font-size: 19px;
+    margin-top: 30% ;
+    /* border: 1px solid black; */
+    margin-left: -20%;
 }
 .stats{
     font-size: 30px;
     text-align: center;
-    margin: -105px 0 50px 0;
+    margin:-60% auto 0 -20%;
+    
 }
 .st{
     font-size:30px;
@@ -43,6 +50,7 @@
 }
 .creator-table{
     width: 90%;
+    margin-left: 4%;
 }
 @media only screen and (max-width: 500px) {
     .row{
@@ -54,21 +62,26 @@
         height: 100%;
         margin-left: 0%;
         overflow: hidden;
+        
     }
     .stats-card{
         width: 100%;
         margin-top: 10px;
+        margin-bottom: 10%;
     }
     .circle{
         margin-left: 33.33%;
     }
     .stats{
         margin-left: 20px;
+        margin-top: -30%;
+        
     }
     .stat-n{
         width: 100%;
         font-size: 25px;
         margin-left: 10px;
+        margin-top: 15%;
     }
     .creator-table{
         width: 90%;

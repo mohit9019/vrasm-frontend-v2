@@ -1,5 +1,3 @@
-import Data from "./Data";
-import react,{useState} from "react";
 import Card from "./Card";
 function details(val){
     return(

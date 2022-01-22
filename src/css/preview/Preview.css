@@ -4,7 +4,7 @@
     /* display: grid;
     grid-template-columns: 580px auto; */
     border-radius: 3px;
-    margin:20px auto 0 auto;
+    margin:90px auto 50px auto;
 }
 .detail{
     width: 60%;
@@ -58,13 +58,19 @@
     margin-top: 20px;
 }
 .description{
-    width: 90%;
+    width: 80%;
     padding-top: 10px; 
     display: block;
+    margin-top: 3%;
+    /* border: 1px solid black; */
+}
+.f_descrition{
+    margin-top: 3%;
+    margin-left: 3%;
 }
 .temp-desc{
-    font-size: 10px;
-    margin-left: 20px;
+    font-size: 13px;
+    margin-left: 0px;
     text-align: justify;
 }
 .techs{
@@ -106,7 +112,7 @@
     }
     .detail{
         width: 90%;
-        height: 660px;
+        height: 690px;
     }
     .bt{
         margin-right: 10px;
@@ -121,6 +127,11 @@
         margin-left: 10px;
     }
     .download{
-        font-size: 10px;
+        font-size: 12px;
+    }
+    .f_descrition{
+        margin-top: 5%;
+        margin-left: 5%;
+        font-size: 12px;
     }
 }

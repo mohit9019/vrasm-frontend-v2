@@ -10,7 +10,9 @@ function Analysis(){
             <div className="row">
             <div className="stats-card">
               <div className="circle"><svg>
-                <circle cx="70" cy="70" r="60"></circle>
+                <circle cx="70" cy="70" r="60">
+               </circle>
+            
               </svg></div>
               <div className="stats">30</div>
               <div className="stat-n">Total Templates</div>

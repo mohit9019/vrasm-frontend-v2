@@ -2,8 +2,11 @@
     width: 80%;
     height: 100%;
     margin-left: 18%;
+
+    
 }
 .edit{
     width: 60%;
     margin:30px auto 0 auto;
+    /* border: 1px solid black; */
 }
