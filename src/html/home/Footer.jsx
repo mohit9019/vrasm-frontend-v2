@@ -36,7 +36,7 @@ function Footer(){
             </center>
             <center><div className="line"></div></center>
             <div className="end">
-                <img className="whitelogo" src="/Images/white-logo.png" />
+            <p className="footerlogo">VRASM</p>
                 <p className="copyright">Copyright © 2015 VRASM. All Rights Reserved.</p>
             </div>
         </div>

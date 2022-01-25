@@ -6,89 +6,98 @@
   box-shadow: 3px 3px 9px rgb(36, 36, 36);
 }
 .card-cont{
-  width: 80%;
+  width: 100%;
   height: auto;
-  border-radius: 7px;
-  background-color: whitesmoke;
+  /* border-radius: 7px; */
+  background-color: white;
   /* background-color: rgb(199, 198, 198); */
-  box-shadow: 3px 2px 9px gray;
+  box-shadow: 3px 2px 5px rgb(151, 150, 150);
+  /* box-shadow: 4px 8px 8px -4px rgb(90, 45, 134); */
+}
+.cards{
+  height: auto;
+  width: 100%;
+  padding: 1% 2% 1% 2%;
 }
 .image_div{
   width: 100%;
-  border-radius: 7px;
-  /* box-shadow: 2px 2px 15px grey; */
+  box-shadow: inset 2px 0 2px -2px grey;
+  /* border-radius: 7px; */
 }
 .image_div .img{
   width: 100%;
-  height: 170px;
-  border-radius: 7px;
+  height: 150px;
+  /* border-radius: 7px 7px 0 0; */
 }
 .content h4{
   margin-left: 3%;
-  font-size: 18px;
+  font-size: 110%;
 }
 .content{
   width: 100%;
   text-align: left;
-  margin-top: 2%;
+  padding-top: 2%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   word-break: break-all;
 }
-.icon{
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  font-size: 25px;
-  margin: 1% 0 0 0;
-  overflow: hidden;
-  border-radius: 2px;
-  bottom: 0px;
-  background-color: black;
-}
-.icon .pre{
-  width: 20%;
-  margin: 2% 13% 4% 13%;
-}
-.icon .pre i{
-  color: rgb(117, 117, 117);
-}
-.icon .pre i:hover{
-  color:whitesmoke; 
-} 
 .content span{
   width: 100%;
 }
 .disc{
   width: 100%;
   padding: 0 10px 0 10px;
-  font-size: 13px;
-  height: 60px;
+  font-size: 11px;
+  height: 40px;
+  word-wrap: break-word;
+  overflow-wrap: break-word ;
 }
 .stars{
   font-size: 15px;
-  margin:1% 0 0 3%;
+  margin-left:3%;
 }
 .about{
+  margin-top: 2%;
+  height: 30px;
   display: flex;
   flex-direction: row;
-  margin:3% 0 3% 0;
 }
 .about span{
-  font-size: 18px;
   margin: 0 10px 0 10px;
-  border-radius: 7px;
-  padding: 10px;
 }
 .sale{
   text-align: left;
+  font-size: 16px;
 }
 .price{
+  font-size: 25px;
+  line-height: 1px;
+  padding-right: 3%;
   text-align: right;
 }
+.icon{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 23px;
+  overflow: hidden;
+  bottom: 0px;
+}
+.icon .pre{
+  width: 20%;
+  margin: 2% 13% 4% 13%;
+}
+.icon .pre i{
+  color:rgb(90, 45, 134);
+}
+.icon .pre i:hover{
+  color: rgb(247, 152, 215);; 
+} 
+
+
 .searchbar{
   width: 50%;
   margin: 3% auto 0 auto;
@@ -99,14 +108,16 @@
 }
 .search-icon{
   width: 10%;
+  height: 49px;
   margin-top: -2%;
-  padding: 2% 0 2% 0;
+  padding: 1.8% 0 2% 0;
   background-color: #7358b7;
   border-radius: 5px 0 0 5px;
 }
 .search-icon i{
   font-size: 150%;
   margin-left:30%;
+  margin-top: 3%;
   color: white;
 }
 .search-input{
@@ -126,12 +137,95 @@
   caret-color:#7358b7;
   caret-shape: bar;
 }
-  @media only screen and (max-width: 600px) {
+@media only screen and (min-width:480px) and (max-width:785px){
+  .card-cont{
+    width: 100%;
+    margin: 2% auto 0 auto;
+  }
+  .image_div .img{
+    height: 120px;
+  }
+  .content h4{
+    font-size: 100%;
+  }
+  .disc{
+    font-size: 60%;
+  }
+  .stars{
+    font-size: 12px;
+  }
+  .sale{
+    font-size: 14px;
+  }
+  .price{
+    font-size: 22px;
+  }
+  .icon{
+    height: 40px;
+  }
+  .icon .pre{
+    margin-top: 1%;
+  }
+  .icon .pre i{
+    font-size: 22px;
+  }
+  .searchbar{
+    width: 70%;
+  }
+  .search-icon{
+    width: 10%;
+    margin-top: -2.2%;
+    padding: 1.8% 0 2% 0;
+    background-color: #7358b7;
+    border-radius: 5px 0 0 5px;
+  }
+  .search-icon i{
+    font-size: 150%;
+    margin-left:25%;
+  }
+}
+  @media only screen and (max-width: 480px) {
     .card-cont{
-      width: 90%;
-      margin: 0 5% 0 5%;
+      width: 95%;
+      margin: 2% auto 0 auto;
     }
     .image_div .img{
-      height: 180px;
+      height: 120px;
+    }
+    .content h4{
+      font-size: 100%;
+    }
+    .disc{
+      font-size: 11px;
+    }
+    .stars{
+      font-size: 15px;
+      margin-left:3%;
+    }
+    .icon{
+      height: 40px;
+    }
+    .icon .pre{
+      margin-top: 1%;
+    }
+    .icon .pre i{
+      font-size: 22px;
+    }
+    .searchbar{
+      width: 70%;
+      padding-top: 10%;
+    }
+    .search-icon{
+      width: 15%;
+      height:37px;
+      margin-top: -2.5%;
+      padding: 2% 0 2.1% 0;
+      background-color: #7358b7;
+      border-radius: 5px 0 0 5px;
+    }
+    .search-icon i{
+      font-size: 130%;
+      margin-left:25%;
+      margin-top: 8%;
     }
   }
