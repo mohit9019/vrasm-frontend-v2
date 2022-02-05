@@ -9,8 +9,8 @@ function Banner(){
             <div className="ban-text">
                 <h1 className="ban-title">Vrasm Templates</h1>
                 <p>Designers are meant to be loved, not to be understood.</p>
-                <button>&lt;<span className="typing"> Be a Creator </span>/&gt;</button>
-            </div>
+                <button><div className="typing"><p>&lt; Be a Creator /&gt;</p> </div></button>
+            </div>   
         </div>
         </>
     );

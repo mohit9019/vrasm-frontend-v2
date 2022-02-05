@@ -29,7 +29,7 @@ function Changepass(){
       Forgot Password ?</Link>
     </Form.Text>
   <Form.Group className="mb-3">
-      <Button type="submit" style={{marginTop:"10px"}}>Edit Password</Button>
+      <button type="submit" style={{marginTop:"10px",padding:'2%'}} className="dash-button">Edit Password</button>
   </Form.Group>
 </Form> 
 

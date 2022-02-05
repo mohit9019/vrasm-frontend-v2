@@ -12,7 +12,7 @@ const Data=[
         id:"2",
         img:"/Images/ecolife.jpg",
         title:"EcoLife",
-        desc:"Ecolife – Organic Food Responsive Prestashop theme is an amazing Prestash",
+        desc:"Ecolife Organic Food Responsive Prestashop theme is an amazing Prestash",
         review: "⭐⭐⭐⭐",
         sale:"200",
         price:"$30",

@@ -48,7 +48,7 @@ function Analysis(){
 
       <div className="creator-table">
         <Table striped bordered hover variant="light">
-  <thead>
+  <thead className="table-head">
     <tr>
       <th>ID</th>
       <th>Template Name</th>

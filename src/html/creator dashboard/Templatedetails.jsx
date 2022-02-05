@@ -36,9 +36,9 @@ function Tenmplatedetails() {
                             <Form.Control type="number" min={50} placeholder="Rs." />
                         </Form.Group>
 
-                        <Link to="/Creatordash/Uploadtemp/Documents"><Button className="save" variant="primary" type="submit" style={{ marginTop: "10px" }}>
+                        <Link to="/Creatordash/Uploadtemp/Documents"><button className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }} variant="primary" type="submit">
                             Save & Next
-                        </Button></Link>
+                        </button></Link>
                     </Form>
                 </div>
         </>

@@ -1,5 +1,5 @@
 .footer{
-    margin-top: 20px;
+    margin-top: 5%;
     height: auto;
     background: rgb(90, 45, 134);
 }
@@ -54,6 +54,9 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .footer{
+        margin-top: 15%;
+    }
     .tabs{
         display: inline-block;
     }

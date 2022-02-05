@@ -6,7 +6,7 @@
     margin-top: 5%;
 }
 .row{
-    margin-top: 1%;
+    margin-top: 1%; 
     width: 100%;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
 }
 .circle svg circle{
     fill: none;
-    stroke: rgb(26, 27, 27);
+    stroke: rebeccapurple;
     stroke-width: 8px;
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
@@ -32,13 +32,13 @@
 
 }
 .stat-n{
+    color: rebeccapurple;
     text-align: center;
     font-size: 19px;
-    margin-top: 30% ;
-    /* border: 1px solid black; */
-    margin-left: -20%;
+    margin: 30% 0 0 -20%;
 }
 .stats{
+    color: rebeccapurple;
     font-size: 30px;
     text-align: center;
     margin:-60% auto 0 -20%;
@@ -51,6 +51,12 @@
 .creator-table{
     width: 90%;
     margin-left: 4%;
+}
+.table-head{
+    color: rgb(143, 16, 143);
+}
+.creator-table tr td{
+    font-size: 85%;
 }
 @media only screen and (max-width: 500px) {
     .row{

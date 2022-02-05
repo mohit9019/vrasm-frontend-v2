@@ -1,89 +1,63 @@
-import Navba from "../home/Navba";
-import { Form, Col, Row, Button, } from "react-bootstrap";
 import "../../css/registration/Registration.css";
-import Preview from "../preview/Preview";
 import React, { useState } from 'react';
 
 function Registration() {
   const [show, setShow] = useState(false)
+  function click(){
+    console.log("clicked");
+  }
   return (
     <>
+    <div className="background">
       <div className="regist">
-        <Form>
-          <Form.Group className="mb-3">
-            <Form.Label>User-Name</Form.Label>
-            <Form.Control type="text" placeholder="User Name" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
+        
+        <div className="regist-col">
+        <label className="regist-label">Phone Number</label>
+        <input type="tel" className="regist-input" placeholder="Enter Phone Number"></input>
+        </div>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
+        <div className="regist-col">
+        <label className="regist-label">Password</label>
+        <input type="password" className="regist-input" placeholder="Enter Password"></input>
+        </div>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Confirm Password</Form.Label>
-            <Form.Control type="Conform password" placeholder="Password" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formGridAddress1">
-            <Form.Label>Address</Form.Label>
-            <Form.Control placeholder="Address" />
-          </Form.Group>
-          <Form.Group controlId="formFileSm" className="mb-3">
-            <Form.Label>Profile Picture</Form.Label>
-            <Form.Control type="file" size="sm" />
-          </Form.Group>
-          {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group> */}
+        <div className="regist-col">
+        <label className="regist-label">Confirm Password</label>
+        <input type="password" className="regist-input" placeholder="Enter Confirm Password"></input>
+        </div>
 
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label as="legend" column sm={2}>
+        <div className="regist-col">
+        <div className="regist-row">
+        <input type="radio" name="register" className="radio-button" onClick={() => setShow(false)}></input>
+        <label className="regist-label" style={{marginRight:'20px'}}>Buyer</label>
+        <input type="radio" name="register" className="radio-button" onClick={() => setShow(true)}></input>
+        <label className="regist-label">Creator</label>
+        </div>
+        </div>
+        {show ? <div className="live">
 
-            </Form.Label>
-            <Col sm={10}>
-              <Form.Check
-                type="radio"
-                label="As a Buyer"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios1"
-                onClick={() => setShow(false)}
-              />
-              <Form.Check
-                type="radio"
-                label="As a creator"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios2"
-                onClick={() => setShow(true)}
-              />
-            </Col>
-          </Form.Group>
+        <div className="regist-col">
+        <label className="regist-label">College Name</label>
+        <input type="text" className="regist-input" placeholder="Enter College Name"></input>
+        </div>
+        
+        <div className="regist-col">
+        <label className="regist-label">Course Name</label>
+        <input type="text" className="regist-input" placeholder="Enter Course Name"></input>
+        </div>
 
-          {show ? <div className="live">
-            <Form.Group className="mb-3">
-              <Form.Label>College Name</Form.Label>
-              <Form.Control type="text" placeholder="College Name" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Course</Form.Label>
-              <Form.Control type="text" placeholder="Course" />
-            </Form.Group>
-            <Form.Group controlId="formFileSm" className="mb-3">
-              <Form.Label>College ID</Form.Label>
-              <Form.Control type="file" size="sm" />
-            </Form.Group>
+        <div className="regist-col">
+        <label className="regist-label">College ID</label>
+        <input type="file" className="regist-input"></input>
+        </div>
+
           </div> : null}
 
-          <Button variant="primary" type="submit">
+        <button className="regist-button" type="reset" onclick={click()}>
             Submit
-          </Button>
-        </Form>
+          </button>
+
+      </div>
       </div>
     </>
   );

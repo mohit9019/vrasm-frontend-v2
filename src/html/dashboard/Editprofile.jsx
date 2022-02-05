@@ -1,14 +1,12 @@
 import "../../css/buyer dashboard/Editprofile.css";
 import "../../css/buyer dashboard/Personalinfo.css";
-import Sidebar from "./Sidebar";
-import Navba from "../home/Navba";
-import { Form, Col, Row, Button } from "react-bootstrap";
+import { Form, Col, Row} from "react-bootstrap";
 import { Link } from "react-router-dom";
 function Editprofile() {
   return (
     <>
       <div className="personal-info">
-        <div className="info"><div className="edit-icon"><h2 className="n">Edit Information</h2>
+        <div className="info"><div className="edit-icon"><h3 className="dash-head">Edit Information</h3>
         </div>
 
 
@@ -52,9 +50,9 @@ function Editprofile() {
               <Form.Control type="file" style={{ width: "80%" }} />
             </Form.Group>
 
-            <Link to="/Buyerdash/Personalinfo"><Button variant="primary" type="submit" style={{ marginTop: "10px" }}>
+            <Link to="/Buyerdash/Personalinfo"><button variant="primary" type="submit" className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>
               Edit Profile
-            </Button></Link>
+            </button></Link>
 
           </Form>
         </div>

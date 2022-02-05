@@ -17,13 +17,13 @@ function Documents() {
                     <Form.Label>Product File</Form.Label>
                     <Form.Control type="file" />
                 </Form.Group>
-                <Link to="/Creatordash/Uploadtemp/Templatedetails"><Button className="previous" variant="primary" type="submit" style={{ marginTop: "10px" }}>
+                <Link to="/Creatordash/Uploadtemp/Templatedetails"><button className="dash-button" variant="primary" type="submit" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>
                 <i class="fas fa-arrow-circle-left"></i>
-                        </Button></Link>
+                        </button></Link>
 
-                        <Link to=""><Button className="save" variant="primary" type="submit" style={{ marginTop: "10px" }}>
+                        <Link to=""><button className="dash-button" variant="primary" type="submit" style={{ marginTop: "10px", padding:'1.5% 2% 1.5% 2%',float:'right'}}>
                             Save & Next
-                        </Button></Link>
+                        </button></Link>
             </div>
         </>
     );

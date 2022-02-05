@@ -9,7 +9,7 @@ function Editprofile(){
         <> 
 
 <div className="personal-info">
-            <div className="info"><div className="edit-icon"><h2 className="n">Edit Information</h2>
+            <div className="info"><div className="edit-icon"><h3 className="dash-head">Edit Information</h3>
             </div>
 
 
@@ -65,9 +65,9 @@ function Editprofile(){
   </Form.Group>
 
 
-  <Link to="/Creatordash/Personalinfo"><Button variant="primary" type="submit" style={{marginTop:"10px"}}>
-    Edit Profile
-  </Button></Link>
+  <Link to="/Creatordash/Personalinfo"><button variant="primary" type="submit" className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>
+              Edit Profile
+            </button></Link>
 
 </Form>
 </div>

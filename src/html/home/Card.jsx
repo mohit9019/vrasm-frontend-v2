@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Data from "./Data";
 const Card=(props)=>{
   const [cartItems, setcartItems] = useState(0);
-  return( 
+  return(  
     <>
     <div className="card-cont">
       <div className="image_div"><img src={props.img} className="img" alt="IMAGE"/></div>

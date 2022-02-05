@@ -1,12 +1,27 @@
+.dash-button{
+    color: white;
+    font-size: small;
+    font-weight: 500;
+    background-color: rgb(113, 65, 160);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.dash-button:hover{
+    background-color: rebeccapurple;
+}
+.dash-head{
+    margin:2%;
+}
+.readonly{
+    background-color: white;
+}
 .personal-info{
     width: 79%;
     height: auto;
     margin-left: 18%;
     margin-top: 6%;
     margin-bottom: 3%;
-}
-.n{
-    margin-left:20px ;
 }
 .info{
     margin-top: 15px;

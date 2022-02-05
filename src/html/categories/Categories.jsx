@@ -24,7 +24,6 @@ function Categories(){
   </Container>
 </Navbar>
 </div>
-<div className='trending'> Trending</div>
         </>
     );
 }

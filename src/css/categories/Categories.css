@@ -6,9 +6,75 @@
 .cat p:hover{
     color: black ;
 }
-.trending{
-    font-size: x-large;
+.categories{
+    display: flex;
+    flex-direction: row;
+}
+.categories-content{
+    width: 82%;
+    height: auto;
+    float: right;
+    margin: 5% 0 0 auto;
+}
+.categories-navbar{
+    /* border: black 1px solid; */
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin:2% auto 4% auto;
+}
+.categories-navbar li{
+    margin:0 auto 0 auto;
+    font-weight: 500;
+    color: rgb(136, 136, 136);
+}
+.categories-navbar li:hover{
+    color: black;
+}
+.categories-cards{ 
+    width: 75%;
+    margin: 0 auto 0 auto;
+}
+.my-like{
+    margin:50% ;
+}
+.categories-serch{
+    width: 100%;
+    margin-top: 15%;
+    /* border: 1px solid black; */
+}
+.categories-input{
+    width: 65%;
+    margin-left: 5%;
+    padding:0 0 0.5% 1% ;
+    font-size: small;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rebeccapurple;
+}
+#categories-icon{
+    margin-left: 7%;
+    color: rebeccapurple;
+}
+.categories-list{
+    margin-top: 20%;
+}
+.list-head{
+    font-size: small;
     font-weight: bold;
-    color: rgb(83, 83, 83);
-    margin:3% 0 1% 3.5%;
+    margin-left: 15%;
+    color: rgb(110, 108, 108);
+}
+.list{
+    margin: 6% 0;
+}
+.categories-list ul li{
+    list-style: none;
+    font-size: small;
+    /* font-weight: 500; */
+    margin-top: 2%;
+    color: rgb(110, 108, 108);
+}
+.categories-list ul li:hover{
+    color: black;
 }
