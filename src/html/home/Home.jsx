@@ -14,7 +14,7 @@ function Home() {
     <Searchbar />
     <Categories />
 
-    <div className='trending'> Trending</div>
+    <div className='trending'> Hot Trending</div>
     <div className="temp">
     <div className="cards">
     {Data.map(details)} </div>
