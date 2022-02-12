@@ -1,4 +1,3 @@
-import Card from "./Card";
 import Banner from "./Banner";  
 import Data from "./Data";
 import Footer from "./Footer";
@@ -7,30 +6,37 @@ import "../../css/home/Card.css";
 import Categoriespage from "../categories/Categoriespage";
 import details from "./Detailsmap";
 import Searchbar from "./Searchbar";
+import {Link } from 'react-router-dom';
+// import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
+function ScrolltoTop(){
+  window.scrollTo({
+    top: 540, 
+    behavior: 'smooth',
+  });
+}
 function Home() {
   return(<>
     <Banner /> 
+    <div className="explore"><i class="fad fa-chevron-up" onClick={ScrolltoTop}></i></div>
     <div className="home-slide">
     <Searchbar />
     <Categories />
 
-    <div className='trending'> Hot Trending</div>
+    <div className='trending'>Trending</div>
     <div className="temp">
     <div className="cards">
     {Data.map(details)} </div>
     </div>
-    <div className="seemore"><p>see more...&gt;</p></div>
-
+    <div className="seemore"><Link to="/categoriespage" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more</p></Link></div>
     <div className='trending'> Highest Ratings</div>
     <div className="temp">
     <div className="cards">
     {Data.map(details)} </div>
     </div>
-    <div className="seemore"><p>see more...&gt;</p></div>
+    <div className="seemore"><Link to="/categoriespage" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more</p></Link></div>
 
     <Footer />
     </div>
-    {/* <Categoriespage /> */}
     </>);
 }
 export default Home;

@@ -10,15 +10,8 @@ import { Routes, Route, } from 'react-router-dom';
 import Like from './html/cart/Like';
 import Navba from "./html/home/Navba";
 import Buyerdash from "./html/dashboard/Buyerdash";
-import Personalinfo from "./html/dashboard/Personalinfo";
-import Myorder from "./html/dashboard/Myorder";
-import Changepass from "./html/dashboard/Changepass";
-import Wallet from "./html/dashboard/Wallet";
-import Editprofile from "./html/dashboard/Editprofile";
 import Creatordash from "./html/creator dashboard/Creatordash";
-import Features from "./html/preview/Features";
-import Details from "./html/preview/Details";
-import Overview from "./html/preview/Overview";
+import Categoriespage from "./html/categories/Categoriespage";
 function App() {
   return (<>
     <Navba />
@@ -31,6 +24,7 @@ function App() {
       <Route exact path="/Buyerdash/*" element={<Buyerdash />} />
       <Route exact path="/creatordash/*" element={<Creatordash />} />
       <Route exact path="/preview/*" element={<Preview />} /> 
+      <Route exact path="/categoriespage/*" element={<Categoriespage />} /> 
     </Routes>
   </>);
 }

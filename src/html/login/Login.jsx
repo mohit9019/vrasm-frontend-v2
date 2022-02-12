@@ -1,4 +1,5 @@
 import {Form, Button,} from "react-bootstrap";
+import { register } from "react-scroll/modules/mixins/scroller";
 import "../../css/login/Login.css";
 function Login(){
     return(
