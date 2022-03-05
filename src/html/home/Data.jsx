@@ -6,7 +6,7 @@ const Data=[
         desc:"Foodhall is a responsive Blogger theme highlighting a good design for food ",
         review:<><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"100",
-        price:"$20",
+        price:"Rs.20",
     }, 
     {
         id:"2",
@@ -15,7 +15,7 @@ const Data=[
         desc:"Ecolife Organic Food Responsive Prestashop theme is an amazing Prestash",
         review: <><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"200",
-        price:"$30",
+        price:"Rs.30",
     },
     {
         id:"3",
@@ -24,7 +24,7 @@ const Data=[
         desc:"FlexiBlog is a fully functional multi-purpose blog theme powered by React an",
         review: <><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"2",
-        price:"$26",
+        price:"Rs.26",
     },
     {
         id:"4",
@@ -33,7 +33,7 @@ const Data=[
         desc:"Quarter is a Real Estate, Architecture & interior design Bootstrap 5 HTML",
         review: <><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"34",
-        price:"$14",
+        price:"Rs.14",
     },
     {
         id:"5",
@@ -42,7 +42,7 @@ const Data=[
         desc:"Architeck is a clean and powerful HTML5 Construction and",
         review: <><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"78",
-        price:"$29",
+        price:"Rs.29",
     },
     {
         id:"6",
@@ -51,7 +51,7 @@ const Data=[
         desc:"Realtor is a Real Estate, Architecture & interior design Bootstrap 5 HTML",
         review: <><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"65",
-        price:"$10", 
+        price:"Rs.10", 
     },
     {
         id:"7",
@@ -60,7 +60,7 @@ const Data=[
         desc:"Architeck is a clean and powerful HTML5 Construction and",
         review: <><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"78",
-        price:"$29",
+        price:"Rs.29",
     },
     {
         id:"8",
@@ -69,7 +69,7 @@ const Data=[
         desc:"Realtor is a Real Estate, Architecture & interior design Bootstrap 5 HTML",
         review: <><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></>,
         sale:"65",
-        price:"$10", 
+        price:"Rs.10", 
     },
 ];
 export default Data;

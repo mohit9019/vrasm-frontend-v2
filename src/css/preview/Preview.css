@@ -1,10 +1,48 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 .temp-detail{
     width: 100%;
     height: auto;
     /* display: grid;
     grid-template-columns: 580px auto; */
     border-radius: 3px;
-    margin:90px auto 50px auto;
+    margin:3% auto 50px auto;
+}
+.image-carousel{
+    margin:2% 0;
+    width: 60%;
+    height: auto;
+}
+.slide{
+    transform: scale(0.7);
+    transition: transform 300ms;
+    opacity: 0.5;
+}
+.activeslide{
+    transform: scale(1.1);
+    opacity: 1;  
+}
+.arrow{
+    cursor: pointer;
+    position: absolute;
+    background-color: rebeccapurple;
+    color: white;
+    border: none;
+    padding: 0 .75% .5% .75%;
+    border-radius: 5px;
+    font-size: 95%;
+    z-index: 10;
+}
+.next{
+    right: 0%;
+    top: 45%;
+}
+.prev{
+    left: 0%;
+    top: 45%;
+}
+.image-carousel img{
+    width: 50%;
 }
 .detail{
     width: 60%;
@@ -97,13 +135,21 @@
     font-size: 15px;
     padding:5px 10px 5px 10px;
     margin-top: 10px;
-    background-color: rgb(236, 124, 96);
+    background-color: rgb(136, 69, 204);
     color: white;
 }
 .download:hover{
-    background-color:rgb(252, 120, 87) ;
+    background-color: rgb(157, 80, 233) ;
     
 }
+.maincont{
+    width: 100%;
+    height: 100vh;
+    background-color: rebeccapurple;
+}
+
+/* privew slider */
+
 @media only screen and (max-width: 500px) {
     .temp-detail{
         width: 100%;

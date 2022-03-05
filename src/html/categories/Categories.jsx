@@ -6,8 +6,8 @@ function Categories(){
         <div style={{zIndex:"5"}}>
             <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark" style={{marginTop:"20px"}}>
   <Container>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{marginLeft:"auto",fontSize:'10px',padding:'0.10rem 0.30rem',color:'rgb(83, 83, 83)',border:'3px solid',backgroundColor:'rgb(83, 83, 83)'}} />
-  <Navbar.Collapse  id="responsive-navbar-nav" style={{justifyContent:'center',alignItems:'center'}} >
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{marginRight:"20px",marginLeft:'auto',fontSize:'10px',padding:'0.30rem 0.60rem',color:'white',border:'3px solid',borderRadius:'6px',backgroundColor:'rgb(116, 66, 167)'}} />
+  <Navbar.Collapse  id="responsive-navbar-nav" style={{justifyContent:'center',alignItems:'center',fontSize:'10px'}} >
     
     <div className="cat">
       <Nav>

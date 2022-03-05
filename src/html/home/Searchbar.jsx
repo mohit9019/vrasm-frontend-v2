@@ -1,3 +1,4 @@
+//searchbar -css in card.css
 function Searchbar(){
     return(
         <>

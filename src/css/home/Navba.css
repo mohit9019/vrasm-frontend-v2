@@ -2,18 +2,18 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    height: auto;
+    height: 8%;
     /* background-color: rgb(54, 44, 44); */
     background-color: white;
     overflow: hidden;
     /* /* position: fixed; */
     z-index: 11; 
-    position: fixed;
+    position: sticky;
     top: 0;
     box-shadow: 0px 1px 8px 1px rgb(167, 165, 165) ;
 }
 .logo-cont{
-    width: 100%;
+    width: 20%;
     float: left;
 }
 .logo{
@@ -22,15 +22,15 @@
     background: -webkit-linear-gradient(60deg,#2596be , rgb(202, 69, 202) 40%);
     -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-    /* color: rgb(170, 39, 170); */
-    margin: 1% 0 1% 4%;
+    /* color: rgb(170, 39, 170); */ 
+    margin: 0 0 1% 15%;
     float: left;
 }
 .v{
     color: rebeccapurple;
 }
 .top-cont{
-    width: 100%;
+    width: 115%;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -40,7 +40,7 @@
     justify-content: right;
 }
 .top-icon{
-    font-size: 18px;
+    font-size: 100%;
     margin:auto 0 auto 20px;
     color: rebeccapurple;
     text-align: right;
@@ -49,25 +49,26 @@
     margin-top: 12px;
 }
 .top-icon:hover{
-    color: rgb(202, 69, 202);
+    color: rgb(87, 86, 86);
 }
 @media only screen and (max-width:480px) {
     .top{
         width: 100%;
+        height: 7.5%;
     }
     .logo-cont{
         width: 30%;   
     }
     .logo{
         /* width: 100%; */
-        margin: 7% 0 0 10%;
+        margin: 3.5% 0 0 10%;
         font-size: x-large;
     }
     .top-cont{
         width: 70%;
     }
     .top-icon{
-        font-size: 16px;
+        font-size: 95%;
         margin-left: 10px;
 }
 }

@@ -1,20 +1,22 @@
 import React,{useState} from "react";
-import "../../css/home/Card.css";
+import "../../css/home/Card.css"; 
 import { Link } from "react-router-dom";
 // import {cart} from "./Data";
 import Data from "./Data";
 const Card=(props)=>{
   // const [cartItems, setcartItems] = useState(0);
   return(  
-    <>
+    <> 
     <div className="card-cont">
-      <div className="image_div">{/*<div className="save" ><i class="fas fa-heart"></i></div>*/}<img src={props.img} className="img" alt="IMAGE"/></div>
+      <div className="image_div">
+      {/* <div className="save" ><i class="fas fa-heart"></i></div> */}
+      <img src={props.img} className="img" alt="IMAGE"/></div>
       <div className="content"> 
         <h4>{props.title}</h4>
         <span className="disc">{props.desc}</span>
-        {/* <div className="review"> */}
+        <div className="review">
         <span className="stars">{props.review}</span>
-        {/* </div>                     */}
+        </div>                    
         <div className="about"><span className="sale">Sale: {props.sale}</span><span className="price">{props.price}</span></div>
         <div className="icon">
         <Link className="previewicon" to="Preview/Overview"  style={{textDecoration:"none", color:"darkgray"}} >

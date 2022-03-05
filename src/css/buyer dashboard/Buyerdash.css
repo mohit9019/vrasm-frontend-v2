@@ -4,10 +4,11 @@
     height: auto;
 }
 .profile p{
-    color: rebeccapurple;
-    font-size: 20px;
+    color: white;
+    font-size: 20px; 
     font-weight: 700;
 }
+
 .pic{
     margin: 10px 0 10px 0;
     width: 60%;
@@ -16,62 +17,66 @@
     border-radius:50%;
     /* border: 1px rgb(100, 99, 99) solid; */
 }
-.side-bar{
+.dash-side-bar{
     width: 18%;
     float: left;
     position: absolute;
-    background-color:white ;
+    background-color:rebeccapurple ;
     height: 100%;
     /* border-right: 2px solid rebeccapurple ; */
     box-shadow: 4px 0 5px -3px grey;
     position: fixed;
-    margin-top: 4.7%;
     z-index: 10;
 }
-.side-bar .info{
+.dash-side-bar .info{
     width: auto;
     /* border: 5px orangered solid; */
 }
-.side-bar .info p{
+.dash-side-bar .info p{
     margin: 10px 0 10px 12px;
     font-size: 13px;
     font-weight:500;
-    color: rebeccapurple;
+    color: white;
     text-align: left;
     /* border: 1px olive solid; */
 }
-.side-bar #mainbar{
+.dash-side-bar #mainbar{
     width: 105%;
 }
 .mainbar{
     width: 105%;
     margin-left: -12px;
     height: .1em;
-    background-color: rebeccapurple;
+    background-color: white;
 }
-.side-bar .info .bar{
+.dash-side-bar .info .bar{
     width: 110%;
     margin-left: -12px;
     height: .05em;
-    background-color: rebeccapurple;
+    background-color:rgb(134, 132, 132);
 }
 .check{
     display: none;
 }
 @media only screen and (max-width: 500px) {
-    .side-bar{
+    .dash-side-bar{
         width: 100%;
         position: relative;
-        z-index: 2;
-        margin-top: 13.5%;
+        z-index: 2; 
     }
     .pic{
         width: 30%;
     }
-    .side-bar .info p{
+    .dash-side-bar .info p{
         text-align: center;
     }
-    .check:checked~.info{
-        display: none;
+    .dash-side-bar .info .bar{
+        width: 103%;
     }
+    .mainbar{
+        width: 103%;
+    }
+    /* .check:checked~.info{
+        display: none;
+    } */
 }

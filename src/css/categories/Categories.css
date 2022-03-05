@@ -9,38 +9,58 @@
 .categories{
     display: flex;
     flex-direction: row;
+    background-color: rgb(250, 250, 250);
 }
 .categories-content{
     width: 82%;
-    height: auto;
     float: right;
-    margin: 5% 0 0 auto;
+    margin: 3% 0 0 auto; 
 }
 .categories-navbar{
     /* border: black 1px solid; */
     list-style: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin:2% auto 4% auto;
 }
 .categories-navbar li{
-    margin:0 auto 0 auto;
+    margin:2% 0;
     font-weight: 500;
     color: rgb(136, 136, 136);
+    font-size: small;
+}
+.bar{
+    background-color: rgb(172, 171, 171);
+    height: 2px;
+    width: 70%;
+    margin: 15% auto 0 auto;
 }
 .categories-navbar li:hover{
     color: black;
 }
 .categories-cards{ 
-    width: 75%;
+    width: 90%;
     margin: 0 auto 0 auto;
+    background-color: white;
 }
-.my-like{
-    margin:50% ;
+.cat-card{ 
+    margin: 1% auto 0 auto;
+    padding:1% 0 1% 0;
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    /* background-color: whitesmoke; */
+    border-bottom: rgb(196, 195, 195) 1px solid;
+    border-radius: 2px;
+    /* box-shadow:2px 2px 15px rgb(165, 164, 164); */
 }
+.cat-card:hover{
+    border-left: rgb(196, 195, 195) 1px solid;
+}
+
 .categories-serch{
     width: 100%;
-    margin-top: 15%;
+    margin-top: 8%;
     /* border: 1px solid black; */
 }
 .categories-input{
@@ -57,7 +77,7 @@
     color: rebeccapurple;
 }
 .categories-list{
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .list-head{
     font-size: small;
@@ -67,6 +87,7 @@
 }
 .list{
     margin: 6% 0;
+    height: 30%;
 }
 .categories-list ul li{
     list-style: none;
@@ -75,6 +96,101 @@
     margin-top: 2%;
     color: rgb(110, 108, 108);
 }
+.categories-list ul li span{
+   margin-left: 7%;
+}
 .categories-list ul li:hover{
     color: black;
+}
+.cat-bar{
+    width: 18%;
+    float: left;
+    position: absolute;
+    background-color:white ;
+    height: 100%;  
+    position: fixed;
+    margin: 0.5% 0;
+    background-color: rgb(250, 250, 250);
+    overflow-y: scroll;
+    padding: 0 0 8%;
+}
+
+@media only screen and (max-width: 500px) {
+.cat Nav Nav.Link p{
+    font-size: 10px;
+}
+.cat-bar{ 
+    width: 10%;
+    margin-top: 11%;
+}
+.categories-list ul li span{
+    display: none;
+    margin-top: -70%;
+    text-align: center;
+    width: 300%;
+    font-size: small;
+    border-radius: 2px;
+    background-color: rgb(146, 49, 146);
+    padding: 3% 0 5% 0%;
+    transition: all 4s ease-in-out;
+}
+.categories-list{
+    margin-left: -50%;
+    margin-right:-10%;
+    overflow: visible;
+    margin-top: 50%;
+    /* margin-right: 40%; */
+}
+.categories-list ul li{
+    margin-top: 20%;
+    font-size: 100%;
+}
+/* after hovering categories manu  */
+
+.categories-list ul li:hover span{
+    display: block;
+    margin-left: 80%;
+    color: white;
+}
+.list-head{
+    display: none;
+}
+.categories-content{
+    width: 90%;
+    /* border: 1px solid black; */
+    margin-top: 25%;
+}
+.categories-navbar{
+    font-size: 90%;
+    margin-top: 20%;
+    margin-left: -10%;
+    /* border: 1px solid black; */
+}
+.categories-navbar li{
+    margin-left: 3%;
+    font-size: 80%;
+}
+.categories-serch{
+    margin:70% 0 0 2%;
+    /* border: 1px solid black; */
+    width: 350%;
+    position: relative;
+}
+.categories-input{
+    /* border: 1px solid black; */
+    display: none;
+    width: 75%;
+    height: 25px;
+    margin-left: 5%;
+    padding: 3% 0% 3% 3%;
+    border-radius: 5px;
+}
+.categories-cards{ 
+    width: 90%;
+    margin-left: 5%;
+}  
+.categories-serch:hover .categories-input{
+  display:inline-block;
+  border: 2px solid rebeccapurple;
+}
 }

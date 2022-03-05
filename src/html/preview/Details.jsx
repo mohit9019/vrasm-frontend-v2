@@ -9,25 +9,26 @@ import Footer from "../home/Footer";
 function Details() {
     return (
         <>
-            <center><div className="temp-detail">
+            {/* <center><div className="temp-detail">
                 <div className="detail">
                     <div className="nest">
                         <h2 className="name">Template Name</h2>
                         <div className="buton">
                             <Link to="Overview"><button className="bt">Overview</button></Link>
                             <Link to="Features"><button className="bt">Details</button></Link></div>
-                    </div>
+                    </div> */}
                     <Routes>
                         <Route>
                             <Route path="Overview" element={<Overview />} />    
                             <Route path="Features" element={<Features />} />
                         </Route>
                     </Routes>
-                    <center><button className="download">Buy this Template</button></center>
+                    {/* <center><button className="download">Buy this Template</button></center>
                 </div>
 
             </div></center>
-            <Footer />
+            <Footer /> */}
+        
         </>
     );
 }

@@ -12,6 +12,7 @@ import Navba from "./html/home/Navba";
 import Buyerdash from "./html/dashboard/Buyerdash";
 import Creatordash from "./html/creator dashboard/Creatordash";
 import Categoriespage from "./html/categories/Categoriespage";
+import Admin from "./html/Admin/Admin";
 function App() {
   return (<>
     <Navba />
@@ -25,6 +26,7 @@ function App() {
       <Route exact path="/creatordash/*" element={<Creatordash />} />
       <Route exact path="/preview/*" element={<Preview />} /> 
       <Route exact path="/categoriespage/*" element={<Categoriespage />} /> 
+      <Route exact path='/Admin/*' element={<Admin />} />
     </Routes>
   </>);
 }

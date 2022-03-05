@@ -7,14 +7,14 @@ import Categoriespage from "../categories/Categoriespage";
 import details from "./Detailsmap";
 import Searchbar from "./Searchbar";
 import {Link } from 'react-router-dom';
-// import { scrollToTop } from "react-scroll/modules/mixins/animate-scroll";
 function ScrolltoTop(){
+  const c=540;
   window.scrollTo({
-    top: 540, 
+    top: c, 
     behavior: 'smooth',
   });
 }
-function Home() {
+function Home() { 
   return(<>
     <Banner /> 
     <div className="explore"><i class="fad fa-chevron-up" onClick={ScrolltoTop}></i></div>

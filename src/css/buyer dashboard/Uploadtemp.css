@@ -1,15 +1,11 @@
 .upload-template{
     width: 72%;
     height: auto;
-    margin-left: 18%;
-    margin-top: 7%;
-    margin-bottom: 7%;
+    margin:2% 0 7% 18%;
 } 
 .form1 , .documents{
-    margin-top: 15px;
+    margin: 15px 13% 0 13%;
     width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
 }
 .n{
     margin-top: 10px;
@@ -24,8 +20,7 @@
 @media only screen and (max-width: 500px) {
     .upload-template{
         width: 100%;
-        margin-left: 1%;
-        margin-bottom: 20%;
+        margin:5% 0 10% 1%;
     }
 
 }

@@ -1,27 +1,39 @@
 import "../../css/registration/Registration.css";
 import React, { useState } from 'react';
 import axios from "axios";
+import ApiCaller from "../../apiCaller.js/apiCaller";
+
+function toggle(value){
+  return !value;
+}
 
 function Registration() {
   const [show, setShow] = useState(false)
   function register(e) {
     e.preventDefault();
     console.log("clicked");
-    console.log(e.target.phoneno.value);
+    console.log(e.target.password.value);
     let body = {
-      name: 'test',
-      phoneno: e.target.phoneno.value,
+      name: 'manav',
+      email: e.target.email.value,
       password: e.target.password.value,
-      gender: 'male',
-      dob: '10-14-2001',
+      gender: e.target.gender.value,
+      is_creator: e.target.is_creator.checked
     }
-    axios.post('http://localhost:4000/v1/buyer/register', body)
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    if(e.target.is_creator.checked){
+      body.college = e.target.college.value;
+      body.course = e.target.course.value;
+    }
+    let apiCaller = new ApiCaller();
+    apiCaller.postData({
+      url:'buyer/register',
+      data:body
+    }).then(data=>{
+      console.log(data);
+    })
+    .catch(err=>{
+      console.log(err);
+    })
   }
   return (
     <>
@@ -29,38 +41,49 @@ function Registration() {
         <div className="regist">
           <form onSubmit={register}>
             <div className="regist-col">
-              <label className="regist-label">Phone Number</label>
-              <input type="tel" className="regist-input" name="phoneno" placeholder="Enter Phone Number"></input>
+              <label className="regist-label">E-mail</label>
+              <input type="tel" className="regist-input" name="email" placeholder="Enter email" ></input>
             </div>
 
             <div className="regist-col">
               <label className="regist-label">Password</label>
-              <input type="password" className="regist-input" name="password" placeholder="Enter Password"></input>
+              <input type="password" className="regist-input" name="password" placeholder="Enter Password" ></input>
             </div>
 
             <div className="regist-col">
               <label className="regist-label">Confirm Password</label>
-              <input type="password" className="regist-input" placeholder="Enter Confirm Password"></input>
+              <input type="password" className="regist-input" placeholder="Enter Confirm Password"   ></input>
             </div>
 
             <div className="regist-col">
               <div className="regist-row">
-                <input type="radio" name="register" className="radio-button" onClick={() => setShow(false)}></input>
-                <label className="regist-label" style={{ marginRight: '20px' }}>Buyer</label>
-                <input type="radio" name="register" className="radio-button" onClick={() => setShow(true)}></input>
-                <label className="regist-label">Creator</label>
+                <input type="radio" name="gender" value="male" className="radio-button" ></input>
+                <label className="regist-label" style={{ marginRight: '20px' }}>Male</label>
+                <input type="radio" name="gender" value="female" className="radio-button" ></input>
+                <label className="regist-label">Female</label>
+              </div>
+            </div> 
+
+            <div className="regist-col">
+              <div className="regist-row">
+              <label className="regist-label">Buyer</label>
+              <label class="switch">
+             <input type="checkbox" name="is_creator" onChange={() => setShow(toggle)}></input>
+            <span class="slider round"></span>
+            </label>
+            <label className="regist-label">Creator</label>
               </div>
             </div>
             {show ? <div className="live">
 
               <div className="regist-col">
                 <label className="regist-label">College Name</label>
-                <input type="text" className="regist-input" placeholder="Enter College Name"></input>
+                <input type="text" name="college" className="regist-input" placeholder="Enter College Name"></input>
               </div>
 
               <div className="regist-col">
                 <label className="regist-label">Course Name</label>
-                <input type="text" className="regist-input" placeholder="Enter Course Name"></input>
+                <input type="text" name="course" className="regist-input" placeholder="Enter Course Name"></input>
               </div>
 
               <div className="regist-col">
