@@ -6,7 +6,8 @@ function Preview(){
     return(
         <>
 
-            <Details />
+            <Overview />
+            <Footer />
         </>
     );
 }

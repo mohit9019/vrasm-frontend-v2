@@ -1,183 +1,295 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-.temp-detail{
+
+.preview{
+    width: 96%;
+    margin: 1.5% auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(246, 244, 248);
+    border-radius: 5px;
+    padding: 0 0 2% 4%;
+}
+.preview-details{
     width: 100%;
     height: auto;
-    /* display: grid;
-    grid-template-columns: 580px auto; */
-    border-radius: 3px;
-    margin:3% auto 50px auto;
+    display: flex;
+    flex-direction: row;
+}
+.userinfo{
+    margin:5% 0 0;
+    width: 100%;
+    display: flex;
+}
+.user-dp{
+    height: 28px;
+    width: 28px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.user-dp img{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.user-name{
+    color: rgb(92, 91, 91);
+    font-size: 75%;
+    font-weight: 500;
+    margin: 1% 0 0 3%;
+}
+.preview-title{
+    width: 35%;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 5% 0 0 ;
+}
+.preview-name{
+    /* text-align: center; */
+    margin:1% 0 5%;
+    color: rgb(70, 69, 69);
+}
+.preview-desc{
+    width: 85%;
+    height: auto;
+    max-height: 38%;
+    font-size: 80%;
+    color: rgb(94, 93, 93);
+    font-weight: 500;
+    text-align: justify;
+    overflow: hidden;
+}
+.preview-stars{
+    margin:2% 0 ;
+    font-size: large;
+}
+.preview-stars i{
+    margin: 0 .5%;
+}
+.preview-btns{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    padding: 0 17% 0 0;
+    margin:7% 0 ;
+}
+.preview-btns button{
+    margin: 1% 0 ;
+    padding: 1% 0 1% 0;
+    border-radius: 2px;
+    font-weight:500;
+    border: none;
+}
+.preview-cart{
+    color: white;
+    background-color: rgb(127, 76, 179);
+}
+.preview-cart:hover{
+    background-color: rgb(145, 77, 212);
+}
+.buy-btn{
+    background-color: rgb(43, 174, 207);
+    color: white;
+}
+.buy-btn:hover{
+    background-color: rgb(57, 189, 223);
+}
+.preview-btns button i{
+    margin: 0 3%;
 }
 .image-carousel{
     margin:2% 0;
-    width: 60%;
+    width: 65%;
     height: auto;
+    padding: 1%; 
+}
+.carousel-img-cont{
+    width: 80%;
+    height: auto;
+    max-height:350px ;
+    overflow-y: scroll;
+    padding: 0 .65%;
+}
+.carousel-cont{
+    width: 100%;
+    /* background-color: rgb(218, 238, 255); */
+    padding: 3% 1% 0 1%;
+    border: none;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Image Carousel  */
+
+.image-carousel img{
+    width: 100%;
 }
 .slide{
     transform: scale(0.7);
-    transition: transform 300ms;
-    opacity: 0.5;
+    transition: transform 700ms;
+    opacity: 0.7;
 }
 .activeslide{
     transform: scale(1.1);
-    opacity: 1;  
+    opacity: 1;
+    margin-bottom: 4%;
 }
 .arrow{
     cursor: pointer;
     position: absolute;
-    background-color: rebeccapurple;
-    color: white;
+    color: rebeccapurple;
     border: none;
-    padding: 0 .75% .5% .75%;
     border-radius: 5px;
-    font-size: 95%;
+    font-size: 200%;
     z-index: 10;
+    top: 0;
+    height: 100%;
+    padding: 15% 0 0 ;
+    background-color: transparent;
+    width: 10%;
 }
 .next{
-    right: 0%;
-    top: 45%;
+    right: 0;
+    text-align: right;
 }
 .prev{
-    left: 0%;
-    top: 45%;
-}
-.image-carousel img{
-    width: 50%;
-}
-.detail{
-    width: 60%;
-    height: auto;
-    padding-bottom: 20px;
-    background-color: rgb(253, 252, 252);
-    border-radius: 3px;
-    display: block;
-    box-shadow: 4px 7px 8px grey ;
-}
-.name{
-    float: left;
-    text-align: center;
-    margin: 10px 0 0 14px;
-    color: rgb(196, 195, 195);
-}
-.temp-name  {  
-    display:inline;
-    width: 100% ;
-    height: 60px;
-}
-.nest{
-    width: 100%;
-    height: 60px;
-    border-radius: 3px;
-    background-color:rgb(39, 39, 39);
-    font-weight: 1px;
-}
-.buton{
-    float: right;
-    margin-right: 5px;
-}
-.bt{
-    color: rgb(22, 22, 22);
-    background-color: rgb(255, 254, 254);
-    margin: 15px 15px 0 0;
-    padding: 5px 5px 5px 5px;
-    border: none;
-    border-radius: 6px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: .3s;
-}
-.bt:hover{
-    color: rgb(255, 254, 254);
-    background-color: rgb(41, 41, 41);
-}
-.temp-img{
-    width: 80%;
-    height: auto;
-    margin-top: 20px;
-}
-.description{
-    width: 80%;
-    padding-top: 10px; 
-    display: block;
-    margin-top: 3%;
-    /* border: 1px solid black; */
-}
-.f_descrition{
-    margin-top: 3%;
-    margin-left: 3%;
-}
-.temp-desc{
-    font-size: 13px;
-    margin-left: 0px;
-    text-align: justify;
-}
-.techs{
-    display: inline;
-    width: 90%;
-    height: 30px;
-    margin:10px 0 15px 30px;
-    float: left;
-}
-.technology{
-    margin-left:20px ;
-    border-radius: 4px;
-    border: none;
-    background-color: rgb(175, 174, 174);
-    padding:3px 8px 3px 8px;
-}
-.technology:hover{
-    color: white;
-    background-color: rgb(48, 47, 47);
-}
-.download{
-    border: none;
-    border-radius: 2px;
-    font-size: 15px;
-    padding:5px 10px 5px 10px;
-    margin-top: 10px;
-    background-color: rgb(136, 69, 204);
-    color: white;
-}
-.download:hover{
-    background-color: rgb(157, 80, 233) ;
-    
-}
-.maincont{
-    width: 100%;
-    height: 100vh;
-    background-color: rebeccapurple;
+    left: 0;
 }
 
-/* privew slider */
+/* Features */
+
+.features{
+    display: flex;
+    flex-wrap: wrap;
+}
+.features-title{
+    font-size: 120%;
+    color: rgb(44, 44, 44);
+}
+.tags-cont, .technologies-cont{
+    width: 50%;
+    margin: 2% 0;
+}
+.tags-list{
+    margin: 1.5% 0 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tag, .technology{
+    font-weight: 500;
+    font-size: 65%;
+    padding: 1% 2% 1% 2%;
+    margin: .5% .75%;
+    color: rgb(66, 66, 66);
+    border: 1px solid rgb(167, 165, 165);
+    border-radius: 25px;
+    background-color: rgb(243, 242, 242);
+}
+.tag:hover, .technology:hover{
+    background-color: rgb(220, 220, 220);
+}
+
+/* Reviews */
+.review-cont{
+    width: 100%;
+    height: auto;
+    margin: 1% 0 0;
+}
+.reviews{
+    width: 96%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1.5% 0 0 ;
+}
+.review-card{
+    width: 30%;
+    height: auto;
+    border-radius: 5px;
+    max-height: 180px;
+    background-color: white;
+    padding: .25% 2% .5% 2%;
+}
+.feedback-stars{
+    font-size: 80%;
+    margin: 1% 0 .5%;
+}
+.feedback{
+    font-size: 70%;
+    padding-left: 5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.qoute-icon i{
+    font-size: 70%;
+    color: rebeccapurple;
+}
+
+/* privew Responsive */
 
 @media only screen and (max-width: 500px) {
-    .temp-detail{
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    .detail{
-        width: 90%;
-        height: 690px;
-    }
-    .bt{
-        margin-right: 10px;
-        font-size: 10px;
-    }
-    .name{
-        font-size: 20px;
-        margin: 15px 0 0 15px;
-    }
-    .technology{
-        font-size: 12px;
-        margin-left: 10px;
-    }
-    .download{
-        font-size: 12px;
-    }
-    .f_descrition{
-        margin-top: 5%;
-        margin-left: 5%;
-        font-size: 12px;
-    }
+.preview{
+    margin-top: 4% ;
+    width: 90%;
+}
+.preview-details{
+    flex-direction: column-reverse;
+}   
+.image-carousel{
+    margin: 5% 0 5% 0;
+    width: 100%;
+    padding: 0 3% 0 3%;
+}
+.carousel-img-cont{
+    width: 90%;
+    height: auto;
+    max-height: 200px;
+}
+.carousel-cont{
+    padding-bottom:6% ;
+}
+.preview-title{
+    width: 100%;
+    padding: 0 5% 0 5%;
+}
+.preview-name{
+    margin-bottom: 4%;
+}
+.preview-desc{
+    width: 97%;
+    font-size: 60%;
+}
+.preview-stars{
+    font-size: medium;
+}
+.arrow{
+    display: none;
+    font-size: 150%;
+    padding: 15% 0;
+}
+.preview-btns{
+    width: 80%;
+    padding: 2% auto 2% auto;
+    margin: 0 auto 0 auto;
+    font-size: 80%;
+}
+.preview-btns button{
+    margin: 2% 0;
+}
+.tag,.technology{
+    font-size: 55%;
+}
+.tags-cont, .technologies-cont{
+    width: 100%;
+}
+.reviews{
+    flex-direction: column;
+}
+.review-card{
+    margin: 2.5% 0 0;
+    width: 100%;
+}
 }

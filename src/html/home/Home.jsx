@@ -27,7 +27,7 @@ function Home() {
     <div className="cards">
     {Data.map(details)} </div>
     </div>
-    <div className="seemore"><Link to="/categoriespage" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more</p></Link></div>
+    <div className="seemore"><Link to="/Loader" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more</p></Link></div>
     <div className='trending'> Highest Ratings</div>
     <div className="temp">
     <div className="cards">

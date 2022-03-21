@@ -1,4 +1,5 @@
 import axios from "axios";
+import Loader from "../html/other/Loader";
 
 class ApiCaller{
 

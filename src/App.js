@@ -11,8 +11,9 @@ import Like from './html/cart/Like';
 import Navba from "./html/home/Navba";
 import Buyerdash from "./html/dashboard/Buyerdash";
 import Creatordash from "./html/creator dashboard/Creatordash";
+import OtpVerification from "./html/registration/OtpVerification";
 import Categoriespage from "./html/categories/Categoriespage";
-import Admin from "./html/Admin/Admin";
+import Loader from "./html/other/Loader";
 function App() {
   return (<>
     <Navba />
@@ -26,7 +27,8 @@ function App() {
       <Route exact path="/creatordash/*" element={<Creatordash />} />
       <Route exact path="/preview/*" element={<Preview />} /> 
       <Route exact path="/categoriespage/*" element={<Categoriespage />} /> 
-      <Route exact path='/Admin/*' element={<Admin />} />
+      <Route exact path="/OtpVerification/*" element={<OtpVerification />} />
+      <Route exact path="/Loader" element={<Loader />} />
     </Routes>
   </>);
 }

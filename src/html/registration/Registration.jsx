@@ -1,5 +1,6 @@
 import "../../css/registration/Registration.css";
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import axios from "axios";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 
@@ -37,6 +38,7 @@ function Registration() {
   }
   return (
     <>
+
       <div className="background">
         <div className="regist">
           <form onSubmit={register}>
@@ -92,10 +94,9 @@ function Registration() {
               </div>
 
             </div> : null}
-
-            <button className="regist-button" type="submit" >
+            <Link to="/OtpVerification"><button className="regist-button" type="submit" >
               Submit
-            </button>
+            </button></Link>
 
           </form>
         </div>
