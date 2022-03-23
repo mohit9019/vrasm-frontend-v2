@@ -1,33 +1,32 @@
 import { Form,Button } from "react-bootstrap";
 import {Link} from "react-router-dom";
-import axios from "axios";
-function Tenmplatedetails() {
+import ApiCaller from "../../apiCaller.js/apiCaller";
 
+function Tenmplatedetails() {
+    
     function templateupload(e) {
-          e.preventDefault();
-          console.log("clicked");
-          console.log(e.target.password.value);
-          let body = {
+        e.preventDefault();
+        console.log("clicked");
+        let body = {
             name: e.target.name.value,
             description: e.target.description.value,
             technology: e.target.technology.value,
             category: e.target.category.value,
             tags: e.target.tags.value,
             price: e.target.price.value,
-          }
-          axios.post('http://localhost:4000/v1/template/upload', body)
-            .then(data => {
-              console.log(data);
-              let response = {
-                status:0,
-                message:'',
-                data:''
-              }
-            })
-            .catch(err => {
-              console.log(err);
-            })
-        }  
+        }
+        let apiCaller = new ApiCaller();
+        apiCaller.postData({
+          url:'template/upload',
+          data:body
+        }).then(data=>{
+          console.log(data);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      }
+
     return (
         <>
                 <h3 className="n">Template Details</h3>
@@ -67,7 +66,7 @@ function Tenmplatedetails() {
                         <button className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }} variant="primary" type="submit">
                             Save & Next
                         </button>
-                        {/* </Link> */}
+                        {/* </Link> */} 
                     </Form>
                 </div>
         </>

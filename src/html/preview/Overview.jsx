@@ -2,11 +2,14 @@ import "../../css/preview/Preview.css";
 import { useState } from "react";
 import Slider from "react-slick";
 import RatedStars from "./RatedStars";
+import Ratings from "./Ratings";
+
 const tags=["html","css",'bootstrap','tailwind','h'];
 const i='/Images/113.jpg';
 const images = [i,'/Images/p.jpg','/Images/longss.webp'];
 function Overview(){
 
+    // for slider
     const NextArrow =({onClick})=>{return(<><div className="arrow next" onClick={onClick}><i class="fad fa-angle-right"></i></div></>);};
     const PrevArrow =({onClick})=>{return(<><div className="arrow prev" onClick={onClick}><i class="fad fa-angle-left"></i></div></>);};
     const [ImageIndex , setImageIndex]= useState(0);
@@ -114,18 +117,38 @@ function Overview(){
                     </div>
                 </div>
                 <div className="review-card">
-                
                     <div className="userinfo">
                         <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
                     </div>
                     <div className="feedback-stars"><RatedStars /></div>
                     <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
                     <div className="feedback">
-                    <p>This is a tremendously amazing site i have ever visited in my life .</p>
+                        <p>This is a tremendously amazing site i have ever visited in my life .</p>
                     </div>
                 </div>
+                <div className="review-card">
+                    <div className="userinfo">
+                        <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
+                    </div>
+                    <div className="feedback-stars"><RatedStars /></div>
+                    <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
+                    <div className="feedback">
+                        <p>This is a tremendously amazing site i have ever visited in my life .</p>
+                    </div>
+                </div>  
             </div>
-            </div>
+
+            <div className="feedback-form">
+                <h5 className="feedback-title">Your Opinion Matters !</h5>
+                <div className="feedback-inputs">
+                    <Ratings />
+                    <input className="feedback-mail" placeholder="E-mail" />
+                    <textarea className="feedback-text" placeholder="Leave a Feedback" />
+                    <button type="submit" className="feedback-btn">Send</button>
+                </div>
+                <div className="closing"><text className="thank-you">Thank You !</text></div>
+            </div>  
+            </div> 
         </div>
         </>
     );

@@ -27,8 +27,8 @@ export default function OtpVerification() {
     },[counter]);
 
   //for otp verified toaster
-    const otpVerified = () =>{ toast(<><i class="fas fa-check-circle" id="toaster-icon"></i><text className="toaster-text"> Otp Matched</text></>);}
-    const wrongOtp=()=>{toast (<><i class="fas fa-times-circle" id="toaster-icon"></i><text className="toaster-text"> Otp Doesn't Matched</text></>)}
+    const otpVerified = () =>{ toast(<><i class="fas fa-check-circle" id="right-icon"></i><text className="toaster-text"> Otp Matched</text></>);}
+    const wrongOtp=()=>{toast (<><i class="fas fa-times-circle" id="wrong-icon"></i><text className="toaster-text"> Otp Doesn't Matched</text></>)}
 
   return (
    <>

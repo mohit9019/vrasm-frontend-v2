@@ -11,7 +11,7 @@
     padding: 0 0 2% 4%;
 }
 .preview-details{
-    width: 100%;
+    width: 100%; 
     height: auto;
     display: flex;
     flex-direction: row;
@@ -187,6 +187,7 @@
     border: 1px solid rgb(167, 165, 165);
     border-radius: 25px;
     background-color: rgb(243, 242, 242);
+    cursor: pointer;
 }
 .tag:hover, .technology:hover{
     background-color: rgb(220, 220, 220);
@@ -212,6 +213,7 @@
     max-height: 180px;
     background-color: white;
     padding: .25% 2% .5% 2%;
+    margin: 2% 0 0 0;
 }
 .feedback-stars{
     font-size: 80%;
@@ -227,6 +229,83 @@
     font-size: 70%;
     color: rebeccapurple;
 }
+
+/* review form  */
+.feedback-form{
+    width: 40%;
+    margin: 3% auto 0 auto;
+    box-shadow: 1px 1px 10px rgb(201, 200, 200);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 5px;
+}
+.feedback-title, .closing{
+    padding: 3% 0 3% 0;
+    font-weight: 500;
+    color: rgb(56, 56, 56);
+    background-color: white;
+}
+.feedback-title{
+    border-radius: 5px 5px 0 0 ;
+}
+.closing{
+    border-radius: 0 0 5px 5px ;
+}
+.feedback-inputs{
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0 0;
+    background-color: rgb(233, 230, 236);
+}
+.feedback-mail, .feedback-text{
+    width: 75%;
+    margin: 3% auto 0 auto;
+    outline:none;
+    padding: 1.5% 3%;
+    border: 1px solid rgb(235, 232, 232);
+    border-radius: 7px;
+    color: rgb(114, 114, 114);
+}
+.feedback-text{
+    height: 120px;
+    resize: none;
+}
+.feedback-btn{
+    margin: 3% auto;
+    width: 40%;
+    border: .11rem solid rgb(129, 48, 211);
+    background-color: rgb(246, 244, 248);
+    border-radius: 35px;
+    color: rgb(129, 48, 211);
+    padding: 2% 0 ;
+    font-weight: 500;
+}
+.feedback-btn:hover{
+    background-color: rgb(129, 48, 211);
+    color: white;
+}
+.feedbackform-stars{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 1% auto;
+    justify-content: space-around;
+    
+}
+.stars{
+    transition: color 150ms;
+    cursor: pointer;
+    font-size: 150%;
+}
+.stars:hover{
+    color: rgb(248, 215, 31);
+}
+.ratings-radio{
+    display: none;
+}
+
 
 /* privew Responsive */
 

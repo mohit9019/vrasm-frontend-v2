@@ -5,7 +5,6 @@ class ApiCaller{
 
     site= 'http://localhost:4000/v1/';
     constructor(){
-
     }
 
     postData({url,data}){
@@ -20,7 +19,7 @@ class ApiCaller{
         })
         .catch(err => {
           console.log(err);
-        })
+        }) 
 
     }
 }

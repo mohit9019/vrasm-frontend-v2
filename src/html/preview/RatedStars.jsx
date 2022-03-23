@@ -1,5 +1,6 @@
 import {FaStar} from 'react-icons/fa';
-const ratings=2,unrate=5-ratings;
+import {ratedStars} from "./Ratings";
+const ratings=3 ,unrate=5-ratings;
 function RatedStars(){
     return(
         <>

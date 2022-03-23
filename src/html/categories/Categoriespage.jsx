@@ -33,13 +33,13 @@ function Categoriespage(){
             <div className='categories-list'>
                 <span className='list-head'>Technologies</span>
                 <ul className='list'>
-                <li><i class="fab fa-html5"></i></li>
-                    <li><i class="fab fa-bootstrap"></i></li>
-                    <li><i class="fab fa-wordpress"></i></li>
-                    <li>Tailwind</li>
-                    <li>Psd</li>
-                    <li><i class="fas fa-presentation"></i></li>
-                    <li>Responsive</li>
+                <li><i class="fab fa-html5"></i><span className='homenu'>HTML</span></li>
+                    <li><i class="fab fa-bootstrap"></i><span className='homenu'>Boostrap</span></li>
+                    <li><i class="fab fa-wordpress"></i><span className='homenu'>Wordpress</span></li>
+                    {/* <li><span className='homenu'>Tailwind</span></li> */}
+                    <li><span className='homenu'>PSD</span></li>
+                    <li><i class="fas fa-presentation"></i><span className='homenu'>PPT</span></li>
+                    {/* <li>Responsive</li> */}
                 </ul>
             </div>
             </div>

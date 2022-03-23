@@ -222,9 +222,12 @@
 .time{
   color: green;
 }
-#toaster-icon{
-  /* color: rgb(121, 39, 204); */
-  color: rgb(236, 234, 234);
+#right-icon{
+  color: rgb(2, 155, 2);
+  margin-right: 3%;
+}
+#wrong-icon{
+  color: red;
   margin-right: 3%;
 }
 .toaster-text{
