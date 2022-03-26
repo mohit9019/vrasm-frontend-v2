@@ -14,7 +14,7 @@ class ApiCaller{
           let response = {
             status:0,
             message:'',
-            data:''
+            data:'' 
           }
         })
         .catch(err => {
@@ -22,5 +22,20 @@ class ApiCaller{
         }) 
 
     }
+  //   getData({url,data}){
+  //     return axios.get(this.site+url, data)
+  //     .then(data => {
+  //       console.log(data);
+  //       let response = {
+  //         status:0,
+  //         message:'',
+  //         data:''
+  //       }
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     }) 
+
+  // }
 }
 export default ApiCaller;

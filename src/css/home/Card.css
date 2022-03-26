@@ -6,14 +6,115 @@
   box-shadow: 3px 3px 9px rgb(36, 36, 36);
   overflow: hidden;
 }
+
+/* explore btn  */
 .explore{
-  color: #7358b7;
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 50px;
+  color: rgb(128, 64, 192);
+  background-color: rgb(128, 64, 192);
+  box-shadow: 1px 2px 10px rgba(136, 136, 136, 0.5);
   animation: border 2s ease-in-out infinite;
-  font-size: 200%;
-  margin: 5% 0 0 50%;
+  padding: 0 auto 0 auto;
+  overflow: hidden ;
+  margin: 5% 0 0 49%;
   position: absolute;
-  animation: explore 2s infinite ease-in-out;
+  display: flex;
+  flex-direction: row;
+  transition: all .3s ease-in;
 }
+.explore-icon{
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  padding-top: 10%;
+  border-radius:50px ;
+}
+.explore-icon i{
+  font-size: 160%;
+  color: white;
+}
+.explore-text{
+  display: none;
+  font-weight: 500;
+  padding: 5% 0 2%;
+}
+.explore:hover{
+  width: auto;
+  padding-right:.75% ;
+  background-color: rgb(162, 64, 192);
+  margin-right: 10%;
+}
+.explore:hover .explore-text{
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+.explore:hover .explore-icon{
+  padding-top: 3%;
+  transform: rotate(360deg);
+}
+
+/* upload btn  */
+.upload-wraper{
+  height: 40px;
+  width: 40px;
+  z-index: 11;
+  position: fixed;
+  border-radius: 50px;
+  /* background-color: white; */
+  background-color: rgb(128, 64, 192);
+  cursor: pointer;
+  right: 0;
+  align-items: center;
+  box-shadow: 0px 3px 5px rgba(136, 136, 136, 0.9);
+  transition: all 0.4s ease-out ;
+  overflow: hidden;
+  margin: 0 1% 0;
+}
+.upload-btn{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.upload-icon{
+  height: 40px;
+  width: 40px;
+  color: white;
+  /* color: rgb(162, 64, 192); */
+  /* color: rgb(128, 64, 192); */
+  font-weight: 500;
+  font-size: 140%;
+  padding:5% 0 0;
+  transition: all 0.4s ease-out;
+}
+.upload-text{
+  display: none;
+  font-size: 85%;
+  font-weight: 500;
+  padding: 5% 0 0 2% ;
+  white-space: nowrap;
+}
+.upload-wraper:hover{
+  width: 170px;
+  box-shadow: 0px 3px 8px rgba(136, 136, 136, 0.5);
+  /* background-color: rgb(128, 64, 192); */
+  background-color: rgb(162, 64, 192);
+}
+.upload-wraper:hover .upload-text{
+  display: inline-block;
+  color: white;
+}
+.upload-wraper:hover .upload-icon{
+  color: white;
+  padding: 2% 0 0 5%;
+  transform: rotate(360deg);
+}
+
+/* cards  */
 .card-cont{
   width: 100%;
   height: auto;
@@ -56,8 +157,8 @@
   word-wrap: break-word;
   overflow-wrap: break-word ;
 }
-.stars{
-  font-size: 15px;
+.card-stars{
+  font-size: 100%;
   margin-left:4%;
 }
 /* .review{
@@ -176,7 +277,7 @@
   font-size: medium;
   border: none;
   color: rgb(59, 59, 59);
-}
+} 
 .search-input input:focus{
   outline: none;
   caret-color:#7358b7;
@@ -252,6 +353,12 @@
     .explore{
       position: absolute;
       margin-top: -5%;
+    }
+    .upload-wraper{
+      margin-bottom: 20%;
+    }
+    .upload-wraper:hover .upload-text{
+      padding: 6% 0 0 2%;
     }
     .cards{
       height: auto;

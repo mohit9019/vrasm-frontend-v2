@@ -1,4 +1,3 @@
-import "../../css/preview/Preview.css";
 function Details() {
     return (
         <>

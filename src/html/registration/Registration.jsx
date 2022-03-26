@@ -1,17 +1,19 @@
 import "../../css/registration/Registration.css";
-import React, { useState } from 'react';
+import React, { useState, componentDidMount, state } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ApiCaller from "../../apiCaller.js/apiCaller";
+import { getDefaultNormalizer } from "@testing-library/react";
 
 function toggle(value){
   return !value;
 }
 
 function Registration() {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+
   function register(e) {
-    e.preventDefault();
+    e.preventDefault(); 
     console.log("clicked");
     console.log(e.target.password.value);
     let body = {
@@ -36,9 +38,16 @@ function Registration() {
       console.log(err);
     })
   }
+
+//get
+  async function getData(){
+    const res = await axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(res=>{console.log(res.data);})
+    .catch(err=>{console.log(err);})
+  }  
+
   return (
     <>
-
       <div className="background">
         <div className="regist">
           <form onSubmit={register}>
@@ -99,6 +108,9 @@ function Registration() {
             </button></Link>
 
           </form>
+          {/* <button className="regist-button" onClick={getData} >
+              Submit
+            </button> */}
         </div>
 
       </div>

@@ -15,11 +15,11 @@ const Card=(props)=>{
         <h4>{props.title}</h4>
         <span className="disc">{props.desc}</span>
         <div className="review">
-        <span className="stars">{props.review}</span>
+        <span className="card-stars">{props.review}</span>
         </div>                    
         <div className="about"><span className="sale">Sale: {props.sale}</span><span className="price">{props.price}</span></div>
         <div className="icon">
-        <Link className="previewicon" to="Preview/Overview"  style={{textDecoration:"none", color:"darkgray"}} >
+        <Link className="previewicon" to="/Preview/"  style={{textDecoration:"none", color:"darkgray"}} >
         <button className="previewbtn">
         <i class="fas fa-eye"></i><span className="topreview">Preview</span>
         </button>

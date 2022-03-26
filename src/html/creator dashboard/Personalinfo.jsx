@@ -1,8 +1,6 @@
 import "../../css/buyer dashboard/Personalinfo.css";
 import {Form,Col,Row} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Navba from "../home/Navba";
-import Sidebar from "./Sidebar";
 function Personalinfo(){
     return(
         <>
@@ -27,7 +25,7 @@ function Personalinfo(){
 
   <Form.Group className="mb-3" controlId="formGridAddress1">
     <Form.Label>Address</Form.Label>
-    <Form.Control as="textarea" type="text" style={{width:"90%"}} placeholder="177 A Bleaker street, New York horhfoehfu" style={{backgroundColor:'white'}} readOnly />
+    <Form.Control as="textarea" type="text" style={{width:"90%",backgroundColor:'white'}} placeholder="177 A Bleaker street, New York horhfoehfu" readOnly />
   </Form.Group>
 
   <Row className="mb-3">
@@ -61,7 +59,6 @@ function Personalinfo(){
 
 </Form>
 </div>
-
             </div>
 
             </>

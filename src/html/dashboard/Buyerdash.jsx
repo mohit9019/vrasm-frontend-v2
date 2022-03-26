@@ -7,10 +7,7 @@ import Changepass from "./Changepass";
 import Wallet from "./Wallet";
 import React from "react";
 import Sidebar from "./Sidebar";
-import { Link } from "react-router-dom";
 import { Routes, Route, } from 'react-router-dom';
-import { useState } from "react";
-
 function Buyerdash() {
     return (
         <>

@@ -9,39 +9,46 @@ function Analysis(){
           {/* <div className="st">Statistics:</div> */}
             <div className="row">
             <div className="stats-card">
+            <center>
               <div className="circle"><svg>
-                <circle cx="70" cy="70" r="60">
+                <circle cx="80" cy="70" r="60">
                </circle>
-            
               </svg></div>
               <div className="stats">30</div>
               <div className="stat-n">Total Templates</div>
+              </center>
             </div>
             <div className="stats-card">
+            <center>
               <div className="circle">
               <svg>
-                <circle cx="70" cy="70" r="60"></circle>
+                <circle cx="84" cy="70" r="60"></circle>
               </svg>
               </div>
               <div className="stats">999999</div>
+              </center>
               <div className="stat-n">Total Sales</div>
             </div>
             <div className="stats-card">
+            <center>
               <div className="circle">
               <svg>
-                <circle cx="70" cy="70" r="60"></circle>
+                <circle cx="84" cy="70" r="60"></circle>
               </svg>
               </div>
               <div className="stats">30</div>
+              </center>
               <div className="stat-n">Total Income</div>
             </div>
             <div className="stats-card">
+            <center>
               <div className="circle">
               <svg>
-                <circle cx="70" cy="70" r="60"></circle>
+                <circle cx="84" cy="70" r="60"></circle>
               </svg>
               </div>
               <div className="stats">30</div>
+              </center>
               <div className="stat-n">Average Review</div>
             </div>
             </div>
