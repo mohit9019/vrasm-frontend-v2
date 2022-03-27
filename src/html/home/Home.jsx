@@ -8,13 +8,13 @@ import details from "./Detailsmap";
 import Searchbar from "./Searchbar";
 import {Link } from 'react-router-dom';
 
-// function ScrolltoTop(){
-//   const c=540;
-//   window.scrollTo({
-//     top: c, 
-//     behavior: 'smooth',
-//   });
-// }
+function ScrolltoTop(){
+  const c=540;
+  window.scrollTo({
+    top: c, 
+    behavior: 'smooth',
+  });
+}
 
 const is_creator=1;
 
