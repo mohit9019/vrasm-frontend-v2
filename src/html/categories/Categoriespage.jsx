@@ -1,112 +1,47 @@
-import Sidebar from '../dashboard/Sidebar';
-import Searchbar from '../home/Searchbar';
 import "../../css/categories/Categories.css";
-import Card from '../home/Card';
-import {Link} from "react-router-dom";
 function Categoriespage(){
     return(
         <>
-        <div className='categories'>
-            <div className='cat-bar'>
-            <div className='categories-serch'>
-            <i class="fas fa-search" id='categories-icon'></i>
-                <input className='categories-input'>
-                </input>
-            </div>
-            <div className='categories-list'>
-                <span className='list-head'>Categories</span>
-                <ul className='list'>
-                    <li><i class="far fa-address-card"></i><span className='homenu'>E-commerce</span></li>
-                    <li><i class="far fa-briefcase"></i><span className='homenu'>Bussiness</span></li>
-                    <li><i class="far fa-id-card-alt"></i><span className='homenu'>Portfolio</span></li>
-                    <li><i class="far fa-building"></i><span className='homenu'>Real-estate</span></li>
-                    <li><i class="far fa-volleyball-ball"></i><span className='homenu'>sports</span></li>
-                    <li><i class="far fa-burger-soda"></i><span className='homenu'>Restaurants</span></li>
-                    <li><i class="far fa-graduation-cap"></i><span className='homenu'>Educational</span></li>
-                    <li><i class="far fa-backpack"></i><span className='homenu'>Tourism</span></li>
-                    <li><i class="far fa-hospital-alt"></i><span className='homenu'>Hospital</span></li>
-                    <li><i class="far fa-infinity"></i><span className='homenu'>Other</span></li>
-                
-                </ul>
-            </div>
-            <div className='bar'></div>
-            <div className='categories-list'>
-                <span className='list-head'>Technologies</span>
-                <ul className='list'>
-                <li><i class="fab fa-html5"></i><span className='homenu'>HTML</span></li>
-                    <li><i class="fab fa-bootstrap"></i><span className='homenu'>Boostrap</span></li>
-                    <li><i class="fab fa-wordpress"></i><span className='homenu'>Wordpress</span></li>
-                    {/* <li><span className='homenu'>Tailwind</span></li> */}
-                    <li><span className='homenu'>PSD</span></li>
-                    <li><i class="fas fa-presentation"></i><span className='homenu'>PPT</span></li>
-                    {/* <li>Responsive</li> */}
-                </ul>
-            </div>
-            </div>
+<div className="categories">
+<input type='checkbox' id='toggle'></input>
 
-            <div className='categories-content'>
+{/* <!-- Menu --> */}
+<aside className='category-sidebar'>
+  <label for='toggle' className='exit'><i class="fad fa-times"></i></label>
+  <h4 className='category-title'>Catagories</h4>
+  <ul className="categories-list">
+      <li><span className='category-name'>Portfolio</span> <span className="number">30</span></li>
+      <li><span className='category-name'>Business</span><span className="number">25</span></li>
+      <li><span className='category-name'>Sports</span><span className="number">3</span></li>
+      <li><span className='category-name'>Education</span><span className="number">225</span></li>
+      <li><span className='category-name'>Real-Estate</span><span className="number">15</span></li>
+      <li><span className='category-name'>Restorant</span><span className="number">37</span></li>
+      <li><span className='category-name'>Others</span><span className="number">40</span></li>
+      <li><span className='category-name'>Education</span><span className="number">225</span></li>
+      <li><span className='category-name'>Real-Estate</span><span className="number">15</span></li>
+      <li><span className='category-name'>Restorant</span><span className="number">37</span></li>
+      <li><span className='category-name'>Others</span><span className="number">40</span></li>     
+  </ul>
+  <hr />
+  <h4 className='category-title'>Technologies</h4>
+  <ul className="tech-list">
+      <li><span className='category-name'>HTML</span> <span className="number">30</span></li>
+      <li><span className='category-name'>CSS</span> <span className="number">30</span></li>
+      <li><span className='category-name'>Javascript</span> <span className="number">30</span></li>
+      <li><span className='category-name'>Jquery</span> <span className="number">30</span></li>
+      <li><span className='category-name'>ReactJs</span> <span className="number">30</span></li>
+      <li><span className='category-name'>Wordpress</span> <span className="number">30</span></li>
+      <li><span className='category-name'>Others</span> <span className="number">30</span></li>
+  </ul>
+</aside>
 
-            <div className='categories-cards'>
-                <div className="cat-card"> 
-                    <div className="lk-cont ">
-                    <div className='lk-split'>
-                    <div className="lk-img"><img src="/images/q.jpg" altlt="image" /></div>
-                    <div className="lk-details">
-                        <span className="lk-name">Quarter – Real Estate</span>
-                        <span className="lk-desc">Quarter is a Real Estate, Architecture & interior design Bootstrap 5 HTML Template for real estate website.</span>
-                        <div className='stars'><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                    </div>
-                    <div className="lk-price">Rs.20</div>
-                    </div>
-                    <div className="lk-btns">
-                        <div className="lk-icon">
-                            <Link to="Preview/Overview"  style={{textDecoration:"none", color:"darkgray"}} >
-                                <button className="lk-preview">
-                                <i class="fas fa-eye"></i> <span>Preview</span>
-                                </button>
-                            </Link>
-                            <Link to="#" style={{textDecoration:"none", color:"darkgray"}}>
-                                <button className="lk-cart">
-                                <i class="fas fa-shopping-cart"></i> <span>Add to cart</span>
-                                </button>
-                            </Link> 
-                    </div>  
-                    </div>
-                    <div className="unsave"><i class="far fa-heart"></i></div>
-                    </div>
-                </div>
-
-                <div className="cat-card"> 
-                    <div className="lk-cont ">
-                    <div className='lk-split'>
-                    <div className="lk-img"><img src="/images/q.jpg" altlt="image" /></div>
-                    <div className="lk-details">
-                        <span className="lk-name">Quarter – Real Estate</span>
-                        <span className="lk-desc">Quarter is a Real Estate, Architecture & interior design Bootstrap 5 HTML Template for real estate website.</span>
-                        <div className='stars'><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                    </div>
-                    <div className="lk-price">Rs.20</div>
-                    </div>
-                    <div className="lk-btns">
-                        <div className="lk-icon">
-                            <Link to="Preview/Overview"  style={{textDecoration:"none", color:"darkgray"}} >
-                                <button className="lk-preview">
-                                <i class="fas fa-eye"></i> <span>Preview</span>
-                                </button>
-                            </Link>
-                            <Link to="#" style={{textDecoration:"none", color:"darkgray"}}>
-                                <button className="lk-cart">
-                                <i class="fas fa-shopping-cart"></i> <span>Add to cart</span>
-                                </button>
-                            </Link> 
-                    </div>  
-                    </div>
-                    <div className="unsave"><i class="far fa-heart"></i></div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
+<div className='content'>
+  <label for='toggle' className='button'><i class="fad fa-bars"></i></label>
+  <div className="cat-serach">
+      <input type="text" name="" className="cat-search" placeholder="Search Here....." />
+  </div>
+</div>
+</div>
         </>
     );
 }
