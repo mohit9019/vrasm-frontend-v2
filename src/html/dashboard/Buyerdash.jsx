@@ -1,5 +1,4 @@
 import "../../css/buyer dashboard/Buyerdash.css";
-import Navba from "../home/Navba";
 import Personalinfo from "./Personalinfo";
 import Myorder from "./Myorder";
 import Editprofile from "./Editprofile";

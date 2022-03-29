@@ -1,5 +1,4 @@
 import "../../css/home/Banner.css";
-// import Navba from "./Navba";
 import {Link } from 'react-router-dom';
 function Banner(){
     return(

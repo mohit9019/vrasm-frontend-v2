@@ -7,7 +7,6 @@ import Categoriespage from "../categories/Categoriespage";
 import details from "./Detailsmap";
 import Searchbar from "./Searchbar";
 import {Link } from 'react-router-dom';
-
 function ScrolltoTop(){
   const c=540;
   window.scrollTo({
