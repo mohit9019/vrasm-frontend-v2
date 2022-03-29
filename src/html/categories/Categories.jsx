@@ -11,12 +11,12 @@ function Categories(){
     
     <div className="cat">
       <Nav>
-      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p>HTML 5</p></Nav.Link>
-      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p>Responsive</p></Nav.Link>
-      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p>Bootstrap</p></Nav.Link>
-      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p>Wordpress</p></Nav.Link>
-      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p>Psd</p></Nav.Link>
-      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p>Tailwind</p></Nav.Link>
+      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p style={{fontSize:'150%',fontWeight:'500'}}>HTML 5</p></Nav.Link>
+      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p style={{fontSize:'150%',fontWeight:'500'}}>Responsive</p></Nav.Link>
+      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p style={{fontSize:'150%',fontWeight:'500'}}>Bootstrap</p></Nav.Link>
+      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p style={{fontSize:'150%',fontWeight:'500'}}>Wordpress</p></Nav.Link>
+      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p style={{fontSize:'150%',fontWeight:'500'}}>Psd</p></Nav.Link>
+      <Nav.Link href="/categoriespage" style={{marginLeft:'auto',marginRight:'auto'}}><p style={{fontSize:'150%',fontWeight:'500'}}>Tailwind</p></Nav.Link>
       </Nav>
     </div>
     

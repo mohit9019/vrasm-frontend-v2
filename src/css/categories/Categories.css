@@ -14,11 +14,11 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 1% 0 0 0;
+    padding: 0 0 0 0;
 }
 .category-sidebar{
     width: 20%;
-    height: 85vh;
+    height: 91vh;
     padding: 1% 0 0 2%;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
 }
@@ -67,7 +67,7 @@
     color: rgb(143, 140, 140);
     font-weight: 600;
 }
-.content{
+.categories-content{
     width: 80%;
 }
 h4{
@@ -103,6 +103,9 @@ hr{
 }
 .category-title{
     font-size: 100%;
+}
+.categories-content{
+    padding: 2% 0 0 0;
 }
 @media only screen and (max-width: 500px)
 {
@@ -166,11 +169,12 @@ hr{
         text-align: right;
         display: block; 
       }
-      .content {
+      .categories-content {
         position: absolute;
-        width: 99%;
+        width: 100%;
         transition: background-color 0.5s ease-in-out;
         left: 0;
+        padding: 0;
       }
       .button {
         position: absolute;
@@ -186,7 +190,7 @@ hr{
         left: 0;
       }
       
-      #toggle:checked ~ .content {
+      #toggle:checked ~ .categories-content {
         /* background-color: rgba(0, 0, 0, 0.06); */
       }
 }

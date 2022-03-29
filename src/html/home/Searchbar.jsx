@@ -4,7 +4,7 @@ function Searchbar(){
         <>
             <div className="searchbar"> 
                 <div className="search-icon"><i class="fas fa-search"></i></div>
-                <div className="search-input"><input type="text" /></div>
+                <div className="search-input"><input type="text" placeholder="Search here" /></div>
              </div> 
         </>
     );

@@ -1,33 +1,27 @@
 import React,{useState} from "react";
 import "../../css/home/Card.css"; 
 import { Link } from "react-router-dom";
+import {AiFillHeart} from "react-icons/ai";
 // import {cart} from "./Data";
 import Data from "./Data";
 const Card=(props)=>{
-  // const [cartItems, setcartItems] = useState(0);
   return(  
     <> 
     <div className="card-cont">
       <div className="image_div">
-      {/* <div className="save" ><i class="fas fa-heart"></i></div> */}
+      <div className="save" ><div className="save-round"><AiFillHeart className="save-icon" /></div></div>
       <img src={props.img} className="img" alt="IMAGE"/></div>
-      <div className="content"> 
-        <h4>{props.title}</h4>
+      <div className="card-content"> 
+        <span className="card-name">{props.title}</span>
         <span className="disc">{props.desc}</span>
-        <div className="review">
         <span className="card-stars">{props.review}</span>
-        </div>                    
-        <div className="about"><span className="sale">Sale: {props.sale}</span><span className="price">{props.price}</span></div>
-        <div className="icon">
-        <Link className="previewicon" to="/Preview/"  style={{textDecoration:"none", color:"darkgray"}} >
-        <button className="previewbtn">
-        <i class="fas fa-eye"></i><span className="topreview">Preview</span>
-        </button>
+        <div className="card-about"><span className="card-sale">Sale: {props.sale}</span><span className="card-price">{props.price}</span></div>
+        <div className="card-btns">
+        <Link  to="/Preview/"  style={{textDecoration:"none", color:"darkgray"}} >
+          <button className="preview-btn"><i class="fad fa-eye"></i><span className="card-btn-title">Preview</span></button>
         </Link>
-        <Link className="pre" to="#" style={{textDecoration:"none", color:"darkgray"}}>
-        <button className="cartbtn">
-        <i class="fas fa-shopping-cart" onClick={()=>console.log(Data[1][7])}></i><span className="addtocart">Add to cart</span>
-        </button>
+        <Link to="#" style={{textDecoration:"none", color:"darkgray"}}>
+          <button className="cart-btn"><i class="fad fa-shopping-cart"></i><span className="card-btn-title">Add to Cart</span></button>
         </Link>
         </div>   
       </div>

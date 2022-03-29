@@ -4,7 +4,7 @@ const Data=[
         id:"1",
         img:"/Images/food.jpg", 
         title:"Food hall",
-        desc:"Foodhall is a responsive Blogger theme highlighting a good design for food ",
+        desc:"Foodhall is a responsive Blogger theme highlighting a good design for food responsive Blogger theme highlighting a good design for food  ",
         review:<><RatedStars /></>,
         sale:"100",
         price:"Rs.20",
