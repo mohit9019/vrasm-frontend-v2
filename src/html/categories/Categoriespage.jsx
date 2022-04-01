@@ -2,7 +2,7 @@ import "../../css/categories/Categories.css";
 import Searchbar from '../home/Searchbar';
 function Categoriespage(){
     return(
-        <>
+        <> 
 <div className="categories">
 <input type='checkbox' id='toggle'></input>
 

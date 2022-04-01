@@ -2,22 +2,30 @@
     width: 75%;
     height: auto;
     margin-left: 21%;
-    margin-top: 1.5%;
-    background-color: rgb(90, 30, 146,.2);
+    /* background-color: rgb(90, 30, 146,.2); */
     border-radius:5px ;
+    display: flex;
+    flex-direction: column;
     padding: 2%;
 }
 .order-card{ 
-    margin:1% 0 0;
-    padding:0 0 3% 0;
+    padding:0 0 1.5% 0;
     height: auto;
-    width: 100%;
+    width: 70%;
+    margin: 2% auto 0 auto;
     /* max-height: 60vh;
     overflow-y: scroll; */
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     background-color: whitesmoke;
-    border-radius: 2px;
-    box-shadow:2px 2px 15px rgb(165, 164, 164);
+    border-radius: 3px;
+    box-shadow:1px 1px 2px rgb(15, 15, 15,.3);
+    transition: all .4s ease;
+}
+.order-card:hover{
+    background-color: rgb(240, 238, 252);
+    box-shadow:1px 1px 15px rgb(15, 15, 15,.3);
+    transform: scale(1.03 ,1.03);
 }
 .order-img{
     width: 20%;
@@ -30,13 +38,13 @@
 }
 .order-date{
     width: 100%;
-    height: 20px;
+    height: 15px;
     text-align: right;
     /* background-color: rgb(163, 162, 162); */
 }
 .order-date p{
     margin:1% 2%;
-    font-size: 13px;
+    font-size: 70%;
 }
 .order-cont{
     display: flex;
@@ -49,23 +57,27 @@
     width: 60%;
 }
 .order-name{
-    font-size: 20px;
+    font-size: 100%;
 }
 .order-desc{
     margin-top: 1.5%;
-    font-size: 10px;
+    font-size: 50%;
     text-overflow: ellipsis;
     overflow:clip;
 }
 .order-id{
-    font-size: 12px;
+    font-size: 70%;
     margin-top: 1.5%;
 }
 .order-price{
     width: 10%;
     margin-top: 5%;
     margin-left: 8%;
-    font-size: 25px;
+    font-size: 120%;
+}
+@media only screen and (min-width:480px) and (max-width:768px){
+    .order-card{width: 100%;}
+    .my-order{margin-left: 30%;}
 }
 @media only screen and (max-width: 500px) {
     .my-order{
@@ -75,14 +87,15 @@
         padding: 2% 2% 5% 2%;
     } 
     .order-card{
+        width: 100%;
         margin: 2.5% 0 0 ;
     }
     .order-date p{
-        font-size:10px ;
+        font-size:60% ;
     }
     .order-price{
-        font-size: 19px;
-        margin:20% 0 0 5%;
+        font-size: 100%;
+        margin:15% 0 0 5%;
     }
     .order-name{
         font-size: 15px;
@@ -90,7 +103,7 @@
         margin-left: 27%;
     }
     .order-desc{
-        font-size: 9px;
+        font-size: 50%;
         /* border:1px solid black; */
         width: 98%;
         margin-left: 27%;
@@ -102,5 +115,6 @@
     }
     .order-img img{
         width: 170%;
+        height: auto;
     }
 }

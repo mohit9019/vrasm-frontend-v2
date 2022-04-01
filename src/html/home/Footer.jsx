@@ -6,31 +6,31 @@ function Footer(){
             <div className="tabs">
                 <ul className="row">
                     <li className="column">Home</li>
-                    <li className="column">About</li>
-                    <li className="column">Products</li>
-                    <li className="column">Testimonials</li>
+                    <li className="column">About Us</li>
+                    <li className="column">Categories</li>
+                    <li className="column">Contact Us ?</li>
                 </ul>
                 <ul className="row">
-                    <li className="column">HTML 5</li>
-                    <li className="column">Responsive</li>
-                    <li className="column">PSD</li>
-                    <li className="column">PPT</li>
+                    <li className="column">HTML / CSS</li>
+                    <li className="column">React JS</li>
+                    <li className="column">WordPress</li>
+                    <li className="column">Bootstrap</li>
                 </ul>
                 <ul className="row">
-                    <li className="column">Whats new</li>
-                    <li className="column">Online Events</li>
-                    <li className="column">VRASM Photos</li>
-                    <li className="column">VRASM Icons</li>
+                    <li className="column">Business</li>
+                    <li className="column">Portfolio</li>
+                    <li className="column">Education</li>
+                    <li className="column">E-Commerce</li>
                 </ul>
                 <ul className="row">
-                    <li className="column">Join Us</li>
-                    <li className="column">Contact Us</li>
-                    <li className="column">Privacy Policy</li>
-                    <li className="column">Terms and Conditions</li>
+                    <li className="column">Log In</li>
+                    <li className="column">Register</li>
+                    <li className="column">Privacy Policy !</li>
+                    <li className="column">Terms and Conditions *</li>
                 </ul>
-                <div className="row" id="ico"><div class="column"><i class="fab fa-twitter"></i>
+                <div className="row" id="ico"><div class="column"><i class="fab fa-youtube"></i>
                 <i class="fab fa-instagram"></i>
-                    <i class="fab fa-facebook-f"></i></div>
+                <i class="fas fa-envelope"></i></div>
                     </div>
             </div> 
             </center>

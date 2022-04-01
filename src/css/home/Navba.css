@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    height: 7%;
+    height: 45px;
     /* background-color: rgb(54, 44, 44); */
     background-color: white;
     overflow: hidden;
@@ -14,32 +14,33 @@
 }
 #nav-active{
     border-bottom: rebeccapurple 2px solid;
-    font-weight: 500;
-    /* transition: all .3s ease; */
+    font-weight: 400;
+    transition: all .3s ease;
 }
 .logo-cont{
-    width: 20%;
+    width: 15%;
     float: left;
+    /* padding: 0 0 10% 0 ; */
 }
 .logo{
-    font-size: 200%;
+    font-size: 190%;
     font-family: 'Fredoka One', cursive;
     background: -webkit-linear-gradient(60deg,#2596be , rgb(202, 69, 202) 40%);
     -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
     /* color: rgb(170, 39, 170); */ 
-    margin: 0 0 1% 15%;
+    margin: 0 0 0 10%;
     float: left;
 }
 .v{
     color: rebeccapurple;
 }
 .top-cont{
-    width: 115%;
+    width: 85%;
     display: flex;
     flex-direction: row;
     position: relative;
-    padding-right: 3%;
+    padding:.3% 2% 0;
     float: right;
     text-align: right;
     justify-content: right;
@@ -49,19 +50,35 @@
     margin:auto 0 auto 20px;
     color: rebeccapurple;
     text-align: right;
+    position: relative;
+    transition: all .3s ease;
 }
 .top-icon p{
-    margin-top: 12px;
+    margin-top: 10px;
 }
 .top-icon:hover{
     color: rgb(73, 9, 110);
-    font-weight: 500;
+    font-size: 110%;
 }
 .reg-but{
     padding-bottom: 7%;
 }
 .top-cont i{
     padding:0 20% 30% 20%;
+}
+.cart-strength{
+    left: 12px; bottom: 1.1rem;
+    height: 17px;
+    width: 17px;
+    padding: 4px 1px 0 0 ;
+    text-align: center;
+    font-weight: 500;
+    font-size: 70%;
+    background-color: rgb(197, 26, 240);
+    color: white;
+    position: absolute;
+    border-radius: 50px;
+    font-family: 'Varela Round', sans-serif;
 }
 @media only screen and (max-width:480px) {
     .top{
@@ -82,5 +99,11 @@
     .top-icon{
         font-size: 95%;
         margin-left: 10px;
-}
+    }
+    .cart-strength{
+        height: 15px;
+        width: 15px;
+        padding-top: 3px;
+        bottom: 1rem;
+    }
 }

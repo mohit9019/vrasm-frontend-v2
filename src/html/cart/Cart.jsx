@@ -1,9 +1,7 @@
-import Navba from "../home/Navba";
 import "../../css/cart/Cart.css";
 import {Link} from "react-router-dom";
-import Card  from "../home/Card";
 import Data from "../home/Data";
-import details from "../home/Detailsmap";
+import RatedStars from "../preview/RatedStars";
 
 function Cart(){
     let CartData = [Data[0],Data[1],Data[2]];   
@@ -25,6 +23,7 @@ function Cart(){
                     <div className="crt-order-details">
                         <span className="crt-order-name">Quarter – Real Estate</span>
                         <span className="crt-order-desc">Quarter is a Real Estate, Architecture & interior design Bootstrap 5 HTML Template for real estate website.</span>
+                        <div className="crt-stars"><RatedStars /></div>
                     </div>
                     <div className="crt-order-price">Rs.20</div>
                         <div><i class="far fa-trash-alt" id="del"></i></div>

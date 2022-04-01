@@ -54,6 +54,7 @@
      font-weight: bold;
      width: 40%;
      height: 20%;
+     transition: all .3s ease;
      overflow: hidden;
  }
  .typing{
@@ -123,6 +124,7 @@
     .templetes{
         margin:1% 0 1% 0;
         width: 100%;
+       
     }
     .clip{
         width: 100%;

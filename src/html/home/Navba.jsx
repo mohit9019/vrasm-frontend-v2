@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 function Navba() {
   const [togglenav, setTogglenav]=useState(0);
+  const is_cart=4; 
   const NavActive =(index) =>{
     setTogglenav(index); 
   }
@@ -11,7 +12,6 @@ function Navba() {
         <div className="top">
           <div className="logo-cont"> 
             <Link to="/">
-              {/* <img src="/Images/black.png" className="logo" /> */}
               <p className="logo" onClick={()=>NavActive(0)}><span className="v">V</span>RASM</p>
               </Link>
           </div>
@@ -26,7 +26,7 @@ function Navba() {
               Register</span>
             </Link>
             <Link to="/Cart" className="top-icon">
-              <i class="fas fa-shopping-cart" onClick={()=>NavActive(3)} id={togglenav===3?"nav-active":null}></i>
+              <i class="fas fa-shopping-cart" onClick={()=>NavActive(3)} id={togglenav===3?"nav-active":null}>{is_cart==0?null:<span className="cart-strength">{is_cart}</span>}</i>
             </Link>
             <Link to="/Like" className="top-icon">
               <i class="fas fa-bookmark" onClick={()=>NavActive(2)} id={togglenav===2?"nav-active":null}></i>

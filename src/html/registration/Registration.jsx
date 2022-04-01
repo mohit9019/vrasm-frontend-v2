@@ -40,11 +40,11 @@ function Registration() {
   }
 
 //get
-  async function getData(){
-    const res = await axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res=>{console.log(res.data);})
-    .catch(err=>{console.log(err);})
-  }  
+  // async function getData(){
+  //   const res = await axios.get('https://jsonplaceholder.typicode.com/users')
+  //   .then(res=>{console.log(res.data);})
+  //   .catch(err=>{console.log(err);})
+  // }  
 
   return (
     <>
@@ -103,7 +103,7 @@ function Registration() {
               </div>
 
             </div> : null}
-            <Link to="/OtpVerification"><button className="regist-button" type="submit" >
+            <Link to="#"><button className="regist-button" type="submit" >
               Submit
             </button></Link>
 

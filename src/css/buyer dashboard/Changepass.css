@@ -2,7 +2,7 @@
     width: 75%;
     height: auto;
     margin:2% 0 2% 21%;
-    background-color: rgb(90, 30, 146,.2);
+    /* background-color: rgb(90, 30, 146,.2); */
     border-radius:5px ;
     padding: 2% 0 0;
 }
@@ -10,6 +10,10 @@
     width: 50%;
     margin:0 auto 0 auto;
     /* border: black 1px solid; */
+}
+@media only screen and (min-width:480px) and (max-width:768px){
+    .change{width: 75%;}
+    .change-password{margin-left: 30%;}
 }
 @media only screen and (max-width: 500px) {
     .change-password{

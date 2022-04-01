@@ -3,7 +3,6 @@ import Data from "./Data";
 import Footer from "./Footer";
 import Categories from "../categories/Categories";
 import "../../css/home/Card.css";
-import Categoriespage from "../categories/Categoriespage";
 import details from "./Detailsmap";
 import Searchbar from "./Searchbar";
 import {Link } from 'react-router-dom';

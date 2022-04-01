@@ -1,13 +1,18 @@
 .cat p{
-    margin: 0 25px 0 25px;
-    font-size: 20px;
+    margin: 0 30px 0 30px;
     color: rgb(83, 83, 83);
 }
 .cat p:hover{
     color: black ;
 }
-*::-webkit-scrollbar {
-    width: 4px;  
+::-webkit-scrollbar {
+    width: 2px;  
+}
+::-webkit-scrollbar-track{
+    width: 1px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(173, 172, 172);
 }
 .categories{
     width: 2%;
@@ -19,8 +24,8 @@
 .category-sidebar{
     width: 20%;
     height: 91vh;
-    padding: 1% 0 0 2%;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    padding: 4% 0 0 2%;
+    /* box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5); */
 }
 .categories-list li{
     list-style: none;
@@ -32,7 +37,7 @@
 }
 .categories-list{
     margin: 2% auto 0 auto;
-    height: 40%;
+    height: 45%;
     width: 75%;
     padding: 0 3% 0 0;
     overflow-y: scroll;
@@ -46,12 +51,15 @@
     margin: 1% auto 0 auto;
     height: auto;
     width: 75%;
-    height: 40%;
+    height: 35%;
     padding:0 3% 0;
     overflow-y: scroll;
 }
 .category-name{
     font-size: 80%;
+}
+.category-name i{
+    margin: 0 3% 0 0;
 }
 .tech-list li{
     list-style: none;
@@ -63,9 +71,10 @@
 }
 .number{
     float:right;
-    font-size: small;
+    font-size: xx-small;
     color: rgb(143, 140, 140);
     font-weight: 600;
+    margin: 5% 5% 0;
 }
 .categories-content{
     width: 80%;
@@ -124,7 +133,6 @@ hr{
         font-size: small;
         margin: 5% 0 0 20%;
         padding: 1% 2%;
-        /* height: 6%; */
       }
       ::placeholder{
           font-size: small;

@@ -8,7 +8,7 @@ import Ratings from "./Ratings";
 
 const tags=["html","css",'bootstrap','tailwind','h'];
 const i='/Images/113.jpg';
-const images = [i,'/Images/p.jpg','/Images/longss.webp'];
+const images = ['/Images/longss.webp',i,'/Images/p.jpg'];
 
 function Preview(){
 

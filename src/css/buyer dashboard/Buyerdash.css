@@ -1,22 +1,28 @@
 .buyer-dashboard{
     width: 100%;
     display: flex;
-    flex-direction: row;                                                                                              
+    flex-direction: row; 
     height: auto;
 }
+                                            /* sidebar */
 #active-tab{
     background-color: white;
     color: #421970;
-    font-weight: 500;
+    font-size: 95%;
 }
 .dash-side-bar{
     width: 18%;
     float: left;
-    position: absolute;
-    background-color:#380a6d;
+    position: relative;
+    background: linear-gradient(45deg, rgba(141, 45, 250, 0.5) 10%, transparent 10%),
+    linear-gradient(65deg, transparent 70%, rgba(205, 63, 218, 0.5) 70%),
+    linear-gradient(15deg, rgba(128, 37, 202, 0.5) 80%, transparent 80%),
+    linear-gradient(25deg, rgba(99, 29, 165, 0.5) 30%, transparent 30%),
+    linear-gradient(-35deg, rgba(148, 39, 182, 0.5) 50%, transparent 50%),
+    rgba(137, 34, 185, 0.5);
     height: 100%;
     position: fixed; 
-    z-index: 10;
+    /* z-index: 10; */
 }
 .pic{
     margin: 5% 0 10px 0;
@@ -28,7 +34,7 @@
     border: 3px rgba(244, 242, 245, 0.8) solid;
     padding: 2%;
 }
-.dash-username{
+.dash-username{ 
     color: white;
     font-size: 100%;
 }
@@ -37,26 +43,41 @@
     flex-direction: column;
     height: auto;
     margin: 5% 0 0 0 ;
+    padding: 0 0 0 10%;
 }
 .sidebar-options{
     color: white;
     width: 95%;
-    border-radius:25px 0 0 25px ;
-    padding: 4% 0 4% 10%;
+    border-radius:3px 0 0 3px ;
+    padding: 5% 0 5% 10%;
     font-size: 90%;
+    white-space: nowrap;
     margin:5% 0 0 auto;
-    transition: all .5s ease-out;
+    transition: all .2s ease-out;
 }
 .sidebar-options:hover{
-    background-color:rgb(61, 59, 206,.5);
+    background-color:rgba(93, 2, 146, 0.6);
     border-bottom:0px;
 }
+
 .mainbar{
     width: 92%;
     margin: 0 0 0 4%;
-    height: 2px;
+    height: 1px;
     border-radius:20px ;
     background-color: rgb(236, 235, 235);
+}
+@media only screen and (min-width:500px) and (max-width:800px){
+    .dash-side-bar{
+        width: 30%;
+    }
+    .sidebar-pages{
+        padding-left: 7%;
+    }
+    .sidebar-options{
+        padding-left:10% ;
+        font-size: 90%;
+    }
 }
 @media only screen and (max-width: 500px) {
     .dash-side-bar{
@@ -69,6 +90,7 @@
     }
     .sidebar-pages{
         width: 100% ;
+        padding: 0;
     }
     .sidebar-page-cont{
         display: flex;
@@ -80,7 +102,7 @@
     .sidebar-options{
         word-wrap: normal;
         width: auto;
-        border-radius: 10px 10px 0 0;
+        border-radius: 10px 10px 0 0 ;
         margin: 0 15px;
         padding: 5px 20px 5px; 
         overflow: hidden;
