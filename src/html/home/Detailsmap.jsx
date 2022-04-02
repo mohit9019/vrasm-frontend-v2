@@ -1,14 +1,15 @@
 import Card from "./Card";
+import RatedStars from "../preview/RatedStars";
 function details(val){
     return(
       <>
         <div className="templetes">
         <Card 
           id={val.id}
-          img={val.img}
-          title={val.title}
+          img='/Images/ecolife.jpg'
+          title={val.name}
           desc={val.desc}
-          review={val.review}
+          review={<RatedStars></RatedStars>}
           sale={val.sale}
           price={val.price}
         />

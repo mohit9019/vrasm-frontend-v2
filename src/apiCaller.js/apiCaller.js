@@ -10,12 +10,7 @@ class ApiCaller{
     postData({url,data}){
         return axios.post(this.site+url, data)
         .then(data => {
-          console.log(data);
-          let response = {
-            status:0,
-            message:'',
-            data:'' 
-          }
+          return data.data
         })
         .catch(err => {
           console.log(err);
