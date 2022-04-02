@@ -8,6 +8,7 @@ function Tenmplatedetails() {
         e.preventDefault();
         console.log("clicked");
         let body = {
+            creator_id: '623589cc46ed885edbe4167b', // this is sample creator_id of nandita mam for testing, you have to pass the creator_id when user comes
             name: e.target.name.value,
             description: e.target.description.value,
             technology: e.target.technology.value,
