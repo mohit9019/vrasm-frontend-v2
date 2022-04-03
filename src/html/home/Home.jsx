@@ -19,7 +19,7 @@ function ScrolltoTop(){
 const is_creator=1;
 
 function Home() { 
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [Data, setData] = useState([]);
 
   useEffect(() => {
@@ -30,10 +30,9 @@ function Home() {
     }).then(res=>{
       if(res && res.status_code == '1'){
         setData(res.data);
-        setIsLoading(false);
       }
     })
-  }, [Data]);
+  },[]);
   return(<>
     <Banner /> 
     <div className="explore" onClick={ScrolltoTop}><div className="explore-icon"><i class="fad fa-chevron-up"></i></div><span className="explore-text">Explore</span></div> 
@@ -46,7 +45,7 @@ function Home() {
     <div className="card-scroller">
     <div className="cards">
     {
-      isLoading ? <></>: Data.map(details)
+       Data.map(details)
     } 
     </div>
     </div>
@@ -55,7 +54,7 @@ function Home() {
     <div className="card-scroller">
     <div className="cards">
     {
-      isLoading ? <></> : Data.map(details)
+      Data.map(details)
     } 
     </div>
     </div>
