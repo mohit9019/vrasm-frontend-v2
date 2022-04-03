@@ -16,19 +16,23 @@
 .tabs ul li{
     color:rgb(236, 234, 234);
     text-align: left;
-    font-size: 13px;
+    font-size: 70%;
+    margin: 3% 0 0 ;
     list-style: none;
+    transition: all .3s ease;
 }
 .row i{
     margin: 30px 20px;
-    font-size: 40px;
-    color: white;
+    font-size: 190%;
+    color: rgb(225, 225, 225);
 }
 .tabs ul li:hover{
-    color: rgb(247, 152, 215);
+    color: white;
+    font-size: 75%;
 }
 .row i:hover{
-    color: rgb(247, 152, 215);
+    color: white;
+    font-size: 195%;
 }
 .line{
     width: 70%;

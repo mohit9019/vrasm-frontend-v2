@@ -29,11 +29,11 @@ function Login(){
             Submit
           </button>
 
-        <div className="regist-row"><div className="hr-bar"></div><span>or</span><div className="hr-bar"></div></div>
+        {/* <div className="regist-row"><div className="hr-bar"></div><span>or</span><div className="hr-bar"></div></div>
           <div className="regist-col">
         <button className="signin-social" style={{marginTop:"4%"}}><div className="col"><i class="fab fa-google"></i><span> sign in with Google</span></div></button>
         <button className="signin-social"><div className="col"><i class="fab fa-facebook-f"></i><span>sign in with facebook</span></div></button>
-        </div>
+        </div> */}
 
       </div>
       </div>

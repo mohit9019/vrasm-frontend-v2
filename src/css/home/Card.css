@@ -31,7 +31,7 @@
   position: absolute;
   display: flex;
   flex-direction: row;
-  transition: all .3s ease-in;
+  transition: all .3s ease;
 }
 .explore-icon{
   height: 35px;

@@ -19,7 +19,7 @@ function Ratings () {
             </>
         );
       })}
-      <p>you rated {rating } stars</p>
+      {/* <p>you rated {rating } stars</p> */}
       </div>
     </>
   );
