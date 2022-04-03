@@ -5,7 +5,7 @@ import axios from "axios";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { getDefaultNormalizer } from "@testing-library/react";
 
-function toggle(value){
+function toggle(value) {
   return !value;
 }
 
@@ -13,7 +13,7 @@ function Registration() {
   const [show, setShow] = useState(false);
 
   function register(e) {
-    e.preventDefault(); 
+    // e.preventDefault(); 
     console.log("clicked");
     console.log(e.target.password.value);
     let body = {
@@ -23,23 +23,28 @@ function Registration() {
       gender: e.target.gender.value,
       is_creator: e.target.is_creator.checked
     }
-    if(e.target.is_creator.checked){
+    if (e.target.is_creator.checked) {
       body.college = e.target.college.value;
       body.course = e.target.course.value;
     }
     let apiCaller = new ApiCaller();
     apiCaller.postData({
-      url:'buyer/register',
-      data:body
-    }).then(data=>{
-      console.log(data);
+      url: 'buyer/register',
+      data: body
+    }).then(res => {
+      if(res && res.status_code == '1'){
+        // window.history.pushState({},undefined,'/OtpVerification')
+      }
+
+      console.log(res.data);
+      // redirect here
     })
-    .catch(err=>{
-      console.log(err);
-    })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
-//get
+  //get
   // async function getData(){
   //   const res = await axios.get('https://jsonplaceholder.typicode.com/users')
   //   .then(res=>{console.log(res.data);})
@@ -50,7 +55,7 @@ function Registration() {
     <>
       <div className="background">
         <div className="regist">
-          <form onSubmit={register}>
+          <form  onSubmit={register}>
             <div className="regist-col">
               <label className="regist-label">E-mail</label>
               <input type="tel" className="regist-input" name="email" placeholder="Enter email" ></input>
@@ -73,16 +78,16 @@ function Registration() {
                 <input type="radio" name="gender" value="female" className="radio-button" ></input>
                 <label className="regist-label">Female</label>
               </div>
-            </div> 
+            </div>
 
             <div className="regist-col">
               <div className="regist-row">
-              <label className="regist-label">Buyer</label>
-              <label class="switch">
-             <input type="checkbox" name="is_creator" onChange={() => setShow(toggle)}></input>
-            <span class="slider round"></span>
-            </label>
-            <label className="regist-label">Creator</label>
+                <label className="regist-label">Buyer</label>
+                <label class="switch">
+                  <input type="checkbox" name="is_creator" onChange={() => setShow(toggle)}></input>
+                  <span class="slider round"></span>
+                </label>
+                <label className="regist-label">Creator</label>
               </div>
             </div>
             {show ? <div className="live">
@@ -103,9 +108,11 @@ function Registration() {
               </div>
 
             </div> : null}
-            <Link to="#"><button className="regist-button" type="submit" >
-              Submit
-            </button></Link>
+            <button className="regist-button" type="submit" >
+              {/* <Link to="/OtpVerification"> */}
+                Submit
+              {/* </Link> */}
+            </button>
 
           </form>
           {/* <button className="regist-button" onClick={getData} >
