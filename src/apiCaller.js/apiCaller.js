@@ -1,36 +1,28 @@
 import axios from "axios";
 import Loader from "../html/other/Loader";
+class ApiCaller {
 
-class ApiCaller{
+  static userData = {};
 
-    site= 'http://localhost:4000/v1/';
-    constructor(){
-    }
+  site = 'http://localhost:4000/v1/';
+  constructor() {
+  }
 
-    postData({url,data}){
-        return axios.post(this.site+url, data)
-        .then(data => {
-          return data.data
-        })
-        .catch(err => {
-          console.log(err);
-        }) 
+  postData({ url, data }) {
+    console.log(url);
+    return axios.post(this.site + url, data)
+      .then(data => {
+        if(url == 'user/login' && data.data.status_code == '1'){
+          console.log('data inserted');
+          ApiCaller.userData = {...data.data.data};
+          localStorage.setItem('userData', JSON.stringify(data.data.data));
+        }
+        return data.data
+      })
+      .catch(err => {
+        console.log(err);
+      })
 
-    }
-  //   getData({url,data}){
-  //     return axios.get(this.site+url, data)
-  //     .then(data => {
-  //       console.log(data);
-  //       let response = {
-  //         status:0,
-  //         message:'',
-  //         data:''
-  //       }
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     }) 
-
-  // }
+  }
 }
 export default ApiCaller;

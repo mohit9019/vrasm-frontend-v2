@@ -14,9 +14,25 @@ import Creatordash from "./html/creator dashboard/Creatordash";
 import OtpVerification from "./html/registration/OtpVerification";
 import Categoriespage from "./html/categories/Categoriespage";
 import Loader from "./html/other/Loader";
+import { ToastContainer ,toast, Flip, Zoom, Slide} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (<>
+
     <Navba />
+    <ToastContainer
+      theme="dark"
+      position="top-center"
+      autoClose={1000}
+      hideProgressBar={true}
+      newestOnTop
+      closeOnClick
+      rtl={false}
+      transition={Slide}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/Login" element={<Login />} />

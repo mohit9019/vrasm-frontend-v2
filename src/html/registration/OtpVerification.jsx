@@ -1,10 +1,33 @@
 import { useEffect, useState } from "react";
-import { ToastContainer ,toast, Flip, Zoom, Slide} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 import "../../css/registration/Registration.css";
+import ApiCaller from "../../apiCaller.js/apiCaller";
 export default function OtpVerification() {
 
-  const enteredOtp=1234;
+  function otp(e){
+    e.preventDefault(); 
+    console.log(e.target.value);
+    let otp = e.target[0].value+e.target[1].value+e.target[2].value+e.target[3].value ;
+    let body = {
+      otp:otp,
+      // email:
+    }
+    let apiCaller = new ApiCaller();
+    apiCaller.postData({
+      url:'buyer/otp',
+      data:body
+    }).then(data=>{
+      if(data && data.status_code=='1')
+        toast.success('Otp Verified',{autoClose:2000});
+      else
+        toast.error("Otp doesn't Matched",{autoClose:2000});
+      console.log(data);
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }
+  // const enteredOtp=1234;
   // for otp inputs
     const [Otp,setOtp]= useState(new Array(4).fill(""));
     const handleChange = (element, index)=>{
@@ -27,30 +50,16 @@ export default function OtpVerification() {
     },[counter]);
 
   //for otp verified toaster
-    const otpVerified = () =>{ toast(<><i class="fas fa-check-circle" id="right-icon"></i><text className="toaster-text"> Otp Matched</text></>);}
-    const wrongOtp=()=>{toast (<><i class="fas fa-times-circle" id="wrong-icon"></i><text className="toaster-text"> Otp Doesn't Matched</text></>)}
+    // const otpVerified = () =>{ toast(<><i class="fas fa-check-circle" id="right-icon"></i><text className="toaster-text"> Otp Matched</text></>);}
+    // const wrongOtp=()=>{toast (<><i class="fas fa-times-circle" id="wrong-icon"></i><text className="toaster-text"> Otp Doesn't Matched</text></>)}
 
   return (
    <>
-    <ToastContainer
-      theme="dark"
-      position="top-center"
-      autoClose={1000}
-      hideProgressBar={true}
-      newestOnTop
-      closeOnClick
-      rtl={false}
-      transition={Slide}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-
-    />
           <div className="otpcontainer">
           <img src="/Images/otpclip.png" className="otp-img" />
             <h5 className="otp-title">Otp Verification</h5>
             <p className="yourmail">OTP sent on your Email@gmail.com</p>
-            
+            <form onSubmit={otp}>
               <div  className="otp">
                 <div className="otp-inputs">
                 {Otp.map((data,index)=>{
@@ -71,10 +80,10 @@ export default function OtpVerification() {
                 <p className="resend">Didn't recieved otp ?  <span className="re"> Resend</span></p>
                 <div className="otp-btns">
                   <button className="clear-button" onClick={e => setOtp([...Otp.map(v => "")])}>Clear</button>
-                  <button className="verify-button" type="submit" onClick={(enteredOtp==Otp.join(""))? otpVerified : wrongOtp}>verify</button>
-                  
+                  <button className="verify-button" type="submit">verify</button>
                 </div>
               </div>
+              </form>
           </div>
    </>
     );

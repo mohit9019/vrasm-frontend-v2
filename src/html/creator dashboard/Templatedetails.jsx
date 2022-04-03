@@ -1,6 +1,8 @@
 import { Form,Button } from "react-bootstrap";
 import {Link} from "react-router-dom";
+import { toast } from "react-toastify";
 import ApiCaller from "../../apiCaller.js/apiCaller";
+// import { ToastContainer, toast, Flip, Zoom, Slide } from "react-toastify";
 
 function Tenmplatedetails() {
     
@@ -21,6 +23,10 @@ function Tenmplatedetails() {
           url:'template/upload',
           data:body
         }).then(data=>{
+            if(data && data.status_code=='1')
+                toast.success('Data Uploaded succesfully');
+            else
+                toast.error('Something went wrong');
           console.log(data);
         })
         .catch(err=>{
