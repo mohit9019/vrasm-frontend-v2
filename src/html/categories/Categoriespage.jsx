@@ -1,6 +1,22 @@
 import "../../css/categories/Categories.css";
 import Searchbar from '../home/Searchbar';
+import ApiCaller from "../../apiCaller.js/apiCaller";
+import details from "../home/Detailsmap";
+import { useState, useEffect} from "react";
 function Categoriespage(){
+
+  const [Data, setData] = useState([]);
+  useEffect(() => {
+    let apiCaller = new ApiCaller();
+    apiCaller.postData({
+      url: 'template/get',
+      data:{user_id:'123456789101'} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+    }).then(res=>{
+      if(res && res.status_code == '1'){
+        setData(res.data);
+      }
+    })
+  },[]);
     return(
         <> 
 <div className="categories">
@@ -34,11 +50,18 @@ function Categoriespage(){
       <li><span className='category-name'><i class="fas fa-presentation"></i> PPT</span> <span className="number">30</span></li>
       <li><span className='category-name'><i class="far fa-file-image"></i> PSD</span> <span className="number">30</span></li>
   </ul>
-</aside>
-
+</aside> 
+ 
 <div className='categories-content'>
   <label for='toggle' className='button'><i class="fad fa-bars"></i></label>
-  <Searchbar /> 
+  <div className="categories-search"><Searchbar /></div>
+  <div className="card-scroller" style={{marginTop:'10%'}}>
+    <div className="cards">
+    {
+       Data.map(details)
+    } 
+    </div>
+    </div>
 </div>
 </div>
         </>

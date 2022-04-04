@@ -1,92 +1,87 @@
 import "../../css/buyer dashboard/Analysis.css";
-import {Table} from "react-bootstrap";
-import Navba from "../home/Navba";
-import Sidebar from "./Sidebar";
+
+const headers = [
+  { keys: "id",   name: "ID" },
+  { keys: "name", name: "Name" },
+  { keys: "age",  name: "Age" },
+  { keys: "id",   name: "ID" },
+  { keys: "name", name: "Name" },
+  { keys: "age",  name: "Age" },
+];
+const data = [
+  { id: 1, name: 'mohit',  age: 20, id: 1, name: 'mohit',  age: 20},
+  { id: 2, name: 'dev',   age: 20, id: 1, name: 'mohit',  age: 20},
+  { id: 3, name: 'manav',   age: 20, id: 1, name: 'mohit',  age: 20},
+  { id: 1, name: 'mohit',  age: 20, id: 1, name: 'mohit',  age: 20},
+  { id: 1, name: 'mohit',  age: 20, id: 1, name: 'mohit',  age: 20},
+  { id: 2, name: 'dev',   age: 20, id: 1, name: 'mohit',  age: 20},
+  { id: 3, name: 'manav',   age: 20, id: 1, name: 'mohit',  age: 20},
+  { id: 1, name: 'mohit',  age: 20, id: 1, name: 'mohit',  age: 20},
+];
+
 function Analysis(){
     return(
         <>
           <div className="analysis">
-          {/* <div className="st">Statistics:</div> */}
             <div className="row">
             <div className="stats-card">
-            <center>
-              <div className="circle"><svg>
-                <circle cx="80" cy="70" r="60">
-               </circle>
-              </svg></div>
-              <div className="stats">30</div>
-              <div className="stat-n">Total Templates</div>
-              </center>
+            <div className="circle">
+                <span className="stats">30</span>
+            </div>
+              <span className="stats-n">Total Templates</span>
             </div>
             <div className="stats-card">
-            <center>
-              <div className="circle">
-              <svg>
-                <circle cx="84" cy="70" r="60"></circle>
-              </svg>
-              </div>
-              <div className="stats">999999</div>
-              </center>
-              <div className="stat-n">Total Sales</div>
+            <div className="circle">
+                <span className="stats">30</span>
+            </div>
+              <span className="stats-n">Total Sales</span>
             </div>
             <div className="stats-card">
-            <center>
-              <div className="circle">
-              <svg>
-                <circle cx="84" cy="70" r="60"></circle>
-              </svg>
-              </div>
-              <div className="stats">30</div>
-              </center>
-              <div className="stat-n">Total Income</div>
+            <div className="circle">
+                <span className="stats">30</span>
+            </div>
+              <span className="stats-n">Total Income</span>
             </div>
             <div className="stats-card">
-            <center>
-              <div className="circle">
-              <svg>
-                <circle cx="84" cy="70" r="60"></circle>
-              </svg>
-              </div>
-              <div className="stats">30</div>
-              </center>
-              <div className="stat-n">Average Review</div>
+            <div className="circle">
+                <span className="stats">30</span>
+            </div>
+              <span className="stats-n">Average Ratings</span>
             </div>
             </div>
 
       <div className="creator-table">
-        <Table striped bordered hover variant="light">
-  <thead className="table-head">
-    <tr>
-      <th>ID</th>
-      <th>Template Name</th>
-      <th>Sales</th>
-      <th>Ratings</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Temp1</td>
-      <td>2</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Temp2</td>
-      <td>2</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Temp3</td>
-      <td>2</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</Table></div>
+      <Table id="id" headers={headers} data={data} />
+      </div>
           </div>
         </> 
     );
 }
 export default Analysis;
 
+const Table = ({ id, headers, data }) => (
+  <>
+  <div className="table-background">
+  <div className="template-table">
+    <table className="table-cont"> 
+      <tbody>
+        <tr>
+          {headers.map(({ keys, name }) => (
+            <th className="table-header" key={keys}>{name}</th>
+          ))}
+        </tr>
+        {data.map((rowData) => (
+          <tr className="table-row" key={rowData[id]}>
+            {headers.map(({ keys }) => (
+              <td className="table-column" key={keys}>
+                {rowData[keys]}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    </div>
+    </div>
+    </>
+  );

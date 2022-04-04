@@ -1,13 +1,12 @@
 .analysis{
     width: 78%;
     height: 100%;
-    margin:2% 0 0 20%;
+    margin:0 0 0 20%;
     border-radius:5px ;
     overflow: hidden;
-    padding: 1% 0 ;
+    padding: 2% 0 ;
 }
 .row{
-    /* margin-top: 1%;  */
     width: 100%;
     display: flex;
     align-items: center;
@@ -16,62 +15,120 @@
     justify-content: space-evenly;
 }
 .stats-card{
-    width: 20%;
-    height: 185px;
-    border-radius: 50px;
+    width: 22%;
+    padding: 1.5%;
     text-align: center;
-    transition:all .3s ease-out ;
+    /* border: rgb(114, 114, 114) 1px solid; */
+    border-radius: 3px;
+}
+.circle{
+    border: 10px rebeccapurple solid;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto 5% auto;
+}
+.stats-n{
+    color: rebeccapurple;
+    text-align: center;
+    font-size: 120%;
+    font-weight: 400;
+    margin: 2% 0 0;
+}
+.stats{
+    color: rebeccapurple;
+    font-size: 150%;
+    padding: 35px 0 0;
+    display: inline-block;
 }
 /* .stats-card:hover{
     box-shadow:inset 1px 2px 3px 1px rgb(46, 46, 46,.3);
 } */
-.circle{
-    padding: 0 auto 0 auto;
-    /* border: 2px solid black; */
-}
-.circle svg circle{
-    fill: none;
-    stroke: rebeccapurple;
-    stroke-width: 8px;
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
-    animation: animate 2s forwards;
-}
-.stat-n{
-    color: rebeccapurple;
-    text-align: center;
-}
-.stats{
-    color: rebeccapurple;
-    text-align: center;
-    margin-top: -56%;
-    font-size: 140%;
-    /* border: 1px solid black; */
-}
-.stat-n{
-    /* border: 1px solid black; */
-    width: 100%;
-    margin-top: 30%;
-    font-size: 120%;
-}
-.st{
-    font-size:30px;
-    margin-left: 1%;
-}
 .creator-table{
     width: 90%;
     margin:2% 0 0 4%;
 }
-.table-head{
-    color: rgb(143, 16, 143);
-}
-.creator-table tr td{
-    font-size: 85%;
-}
+.table-background{
+    margin: 2% 0 0 1%;
+    border-radius: 10px;
+     padding: 1.5% 2% 1% 1%;
+     background-color: white;
+ }
+ .template-table{
+     /* border: #8a66fe 1px solid; */
+     max-height: 80vh;
+     overflow-y: scroll ;
+     scroll-behavior: smooth;
+     border-radius: 10px;
+ }
+ .table-cont{
+     border-collapse:separate;
+     border-spacing:0 10px;
+     width: 100%;
+     background-color: white;
+     padding: 0 1.5%;
+     border-radius: 10px ;
+ }
+ .table-header:first-child {
+     border-radius: 5px 0 0 5px;
+ }
+ .table-header:last-child{
+     border-radius: 0 5px 5px 0;
+ }
+ .table-row:first-child {
+     border-radius: 5px 0 0 5px;
+ }
+ .table-header{
+     background-color: rebeccapurple;
+     padding: 1% 2%;
+     color: rgb(240, 238, 238);
+     font-size: 100%;
+     text-align: left;
+     position: -webkit-sticky;
+     position: sticky;
+     top: 0;
+ }
+ .table-row{
+     border: grey 1px solid;
+     transition: all .3s ease;
+     font-size: 90%;
+     /* width: auto; */
+     /* border-radius: 10px; */
+ }
+ .table-row:hover{
+     background-color: rgb(232, 244, 254);
+     transform: translate(-3px -3px);
+     font-size: 95%;
+ }
+ .table-column{
+     padding: .75% 2%;
+ }
+ .table-row:nth-child(odd){
+     border: rgb(245, 244, 250) 1px solid;
+ }
+ ::-webkit-scrollbar{
+     width: 3px;
+ }
+ ::-webkit-scrollbar-track{
+     background-color: rgb(223, 222, 222);
+     border-radius: 10px;
+ }
+ ::-webkit-scrollbar-thumb{
+     background-color: rgb(173, 171, 171);
+     border-radius: 50px;
+ }
+ ::-webkit-scrollbar-button{
+     display: none;
+ }
+ 
 @media only screen and (min-width:480px) and (max-width:768px){
     .analysis{
         margin: 30%;
         width: 100%;
+    }
+    .stat-n{
+        font-size: 90%;
     }
 }
 @media only screen and (max-width: 500px) {
@@ -79,34 +136,35 @@
         display: flex;
         flex-direction: column;
     }
+    .circle{
+        height: 100px;
+        width: 100px;
+    }
     .analysis{
         width: 100%;
-        height: 100%;
-        margin-left: 0%;
         overflow: hidden;
-        
+        margin-left: 0;
     }
     .stats-card{
-        width: 100%;
-        margin-top: 10px;
-        margin-bottom: 10%;
+        width: 50%;
+        margin: 2% auto 0 auto;
     }
     .circle{
-        margin-left: 33.33%;
-    }
-    .stats{
-        margin-left: 20px;
-        margin-top: -30%;
+        margin-bottom: 1%;
     }
     .stat-n{
         width: 100%;
-        font-size: 25px;
+        font-size: 90%;
         margin-left: 10px;
         margin-top: 15%;
     }
     .creator-table{
-        width: 90%;
+        width: 100%;
         margin: 0 auto 0 auto;
+        font-size: 85%;
+    }
+    .template-table{
+     overflow-x: scroll ;
     }
 }
 @keyframes animate {

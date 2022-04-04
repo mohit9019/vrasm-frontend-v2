@@ -43,7 +43,7 @@ function Home() {
 
     <div className='trending'>Trending</div>
     <div className="card-scroller">
-    <div className="cards">
+    <div className="cards"> 
     {
        Data.map(details)
     } 

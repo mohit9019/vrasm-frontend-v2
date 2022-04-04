@@ -26,7 +26,7 @@ function Tenmplatedetails() {
             if(data && data.status_code=='1')
                 toast.success('Data Uploaded succesfully');
             else
-                toast.error('Something went wrong');
+                toast.error(data.status_message);
           console.log(data);
         })
         .catch(err=>{
@@ -69,12 +69,17 @@ function Tenmplatedetails() {
                             <Form.Control name="price" type="number" min={50} placeholder="Rs." required />
                         </Form.Group>
 
+                        <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label style={{ fontSize: "15px" }}>Zip File</Form.Label>
+                    <Form.Control name="zip" type="file" required />
+                </Form.Group>
+
                         {/* <Link to="/Creatordash/Uploadtemp/Documents"> */}
                         <button className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }} variant="primary" type="submit">
                             Save & Next
                         </button>
                         {/* </Link> */} 
-                    </Form>
+                    </Form> 
                 </div>
         </>
     );

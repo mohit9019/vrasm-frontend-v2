@@ -118,6 +118,9 @@ hr{
 }
 @media only screen and (max-width: 500px)
 {
+    .category-sidebar{
+        height: 93vh;
+    }
     .cat Nav Nav.Link p{
         font-size: 10px;
     }
@@ -184,6 +187,10 @@ hr{
         transition: background-color 0.5s ease-in-out;
         left: 0;
         padding: 0;
+      }
+      .categories-search{
+        width: 100%;
+        padding: 0 0 0 7%;
       }
       .button {
         position: absolute;

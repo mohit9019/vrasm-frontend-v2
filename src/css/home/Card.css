@@ -3,7 +3,7 @@
   background-color: white;
   margin-top: 10%;
   position: relative;
-  box-shadow: 3px 3px 9px rgb(36, 36, 36);
+  box-shadow: 3px 3px 9px rgb(36, 36, 36,.7);
   overflow: hidden;
   padding: 2% 0 0 ;
 }
@@ -27,7 +27,7 @@
   animation: border 2s ease-in-out infinite;
   padding: 0 auto 0 auto;
   overflow: hidden ;
-  margin: 5% 0 0 49%;
+  margin: 5% 0 0 47%;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -129,6 +129,9 @@
   border-radius: 2px;
   box-shadow: 3px 2px 5px rgb(151, 150, 150);
 }
+.card-cont:hover .save{
+  display: block;
+}
 .cards{
   padding: 0 2% 1% 2%;
   border: #7358b7 1px;
@@ -140,9 +143,6 @@
 }
 .image_div:hover .image_div{
   opacity: 0.3;
-}
-.image_div:hover .save{
-  display: block;
 }
 .image_div .img{
   width: 100%;
@@ -184,7 +184,7 @@
   padding-left:4%;
 }
 .save{
-  /* display: none; */
+  display: none;
   position: absolute;
   right: 0;
   margin: 3% 3% 0;
@@ -209,6 +209,10 @@
 }
 .save-icon:hover{
   color: rgb(153, 11, 248);
+}
+#toggle:checked ~ .save-icon{
+  display: block;
+  color: #7358b7;
 }
 .card-about{
   margin-top: 2%;
@@ -369,7 +373,8 @@
     }
     .explore{
       position: absolute;
-      margin-top: -5%;
+      margin-top: -3%;
+      z-index: 10;
     }
     .upload-wraper{
       margin-bottom: 20%;
@@ -428,8 +433,8 @@
     }
     .searchbar{
       width: 70%;
-      padding: .5% 2% .5% 2%;
-      margin-top: 10%;
+      padding: .75% 2% 1% 2%;
+      margin-top: 6%;
     }
     .search-icon{
       width: 15%;

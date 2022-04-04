@@ -14,13 +14,13 @@ function Sidebar(){
                     <div className="sidebar-pages">
                     <div className="sidebar-page-cont">
                     <Link to="Personalinfo" style={{textDecoration:"none"}}><div className="sidebar-options" onClick={()=>ActiveTabB(1)} id={toggledashB===1?"active-tab":null}>
-                        <span>Buyers Information</span></div>
+                        <span><i class="far fa-user-tag"></i> Buyers Information</span></div>
                     </Link>
                     <Link to="/Buyerdash/Myorder" style={{textDecoration:"none"}}><div className="sidebar-options" onClick={()=>ActiveTabB(2)} id={toggledashB===2?"active-tab":null}>
-                        <span>My Orders</span></div>
+                        <span><i class="far fa-bags-shopping"></i> My Orders</span></div>
                     </Link>
                     <Link to="/Buyerdash/Changepass" style={{textDecoration:"none"}}><div className="sidebar-options" onClick={()=>ActiveTabB(3)} id={toggledashB===3?"active-tab":null}>
-                        <span>Change Password</span></div>
+                        <span><i class="far fa-key"></i> Change Password</span></div>
                     </Link>
                     </div>
                     </div> 

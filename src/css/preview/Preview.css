@@ -234,6 +234,7 @@
 .feedback-form{
     width: 35%;
     margin: 3% 0 0 0;
+    padding: 2% 0 ;
     /* box-shadow: 1px 1px 6px rgb(201, 200, 200,.2); */
     text-align: center;
     display: flex;
@@ -242,15 +243,10 @@
     border: none;
     border-radius: 5px;
 }
-.feedback-title{
-    padding: 5% 0 0 ;
-}
-.closing{
-    padding: 3% 0 0 0;
-}
 .feedback-title, .closing{
     font-weight: 500;
     color: rgb(56, 56, 56);
+    margin: 5% 0 0 ;
     background-color: white;
 }
 .feedback-title{
@@ -269,13 +265,15 @@
     width: 75%;
     margin: 3% auto 0 auto;
     outline:none;
+    font-size: 75%;
+    word-spacing:normal;
     padding: 1.5% 3%;
     border: 1px solid rgb(165, 165, 165);
     border-radius: 7px;
     color: rgb(114, 114, 114);
 }
 .feedback-mail::placeholder, .feedback-text::placeholder{
-    font-size: 75%;
+    font-size: 85%;
 }
 .feedback-text{
     height: 70%;
@@ -294,19 +292,19 @@
 .feedback-btn:hover{
     background-color: white;
     color:  rgb(129, 48, 211);
-    border: rgb(129, 48, 211) .1rem solid;
+    border: rgb(129, 48, 211) 1px solid;
 }
 .feedbackform-stars{
     display: flex;
     flex-direction: row;
     width: 60%;
     margin: 1% auto;
-    justify-content: space-around;
-    
+    justify-content: space-around;   
 }
 .stars{
     transition: color 150ms;
     cursor: pointer;
+    margin: 2% 0 0 ;
     font-size: 150%;
 }
 .stars:hover{

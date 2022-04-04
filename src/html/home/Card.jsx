@@ -9,7 +9,7 @@ const Card=(props)=>{
     <> 
     <div className="card-cont">
       <div className="image_div">
-      <div className="save" ><div className="save-round"><AiFillHeart className="save-icon" /></div></div>
+      <div className="save" ><div className="save-round"><label for="toggle"><AiFillHeart className="save-icon" /></label></div></div>
       <img src={props.img} className="img" alt="IMAGE"/></div>
       <div className="card-content"> 
         <span className="card-name">{props.title}</span>
@@ -22,7 +22,7 @@ const Card=(props)=>{
         </Link>
         <Link to="#" style={{textDecoration:"none", color:"darkgray"}}>
           <button className="cart-btn"><i class="fad fa-shopping-cart"></i><span className="card-btn-title">Add to Cart</span></button>
-        </Link>
+        </Link> 
         </div>   
       </div>
     </div>

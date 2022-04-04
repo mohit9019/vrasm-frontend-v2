@@ -13,12 +13,12 @@ import Buyerdash from "./html/dashboard/Buyerdash";
 import Creatordash from "./html/creator dashboard/Creatordash";
 import OtpVerification from "./html/registration/OtpVerification";
 import Categoriespage from "./html/categories/Categoriespage";
-import Loader from "./html/other/Loader";
 import { ToastContainer ,toast, Flip, Zoom, Slide} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from "./html/other/Loader";
 function App() {
   return (<>
-
+{/* <Loader /> */}
     <Navba />
     <ToastContainer
       theme="dark"

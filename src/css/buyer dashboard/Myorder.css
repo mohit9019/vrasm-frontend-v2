@@ -24,7 +24,6 @@
 }
 .order-card:hover{
     background-color: rgb(240, 238, 252);
-    box-shadow:1px 1px 15px rgb(15, 15, 15,.3);
     transform: scale(1.03 ,1.03);
 }
 .order-img{

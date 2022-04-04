@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import ApiCaller from "../../apiCaller.js/apiCaller";
+import {Link } from 'react-router-dom';
 import "../../css/login/Login.css";
 function Login(){
   function login(e) {
@@ -45,7 +46,8 @@ function Login(){
         <input type="checkbox" name="register" className="radio-button" placeholder="Passwords"  style={{height:'1.01rem',marginTop:'5px'}}></input>
         <label className="regist-label">Agree with Terms & Conditions</label>
         </div>
-        </div>  
+        </div> 
+        <div className="regist-col"><label className="regiter"><Link to="/registration" style={{fontSize:"85%",textDecoration:"none"}}>New On This Site ?</Link></label> </div> 
 
         <button className="regist-button" type="submit">
             Submit
