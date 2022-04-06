@@ -1,42 +1,32 @@
-import { Form,Button } from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 // import { ToastContainer, toast, Flip, Zoom, Slide } from "react-toastify";
 
 function Tenmplatedetails() {
-    
-    function templateupload(e) {
-        e.preventDefault();
-        console.log("clicked");
-        let body = {
-            creator_id: '623589cc46ed885edbe4167b', // this is sample creator_id of nandita mam for testing, you have to pass the creator_id when user comes
-            name: e.target.name.value,
-            description: e.target.description.value,
-            technology: e.target.technology.value,
-            category: e.target.category.value,
-            tags: e.target.tags.value,
-            price: e.target.price.value,
-        }
-        let apiCaller = new ApiCaller();
-        apiCaller.postData({
-          url:'template/upload',
-          data:body
-        }).then(data=>{
-            if(data && data.status_code=='1')
-                toast.success('Data Uploaded succesfully');
-            else
-                toast.error(data.status_message);
-          console.log(data);
-        })
-        .catch(err=>{
-          console.log(err);
-        })
-      }
+
+   
 
     return (
         <>
-                <h3 className="n">Template Details</h3>
+        
+        <form  enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
+            {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}
+                {/* <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label>Promotional Image</Form.Label>
+                    <Form.Control name="file" type="file" />
+                </Form.Group>
+                <Form.Group controlId="formFileMultiple" className="mb-3">
+                    <Form.Label>Other Images</Form.Label>
+                    <Form.Control name="file" type="file" multiple />
+                </Form.Group> */}
+                <input type="file" name="file"></input>
+                <input type="file" name="file"></input>
+                <input type="text" style={{visibility:'hidden'}} name="template_id" value="6225a181ffb0259ddab852ba"></input>
+                <button type="submit">submit</button>
+            </form>
+            {/* <h3 className="n">Template Details</h3>
                 <div className="form1">
                     <Form onSubmit={templateupload}>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -75,12 +65,12 @@ function Tenmplatedetails() {
                 </Form.Group>
 
                         {/* <Link to="/Creatordash/Uploadtemp/Documents"> */}
-                        <button className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }} variant="primary" type="submit">
+            {/* <button className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }} variant="primary" type="submit">
                             Save & Next
-                        </button>
-                        {/* </Link> */} 
-                    </Form> 
-                </div>
+                        </button> */}
+            {/* </Link> */}
+            {/* </Form>  */}
+            {/* </div> */}
         </>
     );
 }
