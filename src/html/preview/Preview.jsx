@@ -5,6 +5,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 import RatedStars from "./RatedStars";
 import Ratings from "./Ratings";
+import { Link } from "react-router-dom";
 
 const tags=["html","css",'bootstrap','tailwind','h'];
 const i='/Images/113.jpg';
@@ -44,7 +45,7 @@ function Preview(){
                 <div className="preview-stars"><RatedStars /></div>
                 <div className="preview-btns">
                     <button className="preview-cart"><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
-                    <button className="buy-btn"><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
+                    <Link to="/Payment"><button className="buy-btn"><i class="far fa-shopping-bag"></i><span>Buy Now</span></button></Link>
                 </div>
             </div>
             <div className="image-carousel">

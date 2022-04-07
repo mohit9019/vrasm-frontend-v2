@@ -3,10 +3,7 @@
     display: flex;
     flex-direction: row;
     height: 45px;
-    /* background-color: rgb(54, 44, 44); */
     background-color: white;
-    overflow: hidden;
-    /* /* position: fixed; */
     z-index: 11; 
     position: sticky;
     top: 0;
@@ -80,13 +77,51 @@
     border-radius: 50px;
     font-family: 'Varela Round', sans-serif;
 }
-@media only screen and (max-width:480px) {
+.navbar-profile{
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    border-radius: 50px;
+    border: rebeccapurple .1rem solid;
+}
+.navbar-profile img{
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-radius: 50px;
+    position: relative;
+}
+#down-arrow{
+    padding-top: 0;
+    padding-left: 8%;
+    font-size: 70%;
+    position: absolute;
+    top: 5px;
+}
+#down-arrow:hover{
+    font-size: 70%;
+}
+.dropdown-content{
+    display: none;
+    margin: 10% 0 0 0;
+    font-size: 70%;
+    width: 100%;
+    background-color: rebeccapurple;
+    color: white;
+    padding: .1%;
+    position: absolute;
+}
+#toggle:checked ~ .dropdown-content{
+    display: block;
+}
+
+@media only screen and (max-width:500px) {
     .top{
         width: 100%;
         height: 7.5%;
     }
     .logo-cont{
-        width: 30%;   
+        width: 20%;   
     }
     .logo{
         /* width: 100%; */
@@ -94,7 +129,8 @@
         font-size: x-large;
     }
     .top-cont{
-        width: 70%;
+        width: 80%;
+        padding: 0 3% 0 0;
     }
     .top-icon{
         font-size: 95%;
@@ -105,5 +141,12 @@
         width: 15px;
         padding-top: 3px;
         bottom: 1rem;
+    }
+    .navbar-profile{
+        height: 18px;
+        width: 18px;
+    }
+    #down-arrow{
+        padding:0 30% 0 5%;
     }
 }

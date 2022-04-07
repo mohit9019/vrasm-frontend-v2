@@ -6,10 +6,11 @@ function Uploadtemp(){
     return(
         <>
             <div className="upload-template">
-            <Routes>
+            <Tenmplatedetails />
+            {/* <Routes>
             <Route exact path="Templatedetails" element={<Tenmplatedetails />} />
             <Route exact path="Documents" element={<Documents />} />
-            </Routes> 
+            </Routes>  */}
             </div>
         </>
     );

@@ -16,6 +16,7 @@ import Categoriespage from "./html/categories/Categoriespage";
 import { ToastContainer ,toast, Flip, Zoom, Slide} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "./html/other/Loader";
+import Payment from "./html/preview/Payment";
 function App() {
   return (<>
 {/* <Loader /> */}
@@ -45,6 +46,7 @@ function App() {
       <Route exact path="/categoriespage/*" element={<Categoriespage />} /> 
       <Route exact path="/OtpVerification/*" element={<OtpVerification />} />
       <Route exact path="/Loader" element={<Loader />} />
+      <Route exact path="/Payment" element={<Payment />} />
     </Routes>
   </>);
 }

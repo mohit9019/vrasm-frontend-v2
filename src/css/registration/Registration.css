@@ -5,7 +5,7 @@
 }
 .regist{
     width: 30%;
-    margin:0 auto 6% auto;
+    margin:0 auto 0 auto;
     padding:2rem;
     background-color: white;
     border: rgb(204, 203, 203) 1px solid;
@@ -235,9 +235,12 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .background{
+      padding: 0 0 0;
+    }
     .regist{
         width:87%;
-        margin-top: 20%;
+        margin-top: 10%;
         margin-bottom: 23%; 
     }
     .otpcontainer{

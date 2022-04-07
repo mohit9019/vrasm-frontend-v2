@@ -1,0 +1,111 @@
+.paynow {
+    border-radius: 5px;
+    height: 70vh;
+    border: .1rem solid rgb(154, 154, 154);
+    width: 60%;
+    margin: 5% auto 0 auto;
+    display: flex;
+    position: relative;
+    z-index: 3;
+    /* box-shadow: 1px 1px 3px rgb(0, 0, 0,.2); */
+  }
+.payment-method {
+    width: 30%;
+    height: 100%;
+    text-align: center;
+  }
+  .pay-title{
+      margin: 30% 0 0 0 ;
+  }
+  .method-list{
+    padding: 4% 15% ;
+    margin: 25% 0 0 0;
+    list-style: none;
+    transition: all .3s ease;
+  }
+  .methods{
+    font-size: 90%;
+    padding: 1% 0 0;
+    margin: 10% 0 0 0;
+    transition: all .4s ease;
+  }
+  .methods:hover{
+    border-left: 2px solid rebeccapurple;
+    color: rebeccapurple;
+  }
+  .payment-active{
+    border-left: 2px solid rebeccapurple;
+    color: rebeccapurple;
+  }
+  .backtopreview{
+    margin: 30% 0 0 0 ;
+    font-size: 90%;
+  }
+  .devider{
+    width: 2px;
+    background-color: rebeccapurple;
+    height: 30%;
+    margin: 21% 0 0 0;
+  }
+
+  .payment-details{
+    width: 70%;
+    /* border: 1px solid; */
+  }
+  .payment-title{
+    margin:12% 0 0 15%;
+  }
+  .payment-mode{
+    /* border: 1px solid;  */
+    width: 100%;
+    height: 55%;
+    margin: 5% 0 0 0;
+    padding: 5% 0 0 10%;
+  }
+  .netbanking{
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0 0 0;
+  }
+  .pay-column{
+    margin: 3% 0 0 0;
+  }
+  .upiid{
+    margin:6.5% 0 0 0 ;
+  }
+
+  .input-label{
+    font-size: 90%;
+    color: rgb(63, 63, 63);
+    margin: 0 2% 0;
+  }
+  .payment-input{
+    padding: .5% 0 .5% 1.5%;
+    border: 1px solid rgb(114, 113, 113);
+    outline: none;
+    color: rgb(63, 63, 63);
+    border-radius: 5px;
+    font-size: 80%;
+  }
+
+  .pay-option{
+    width: 80%;
+    /* border: 1px solid; */
+    margin: 0 0 0 15%;
+  }
+  .pay-button{
+    padding:1% 2%;
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 4px;
+    margin: 1% 0 0 15%;
+  }
+  .pay-button:hover{
+    background-color: rgb(132, 64, 199);
+  }
+  .pay-amount{
+    margin: 0 0 0 4%;
+    color: rgb(44, 155, 44);
+    font-weight: 500;
+  }

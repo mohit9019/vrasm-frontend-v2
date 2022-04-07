@@ -8,6 +8,7 @@ function Navba() {
   const NavActive =(index) =>{
     setTogglenav(index); 
   }
+  const [is_verified,setIs_verified]=useState(1);
     return (
       <>
         <div className="top">
@@ -32,9 +33,18 @@ function Navba() {
             <Link to="/Like" className="top-icon">
               <i class="far fa-heart" onClick={()=>NavActive(2)} id={togglenav===2?"nav-active":null}></i>
             </Link>
-            <Link to="/Login" className="top-icon" >
-              <i class="far fa-user-alt" onClick={()=>NavActive(1)} id={togglenav===1?"nav-active":null}></i>
-            </Link>
+
+            { 
+              is_verified==0?
+                <Link to="/Login" className="top-icon" >
+                  <i class="far fa-user-alt" onClick={()=>NavActive(1)} id={togglenav===1?"nav-active":null}></i>
+                </Link>
+                :
+                <div className="top-icon"><div className="navbar-profile" for="toggle"><img src="/Images/profile.jpg" alt="profile" /></div><i id="down-arrow" class="far fa-caret-down"></i>
+                  <div class="dropdown-content">
+                  <p>Log-Out</p> 
+                </div></div>
+            } 
           </div>
         </div>
       </>
