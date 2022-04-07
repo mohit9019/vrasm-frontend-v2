@@ -43,15 +43,29 @@ function Tenmplatedetails() {
       const [Details_saved, setDetails_saved]= useState(0);
     return (
         <>
-            {Details_saved==0 ?
-            <>
-                    <h3 className="n">Template Details</h3>
-                    <div className="form1">
-                        <Form onSubmit={templateupload}>
-                            <Form.Group className="mb-3" controlId="formGroupEmail">
-                                <Form.Label style={{ fontSize: "15px" }}>Template Name</Form.Label>
-                                <Form.Control name="name" type="text" placeholder="Template Name" required />
-                            </Form.Group>
+        
+        <form  enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
+            {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}
+                {/* <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label>Promotional Image</Form.Label>
+                    <Form.Control name="file" type="file" />
+                </Form.Group>
+                <Form.Group controlId="formFileMultiple" className="mb-3">
+                    <Form.Label>Other Images</Form.Label>
+                    <Form.Control name="file" type="file" multiple />
+                </Form.Group> */}
+                <input type="file" name="file"></input>
+                <input type="file" name="file"></input>
+                <input type="text" style={{visibility:'hidden'}} name="template_id" value="6225a181ffb0259ddab852ba"></input>
+                <button type="submit">submit</button>
+            </form>
+            {/* <h3 className="n">Template Details</h3>
+                <div className="form1">
+                    <Form onSubmit={templateupload}>
+                        <Form.Group className="mb-3" controlId="formGroupEmail">
+                            <Form.Label style={{ fontSize: "15px" }}>Template Name</Form.Label>
+                            <Form.Control name="name" type="text" placeholder="Template Name" required />
+                        </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formGroupEmail">
                                 <Form.Label style={{ fontSize: "15px" }}>Description</Form.Label>
@@ -111,11 +125,18 @@ function Tenmplatedetails() {
                                     <button className="dash-button" name="file" type="submit" style={{ marginTop: "10px", padding:'1.5% 2% 1.5% 2%',float:'right'}}>
                                         Upload Template
                                     </button>
-                                    </form>
-                        </div>
+                                    {/* </form> */}
+                        {/* </div>
                         </>
-            }
-            </>  
+            }  */}
+                        {/* <Link to="/Creatordash/Uploadtemp/Documents"> */}
+            {/* <button className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }} variant="primary" type="submit">
+                            Save & Next
+                        </button> */}
+            {/* </Link> */}
+            {/* </Form>  */}
+            {/* </div> */}
+        </>
     );
 }
 export default Tenmplatedetails;
