@@ -2,7 +2,7 @@ import "../../css/preview/Payment.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 export default function Payment() {
-  const [paid,setPaid]=useState(null);
+  const [paid,setPaid]=useState(0);
     return (
         <>
       <div className="paynow"> 
@@ -18,6 +18,7 @@ export default function Payment() {
             <div className="backtopreview"><Link to="/Preview" style={{textDecoration:"none",color:"rebeccapurple"}}><i class="fad fa-arrow-left"></i>Back to Preview</Link></div>
         </div>
         <div className="devider"></div>
+        
         <div className="payment-details">
           <h4 className="payment-title">payment Details</h4>
   
@@ -29,7 +30,8 @@ export default function Payment() {
             <div className="credit-inputs">
               <label className="input-label" htmlFor="">Card Number :</label>
               <input className="payment-input" type="text" name="" id="cardnumber" />
-  
+              </div>
+              <div className="credit-inputs">
               <label className="input-label" htmlFor="">Card Holder :</label>
               <input className="payment-input" type="text" name="" id="cardholder" />
             </div>
@@ -65,8 +67,10 @@ export default function Payment() {
                 <option>2030</option>
                 <option>2031</option>
               </select>
+              </div>
+            <div className="credit-inputs">
               <label className="input-label" htmlFor="">cvv : </label>
-              <input className="payment-input" type="d" name="" id="cvv" />
+              <input className="payment-input" type="text" id="cvv" maxLength={3} />
             </div>
           </div>
   
@@ -102,7 +106,7 @@ export default function Payment() {
           </div>
           <div className="pay-option">
           <span className="pay-amount">Rs.500</span>
-          <button  className="pay-button" onClick={setPaid(1)}>
+          <button  className="pay-button">
             Pay Now
           </button>
           <button className="pay-button" disabled={paid==1? false: true } onClick={console.log("file downloaded")}>Download Zip</button>

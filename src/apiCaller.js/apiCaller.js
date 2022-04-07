@@ -8,6 +8,10 @@ class ApiCaller {
   constructor() {
   }
 
+  // static userData= localStorage.getItem(this.userData)
+  // if(userData){
+
+  // }
   postData({ url, data }) {
     console.log(url);
     return axios.post(this.site + url, data)
