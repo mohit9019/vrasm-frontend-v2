@@ -33,19 +33,22 @@
     border-left: 2px solid rebeccapurple;
     color: rebeccapurple;
   }
-  .payment-active{
+  #active-pay{
     border-left: 2px solid rebeccapurple;
     color: rebeccapurple;
+  }
+  #active-page{
+    display: block;
   }
   .backtopreview{
     margin: 30% 0 0 0 ;
     font-size: 90%;
   }
   .devider{
-    width: 2px;
+    width: 3px;
     background-color: rebeccapurple;
     height: 30%;
-    margin: 21% 0 0 0;
+    margin: 22.5% 0 0 0;
   }
 
   .payment-details{
@@ -62,8 +65,11 @@
     margin: 5% 0 0 0;
     padding: 5% 0 0 10%;
   }
+  .creditcard{
+    display: none;
+  }
   .netbanking{
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 2% 0 0 0;
   }
@@ -75,6 +81,7 @@
     flex-direction: row;
   }
   .upiid{
+    display: none;
     margin:6.5% 0 0 0 ;
   }
 
@@ -127,6 +134,10 @@
   padding: 5% 1% 8% 1% ;
   height: auto;
   flex-direction: column;
+}
+#active-pay{
+  border-left: none;
+  border-bottom: 2px solid rebeccapurple;
 }
 .pay-title{
   margin: 1% 0 0 0 ;

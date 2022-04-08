@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 export default function Payment() {
   const [paid,setPaid]=useState(0);
+  const [togglepay,setTogglepay]=useState(0);
+  const PayActive =(index) =>{
+    setTogglepay(index); 
+  }
     return (
         <>
       <div className="paynow"> 
@@ -11,9 +15,9 @@ export default function Payment() {
             <h4 className="pay-title">Pay with</h4>
           </div>
             <ul className="method-list">
-              <li className="methods"><i class="far fa-credit-card"></i> Credit Card</li>
-              <li className="methods"><i class="far fa-university"></i> Netbanking</li>
-              <li className="methods"><i class="far fa-rupee-sign"></i> UPI</li>
+              <li className="methods" onClick={()=>PayActive(0)} id={togglepay==0?"active-pay":null}><i class="far fa-credit-card"></i> Credit Card</li>
+              <li className="methods" onClick={()=>PayActive(1)} id={togglepay==1?"active-pay":null}><i class="far fa-university"></i> Netbanking</li>
+              <li className="methods" onClick={()=>PayActive(2)} id={togglepay==2?"active-pay":null}><i class="far fa-rupee-sign"></i> UPI</li>
             </ul>
             <div className="backtopreview"><Link to="/Preview" style={{textDecoration:"none",color:"rebeccapurple"}}><i class="fad fa-arrow-left"></i>Back to Preview</Link></div>
         </div>
@@ -24,9 +28,7 @@ export default function Payment() {
   
           <div className="payment-mode">
 
-
-          {/* creditcard */}
-          <div className="creditcard">
+           <div className="creditcard" id={togglepay==0?"active-page":null}>
             <div className="credit-inputs">
               <label className="input-label" htmlFor="">Card Number :</label>
               <input className="payment-input" type="text" name="" id="cardnumber" />
@@ -73,10 +75,10 @@ export default function Payment() {
               <input className="payment-input" type="text" id="cvv" maxLength={3} />
             </div>
           </div>
+
+          {/* Netbanking  */}
   
-          {/* Netbanking */}
-  
-          {/* <div className="netbanking">
+           <div className="netbanking" id={togglepay==1?"active-page":null}>
             <div className="pay-column">
               <label for="year" className="input-label">Bank :</label>
               <select name="cars" id="year" className="payment-input">
@@ -94,13 +96,13 @@ export default function Payment() {
               <label htmlFor="" className="input-label">IFSC Code : </label>
               <input className="payment-input" type="text" />
             </div>
-          </div> */}
-  
-          {/* UPI */}
-          {/* <div className="upiid">
+          </div>
+
+           {/* UPI  */}
+          <div className="upiid" id={togglepay==2?"active-page":null}>
             <label className="input-label">UPI ID : </label>
             <input type="text" className="payment-input" />
-          </div> */}
+          </div>
 
 
           </div>

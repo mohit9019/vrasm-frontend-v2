@@ -45,7 +45,7 @@ function Preview(){
                 <div className="preview-stars"><RatedStars /></div>
                 <div className="preview-btns">
                     <button className="preview-cart"><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
-                    <Link to="/Payment"><button className="buy-btn"><i class="far fa-shopping-bag"></i><span>Buy Now</span></button></Link>
+                    <Link to="/Payment" className="buy-btn"><button className="buy-btn"><i class="far fa-shopping-bag"></i><span>Buy Now</span></button></Link>
                 </div>
             </div>
             <div className="image-carousel">
