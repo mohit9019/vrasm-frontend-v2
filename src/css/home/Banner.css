@@ -74,6 +74,7 @@
      word-break: break-all;
  }
  .ban-text button:hover{
+     border: none;
     background-color: rgb(202, 69, 202) ;
     color: white;
  }

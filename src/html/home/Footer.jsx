@@ -1,36 +1,38 @@
 import "../../css/home/Footer.css";
+import { Link } from "react-router-dom";
 function Footer(){
     return(<>
         <div className="footer">
         <center>
             <div className="tabs">
                 <ul className="row">
-                    <li className="column">Home</li>
-                    <li className="column">About Us</li>
-                    <li className="column">Categories</li>
-                    <li className="column">Contact Us ?</li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/">Home</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="#">About Us</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">Categories</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="#">Contact Us ?</Link></li>
                 </ul>
                 <ul className="row">
-                    <li className="column">HTML / CSS</li>
-                    <li className="column">React JS</li>
-                    <li className="column">WordPress</li>
-                    <li className="column">Bootstrap</li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">HTML / CSS</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">React JS</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">WordPress</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">Bootstrap</Link></li>
                 </ul>
                 <ul className="row">
-                    <li className="column">Business</li>
-                    <li className="column">Portfolio</li>
-                    <li className="column">Education</li>
-                    <li className="column">E-Commerce</li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">Business</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">Portfolio</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">Education</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/categoriespage">E-Commerce</Link></li>
                 </ul>
                 <ul className="row">
-                    <li className="column">Log In</li>
-                    <li className="column">Register</li>
-                    <li className="column">Privacy Policy !</li>
-                    <li className="column">Terms and Conditions *</li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="/Login">Log In</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="Registration">Register</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="#">Privacy Policy !</Link></li>
+                    <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="#">Terms and Conditions *</Link></li>
                 </ul>
-                <div className="row" id="ico"><div class="column"><i class="fab fa-youtube"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fas fa-envelope"></i></div>
+                <div className="row" id="ico"><div class="column"><a href="https://www.youtube.com/c/VRASM"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
                     </div>
             </div> 
             </center>

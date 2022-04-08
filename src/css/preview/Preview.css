@@ -232,9 +232,13 @@
 }
 
 /* review form  */
-.feedback-form{
-    width: 35%;
+.feedback-youtube{
+    display: flex;
+    flex-direction: row;
     margin: 3% 0 0 0;
+}
+.feedback-form{
+    width: 40%;
     padding: 2% 0 ;
     /* box-shadow: 1px 1px 6px rgb(201, 200, 200,.2); */
     text-align: center;
@@ -313,6 +317,33 @@
 }
 .ratings-radio{
     display: none;
+}
+.youtube{
+    width: 60%;
+    background-color: transparent;
+    /* display: flex;
+    flex-direction: row; */
+    padding: 0 0 0 1%;
+}
+.youtube img{
+    width: 35%;
+    transition: all .10s ease;
+    padding: auto 0;
+    margin: 5% 0 0 31%;
+}
+.youtube img:hover{
+    margin-left: 32%;
+}
+.youtube-content{
+    text-align: center;
+}
+.youtube-span{
+    width: 80%;
+    margin: 0 auto;
+}
+.youtube-title{
+    width: 100%;
+    white-space: nowrap;
 }
 
 

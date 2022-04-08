@@ -140,7 +140,7 @@ function Preview(){
                     </div>
                 </div>  
             </div>
-
+            <div className="feedback-youtube">
             <div className="feedback-form">
                 <h5 className="feedback-title">Your Opinion Matters !</h5>
                 <div className="feedback-inputs">
@@ -150,7 +150,15 @@ function Preview(){
                     <button type="submit" className="feedback-btn">Send</button>
                 </div>
                 <div className="closing"><text className="thank-you">Thank You !</text></div>
-            </div>  
+            </div> 
+            <div className="youtube">
+                    <div className="youtube-content">
+                        <h4 className="youtube-title">Need Help ?</h4>
+                        <p className="youtube-span">Don't know how to use These Templates ?  Watch our Tutorials and give some support..</p>
+                    </div>
+                <a href="https://www.youtube.com/c/VRASM"><img src="/Images/youtube-clip.png" /></a>
+            </div> 
+            </div>
             </div> 
         </div>
             <Footer />

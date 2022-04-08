@@ -1,5 +1,5 @@
 .footer{
-    margin-top: 5%;
+    margin-top: 2%;
     height: auto;
     background: rgb(90, 45, 134);
 }
@@ -57,7 +57,7 @@
     margin-top: -12px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
     .footer{
         margin-top: 15%;
     }

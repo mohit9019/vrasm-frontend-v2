@@ -4,10 +4,10 @@ import Footer from "./Footer";
 import Categories from "../categories/Categories";
 import "../../css/home/Card.css";
 import ApiCaller from "../../apiCaller.js/apiCaller";
-import Categoriespage from "../categories/Categoriespage";
 import details from "./Detailsmap";
 import Searchbar from "./Searchbar";
 import {Link } from 'react-router-dom';
+import Aboutus from "./Aboutus";
 function ScrolltoTop(){
   const c=540;
   window.scrollTo({
@@ -60,6 +60,7 @@ function Home() {
     </div>
     <div className="seemore"><Link to="/categoriespage" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more <i class="fad fa-angle-right"></i></p></Link></div>
 
+    <Aboutus />
     <Footer />
     </div>
     </>);

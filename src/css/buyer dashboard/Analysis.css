@@ -15,7 +15,7 @@
     justify-content: space-evenly;
 }
 .stats-card{
-    width: 22%;
+    width: 22%; 
     padding: 1.5%;
     text-align: center;
     /* border: rgb(114, 114, 114) 1px solid; */
@@ -28,6 +28,7 @@
     border-radius: 50%;
     text-align: center;
     margin: 0 auto 5% auto;
+    animation: animate 2s ease infinite;
 }
 .stats-n{
     color: rebeccapurple;
@@ -168,13 +169,13 @@
 }
 @keyframes animate {
     100%{
-        stroke-dashoffset: 0;
+        border:10px solid rebeccapurple;
     }
     50%{
-        stroke-dashoffset: 500;
+        border:10px solid rgb(141, 51, 153);
     }
     0%{
-        stroke-dashoffset: 0;
+        border:10px solid rebeccapurple;
     }
     
 }
