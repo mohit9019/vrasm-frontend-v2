@@ -15,6 +15,9 @@ function Registration() {
   function register(e) {
     e.preventDefault(); 
     console.log("clicked");
+    // if(password!=cpassword){
+    //   return false;
+    // }
     let Email=e.target.email.value;
     let body = {
       name: 'manav',
@@ -93,27 +96,28 @@ function Registration() {
      return()=>clearInterval(timer);
    },[counter]);
 
+const [password,setPassword]=useState(null);
+const [cpassword,setcPassword]=useState(null);
 const [is_register,setis_register]=useState(0);
   return (
     <>
     {is_register==0?
-    
       <div className="background">
         <div className="regist">
           <form onSubmit={register}> 
             <div className="regist-col">
               <label className="regist-label">E-mail</label>
-              <input type="tel" className="regist-input" name="email" placeholder="Enter email" ></input>
+              <input type="tel" className="regist-input" name="email" placeholder="Enter email"  required></input>
             </div>
 
             <div className="regist-col">
               <label className="regist-label">Password</label>
-              <input type="password" className="regist-input" name="password" placeholder="Enter Password" ></input>
+              <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} className="regist-input" name="password" placeholder="Enter Password"  minLength={3} maxLength={10} required></input>
             </div>
 
             <div className="regist-col">
               <label className="regist-label">Confirm Password</label>
-              <input type="password" className="regist-input" placeholder="Enter Confirm Password"   ></input>
+              <input type="password" value={cpassword}  onChange={(e)=> setcPassword(e.target.value)} className="regist-input" placeholder="Enter Confirm Password" id="comform" required></input>
             </div>
 
             <div className="regist-col">
