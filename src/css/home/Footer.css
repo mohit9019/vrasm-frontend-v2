@@ -31,8 +31,9 @@
     font-size: 75%;
 }
 .row i:hover{
-    color: white;
-    font-size: 195%;
+    /* color: white; */
+   
+    font-size: 200%;
 }
 .line{
     width: 70%;

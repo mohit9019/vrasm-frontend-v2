@@ -1,17 +1,19 @@
 import "../../css/cart/Cart.css";
 import {Link} from "react-router-dom";
-import Data from "../home/Data";
 import RatedStars from "../preview/RatedStars";
 
 function Cart(){
-    let CartData = [Data[0],Data[1],Data[2]];   
+    const is_cart=0;
     return(
         <>
-        {/* <div className="searchbar"><i class="fas fa-search"></i><input className="search"></input></div>
-        <div className="oops"><p className="msg">Oops... Your Cart is Empty</p></div> */}
-        {/* <div className="crtcont">        
-        {CartData.map(details)}
-        </div> */}
+        {
+            is_cart==0 ?<> <div className="oops"><p className="oops-title">Oops... Your Cart is Empty</p>
+                            <Link to="/Categoriespage" style={{textDecoration:"none"}}><p className="browse-option"><i class="far fa-file-search"></i> Browse Templates</p></Link>
+                            <div className="oops-clip"><img src="/Images/oops-clip.png" /></div>
+                            </div>
+                            </>
+            :
+        <>
         <h5 className="msg">Your Cart</h5>
         <div className="cart-cont">
         <div className="crt">
@@ -40,6 +42,8 @@ function Cart(){
             </div>
             </div>
             </div>
+            </>
+        }
         </>
     );
 }

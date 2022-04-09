@@ -1,12 +1,29 @@
 .oops{
     width: 100%;
-    margin: 0 auto 0 auto;
-} 
-.msg{
+}
+.oops-title, .browse-option,.msg{
     margin-top: 1%;
-    font-size: 25px;
-    color: rgb(24, 24, 24);
+    color: rgb(81, 80, 80);
     text-align: center;
+}
+.oops-title{
+    font-size: 170%;
+}
+.browse-option{
+    margin: 2% 0 0 0;
+    font-size: 110%;
+}
+.browse-option:hover{
+    color: rebeccapurple;
+    font-size: 115%;
+    text-decoration: underline;
+}
+.oops-clip{
+    width: 50%;
+    margin: 4% 0 0 30%;
+}
+.oops-clip img{
+    width: 60%;
 }
 .crt{
     display: flex;

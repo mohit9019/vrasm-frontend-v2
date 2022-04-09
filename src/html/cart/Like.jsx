@@ -1,17 +1,18 @@
 import React from "react";
 import "../../css/cart/Like.css";
-import Data from "../home/Data";
 import RatedStars from "../preview/RatedStars";
 import {AiFillHeart} from "react-icons/ai";
+import { Link } from "react-router-dom";
 function Like(){
-    let CartData = [Data[4],Data[3]];
+    const is_like=0
     return(
         <>
-            {/* <div className="oops"><p className="msg">Oops... you didn't save any yet</p></div>
-            <center><Link to="/" className="home" style={{textDecoration:"none"}}><i class="fas fa-home"></i></Link></center> */}
-            {/* <div className="crtcont">
-            {CartData.map(details)}
-            </div> */}
+        {is_like==0 ? <div className="oops"><p className="oops-title">Oops... You Haven't liked any Templates</p>
+                            <Link to="/Categoriespage" style={{textDecoration:"none"}}><p className="browse-option"><i class="far fa-file-search"></i> Browse Templates</p></Link>
+                            <div className="oops-clip"><img src="/Images/oops-clip.png" /></div>
+                            </div>
+                            :
+                            <>
             <h3 className="msg">Liked Templates </h3>
         <div className="crt-cont">
         <div className="like">
@@ -31,6 +32,8 @@ function Like(){
                 </div>
             </div>
             </div>
+            </>
+        }
         </>
     );
 }
