@@ -18,10 +18,10 @@ function Login(){
       if(data && data.status_code=='1')
         toast.success('Log-in succesfully',{autoClose:2000});
       else
-        toast.error('Something went wrong',{autoClose:2000});
+        toast.error(data.status_message,{autoClose:2000});
       console.log(data);
     })
-    .catch(err=>{
+    .catch(err=>{ 
       console.log(err);
     })
   }

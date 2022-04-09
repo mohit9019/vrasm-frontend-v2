@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import './App.css';
 import Home from "./html/home/Home";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -18,6 +18,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Loader from "./html/other/Loader";
 import Payment from "./html/preview/Payment";
 function App() {
+
+  const [templates, setTempaltes] = useState([]);
+  const [selectedTemlate, setSelectedTemplate] = useState({});
   return (<>
 {/* <Loader /> */}
     <Navba />
