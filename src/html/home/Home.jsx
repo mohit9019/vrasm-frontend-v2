@@ -26,7 +26,7 @@ function Home() {
     let apiCaller = new ApiCaller();
     apiCaller.postData({
       url: 'template/get',
-      data:{user_id:'123456789101'} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+      data:{} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res=>{
       if(res && res.status_code == '1'){
         setData(res.data);

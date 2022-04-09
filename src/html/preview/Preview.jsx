@@ -5,6 +5,8 @@ import { useState } from "react";
 import Slider from "react-slick";
 import RatedStars from "./RatedStars";
 import Ratings from "./Ratings";
+import ApiCaller from "../../apiCaller.js/apiCaller";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 const tags=["html","css",'bootstrap','tailwind','h'];
@@ -12,6 +14,28 @@ const i='/Images/113.jpg';
 const images = ['/Images/longss.webp',i,'/Images/p.jpg'];
 
 function Preview(){
+
+    function downloadzip(e){
+        e.preventDefault(); 
+        console.log("clicked");
+        let body = {
+            template_id:e.target.template_id,
+        }
+        let apiCaller = new ApiCaller();
+        apiCaller.postData({
+        url:'user/login',
+        data:body
+        }).then(data=>{
+        if(data && data.status_code=='1')
+            toast.success('Log-in succesfully',{autoClose:2000});
+        else
+            toast.error(data.status_message,{autoClose:2000});
+        console.log(data);
+    })
+    .catch(err=>{ 
+      console.log(err);
+    })
+    }
 
     const NextArrow =({onClick})=>{return(<><div className="arrow next" onClick={onClick}><i class="fad fa-angle-right"></i></div></>);};
     const PrevArrow =({onClick})=>{return(<><div className="arrow prev" onClick={onClick}><i class="fad fa-angle-left"></i></div></>);};
@@ -30,6 +54,8 @@ function Preview(){
         prevArrow:<PrevArrow />,
         beforeChange: (current,next)=>setImageIndex(next),
     };
+
+    const [download,setDownload]=useState(0);
     return(
         <>
 
@@ -45,7 +71,10 @@ function Preview(){
                 <div className="preview-stars"><RatedStars /></div>
                 <div className="preview-btns">
                     <button className="preview-cart"><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
-                    <Link to="/Payment" className="buy-btn"><button className="buy-btn"><i class="far fa-shopping-bag"></i><span>Buy Now</span></button></Link>
+                    {/* <Link to="/Payment" className="buy-btn"> */}
+                    <button className="buy-btn" onClick={()=>setDownload(1)}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
+                    {/* </Link> */}
+                    {download==0?null:<button className="buy-btn"><i class="far fa-download"></i><span>Download zip</span></button>}
                 </div>
             </div>
             <div className="image-carousel">

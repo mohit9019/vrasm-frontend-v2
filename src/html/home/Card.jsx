@@ -3,7 +3,6 @@ import "../../css/home/Card.css";
 import { Link } from "react-router-dom";
 import {AiFillHeart} from "react-icons/ai";
 // import {cart} from "./Data";
-import Data from "./Data";
 const Card=(props)=>{
   return(  
     <> 
