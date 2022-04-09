@@ -13,7 +13,6 @@ class ApiCaller {
 
   // }
   postData({ url, data }) {
-    console.log(url);
     return axios.post(this.site + url, data)
       .then(data => {
         if(url == 'user/login' && data.data.status_code == '1'){
