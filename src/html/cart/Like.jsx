@@ -1,8 +1,7 @@
 import React from "react";
 import "../../css/cart/Like.css";
-import RatedStars from "../preview/RatedStars";
-import {AiFillHeart} from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Likecard from "./Likecard";
 function Like(){
     const is_like=0
     return(
@@ -18,16 +17,7 @@ function Like(){
         <div className="like">
         <div className="crt-my-order">
         <div className="crt-order-card">
-                    <div className="crt-order-cont ">
-                    <div className="crt-order-img"><img src="/images/q.jpg" altlt="image" /></div>
-                    <div className="crt-order-details">
-                        <span className="crt-order-name">Quarter – Real Estate</span>
-                        <span className="crt-order-desc">Quarter is a Real Estate, Architecture & interior design Bootstrap 5 HTML Template for real estate website.</span>
-                        <div className="crt-stars"><RatedStars /></div>
-                    </div>
-                    <div className="crt-order-price">Rs.20</div>
-                        <div><AiFillHeart className="save-icon" id="unlike" /></div>
-                    </div>
+                    <Likecard />
                 </div>
                 </div>
             </div>
