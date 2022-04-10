@@ -2,7 +2,7 @@ import axios from "axios";
 import Loader from "../html/other/Loader";
 class ApiCaller {
 
-  static userData = {};
+  static userData = JSON.parse(localStorage.getItem('userData'));
   open_access_apis = ['/template/get', '/user/login', '/user/forget_password', '/admin/get_users', '/buyer/register', '/buyer/otp'];
   site = 'http://localhost:4000/v1/';
 
