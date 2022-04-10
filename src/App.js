@@ -19,6 +19,16 @@ import Loader from "./html/other/Loader";
 import Payment from "./html/preview/Payment";
 function App() {
 
+  function checkLogin(){
+    let userData = localStorage.getItem('userData');
+    if(userData && userData.length > 0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
   const [templates, setTempaltes] = useState([]);
   const [selectedTemlate, setSelectedTemplate] = useState({});
   return (<>
@@ -38,18 +48,18 @@ function App() {
       pauseOnHover
     />
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route exact path="/" element={checkLogin() ? <Home /> : <Login />} />
       <Route exact path="/Login" element={<Login />} />
-      <Route exact path="/Like" element={<Like />} />
+      <Route exact path="/Like" element={checkLogin() ? <Like />:<Login />} />
       <Route exact path="/Registration" element={<Registration />} />
-      <Route exact path="/Cart" element={<Cart />} />
-      <Route exact path="/Buyerdash/*" element={<Buyerdash />} />
-      <Route exact path="/creatordash/*" element={<Creatordash />} />
-      <Route exact path="/preview/:id" element={<Preview />} /> 
-      <Route exact path="/categoriespage/*" element={<Categoriespage />} /> 
-      <Route exact path="/OtpVerification/*" element={<OtpVerification />} />
+      <Route exact path="/Cart" element={checkLogin() ? <Cart />:<Login />} />
+      <Route exact path="/Buyerdash/*" element={checkLogin() ? <Buyerdash />:<Login />} />
+      <Route exact path="/creatordash/*" element={checkLogin()? <Creatordash /> : <Login />} />
+      <Route exact path="/preview/:id" element={checkLogin() ? <Preview /> : <Login />} /> 
+      <Route exact path="/categoriespage/*" element={checkLogin() ? <Categoriespage /> : <Login />} /> 
+      <Route exact path="/OtpVerification/*" element={checkLogin() ? <OtpVerification /> : <Login />} />
       <Route exact path="/Loader" element={<Loader />} />
-      <Route exact path="/Payment" element={<Payment />} />
+      <Route exact path="/Payment" element={checkLogin() ? <Payment /> : <Login />} />
     </Routes>
   </>);
 }
