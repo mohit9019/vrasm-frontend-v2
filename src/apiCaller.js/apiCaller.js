@@ -34,7 +34,7 @@ class ApiCaller {
         return data.data
       })
       .catch(err => {
-        Loader.setLoader(0);
+        // Loader.setLoader(0);
         console.log(err);
       })
 
