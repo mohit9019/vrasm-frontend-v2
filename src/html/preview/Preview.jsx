@@ -32,10 +32,22 @@ function Preview() {
         })
     }, []);
 
-
-    function downloadFile(url){
-        saveAs('https://media.istockphoto.com/photos/wind-farm-at-sunset-picture-id1301243910?s=612x612');
+    function addToCart(){
+        console.log('add to cart');
+        let apiCaller = new ApiCaller();
+        apiCaller.postData({
+            url:'template/add_to_cart',
+            data:{
+                template_id,
+                action:'add'
+            }
+        }).then(data=>{
+            if(data && data.status_code == '1'){
+                toast.success('template added to cart');
+            }
+        })
     }
+
     function downloadzip() {
         let body = {
             template_id: templateData._id
@@ -94,8 +106,7 @@ function Preview() {
                         </div>
                         <div className="preview-stars"><RatedStars /></div>
                         <div className="preview-btns">
-                            <a href="file:///C:/Users/Mohit%20Chauhan/Desktop/STORAGE//template_zip/18zhyecd.jpg">click</a>
-                            <button className="preview-cart"><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
+                            <button className="preview-cart" onClick={()=>addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             {/* <Link to="/Payment" className="buy-btn"> */}
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
                             {/* </Link> */}

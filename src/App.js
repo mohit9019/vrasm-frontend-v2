@@ -53,8 +53,8 @@ function App() {
       <Route exact path="/Like" element={checkLogin() ? <Like />:<Login />} />
       <Route exact path="/Registration" element={<Registration />} />
       <Route exact path="/Cart" element={checkLogin() ? <Cart />:<Login />} />
-      <Route exact path="/Buyerdash/*" element={checkLogin() ? <Buyerdash />:<Login />} />
-      <Route exact path="/creatordash/*" element={checkLogin()? <Creatordash /> : <Login />} />
+      <Route exact path="/Buyerdash/*" element={checkLogin() ? <Buyerdash /> : <Login />} />
+      <Route exact path="/creatordash/*" element={checkLogin() ? <Creatordash /> : <Login />} />
       <Route exact path="/preview/:id" element={checkLogin() ? <Preview /> : <Login />} /> 
       <Route exact path="/categoriespage/*" element={checkLogin() ? <Categoriespage /> : <Login />} /> 
       <Route exact path="/OtpVerification/*" element={checkLogin() ? <OtpVerification /> : <Login />} />

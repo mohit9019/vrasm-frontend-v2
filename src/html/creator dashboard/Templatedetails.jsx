@@ -10,7 +10,6 @@ function Tenmplatedetails() {
     const [template_id, setTemplateId] = useState('');
     function templateupload(e) {
         e.preventDefault();
-        console.log(ApiCaller.userData)
         let body = {
             creator_id: ApiCaller.userData.user_id, // this is sample creator_id of nandita mam for testing, you have to pass the creator_id when user comes
             name: e.target.name.value,
