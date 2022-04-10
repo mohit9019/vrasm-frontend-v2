@@ -47,7 +47,7 @@ function Preview() {
         }).then(data => {
             if (data && data.status_code == '1'){
                 setTimeout(() => {
-                    setDownloadZippath(data.data.zip);
+                    setDownloadZippath('/STORAGE/'+data.data.zip);
                     console.log('path', data.data);
                     toast.success('template bought succesfully', { autoClose: 2000 });
                 }, 2000);
@@ -99,7 +99,7 @@ function Preview() {
                             {/* <Link to="/Payment" className="buy-btn"> */}
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
                             {/* </Link> */}
-                            {downloadZippath == '' ? null : <button onClick={downloadFile(downloadZippath)} className="buy-btn" ><i class="far fa-download"></i><span>Download zip</span></button>}
+                            {downloadZippath == '' ? null : <a href={downloadZippath} className="buy-btn" download="template.zip"><i class="far fa-download"></i><span>Download zip</span></a>}
                         </div>
                     </div>
                     <div className="image-carousel">
