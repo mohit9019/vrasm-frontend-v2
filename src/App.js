@@ -45,7 +45,7 @@ function App() {
       <Route exact path="/Cart" element={<Cart />} />
       <Route exact path="/Buyerdash/*" element={<Buyerdash />} />
       <Route exact path="/creatordash/*" element={<Creatordash />} />
-      <Route exact path="/preview" element={<Preview />} /> 
+      <Route exact path="/preview/:id" element={<Preview />} /> 
       <Route exact path="/categoriespage/*" element={<Categoriespage />} /> 
       <Route exact path="/OtpVerification/*" element={<OtpVerification />} />
       <Route exact path="/Loader" element={<Loader />} />

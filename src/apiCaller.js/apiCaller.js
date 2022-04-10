@@ -16,7 +16,7 @@ class ApiCaller {
     // Loader.setLoader(1);
     if (localStorage.getItem('userData') && localStorage.getItem('userData').length > 0) {
       let userData = JSON.parse(localStorage.getItem('userData'));
-      // data['user_id'] = userData.user_id;
+      data['user_id'] = userData.user_id;
       data['accesstoken'] = userData.accesstoken;
     }
     return axios.post(this.site + url, data)

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {AiFillHeart} from "react-icons/ai";
 // import {cart} from "./Data";
 const Card=(props)=>{
+  let id = '6225a181ffb0259ddab852ba';
   return(  
     <> 
     <div className="card-cont">
@@ -16,7 +17,7 @@ const Card=(props)=>{
         <span className="card-stars">{props.review}</span>
         <div className="card-about"><span className="card-sale">Sale: {props.sale}</span><span className="card-price">{props.price}</span></div>
         <div className="card-btns">
-        <Link  to="/Preview/"  style={{textDecoration:"none", color:"darkgray"}} >
+        <Link  to={{pathname:`/Preview/id?${props._id}`}}  style={{textDecoration:"none", color:"darkgray"}} >
           <button className="preview-btn"><i class="fad fa-eye"></i><span className="card-btn-title">Preview</span></button>
         </Link>
         <Link to="#" style={{textDecoration:"none", color:"darkgray"}}>
