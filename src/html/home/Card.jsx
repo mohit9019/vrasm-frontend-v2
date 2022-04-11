@@ -22,11 +22,25 @@ const Card=(props)=>{
         }
     })
   }
+  function addToLike(template_id){
+    let apiCaller = new ApiCaller();
+    apiCaller.postData({
+        url:'template/like',
+        data:{
+            template_id,
+            action:'add'
+        }
+    }).then(data=>{
+        if(data && data.status_code == '1'){
+            toast.success('template Liked');
+        }
+    })
+  }
   return(  
     <> 
     <div className="card-cont">
       <div className="image_div">
-      <div className="save" ><div className="save-round"><label for="toggle"><AiFillHeart className="save-icon" /></label></div></div>
+      <div className="save" ><div className="save-round"><label for="toggle"><AiFillHeart className="save-icon" onClick={()=>{addToLike(props._id)  }} /></label></div></div>
       <img src={props.img} className="img" alt="IMAGE"/></div>
       <div className="card-content"> 
         <span className="card-name">{props.title}</span>

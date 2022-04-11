@@ -210,10 +210,13 @@
 .save-icon:hover{
   color: rgb(153, 11, 248);
 }
-#toggle:checked ~ .save-icon{
+.saved-temp{
+  color: rgb(153, 11, 248);
+}
+/* #toggle:checked ~ .save-icon{
   display: block;
   color: #7358b7;
-}
+} */
 .card-about{
   margin-top: 2%;
   height: 30px;

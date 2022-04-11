@@ -1,12 +1,11 @@
 import RatedStars from "../preview/RatedStars";
-import {Link} from "react-router-dom";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 export default function CartCards(props){
     function deleteFromCart(template_id){
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url:'template/add_to_cart',
+            url:'template/add_to_cart', 
             data:{
                 template_id,
                 action:'delete'
@@ -14,11 +13,11 @@ export default function CartCards(props){
         }).then(data=>{
             if(data && data.status_code == '1'){
                 props.onDelete();
-                toast.success('template deleted from cart');
+                toast.success('Template deleted from cart');
             }
         })
     }    
-    return(
+    return( 
         <>
                 <div className="crt-order-card">
                     <div className="crt-order-cont ">

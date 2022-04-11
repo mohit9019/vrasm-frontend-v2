@@ -42,7 +42,7 @@ function Tenmplatedetails() {
     return (
         <>
             {
-                Details_saved == 0 ?
+                Details_saved == 1 ?
                     <>
                         {/* designed image upload form */}
                         {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}
@@ -87,7 +87,7 @@ function Tenmplatedetails() {
                                     <Form.Control name="price" type="number" min={50} placeholder="Rs." required />
                                 </Form.Group>
 
-                                <button className="dash-button" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }} type="submit">
+                                <button className="dash-button" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }} type="submit" >
                                     Save & Next
                                 </button>
                             </Form>
@@ -95,7 +95,7 @@ function Tenmplatedetails() {
                     </>
                     :
                     <>
-                        <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
+                        {/* <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
 
                             <input type="file" name="file"></input>
                             <input type="file" name="file"></input>
@@ -104,7 +104,37 @@ function Tenmplatedetails() {
                             <input type="text" style={{ visibility: 'hidden' }} id="user_id" name="user_id" value={ApiCaller.userData.user_id}></input>
                             <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input>
                             <button type="submit">submit</button>
-                        </form>
+                        </form> */}
+                        <h3 className="n">Upload Documents</h3>
+                        <div className="documents">
+                            <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
+                                <Form.Group controlId="formFile" className="mb-3">
+                                    <Form.Label>Promotional Image</Form.Label>
+                                    <Form.Control type="file" />
+                                    <input type="text" style={{ visibility: 'hidden' }} id="template_id" name="template_id" value={template_id}></input>
+                                </Form.Group>
+
+                                <Form.Group controlId="formFileMultiple" className="mb-3">
+                                    <Form.Label>Other Images</Form.Label>
+                                    <Form.Control type="file" />
+                                    <input type="text" style={{ visibility: 'hidden' }} id="user_id" name="user_id" value={ApiCaller.userData.user_id}></input>
+                                </Form.Group>
+
+                                <Form.Group controlId="formFileMultiple" className="mb-3">
+                                    <Form.Label>Other Images</Form.Label>
+                                    <Form.Control type="file" />
+                                    <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input>
+                                </Form.Group>
+
+                                <Link to="/Creatordash/Uploadtemp/Templatedetails"><button className="dash-button" variant="primary" name="file" type="submit" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }}>
+                                    <i class="fas fa-arrow-circle-left"></i>
+                                </button></Link>
+
+                                <Link to=""><button className="dash-button" variant="primary" name="file" type="submit" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%', float: 'right' }}>
+                                    Save & Next
+                                </button></Link>
+                            </form>
+                        </div>
                     </>
             }
         </>);
