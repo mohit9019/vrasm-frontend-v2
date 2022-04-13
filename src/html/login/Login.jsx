@@ -32,18 +32,18 @@ function Login(){
         <form onSubmit={login}>
         <div className="regist-col">
         <label className="regist-label">Email address</label>
-        <input type="email" className="regist-input" placeholder="Enter email" name="email"></input>
+        <input type="email" className="regist-input" placeholder="Enter email" name="email" required></input>
         <label style={{fontSize:'13px',color:'rgb(120, 120, 121)',marginTop:'3px'}} class="text-muted">We'll never share your email with anyone else.</label>
         </div>
 
         <div className="regist-col">
         <label className="regist-label">Password</label>
-        <input type="password" className="regist-input" placeholder="Enter Password" name="password"></input>
+        <input type="password" className="regist-input" placeholder="Enter Password" minLength={3} maxLength={10} name="password" required></input>
         </div>
         
         <div className="regist-col">
         <div className="regist-row">
-        <input type="checkbox" name="register" className="radio-button" placeholder="Passwords"  style={{height:'1.01rem',marginTop:'5px'}}></input>
+        <input type="checkbox" name="register" className="radio-button" placeholder="Passwords"  style={{height:'1.01rem',marginTop:'5px'}} required></input>
         <label className="regist-label">Agree with Terms & Conditions</label>
         </div>
         </div> 

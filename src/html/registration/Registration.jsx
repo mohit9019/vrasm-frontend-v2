@@ -15,9 +15,7 @@ function Registration() {
   function register(e) {
     e.preventDefault(); 
     console.log("clicked");
-    // if(password!=cpassword){
-    //   return false;
-    // }
+    
     let Email=e.target.email.value;
     let body = {
       name: 'manav',
@@ -104,10 +102,11 @@ const [is_register,setis_register]=useState(0);
     {is_register==0?
       <div className="background">
         <div className="regist">
-          <form onSubmit={register}> 
+
+          <form onSubmit={register}>
             <div className="regist-col">
               <label className="regist-label">E-mail</label>
-              <input type="tel" className="regist-input" name="email" placeholder="Enter email"  required></input>
+              <input type="email" className="regist-input" name="email" placeholder="Enter email"  required></input>
             </div>
 
             <div className="regist-col">
@@ -115,16 +114,17 @@ const [is_register,setis_register]=useState(0);
               <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} className="regist-input" name="password" placeholder="Enter Password"  minLength={3} maxLength={10} required></input>
             </div>
 
-            <div className="regist-col">
+            <div className="regist-col"> 
               <label className="regist-label">Confirm Password</label>
               <input type="password" value={cpassword}  onChange={(e)=> setcPassword(e.target.value)} className="regist-input" placeholder="Enter Confirm Password" id="comform" required></input>
+              {password!=cpassword?<span className="password-caution"><i class="fal fa-exclamation-circle"></i> password doesn't matched</span>:null}
             </div>
 
             <div className="regist-col">
               <div className="regist-row">
-                <input type="radio" name="gender" value="male" className="radio-button" ></input>
+                <input type="radio" name="gender" value="male" className="radio-button" required></input> 
                 <label className="regist-label" style={{ marginRight: '20px' }}>Male</label>
-                <input type="radio" name="gender" value="female" className="radio-button" ></input>
+                <input type="radio" name="gender" value="female" className="radio-button" required></input>
                 <label className="regist-label">Female</label>
               </div>
             </div> 
@@ -157,7 +157,7 @@ const [is_register,setis_register]=useState(0);
               </div>
 
             </div> : null}
-            <button className="regist-button" type="submit" >
+            <button className="regist-button" type="submit" disabled={password!=cpassword? true: false} >
               Submit
             </button>
 

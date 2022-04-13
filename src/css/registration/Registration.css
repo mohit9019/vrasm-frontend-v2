@@ -233,6 +233,11 @@
 .toaster-text{
   color: rgb(236, 234, 234);
 }
+.password-caution{
+  color: red;
+  margin: 2% 0 0 5%;
+  font-size: 70%;
+}
 
 @media only screen and (max-width: 480px) {
     .background{
