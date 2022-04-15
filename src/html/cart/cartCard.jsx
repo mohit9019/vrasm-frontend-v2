@@ -21,7 +21,7 @@ export default function CartCards(props){
         <>
                 <div className="crt-order-card">
                     <div className="crt-order-cont ">
-                    <div className="crt-order-img"><img src={props.img} altlt="image" /></div>
+                    <div className="crt-order-img"><img src="/Images/default.webp" alt="image" /></div>
                     <div className="crt-order-details">
                         <span className="crt-order-name">{props.title}</span>
                         <span className="crt-order-desc">{props.desc}</span>

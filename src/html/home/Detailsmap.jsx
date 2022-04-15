@@ -6,7 +6,7 @@ function details(val){
         <div className="templetes">
         <Card 
           _id={val._id}
-          img='/Images/ecolife.jpg'
+          img='/Images/default.webp'
           title={val.name}
           desc={val.desc}
           review={<RatedStars></RatedStars>}

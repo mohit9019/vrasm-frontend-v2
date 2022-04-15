@@ -55,7 +55,7 @@ function Categoriespage(){
 <div className='categories-content'>
   <label for='toggle' className='button'><i class="fad fa-bars"></i></label>
   <div className="categories-search"><Searchbar /></div>
-  <div className="card-scroller" style={{marginTop:'10%'}}>
+  <div className="card-scroller" style={{margin:'1% 0 0 0'}}>
     <div className="cards">
     {
        Data.map(details)

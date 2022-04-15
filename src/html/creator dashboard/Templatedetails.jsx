@@ -121,7 +121,7 @@ function Tenmplatedetails() {
                                 </Form.Group>
 
                                 <Form.Group controlId="formFileMultiple" className="mb-3">
-                                    <Form.Label>Other Images</Form.Label>
+                                    <Form.Label>Zip File</Form.Label>
                                     <Form.Control type="file" />
                                     <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input>
                                 </Form.Group>

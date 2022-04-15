@@ -14,7 +14,7 @@ function Navba() {
     return !value;
   }
     const [show, setShow] = useState(false);
-  const [is_verified,setIs_verified]=useState(0);
+  const [is_verified,setIs_verified]=useState(1);
     return (
       <>
         <div className="top">

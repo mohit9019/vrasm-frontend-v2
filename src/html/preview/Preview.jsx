@@ -107,9 +107,7 @@ function Preview() {
                         <div className="preview-stars"><RatedStars /></div>
                         <div className="preview-btns">
                             <button className="preview-cart" onClick={()=>addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
-                            {/* <Link to="/Payment" className="buy-btn"> */}
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
-                            {/* </Link> */}
                             {downloadZippath == '' ? null : <a href={downloadZippath} className="buy-btn" download="template.zip"><i class="far fa-download"></i><span>Download zip</span></a>}
                         </div>
                     </div>
