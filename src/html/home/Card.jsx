@@ -28,7 +28,7 @@ const Card=(props)=>{
         url:'template/like',
         data:{
             template_id,
-            action:'add'
+            action:'like'
         }
     }).then(data=>{
         if(data && data.status_code == '1'){

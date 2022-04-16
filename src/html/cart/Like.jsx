@@ -5,42 +5,34 @@ import Likecard from "./Likecard";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 function Like(){
-    const is_like=0;
-    const [templates, setTemplates] = useState([1]);
+    const is_like=1;
+    const [templates, setTemplates] = useState([]);
     useEffect(() => {
-        let apiCaller = new ApiCaller();
-        apiCaller.postData({
-            url: 'template/like',
-            data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
-        }).then(res => {
-            if (res && res.status_code == '1') {
-                setTemplates(res.data.data);
-                console.log(templates);
-            }
-        })
+        handleCallback();
     }, []);
 
     function handleCallback(){
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url: 'template/like',
-            data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+            url: 'template/get',
+            data: {
+                type:'like'
+            } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
         }).then(res => {
             if (res && res.status_code == '1') {
-                setTemplates(res.data.data);
-                console.log(templates);
+                setTemplates(res.data);
             }
         })
     }
     function cards(templates) {
         return <>
-            <Likecard onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></Likecard>
+            <Likecard onDelete={()=>handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></Likecard>
         </>;
     }
 
     return(
         <>
-        {is_like==0 ? <div className="oops"><p className="oops-title">Oops... You Haven't liked any Templates</p>
+        {templates.length ==0 ? <div className="oops"><p className="oops-title">Oops... You Haven't liked any Templates</p>
                             <Link to="/Categoriespage" style={{textDecoration:"none"}}><p className="browse-option"><i class="far fa-file-search"></i> Browse Templates</p></Link>
                             <div className="oops-clip"><img src="/Images/oops-clip.png" /></div>
                             </div>

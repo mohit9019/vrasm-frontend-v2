@@ -9,12 +9,11 @@ export default function Likecard(props){
             url:'template/like',
             data:{
                 template_id,
-                action:'delete'
+                action:'unlike'
             }
         }).then(data=>{
             if(data && data.status_code == '1'){
                 props.onDelete();
-                toast.success('Template deleted from cart');
             }
         })
     }    
