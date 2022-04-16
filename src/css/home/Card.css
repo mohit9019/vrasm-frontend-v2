@@ -204,7 +204,6 @@
 }
 .save-icon{
   font-size: 130%;
-  color: rgb(213, 181, 238);
   padding: 10% 0 0 0;
 }
 .save-icon:hover{
@@ -256,20 +255,26 @@
   padding: 3%;
   float: right;
   width: 45%;
-  background-color: rgb(135, 67, 199);
+  background-color: rgb(255,255,255);
+  color: rgb(135, 67, 199);
+  border:.07rem solid rgb(135, 67, 199);
   margin-right: 6%;
 }
 .cart-btn:hover{
   background-color: rgb(121, 57, 180);
+  color: white;
 }
 .preview-btn{
   float: left;
   width: 35%;
-  background-color: rgb(164, 74, 199);
+  background-color: rgb(255,255,255);
+  color: rgb(164, 74, 199);
+  /* border:.1rem solid rgb(164, 74, 199); */
   margin-left: 6%;
 } 
 .preview-btn:hover{
   background-color: rgb(149, 42, 190);
+  color: white;
 }
 .card-btn-title{
   margin-left: 5%;

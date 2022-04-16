@@ -3,8 +3,9 @@ import Footer from "../home/Footer";
 import "../../css/preview/Preview.css";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
+import { FaStar } from "react-icons/fa";
 import RatedStars from "./RatedStars";
-import Ratings from "./Ratings";
+// import Ratings from "./Ratings";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 import { saveAs} from "file-saver";
@@ -18,6 +19,32 @@ function Preview() {
     let template_id = window.location.href.split('?')[1];
     const [templateData, setTemplateData] = useState({});
     const [downloadZippath, setDownloadZippath] = useState('');
+    const [rating, setRating] = useState(0);
+
+    function Ratings () {
+        
+        const [hover, setHover]=useState(null);
+        return (
+            <>
+            <div className="feedbackform-stars">
+            {[...Array(5)].map((star,i)=>{
+                const ratingValue=i+1;
+              return(
+                  <>
+                  <input type="radio" className="ratings-radio" name="rates" value={ratingValue}  />
+                  <FaStar className="stars" 
+                      onClick={()=>setRating(ratingValue)} 
+                      onMouseEnter={()=>setHover(ratingValue)}
+                      onMouseLeave={()=>setHover(null)}
+                      color={ratingValue<=(hover || rating) ? "rgb(248, 215, 31)" : "rgb(207, 206, 206)" } />
+                  </>
+              );
+            })}
+            {/* <p>you rated {rating } stars</p> */}
+            </div>
+          </>
+        );
+      };
 
     useEffect(() => {
         let apiCaller = new ApiCaller();
@@ -31,6 +58,34 @@ function Preview() {
             }
         })
     }, []);
+
+    function feedback(e) {
+        e.preventDefault(); 
+        console.log("clicked");
+        let body = {
+          rating:e.target.rating.value,
+          message:e.target.message.value,
+        }
+        let apiCaller = new ApiCaller();
+        apiCaller.postData({
+          url:'templates/feedback',
+          data:body
+        }).then(data=>{
+          if(data && data.status_code=='1')
+          {
+            toast.success('Feedback sent successfully');
+            setTimeout(() => {
+            }, 500);
+          } 
+          else
+            toast.error(data.status_message);
+          console.log(data);
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      }
+    
 
     function addToCart(){
         console.log('add to cart');
@@ -90,6 +145,7 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
+    
 
     const [download, setDownload] = useState(0);
     return (
@@ -206,12 +262,12 @@ function Preview() {
                     <div className="feedback-youtube">
                         <div className="feedback-form">
                             <h5 className="feedback-title">Your Opinion Matters !</h5>
-                            <div className="feedback-inputs">
+                            <form onSubmit={feedback} className="feedback-inputs">
                                 <Ratings />
-                                <input className="feedback-mail" placeholder="E-mail" />
-                                <textarea className="feedback-text" placeholder="Leave a Feedback" />
+                                <input name="rating" value={rating} style={{visibility:"hidden",height:"1px"}} />
+                                <textarea rows={5} name="message" className="feedback-text" placeholder="Leave a Feedback" />
                                 <button type="submit" className="feedback-btn">Send</button>
-                            </div>
+                            </form>
                             <div className="closing"><text className="thank-you">Thank You !</text></div>
                         </div>
                         <div className="youtube">

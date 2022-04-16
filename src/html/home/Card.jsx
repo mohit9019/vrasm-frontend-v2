@@ -32,15 +32,18 @@ const Card=(props)=>{
         }
     }).then(data=>{
         if(data && data.status_code == '1'){
-            toast.success('template Liked');
         }
     })
+  }
+  const [liked,setLiked]=useState(false);
+  function toggleSave(value){
+    return !value;
   }
   return(  
     <> 
     <div className="card-cont">
       <div className="image_div">
-      <div className="save" ><div className="save-round"><label for="toggle"><AiFillHeart className="save-icon" onClick={()=>{addToLike(props._id)  }} /></label></div></div>
+      <div className="save" style={liked?{display:"block"}:null} ><div className="save-round" style={liked?{color:"rgb(153, 11, 248)"}:{color:"rgb(213, 181, 238)"}}><AiFillHeart className="save-icon" onClick={()=>{addToLike(props._id); setLiked(toggleSave)}} /></div></div>
       <img src={props.img} className="img" alt="IMAGE"/></div>
       <div className="card-content"> 
         <span className="card-name">{props.title}</span>
@@ -49,10 +52,10 @@ const Card=(props)=>{
         <div className="card-about"><span className="card-sale">Sale: {props.sale}</span><span className="card-price">{props.price}</span></div>
         <div className="card-btns">
         <Link  to={{pathname:`/Preview/id?${props._id}`}}  style={{textDecoration:"none", color:"darkgray"}} >
-          <button className="preview-btn"><i class="fad fa-eye"></i><span className="card-btn-title">Preview</span></button>
+          <button className="preview-btn"><i class="fas fa-eye"></i><span className="card-btn-title">Preview</span></button>
         </Link>
         <Link to="#" style={{textDecoration:"none", color:"darkgray"}}>
-          <button className="cart-btn" onClick={()=>addToCart(props._id)}><i class="fad fa-shopping-cart"></i><span className="card-btn-title">Add to Cart</span></button>
+          <button className="cart-btn" onClick={()=>addToCart(props._id)}><i class="fas fa-shopping-cart"></i><span className="card-btn-title">Add to Cart</span></button>
         </Link> 
         </div>   
       </div>

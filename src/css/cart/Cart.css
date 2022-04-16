@@ -12,6 +12,7 @@
 .browse-option{
     margin: 2% 0 0 0;
     font-size: 110%;
+    transition: all .5s ease;
 }
 .browse-option:hover{
     color: rebeccapurple;
@@ -19,8 +20,8 @@
     text-decoration: underline;
 }
 .oops-clip{
-    width: 50%;
-    margin: 4% 0 0 30%;
+    width: 40%;
+    margin: 4% 0 0 35%;
 }
 .oops-clip img{
     width: 60%;

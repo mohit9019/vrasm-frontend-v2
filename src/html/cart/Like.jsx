@@ -5,7 +5,6 @@ import Likecard from "./Likecard";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 function Like(){
-    const is_like=1;
     const [templates, setTemplates] = useState([]);
     useEffect(() => {
         handleCallback();

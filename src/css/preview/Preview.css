@@ -22,8 +22,8 @@
     display: flex;
 }
 .user-dp{
-    height: 28px;
-    width: 28px;
+    height: 27px;
+    width: 26px;
     overflow: hidden;
     border-radius: 50%;
 }
@@ -267,7 +267,7 @@
     background-color: white;
 }
 .feedback-mail, .feedback-text{
-    width: 75%;
+    width: 70%;
     margin: 3% auto 0 auto;
     outline:none;
     font-size: 75%;
@@ -410,6 +410,13 @@
 .review-card{
     margin: 2.5% 0 0;
     width: 100%;
+}
+.feedback-youtube{
+    flex-direction: column-reverse;
+}
+.youtube{
+    width: 100%;
+    margin: 5% 0 0 0;
 }
 .feedback{
     font-size: 70%;

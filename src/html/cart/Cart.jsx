@@ -4,7 +4,6 @@ import CartCards from "./cartCard";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 function Cart() {
-    const is_cart = 1;
     const [templates, setTemplates] = useState([1]);
     useEffect(() => {
         let apiCaller = new ApiCaller();
