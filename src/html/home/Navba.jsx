@@ -4,7 +4,7 @@ import { useState } from "react";
 import {FaRegHeart} from 'react-icons/fa';
 function Navba() {
   const is_cart=0;
-  const is_creator=1;
+  const is_creator=0;
 
   const [togglenav, setTogglenav]=useState(0); 
   const NavActive =(index) =>{

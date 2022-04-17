@@ -41,12 +41,6 @@ function Login(){
         <input type="password" className="regist-input" placeholder="Enter Password" minLength={3} maxLength={10} name="password" required></input>
         </div>
         
-        <div className="regist-col">
-        <div className="regist-row">
-        <input type="checkbox" name="register" className="radio-button" placeholder="Passwords"  style={{height:'1.01rem',marginTop:'5px'}} required></input>
-        <label className="regist-label">Agree with Terms & Conditions</label>
-        </div>
-        </div> 
         <div className="regist-col"><label className="regiter"><Link to="/registration" style={{fontSize:"85%",textDecoration:"none"}}>New On This Site ?</Link></label> </div> 
 
         <button className="regist-button" type="submit">

@@ -9,7 +9,7 @@ function details(val){
           img='/Images/default.webp'
           title={val.name}
           desc={val.desc}
-          review={<RatedStars></RatedStars>}
+          review={val.rating}
           sale={val.sale}
           price={val.price}
         />

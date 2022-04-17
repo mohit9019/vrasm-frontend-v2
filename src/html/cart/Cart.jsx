@@ -30,7 +30,7 @@ function Cart() {
             }
         })
     }
-    function cards(templates) {
+    function cards(templates) { 
         return <>
             <CartCards onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
         </>;

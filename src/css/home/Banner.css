@@ -76,6 +76,7 @@
  .ban-text button:hover{
      border: none;
     background-color: rgb(202, 69, 202) ;
+    border: rgb(202, 69, 202,.9) 2px solid;
     color: white;
  }
  .ban-title{

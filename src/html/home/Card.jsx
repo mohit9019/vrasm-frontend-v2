@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {AiFillHeart} from "react-icons/ai";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
+import RatedStars from "../preview/RatedStars";
 // import {cart} from "./Data";
 const Card=(props)=>{
   let id = '6225a181ffb0259ddab852ba';
@@ -48,7 +49,7 @@ const Card=(props)=>{
       <div className="card-content"> 
         <span className="card-name">{props.title}</span>
         <span className="disc">{props.desc}</span>
-        <span className="card-stars">{props.review}</span>
+        <span className="card-stars"><RatedStars stars={props.rating}/></span>
         <div className="card-about"><span className="card-sale">Sale: {props.sale}</span><span className="card-price">{props.price}</span></div>
         <div className="card-btns">
         <Link  to={{pathname:`/Preview/id?${props._id}`}}  style={{textDecoration:"none", color:"darkgray"}} >

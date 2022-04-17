@@ -1,6 +1,6 @@
-import Navba from "../home/Navba";
 import Footer from "../home/Footer";
 import "../../css/preview/Preview.css";
+import FeedbackCard from "./feedbackCard";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { FaStar } from "react-icons/fa";
@@ -8,8 +8,6 @@ import RatedStars from "./RatedStars";
 // import Ratings from "./Ratings";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
-import { saveAs} from "file-saver";
-import { Link } from "react-router-dom";
 
 const tags = ["html", "css", 'bootstrap', 'tailwind', 'h'];
 const i = '/Images/113.jpg';
@@ -21,30 +19,30 @@ function Preview() {
     const [downloadZippath, setDownloadZippath] = useState('');
     const [rating, setRating] = useState(0);
 
-    function Ratings () {
-        
-        const [hover, setHover]=useState(null);
+    function Ratings() {
+
+        const [hover, setHover] = useState(null);
         return (
             <>
-            <div className="feedbackform-stars">
-            {[...Array(5)].map((star,i)=>{
-                const ratingValue=i+1;
-              return(
-                  <>
-                  <input type="radio" className="ratings-radio" name="rates" value={ratingValue}  />
-                  <FaStar className="stars" 
-                      onClick={()=>setRating(ratingValue)} 
-                      onMouseEnter={()=>setHover(ratingValue)}
-                      onMouseLeave={()=>setHover(null)}
-                      color={ratingValue<=(hover || rating) ? "rgb(248, 215, 31)" : "rgb(207, 206, 206)" } />
-                  </>
-              );
-            })}
-            {/* <p>you rated {rating } stars</p> */}
-            </div>
-          </>
+                <div className="feedbackform-stars">
+                    {[...Array(5)].map((star, i) => {
+                        const ratingValue = i + 1;
+                        return (
+                            <>
+                                <input type="radio" className="ratings-radio" name="rates" value={ratingValue} />
+                                <FaStar className="stars"
+                                    onClick={() => setRating(ratingValue)}
+                                    onMouseEnter={() => setHover(ratingValue)}
+                                    onMouseLeave={() => setHover(null)}
+                                    color={ratingValue <= (hover || rating) ? "rgb(248, 215, 31)" : "rgb(207, 206, 206)"} />
+                            </>
+                        );
+                    })}
+                    {/* <p>you rated {rating } stars</p> */}
+                </div>
+            </>
         );
-      };
+    };
 
     useEffect(() => {
         let apiCaller = new ApiCaller();
@@ -60,44 +58,43 @@ function Preview() {
     }, []);
 
     function feedback(e) {
-        e.preventDefault(); 
+        e.preventDefault();
         console.log("clicked");
         let body = {
-          rating:e.target.rating.value,
-          message:e.target.message.value,
+            rating: e.target.rating.value,
+            message: e.target.message.value,
+            template_id,
         }
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-          url:'templates/feedback',
-          data:body
-        }).then(data=>{
-          if(data && data.status_code=='1')
-          {
-            toast.success('Feedback sent successfully');
-            setTimeout(() => {
-            }, 500);
-          } 
-          else
-            toast.error(data.status_message);
-          console.log(data);
+            url: 'templates/feedback',
+            data: body
+        }).then(data => {
+            if (data && data.status_code == '1') {
+                toast.success('Feedback sent successfully');
+                setTimeout(() => {
+                }, 500);
+            }
+            else
+                toast.error(data.status_message);
+            console.log(data);
         })
-        .catch(err=>{
-          console.log(err);
-        })
-      }
-    
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
-    function addToCart(){
+    function addToCart() {
         console.log('add to cart');
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url:'template/add_to_cart',
-            data:{
+            url: 'template/add_to_cart',
+            data: {
                 template_id,
-                action:'add'
+                action: 'add'
             }
-        }).then(data=>{
-            if(data && data.status_code == '1'){
+        }).then(data => {
+            if (data && data.status_code == '1') {
                 toast.success('template added to cart');
             }
         })
@@ -112,9 +109,9 @@ function Preview() {
             url: 'template/buy',
             data: body
         }).then(data => {
-            if (data && data.status_code == '1'){
+            if (data && data.status_code == '1') {
                 setTimeout(() => {
-                    setDownloadZippath('/STORAGE/'+data.data.zip);
+                    setDownloadZippath('/STORAGE/' + data.data.zip);
                     console.log('path', data.data);
                     toast.success('template bought succesfully', { autoClose: 2000 });
                 }, 2000);
@@ -145,7 +142,7 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
-    
+
 
     const [download, setDownload] = useState(0);
     return (
@@ -162,7 +159,7 @@ function Preview() {
                         </div>
                         <div className="preview-stars"><RatedStars /></div>
                         <div className="preview-btns">
-                            <button className="preview-cart" onClick={()=>addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
+                            <button className="preview-cart" onClick={() => addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
                             {downloadZippath == '' ? null : <a href={downloadZippath} className="buy-btn" download="template.zip"><i class="far fa-download"></i><span>Download zip</span></a>}
                         </div>
@@ -216,55 +213,19 @@ function Preview() {
                     </div>
                 </div>
                 <div className="review-cont">
-                    <h5>Reviews</h5>
-                    <div className="reviews">
-                        <div className="review-card">
-                            <div className="userinfo">
-                                <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
-                            </div>
-                            <div className="feedback-stars"><RatedStars /></div>
-                            <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
-                            <div className="feedback">
-                                <p>This is a tremendously amazing site i have ever visited in my life .</p>
-                            </div>
-                        </div>
-                        <div className="review-card">
-                            <div className="userinfo">
-                                <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
-                            </div>
-                            <div className="feedback-stars"><RatedStars /></div>
-                            <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
-                            <div className="feedback">
-                                <p>This is a tremendously amazing site i have ever visited in my life .</p>
-                            </div>
-                        </div>
-                        <div className="review-card">
-                            <div className="userinfo">
-                                <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
-                            </div>
-                            <div className="feedback-stars"><RatedStars /></div>
-                            <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
-                            <div className="feedback">
-                                <p>This is a tremendously amazing site i have ever visited in my life .</p>
-                            </div>
-                        </div>
-                        <div className="review-card">
-                            <div className="userinfo">
-                                <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
-                            </div>
-                            <div className="feedback-stars"><RatedStars /></div>
-                            <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
-                            <div className="feedback">
-                                <p>This is a tremendously amazing site i have ever visited in my life .</p>
-                            </div>
-                        </div>
-                    </div>
+                    {feedback.length == 1   ? //aiyaa 0 kar deje integrate karya pa6i.
+                        <>
+                            <h5>Reviews</h5>
+                            <div className="reviews">
+                                <FeedbackCard />
+                            </div></>
+                        : null}
                     <div className="feedback-youtube">
                         <div className="feedback-form">
                             <h5 className="feedback-title">Your Opinion Matters !</h5>
                             <form onSubmit={feedback} className="feedback-inputs">
                                 <Ratings />
-                                <input name="rating" value={rating} style={{visibility:"hidden",height:"1px"}} />
+                                <input name="rating" value={rating} style={{ visibility: "hidden", height: "1px" }} />
                                 <textarea rows={5} name="message" className="feedback-text" placeholder="Leave a Feedback" />
                                 <button type="submit" className="feedback-btn">Send</button>
                             </form>

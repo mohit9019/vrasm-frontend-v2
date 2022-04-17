@@ -25,7 +25,7 @@ export default function CartCards(props){
                     <div className="crt-order-details">
                         <span className="crt-order-name">{props.title}</span>
                         <span className="crt-order-desc">{props.desc}</span>
-                        <div className="crt-stars"><RatedStars /></div>
+                        {/* <div className="crt-stars"><RatedStars /></div> */}
                     </div>
                     <div className="crt-order-price">{props.price}</div>
                         <div><i class="far fa-trash-alt" id="del" onClick={()=>deleteFromCart(props.id)}></i></div>
