@@ -44,7 +44,7 @@ function Preview() {
         );
     };
 
-    useEffect(() => {
+    function getDetails(){
         let apiCaller = new ApiCaller();
         apiCaller.postData({
             url: 'template/get',
@@ -55,6 +55,10 @@ function Preview() {
                 console.log(templateData);
             }
         })
+    }
+
+    useEffect(() => {
+        getDetails();
     }, []);
 
     function feedback(e) {
@@ -67,11 +71,12 @@ function Preview() {
         }
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url: 'templates/feedback',
+            url: 'template/feedback',
             data: body
         }).then(data => {
             if (data && data.status_code == '1') {
                 toast.success('Feedback sent successfully');
+                getDetails();
                 setTimeout(() => {
                 }, 500);
             }
@@ -155,7 +160,7 @@ function Preview() {
                         <div className="preview-desc"><span>{templateData.description}</span></div>
 
                         <div className="userinfo">
-                            <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
+                            <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">{templateData?.creator_id?.name}</span>
                         </div>
                         <div className="preview-stars"><RatedStars /></div>
                         <div className="preview-btns">
@@ -213,13 +218,17 @@ function Preview() {
                     </div>
                 </div>
                 <div className="review-cont">
-                    {feedback.length == 1   ? //aiyaa 0 kar deje integrate karya pa6i.
-                        <>
-                            <h5>Reviews</h5>
-                            <div className="reviews">
-                                <FeedbackCard />
-                            </div></>
-                        : null}
+                    <h5>Reviews</h5>
+                    {templateData?.feedbacks?.length > 0 ? //aiyaa 0 kar deje integrate karya pa6i.
+
+                        templateData.feedbacks.map(feedback => {
+                            return (<>
+                                <div className="reviews">
+                                    <FeedbackCard message={feedback.message} rating={feedback?.rating} buyer_id={feedback?.buyer_id} />
+                                </div>
+                            </>);
+                        })
+                        : 'no reviews'}
                     <div className="feedback-youtube">
                         <div className="feedback-form">
                             <h5 className="feedback-title">Your Opinion Matters !</h5>
