@@ -1,7 +1,6 @@
 import axios from "axios";
 import Loader from "../html/other/Loader";
 class ApiCaller {
-
   static userData = JSON.parse(localStorage.getItem('userData'));
   open_access_apis = ['/template/get', '/user/login', '/user/forget_password', '/admin/get_users', '/buyer/register', '/buyer/otp'];
   site = 'http://localhost:4000/v1/';
@@ -10,6 +9,12 @@ class ApiCaller {
     if (localStorage.getItem('userData') && localStorage.getItem('userData').length > 0) {
       ApiCaller.userData = JSON.parse(localStorage.getItem('userData'));
     }
+  }
+  checkCreator(){
+    if(ApiCaller.userData && ApiCaller.userData.is_creator==2)
+      return true;
+    else
+      return false;
   }
 
   postData({ url, data }) {

@@ -19,7 +19,7 @@ import Loader from "./html/other/Loader";
 import Payment from "./html/preview/Payment";
 function App() {
 
-  function checkLogin(){
+  function checkLogin(){ 
     let userData = localStorage.getItem('userData');
     if(userData && userData.length > 0){
       return true;
