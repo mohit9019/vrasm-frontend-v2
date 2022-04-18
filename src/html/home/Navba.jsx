@@ -1,6 +1,7 @@
 import "../../css/home/Navba.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ApiCaller from "../../apiCaller.js/apiCaller";
 import {FaRegHeart} from 'react-icons/fa';
 function Navba() {
   const is_cart=0;
@@ -52,7 +53,7 @@ function Navba() {
                   {show?
                     <div className="dropdown-content">
                   <ul className="dropdown-list">
-                    <Link to={is_creator?"/creatordash/Personalinfo":"/Buyerdash/Personalinfo"} style={{textDecoration:"none",color:"rebeccapurple"}}><li>Dashboard</li></Link>
+                    <Link to={ApiCaller.checkCreator?"/creatordash/Personalinfo":"/Buyerdash/Personalinfo"} style={{textDecoration:"none",color:"rebeccapurple"}}><li>Dashboard</li></Link>
                     <li>Log-Out</li>
                   </ul> 
                 </div> :null} 
