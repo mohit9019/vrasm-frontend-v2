@@ -18,7 +18,7 @@ export default function CartCards(props){
         })
     }    
     return( 
-        <>
+        <> 
                 <div className="crt-order-card">
                     <div className="crt-order-cont ">
                     <div className="crt-order-img"><img src="/Images/default.webp" alt="image" /></div>

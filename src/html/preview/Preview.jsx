@@ -219,16 +219,17 @@ function Preview() {
                 </div>
                 <div className="review-cont">
                     <h5>Reviews</h5>
+                    <div className="reviews">
                     {templateData?.feedbacks?.length > 0 ? //aiyaa 0 kar deje integrate karya pa6i.
 
                         templateData.feedbacks.map(feedback => {
                             return (<>
-                                <div className="reviews">
+                                
                                     <FeedbackCard message={feedback.message} rating={feedback?.rating} buyer_id={feedback?.buyer_id} />
-                                </div>
                             </>);
                         })
                         : 'no reviews'}
+                        </div>
                     <div className="feedback-youtube">
                         <div className="feedback-form">
                             <h5 className="feedback-title">Your Opinion Matters !</h5>

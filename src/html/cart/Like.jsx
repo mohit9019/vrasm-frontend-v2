@@ -41,11 +41,9 @@ function Like(){
         <div className="crt-cont">
         <div className="like">
         <div className="crt-my-order">
-        <div className="crt-order-card">
             {
                 templates.map(cards)
             }
-                </div>
                 </div>
             </div>
             </div>
