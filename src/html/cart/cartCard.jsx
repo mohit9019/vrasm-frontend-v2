@@ -1,6 +1,7 @@
 import RatedStars from "../preview/RatedStars";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
+import {Link} from "react-router-dom";
 export default function CartCards(props){
     function deleteFromCart(template_id){
         let apiCaller = new ApiCaller();
@@ -19,6 +20,7 @@ export default function CartCards(props){
     }    
     return( 
         <> 
+        <Link  to={{pathname:`/Preview/id?${props._id}`}}  style={{textDecoration:"none", color:"black"}} >
                 <div className="crt-order-card">
                     <div className="crt-order-cont ">
                     <div className="crt-order-img"><img src="/Images/default.webp" alt="image" /></div>
@@ -31,6 +33,7 @@ export default function CartCards(props){
                         <div><i class="far fa-trash-alt" id="del" onClick={()=>deleteFromCart(props.id)}></i></div>
                     </div>
                 </div>
+                </Link>
         </>
     );
 }

@@ -2,14 +2,15 @@ import RatedStars from "../preview/RatedStars";
 import {AiFillHeart} from "react-icons/ai";
 import { toast } from "react-toastify";
 import ApiCaller from "../../apiCaller.js/apiCaller";
+import { Link } from "react-router-dom";
 export default function Likecard(props){
     function deleteFromLike(template_id){
         let apiCaller = new ApiCaller();
-        apiCaller.postData({
+        apiCaller.postData({ 
             url:'template/like',
             data:{
                 template_id,
-                action:'unlike'
+                action:'unlike',
             }
         }).then(data=>{
             if(data && data.status_code == '1'){

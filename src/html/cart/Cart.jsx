@@ -35,7 +35,7 @@ function Cart() {
             <CartCards onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
         </>;
     }
-
+    const cart_total=0;
     return ( 
         <>
             {
