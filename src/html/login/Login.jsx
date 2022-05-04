@@ -1,8 +1,10 @@
 import { toast } from "react-toastify";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import {Link } from 'react-router-dom';
+import { useNavigate } from "react-router";
 import "../../css/login/Login.css";
 function Login(){
+  const navigate = useNavigate();
   function login(e) {
     e.preventDefault(); 
     console.log("clicked");
@@ -15,8 +17,11 @@ function Login(){
       url:'user/login',
       data:body
     }).then(data=>{
-      if(data && data.status_code=='1')
-        toast.success('Log-in succesfully',{autoClose:2000});
+      if(data && data.status_code=='1'){
+        toast.success('Log-in successfully',{autoClose:2000});
+        // window.location.reload("/");
+        navigate('/');
+      }
       else
         toast.error(data.status_message,{autoClose:2000});
       console.log(data);

@@ -7,6 +7,10 @@ function Navba() {
   const is_cart=0;
   const is_creator=0;
 
+  function logout(){
+    localStorage.clear();
+    window.location.reload();
+  }
   const [togglenav, setTogglenav]=useState(0); 
   const NavActive =(index) =>{
     setTogglenav(index); 
@@ -31,6 +35,10 @@ function Navba() {
           <Link to="/Buyerdash/Personalinfo" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(5)} id={togglenav===5?"nav-active":null} >
             Buyer</span>
           </Link> */}
+            
+            <Link to="/login" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(5)} id={togglenav===5?"nav-active":null}>
+              Login</span> 
+            </Link>
             <Link to="/Registration" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(4)} id={togglenav===4?"nav-active":null}>
               Register</span> 
             </Link>
@@ -54,7 +62,7 @@ function Navba() {
                     <div className="dropdown-content">
                   <ul className="dropdown-list">
                     <Link to={ApiCaller.checkCreator?"/creatordash/Personalinfo":"/Buyerdash/Personalinfo"} style={{textDecoration:"none",color:"rebeccapurple"}}><li>Dashboard</li></Link>
-                    <li>Log-Out</li>
+                    <li onClick={()=>logout()}>Log-Out</li>
                   </ul> 
                 </div> :null} 
                 </div>

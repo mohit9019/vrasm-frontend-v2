@@ -1,8 +1,8 @@
 import axios from "axios";
-import Loader from "../html/other/Loader";
+import { toast } from "react-toastify";
 class ApiCaller {
   static userData = JSON.parse(localStorage.getItem('userData'));
-  open_access_apis = ['/template/get', '/user/login', '/user/forget_password', '/admin/get_users', '/buyer/register', '/buyer/otp'];
+  open_access_apis = ['template/get', 'user/login', 'user/forget_password', 'admin/get_users', 'buyer/register', 'buyer/otp'];
   site = 'http://localhost:4000/v1/';
 
   constructor() {
@@ -18,12 +18,19 @@ class ApiCaller {
   }
 
   postData({ url, data }) {
-    // Loader.setLoader(1);
     if (localStorage.getItem('userData') && localStorage.getItem('userData').length > 0) {
       let userData = JSON.parse(localStorage.getItem('userData'));
       data['user_id'] = userData.user_id;
       data['accesstoken'] = userData.accesstoken;
     }
+    console.log('open', this.open_access_apis.indexOf(url));
+    if(this.open_access_apis.indexOf(url) == -1) {
+      if(!data['user_id']){
+        toast.error("Login to perform this action");
+        return Promise.reject();
+      }
+    }
+
     return axios.post(this.site + url, data)
       .then(data => {
         // Loader.setLoader(0);
