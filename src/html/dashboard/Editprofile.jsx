@@ -1,7 +1,7 @@
 import "../../css/buyer dashboard/Editprofile.css";
 import "../../css/buyer dashboard/Personalinfo.css";
 import { Form, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
@@ -12,7 +12,7 @@ function Editprofile() {
   const [address, setAddress] = useState('');
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
-
+  const navigate = useNavigate();
   useEffect(() => {
     let apiCaller = new ApiCaller();
     apiCaller.postData({
@@ -21,6 +21,9 @@ function Editprofile() {
     }).then(res => {
         if (res && res.status_code == '1') {
             setUserProfile(res.data);
+        }
+        else {
+          toast.error(res.status_message);
         }
     })
   }, []);
@@ -33,7 +36,6 @@ function Editprofile() {
     setPincode(data?.pincode);
     setCity(data?.city);
   }
-
   function updateUser(){
     let apiCaller = new ApiCaller();
     apiCaller.postData({
@@ -42,6 +44,7 @@ function Editprofile() {
     }).then(res => {
         if (res && res.status_code == '1') {
             toast.success("Profile Updated Successfully");
+            navigate('/Buyerdash/Personalinfo');
         }
     })
   }
@@ -92,9 +95,10 @@ function Editprofile() {
               <Form.Control type="file" style={{ width: "80%" }} />
             </Form.Group>
 
-            <Link to="/Buyerdash/Personalinfo"><button onClick={()=>updateUser()} variant="primary" type="submit" className="dash-button" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }}>
+            {/* <Link to="/Buyerdash/Personalinfo"> */}
+              <button onClick={()=>updateUser()} variant="primary" type="submit" className="dash-button" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }}>
               Edit Profile
-            </button></Link>
+            </button>
 
           </Form>
         </div>

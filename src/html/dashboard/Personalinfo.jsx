@@ -3,7 +3,38 @@ import {Form,Col,Row} from "react-bootstrap";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import Navba from "../home/Navba";
+import { useEffect, useState } from "react";
+import ApiCaller from "../../apiCaller.js/apiCaller";
+import { toast } from "react-toastify";
+
 function Personalinfo(){
+
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
+  const [address, setAddress] = useState('');
+  const [pincode, setPincode] = useState('');
+  const [city, setCity] = useState('');
+
+  useEffect(() => {
+    let apiCaller = new ApiCaller();
+    apiCaller.postData({
+        url: 'user/get_profile',
+        data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+    }).then(res => {
+        if (res && res.status_code == '1') {
+            setUserProfile(res.data);
+        }
+    })
+  }, []);
+
+  // function to set user data;
+  function setUserProfile(data){
+    setFirstName(data?.name.split(" ")[0]);
+    setLastName(data?.name.split(" ")[1]);
+    setAddress(data?.address);
+    setPincode(data?.pincode);
+    setCity(data?.city);
+  }
     return(
         <>
             <div className="personal-info">
@@ -16,29 +47,29 @@ function Personalinfo(){
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>First Name</Form.Label>
-      <Form.Control type="text" placeholder="Tony" style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="Tony" value={firstname} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label>Last Name</Form.Label>
-      <Form.Control type="text" placeholder="Stark" style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="Stark" value={lastname} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
   </Row>
 
   <Form.Group className="mb-3" controlId="formGridAddress1">
     <Form.Label>Address</Form.Label>
-    <Form.Control as="textarea" type="text" style={{width:"90%",backgroundColor:'white'}} placeholder="177 A Bleaker street, New York horhfoehfu" readOnly />
+    <Form.Control as="textarea" type="text" value={address} style={{width:"90%",backgroundColor:'white'}} placeholder="177 A Bleaker street, New York horhfoehfu" readOnly />
   </Form.Group>
 
   <Row className="mb-3">
   <Form.Group as={Col} controlId="formGridCity">
       <Form.Label>City</Form.Label>
-      <Form.Control type="text" placeholder="New York" style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="New York" value={city} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridCity">
       <Form.Label>Pincode</Form.Label>
-      <Form.Control type="text" placeholder="U.S.A" style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="U.S.A" value={pincode} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridZip">
