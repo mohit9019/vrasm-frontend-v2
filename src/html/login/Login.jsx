@@ -19,8 +19,8 @@ function Login(){
     }).then(data=>{
       if(data && data.status_code=='1'){
         toast.success('Log-in successfully',{autoClose:2000});
-        // window.location.reload("/");
         navigate('/');
+        window.location.reload("/");
       }
       else
         toast.error(data.status_message,{autoClose:2000});

@@ -17,8 +17,8 @@ import { ToastContainer ,toast, Flip, Zoom, Slide} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "./html/other/Loader";
 import Payment from "./html/preview/Payment";
+import ApiCaller from "./apiCaller.js/apiCaller";
 function App() {
-
   function checkLogin(){ 
     let userData = localStorage.getItem('userData');
     if(userData && userData.length > 0){
