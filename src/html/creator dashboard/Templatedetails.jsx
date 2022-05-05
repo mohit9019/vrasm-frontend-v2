@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Col, MenuItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 import { toast } from "react-toastify";
+import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 // import { ToastContainer, toast, Flip, Zoom, Slide } from "react-toastify";
 
 function Tenmplatedetails() {
+    const [value, setValue] = useState('');
+    const handleSelect = (e) => {
+        console.log(e);
+        setValue(e)
+    }
     const [Details_saved, setDetails_saved] = useState(0);
     const [template_id, setTemplateId] = useState('');
     function templateupload(e) {
@@ -42,7 +51,7 @@ function Tenmplatedetails() {
     return (
         <>
             {
-                Details_saved == 1 ?
+                Details_saved == 0 ?
                     <>
                         {/* designed image upload form */}
                         {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}
@@ -68,13 +77,27 @@ function Tenmplatedetails() {
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
-                                    <Form.Label style={{ fontSize: "15px" }}>Technologies</Form.Label>
-                                    <Form.Control name="technology" type="text" placeholder="Technologies" required />
+                                    <Form.Label style={{ fontSize: "15px" }}>Category</Form.Label>
+                                    <Form.Select aria-label="Default select example" name="category" type="text" required>
+                                        <option>Categories</option>
+                                        <option value="Portfolio">Portfolio</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Real-Estate">Real-Estate</option>
+                                        <option value="Restaurant">Restaurant</option>
+                                        <option value="Hospital">Hospital</option>
+                                        <option value="Travelling">Travelling</option>
+                                        <option value="Others">Others</option>
+                                    </Form.Select>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
-                                    <Form.Label style={{ fontSize: "15px" }}>Categories</Form.Label>
-                                    <Form.Control name="category" type="text" placeholder="Categories" required />
+                                    <Form.Label style={{ fontSize: "15px" }}>Technologies</Form.Label>
+                                    <DropdownMultiselect
+                                        options={["HTML", "CSS", "ReactJs", "Bootstrap", "Wordpress", "PSD", "PPT", "Responsive"]}
+                                        name="technology" type="text" required
+                                    />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
