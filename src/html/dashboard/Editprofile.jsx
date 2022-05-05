@@ -86,10 +86,6 @@ function Editprofile() {
                 <Form.Control className="value" value={pincode} onChange={(e)=>setPincode(e.target.value)} type="text" placeholder="U.S.A" />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridZip">
-                <Form.Label className="label">Contact Number</Form.Label>
-                <Form.Control className="value" type="text" placeholder="123456789" />
-              </Form.Group>
             </Row>
 
             {/* <Link to="/Buyerdash/Personalinfo"> */}

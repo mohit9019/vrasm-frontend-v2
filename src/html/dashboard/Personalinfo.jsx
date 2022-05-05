@@ -1,13 +1,10 @@
 import "../../css/buyer dashboard/Personalinfo.css";
 import {Form,Col,Row} from "react-bootstrap";
-import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
-import Navba from "../home/Navba";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
-import { toast } from "react-toastify";
 
-function Personalinfo(){
+function Personalinfo(){ 
 
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
@@ -47,34 +44,34 @@ function Personalinfo(){
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>First Name</Form.Label>
-      <Form.Control type="text" placeholder="Tony" value={firstname} style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="..." value={firstname} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label>Last Name</Form.Label>
-      <Form.Control type="text" placeholder="Stark" value={lastname} style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="..." value={lastname} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
   </Row>
 
   <Form.Group className="mb-3" controlId="formGridAddress1">
     <Form.Label>Address</Form.Label>
-    <Form.Control as="textarea" type="text" value={address} style={{width:"90%",backgroundColor:'white'}} placeholder="177 A Bleaker street, New York horhfoehfu" readOnly />
+    <Form.Control as="textarea" type="text" value={address} style={{width:"90%",backgroundColor:'white'}} placeholder="...." readOnly />
   </Form.Group>
 
   <Row className="mb-3">
   <Form.Group as={Col} controlId="formGridCity">
       <Form.Label>City</Form.Label>
-      <Form.Control type="text" placeholder="New York" value={city} style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="..." value={city} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridCity">
       <Form.Label>Pincode</Form.Label>
-      <Form.Control type="text" placeholder="U.S.A" value={pincode} style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="..." value={pincode} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridZip">
       <Form.Label>Contact No.</Form.Label>
-      <Form.Control type="text" placeholder="123456789" style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text" placeholder="..." style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
   </Row>
 
