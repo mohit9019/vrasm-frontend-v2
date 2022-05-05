@@ -56,9 +56,15 @@ function Preview() {
             }
         })
     }
-
+    function ScrolltoTop(){
+        window.scrollTo({
+          top: 0, 
+          behavior: 'smooth',
+        });
+      }
     useEffect(() => {
-        getDetails();
+        getDetails();   
+        ScrolltoTop();
     }, []);
 
     function feedback(e) {

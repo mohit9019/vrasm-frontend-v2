@@ -59,10 +59,6 @@ function Editprofile(){
       <Form.Control type="text" placeholder="Msc.IT" />
     </Form.Group>
   </Row>
-  <Form.Group controlId="formFile" className="mb-3">
-    <Form.Label >Profile Picture</Form.Label> 
-    <Form.Control type="file" />
-  </Form.Group>
 
 
   <Link to="/Creatordash/Personalinfo"><button variant="primary" type="submit" className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>

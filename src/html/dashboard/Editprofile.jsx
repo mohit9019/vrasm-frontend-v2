@@ -43,6 +43,8 @@ function Editprofile() {
         data: {name : firstname+" "+lastname, address, city, pincode} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res => {
         if (res && res.status_code == '1') {
+            ApiCaller.userData.name = firstname + " " + lastname;
+            
             toast.success("Profile Updated Successfully");
             navigate('/Buyerdash/Personalinfo');
         }
@@ -89,11 +91,6 @@ function Editprofile() {
                 <Form.Control className="value" type="text" placeholder="123456789" />
               </Form.Group>
             </Row>
-
-            <Form.Group controlId="formFile" className="mb-3">
-              <Form.Label >Profile Picture</Form.Label>
-              <Form.Control type="file" style={{ width: "80%" }} />
-            </Form.Group>
 
             {/* <Link to="/Buyerdash/Personalinfo"> */}
               <button onClick={()=>updateUser()} variant="primary" type="submit" className="dash-button" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }}>

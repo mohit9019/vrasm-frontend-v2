@@ -1,5 +1,5 @@
 import "../../css/preview/Preview.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import RatedStars from "./RatedStars";
 import Ratings from "./Ratings";
@@ -27,7 +27,6 @@ function Overview(){
         prevArrow:<PrevArrow />,
         beforeChange: (current,next)=>setImageIndex(next),
     };
-
     return (
         <>
         <div className="preview">
