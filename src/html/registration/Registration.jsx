@@ -142,12 +142,12 @@ function Registration() {
 
                 <div className="regist-col">
                   <label className="regist-label">College Name</label>
-                  <input type="text" name="college" className="regist-input" placeholder="Enter College Name"></input>
+                  <input type="text" name="college" className="regist-input" placeholder="Enter College Name" required></input>
                 </div>
 
                 <div className="regist-col">
                   <label className="regist-label">Course Name</label>
-                  <input type="text" name="course" className="regist-input" placeholder="Enter Course Name"></input>
+                  <input type="text" name="course" className="regist-input" placeholder="Enter Course Name" required></input>
                 </div>
 
                 <div className="regist-col">
