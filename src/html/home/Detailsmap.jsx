@@ -1,5 +1,5 @@
 import Card from "./Card";
-import RatedStars from "../preview/RatedStars";
+
 function details(val){
     return(
       <>

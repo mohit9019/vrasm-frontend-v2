@@ -23,6 +23,9 @@ function Sidebar(){
                     <Link to="/Creatordash/Analysis" style={{textDecoration:"none"}}><div className="sidebar-options" onClick={()=>ActiveTabC(3)} id={toggledashC===3?"active-tab":null}>
                         <span><i class="far fa-chart-bar"></i> Analysis</span></div>
                     </Link>
+                    <Link to="/Creatordash/Myorder" style={{textDecoration:"none"}}><div className="sidebar-options" onClick={()=>ActiveTabC(5)} id={toggledashC===5?"active-tab":null}>
+                        <span><i class="far fa-bags-shopping"></i> My Orders</span></div>
+                    </Link>
                     <Link to="/Creatordash/Changepass" style={{textDecoration:"none"}}><div className="sidebar-options" onClick={()=>ActiveTabC(4)} id={toggledashC===4?"active-tab":null}>
                         <span><i class="far fa-key"></i> Change Password</span></div>
                     </Link>

@@ -17,7 +17,7 @@ function Tenmplatedetails() {
     const [Details_saved, setDetails_saved] = useState(0);
     const [template_id, setTemplateId] = useState('');
     const [tech, setTech] = useState([]);
-    function techSelect(selectedValue){
+    function techSelect(selectedValue) {
         setTech(selectedValue);
     }
     function templateupload(e) {
@@ -106,6 +106,9 @@ function Tenmplatedetails() {
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
                                     <Form.Label style={{ fontSize: "15px" }}>Tags</Form.Label>
                                     <Form.Control name="tags" type="text" placeholder="#" required />
+                                    <Form.Text className="text-muted">
+                                        seperate tags with space.
+                                    </Form.Text>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formGroupEmail">

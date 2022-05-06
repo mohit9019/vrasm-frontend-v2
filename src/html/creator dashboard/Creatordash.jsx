@@ -11,6 +11,7 @@ import Analysis from "./Analysis";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Uploadtemp from "./Uploadtemp";
+import Myorder from "../dashboard/Myorder";
 function Creatordash(){
     return(
         <>
@@ -22,7 +23,8 @@ function Creatordash(){
                 <Route exact path="Analysis" element={<Analysis />} />
                 <Route exact path="Uploadtemp/*" element={<Uploadtemp />} />
                 <Route exact path="Changepass" element={<Changepass />} />
-                <Route exact path="Wallet" element={<Wallet />} />
+                {/* <Route exact path="Wallet" element={<Wallet />} /> */}
+                <Route exact path="Myorder" element={<Myorder />} />
                 </Routes>
             </div>
         </>
