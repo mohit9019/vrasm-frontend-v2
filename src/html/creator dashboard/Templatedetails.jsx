@@ -12,18 +12,21 @@ import ApiCaller from "../../apiCaller.js/apiCaller";
 function Tenmplatedetails() {
     const [value, setValue] = useState('');
     const handleSelect = (e) => {
-        console.log(e);
         setValue(e)
     }
     const [Details_saved, setDetails_saved] = useState(0);
     const [template_id, setTemplateId] = useState('');
+    const [tech, setTech] = useState([]);
+    function techSelect(selectedValue){
+        setTech(selectedValue);
+    }
     function templateupload(e) {
         e.preventDefault();
         let body = {
             creator_id: ApiCaller.userData.user_id, // this is sample creator_id of nandita mam for testing, you have to pass the creator_id when user comes
             name: e.target.name.value,
             description: e.target.description.value,
-            technology: e.target.technology.value,
+            technology: tech.join(","),
             category: e.target.category.value,
             tags: e.target.tags.value,
             price: e.target.price.value,
@@ -42,7 +45,6 @@ function Tenmplatedetails() {
             }
             else
                 toast.error(data.status_message);
-            console.log(data);
         })
             .catch(err => {
                 console.log(err);
@@ -78,7 +80,7 @@ function Tenmplatedetails() {
 
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
                                     <Form.Label style={{ fontSize: "15px" }}>Category</Form.Label>
-                                    <Form.Select aria-label="Default select example" name="category" type="text" required>
+                                    <Form.Select aria-label="Default select example" name="category" required>
                                         <option>Categories</option>
                                         <option value="Portfolio">Portfolio</option>
                                         <option value="Business">Business</option>
@@ -95,8 +97,9 @@ function Tenmplatedetails() {
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
                                     <Form.Label style={{ fontSize: "15px" }}>Technologies</Form.Label>
                                     <DropdownMultiselect
+                                        handleOnChange={techSelect}
                                         options={["HTML", "CSS", "ReactJs", "Bootstrap", "Wordpress", "PSD", "PPT", "Responsive"]}
-                                        name="technology" type="text" required
+                                        name="technology" id="technology" type="text" required
                                     />
                                 </Form.Group>
 
