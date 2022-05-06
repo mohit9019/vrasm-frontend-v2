@@ -56,13 +56,13 @@ function Cart() {
                                 </div>
                             </div>
 
-                            <div className="checkout-div">
+                            {/* <div className="checkout-div">
                                 <Link to="/categoriespage" className="continue-shopping"><span><i class="fad fa-long-arrow-left"></i>  Continue Shopping</span></Link>
                                 <div className="checkout">
                                     <div className="totalamnt-div"><h5>Total Amount</h5><span className="pr"> 200 Rs</span></div>
                                     <div className="chout-btn"><button className="chout">CHECKOUT</button></div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </>
             }
