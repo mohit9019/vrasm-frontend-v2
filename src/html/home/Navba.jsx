@@ -61,7 +61,7 @@ function Navba() {
                   {show?
                     <div className="dropdown-content">
                   <ul className="dropdown-list">
-                    <Link to={ApiCaller.checkCreator?"/creatordash/Personalinfo":"/Buyerdash/Personalinfo"} style={{textDecoration:"none",color:"rebeccapurple"}}><li>Dashboard</li></Link>
+                    <Link to={ApiCaller.checkCreator()?"/creatordash/Personalinfo":"/Buyerdash/Personalinfo"} style={{textDecoration:"none",color:"rebeccapurple"}}><li>Dashboard</li></Link>
                     <li onClick={()=>logout()}>Log-Out</li>
                   </ul> 
                 </div> :null} 

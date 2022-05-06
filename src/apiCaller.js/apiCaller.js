@@ -10,7 +10,7 @@ class ApiCaller {
       ApiCaller.userData = JSON.parse(localStorage.getItem('userData'));
     }
   }
-  checkCreator(){
+  static checkCreator(){
     if(ApiCaller.userData && ApiCaller.userData.is_creator==2){
       return true;
     }
