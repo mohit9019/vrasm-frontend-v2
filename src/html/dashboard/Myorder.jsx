@@ -16,9 +16,9 @@ function Myorder() {
             }
         })
     }, []);
-    function cards(orders) { 
+    function cards(order) { 
         return <>
-            <Ordercard id={orders._id} name={orders.name} date={orders.date} desc={orders.description} price={orders.price} />
+            <Ordercard data={order} />
         </>; 
     }
     return (

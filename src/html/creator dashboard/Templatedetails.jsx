@@ -20,7 +20,7 @@ function Tenmplatedetails() {
     function techSelect(selectedValue) {
         setTech(selectedValue);
     }
-    function templateupload(e) {
+    function templateupload(e) { 
         e.preventDefault();
         let body = {
             creator_id: ApiCaller.userData.user_id, // this is sample creator_id of nandita mam for testing, you have to pass the creator_id when user comes

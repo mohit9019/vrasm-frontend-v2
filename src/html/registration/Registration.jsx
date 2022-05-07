@@ -7,16 +7,17 @@ import { toast } from "react-toastify";
 function toggle(value) {
   return !value;
 }
-
+var email = '';
 
 function Registration() {
   const [show, setShow] = useState(false);
+  // let email = '';
 
   function register(e) {
     e.preventDefault();
     console.log("clicked");
 
-    let Email = e.target.email.value;
+    email = e.target.email.value;
     let body = {
       name: 'manav',
       email: e.target.email.value,
@@ -54,7 +55,7 @@ function Registration() {
     let otp = e.target[0].value + e.target[1].value + e.target[2].value + e.target[3].value;
     let body = {
       otp: otp,
-      // email:
+      email
     }
     let apiCaller = new ApiCaller();
     apiCaller.postData({
@@ -88,10 +89,10 @@ function Registration() {
 
   //for otp timer
   const [counter, setCounter] = useState(59);
-  useEffect(() => {
-    const timer = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
-    return () => clearInterval(timer);
-  }, [counter]);
+  // useEffect(() => {
+  //   const timer = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+  //   return () => clearInterval(timer);
+  // }, [counter]);
 
   const [password, setPassword] = useState(null);
   const [cpassword, setcPassword] = useState(null);
