@@ -57,7 +57,7 @@ function Editprofile(){
         <> 
 
 <div className="personal-info">
-            <div className="info"><div className="edit-icon"><h3 className="dash-head">Edit Information</h3>
+            <div className="info"><div className="edit-icon"><Link to="/Creatordash/Personalinfo" style={{fontSize:"120%",color:"rebeccapurple"}} ><i class="far fa-arrow-alt-circle-left"></i></Link><h3 className="dash-head"> Edit Information</h3>
             </div>
 
 
@@ -65,29 +65,29 @@ function Editprofile(){
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label >First Name</Form.Label>
-      <Form.Control  type="text" placeholder="..." onChange={(e)=>setFirstName(e.target.value)} />
+      <Form.Control  type="text" placeholder="..." value={firstname} onChange={(e)=>setFirstName(e.target.value)} />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label  >Last Name</Form.Label>
-      <Form.Control  type="text" placeholder="..." onChange={(e)=>setLastName(e.target.value)} />
+      <Form.Control type="text" placeholder="..." value={lastname} onChange={(e)=>setLastName(e.target.value)} />
     </Form.Group>
   </Row>
 
   <Form.Group className="mb-3" controlId="formGridAddress1">
     <Form.Label>Address</Form.Label>
-    <Form.Control as="textarea" type="text" placeholder="..." onChange={(e)=>setAddress(e.target.value)} />
+    <Form.Control as="textarea" type="text" placeholder="..." value={address} onChange={(e)=>setAddress(e.target.value)} />
   </Form.Group>
 
   <Row className="mb-3">
   <Form.Group as={Col} controlId="formGridCity">
-      <Form.Label >City</Form.Label>
-      <Form.Control type="text" placeholder="..." onChange={(e)=>setCity(e.target.value)} />
+      <Form.Label >City</Form.Label>  
+      <Form.Control type="text" placeholder="..." value={city} onChange={(e)=>setCity(e.target.value)} />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridCity">
       <Form.Label >Pincode</Form.Label>
-      <Form.Control type="text" placeholder="..." onChange={(e)=>setPincode(e.target.value)} />
+      <Form.Control type="text" placeholder="..." value={pincode} onChange={(e)=>setPincode(e.target.value)} />
     </Form.Group>
 
   </Row>
@@ -95,19 +95,19 @@ function Editprofile(){
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label >College Name</Form.Label>
-      <Form.Control type="text" placeholder="..." onChange={(e)=>setCollege(e.target.value)} />
+      <Form.Control type="text" placeholder="..." value={college} onChange={(e)=>setCollege(e.target.value)} />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label  >Course Name</Form.Label>
-      <Form.Control type="text" placeholder="..." onChange={(e)=>setCourse(e.target.value)} />
+      <Form.Control type="text" placeholder="..." value={course} onChange={(e)=>setCourse(e.target.value)} />
     </Form.Group>
   </Row>
 
 
-  <Link to="/Creatordash/Personalinfo"><button variant="primary" onClick={()=>updateUser()} type="submit" className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>
+  <button variant="primary" onClick={()=>updateUser()} type="submit" className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>
               Edit Profile
-            </button></Link>
+            </button>
 
 </Form>
 </div>

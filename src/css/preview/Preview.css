@@ -41,6 +41,10 @@
     font-weight: 500;
     margin: 1% 0 0 3%;
 }
+.category{
+    color: rgb(92, 91, 91);
+    margin: 2% 0 0;
+}
 .preview-title{
     width: 35%;
     word-break: break-all;
@@ -63,7 +67,7 @@
     overflow: hidden;
 }
 .preview-stars{
-    margin:2% 0 ;
+    margin:1% 0 ;
     font-size: large;
 }
 .preview-stars i{
@@ -79,12 +83,12 @@
 .preview-cart , .buy-btn{
     margin: 1% 0 ;
     border-radius: 2px;
+    padding: 1% 0 1% 0;
     font-weight:500;
     border: none;
 }
 .preview-cart{
     color: white;
-    padding: 1% 0 1% 0;
     background-color: rgb(127, 76, 179);
 }
 .preview-cart:hover{

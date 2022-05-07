@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Form, Col, MenuItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
 import { toast } from "react-toastify";
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import ApiCaller from "../../apiCaller.js/apiCaller";
@@ -113,7 +111,7 @@ function Tenmplatedetails() {
 
                                 <Form.Group className="mb-3" controlId="formGroupEmail">
                                     <Form.Label style={{ fontSize: "15px" }}>Price</Form.Label>
-                                    <Form.Control name="price" type="number" min={50} placeholder="Rs." required />
+                                    <Form.Control name="price" type="number" min={50} max={2000} placeholder="Rs." required />
                                 </Form.Group>
 
                                 <button className="dash-button" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }} type="submit" >

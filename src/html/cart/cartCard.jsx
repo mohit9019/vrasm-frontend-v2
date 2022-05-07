@@ -30,7 +30,7 @@ export default function CartCards(props) {
                             {/* <div className="crt-stars"><RatedStars /></div> */}
                         </div>
                     </Link>
-                    <div className="crt-order-price">{props.price}</div>
+                    <div className="crt-order-price">{props.price} <i class="fal fa-rupee-sign"></i></div>
                     <div><i class="far fa-trash-alt" id="del" onClick={() => deleteFromCart(props.id)}></i></div>
                 </div>
             </div>

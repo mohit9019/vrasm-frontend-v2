@@ -15,7 +15,7 @@ function Ordercard(props){
                         <span className="order-desc">{props.data.template[0]['description']}</span>
                         <span className="order-id">{props.data.id}</span>
                     </div>
-                    <div className="order-price">{props.data.amount}</div>
+                    <div className="order-price">{props.data.amount} <i class="fal fa-rupee-sign"></i></div>
                     </div>
                 </div>
             </div>

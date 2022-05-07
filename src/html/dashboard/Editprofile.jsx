@@ -58,7 +58,7 @@ function Editprofile() {
   return (
     <>
       <div className="personal-info">
-        <div className="info"><div className="edit-icon"><h3 className="dash-head">Edit Information</h3>
+        <div className="info"><div className="edit-icon"><Link to="/Creatordash/Personalinfo" style={{fontSize:"120%",color:"rebeccapurple"}} ><i class="far fa-arrow-alt-circle-left"></i></Link><h3 className="dash-head">Edit Information</h3>
         </div>
 
 
@@ -66,29 +66,29 @@ function Editprofile() {
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label className="label">First Name</Form.Label>
-                <Form.Control className="value" value={firstname} onChange={(e)=>setFirstName(e.target.value)} type="text" placeholder="Mohit" />
+                <Form.Control className="value" value={firstname} onChange={(e)=>setFirstName(e.target.value)} type="text" placeholder="..." />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label className="label" >Last Name</Form.Label>
-                <Form.Control className="value" value={lastname} onChange={(e)=>setLastName(e.target.value)} type="text" placeholder="Chauhan" />
+                <Form.Control className="value" value={lastname} onChange={(e)=>setLastName(e.target.value)} type="text" placeholder="..." />
               </Form.Group>
             </Row>
 
             <Form.Group className="mb-3" controlId="formGridAddress1">
               <Form.Label>Address</Form.Label>
-              <Form.Control style={{ width: "88%" }} as="textarea" value={address} onChange={(e)=>setAddress(e.target.value)} type="text" placeholder="177 A Bleaker street, New York" />
+              <Form.Control style={{ width: "88%" }} as="textarea" value={address} onChange={(e)=>setAddress(e.target.value)} type="text" placeholder="..." />
             </Form.Group>
 
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label className="label">City</Form.Label>
-                <Form.Control className="value" value={city} onChange={(e)=>setCity(e.target.value)} type="text" placeholder="New York" />
+                <Form.Control className="value" value={city} onChange={(e)=>setCity(e.target.value)} type="text" placeholder="..." />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label className="label">Pincode</Form.Label>
-                <Form.Control className="value" value={pincode} onChange={(e)=>setPincode(e.target.value)} type="text" placeholder="U.S.A" />
+                <Form.Control className="value" value={pincode} onChange={(e)=>setPincode(e.target.value)} type="text" placeholder="..." />
               </Form.Group>
 
             </Row>

@@ -11,13 +11,20 @@ class ApiCaller {
     }
   }
   static checkCreator(){
-    if(ApiCaller.userData && ApiCaller.userData.is_creator==2){
+    if(ApiCaller.userData && ApiCaller.userData.is_creator==2 ){
       return true;
     }
     else
       return false;
   }
-
+  static checkUser(){
+    if(ApiCaller.userData && ApiCaller.userData.is_verified!=null){
+      return true;
+    }
+    else
+      return false;
+  }
+  
   postData({ url, data }) {
     if (localStorage.getItem('userData') && localStorage.getItem('userData').length > 0) {
       let userData = JSON.parse(localStorage.getItem('userData'));

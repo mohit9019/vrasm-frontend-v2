@@ -5,12 +5,11 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { FaStar } from "react-icons/fa";
 import RatedStars from "./RatedStars";
-// import Ratings from "./Ratings";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 
-const tags = ["html", "css", 'bootstrap', 'tailwind', 'h'];
-const i = '/Images/113.jpg';
+
+const i = 0;
 
 function Preview() {
     let template_id = window.location.href.split('?')[1];
@@ -166,11 +165,12 @@ function Preview() {
                         <div className="userinfo">
                             <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">{templateData?.creator_id?.name}</span>
                         </div>
+                        <div className="category"><span >Category: {templateData.category}</span></div>
                         <div className="preview-stars"><RatedStars /></div>
                         <div className="preview-btns">
                             <button className="preview-cart" onClick={() => addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
-                            {downloadZippath == '' ? null : <a href={downloadZippath} className="buy-btn" download="template.zip"><i class="far fa-download"></i><span>Download zip</span></a>}
+                            {downloadZippath == '' ? null : <a href={downloadZippath} download="template.zip"><button className="buy-btn"><i class="far fa-download"></i><span>Download zip</span></button></a>}
                         </div>
                     </div>
                     <div className="image-carousel">

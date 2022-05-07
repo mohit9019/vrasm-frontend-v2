@@ -28,7 +28,7 @@ export default function Likecard(props){
                         <span className="crt-order-desc">{props.desc}</span>
                         {/* <div className="crt-stars"><RatedStars /></div> */}
                     </div>
-                    <div className="crt-order-price">{props.price}</div>
+                    <div className="crt-order-price">{props.price} <i class="fal fa-rupee-sign"></i></div>
                         <div><AiFillHeart className="save-icon" id="unlike" onClick={()=>deleteFromLike(props.id)} /></div>
                     </div>
             </div>

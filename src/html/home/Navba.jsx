@@ -2,11 +2,8 @@ import "../../css/home/Navba.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
-import {FaRegHeart} from 'react-icons/fa';
 function Navba() {
   const is_cart=0;
-  const is_creator=0;
-
   function logout(){
     localStorage.clear();
     window.location.reload();
@@ -20,6 +17,7 @@ function Navba() {
   }
     const [show, setShow] = useState(false);
   const [is_verified,setIs_verified]=useState(1);
+
     return (
       <>
         <div className="top">
@@ -50,7 +48,7 @@ function Navba() {
             </Link>
 
             { 
-              is_verified==0?
+              ApiCaller.checkUser() ==0?
                 <Link to="/Login" className="top-icon" >
                   <i class="far fa-user-alt" onClick={()=>NavActive(1)} id={togglenav===1?"nav-active":null}></i>
                 </Link>

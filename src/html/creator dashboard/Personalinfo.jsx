@@ -33,7 +33,7 @@ function Personalinfo(){
     setCity(data?.city);
     setCity(data?.college);
     setCity(data?.course);
-  }
+  } 
     return(
         <>
             <div className="personal-info">
@@ -46,29 +46,29 @@ function Personalinfo(){
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label >First Name</Form.Label>
-      <Form.Control type="text"  placeholder="..." style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text"  placeholder="..." value={firstname} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label >Last Name</Form.Label>
-      <Form.Control type="text"  placeholder="..." style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text"  placeholder="..." value={lastname} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
   </Row>
 
   <Form.Group className="mb-3" controlId="formGridAddress1">
     <Form.Label>Address</Form.Label>
-    <Form.Control as="textarea" type="text" style={{width:"90%",backgroundColor:'white'}} placeholder="..." readOnly />
+    <Form.Control as="textarea" type="text" value={address} style={{width:"90%",backgroundColor:'white'}} placeholder="..." readOnly />
   </Form.Group>
 
   <Row className="mb-3">
   <Form.Group as={Col} controlId="formGridCity">
       <Form.Label >City</Form.Label>
-      <Form.Control  type="text" placeholder="..." style={{backgroundColor:'white'}} readOnly />
+      <Form.Control  type="text" placeholder="..." value={city} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridCity">
       <Form.Label >Pincode</Form.Label>
-      <Form.Control  type="text" placeholder="..." style={{backgroundColor:'white'}} readOnly />
+      <Form.Control  type="text" placeholder="..." value={pincode} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridZip">
@@ -80,12 +80,12 @@ function Personalinfo(){
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label >College Name</Form.Label>
-      <Form.Control type="text"  placeholder="..." style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text"  placeholder="..." value={college} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
       <Form.Label >Course Name</Form.Label>
-      <Form.Control type="text"  placeholder="..." style={{backgroundColor:'white'}} readOnly />
+      <Form.Control type="text"  placeholder="..." value={course} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
   </Row>
 

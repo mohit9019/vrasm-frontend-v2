@@ -1,9 +1,10 @@
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 import "../../css/buyer dashboard/Changepass.css";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {Form,Button} from "react-bootstrap";
 function Changepass(){
+  const navigate = useNavigate();
   function changePassword(e){
     e.preventDefault();
 
@@ -18,6 +19,7 @@ function Changepass(){
     }).then(data => {
         if (data && data.status_code == '1') {
             toast.success('Password changed succesfully');
+            navigate('/Creatordash/Personalinfo');
         }
         else
             toast.error(data.status_message);

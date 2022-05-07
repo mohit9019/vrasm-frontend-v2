@@ -19,6 +19,9 @@
 .previous{
     float: left;
 }
+input[type=number] {
+    -moz-appearance: textfield;
+  }
 @media only screen and (min-width:500px) and (max-width:800px){
     .upload-template{
         margin-left:30% ;
