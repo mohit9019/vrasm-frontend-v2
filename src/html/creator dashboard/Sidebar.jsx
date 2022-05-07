@@ -1,6 +1,7 @@
 import "../../css/buyer dashboard/Buyerdash.css";
 import {Link} from "react-router-dom";
 import { useState } from "react";
+import ApiCaller from "../../apiCaller.js/apiCaller";
 function Sidebar(){
     const [toggledashC, setToggledashC]=useState(1);
     const ActiveTabC =(index) =>{
@@ -10,7 +11,7 @@ function Sidebar(){
         <>
                <div className="dash-side-bar" >
                     <div className="dash-profile"><center><img className="pic" src="/Images/profile.jpg" alt="image" />
-                    <p className="dash-username">Tony Stark</p></center></div>
+                    <p className="dash-username">{ApiCaller.userData.name}</p></center></div>
                     <div className="mainbar"></div>
                     <div className="sidebar-pages">
                     <div className="sidebar-page-cont">

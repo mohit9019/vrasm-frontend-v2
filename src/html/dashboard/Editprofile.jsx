@@ -7,13 +7,15 @@ import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 
 function Editprofile() {
+  console.log('in edit profile');
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [address, setAddress] = useState('');
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
+    console.log('in getp')
     let apiCaller = new ApiCaller();
     apiCaller.postData({
         url: 'user/get_profile',
@@ -26,7 +28,7 @@ function Editprofile() {
           toast.error(res.status_message);
         }
     })
-  }, []);
+  },[]);
 
   // function to set user data;
   function setUserProfile(data){
@@ -44,9 +46,12 @@ function Editprofile() {
     }).then(res => {
         if (res && res.status_code == '1') {
             ApiCaller.userData.name = firstname + " " + lastname;
-            
+            localStorage.setItem('userData',JSON.stringify(ApiCaller.userData));
             toast.success("Profile Updated Successfully");
-            navigate('/Buyerdash/Personalinfo');
+            setTimeout(() => {
+              // navigate('/Buyerdash/Personalinfo');
+              
+            }, 1000);
         }
     })
   }

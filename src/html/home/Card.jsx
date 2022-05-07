@@ -44,7 +44,7 @@ const Card=(props)=>{
     <> 
     <div className="card-cont">
       <div className="image_div">
-      <div className="save" style={liked?{display:"block"}:null} ><div className="save-round" style={liked?{color:"rgb(153, 11, 248)"}:{color:"rgb(213, 181, 238)"}}><AiFillHeart className="save-icon" onClick={()=>{addToLike(props._id); setLiked(toggleSave)}} /></div></div>
+      <div className="save" style={props.is_like?{display:"block"}:null} ><div className="save-round" style={props.is_like?{color:"rgb(153, 11, 248)"}:{color:"rgb(213, 181, 238)"}}><AiFillHeart className="save-icon" onClick={()=>{addToLike(props._id); setLiked(toggleSave)}} /></div></div>
       <img src={props.img} className="img" alt="IMAGE"/></div>
       <div className="card-content"> 
         <span className="card-name">{props.title}</span>

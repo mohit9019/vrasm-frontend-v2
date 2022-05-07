@@ -11,7 +11,6 @@ import { toast } from "react-toastify";
 
 const tags = ["html", "css", 'bootstrap', 'tailwind', 'h'];
 const i = '/Images/113.jpg';
-const images = ['/Images/longss.webp', i, '/Images/p.jpg'];
 
 function Preview() {
     let template_id = window.location.href.split('?')[1];
@@ -154,7 +153,6 @@ function Preview() {
         beforeChange: (current, next) => setImageIndex(next),
     };
 
-
     const [download, setDownload] = useState(0);
     return (
         <>
@@ -178,7 +176,7 @@ function Preview() {
                     <div className="image-carousel">
                         <div className="carousel-cont">
                             <Slider {...settings}>
-                                {images.map((img, idx) => (
+                                {templateData.images?.map((img, idx) => (
                                     <div className={idx === ImageIndex ? "activeslide" : "slide"}>
                                         <center>
                                             <div className="carousel-img-cont">

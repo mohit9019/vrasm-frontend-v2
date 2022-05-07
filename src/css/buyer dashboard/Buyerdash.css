@@ -35,6 +35,7 @@
 .dash-username{ 
     color: white;
     font-size: 100%; 
+    text-transform: capitalize;
 }
 .sidebar-pages{
     display: flex;

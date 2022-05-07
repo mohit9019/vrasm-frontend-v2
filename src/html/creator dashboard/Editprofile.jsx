@@ -47,8 +47,9 @@ function Editprofile(){
     }).then(res => {
         if (res && res.status_code == '1') {
             ApiCaller.userData.name = firstname + " " + lastname;
+            localStorage.setItem('userData',JSON.stringify(ApiCaller.userData));
             toast.success("Profile Updated Successfully");
-            navigate('/Creatordash/Personalinfo');
+            // navigate('/Creatordash/Personalinfo');
         }
     })
   }
@@ -104,7 +105,7 @@ function Editprofile(){
   </Row>
 
 
-  <Link to="/Creatordash/Personalinfo"><button variant="primary" type="submit" className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>
+  <Link to="/Creatordash/Personalinfo"><button variant="primary" onClick={()=>updateUser()} type="submit" className="dash-button" style={{ marginTop: "10px",padding:'1.5% 2% 1.5% 2%' }}>
               Edit Profile
             </button></Link>
 
