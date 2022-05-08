@@ -18,27 +18,26 @@ function Categoriespage() {
       }
     })
   }, []);
-
-  const [choose, setChoose] = useState('html');
+  const [length,setLength]=useState([1]);
+  const [choose, setChoose] = useState();
   function category(props) {
-    // let apiCaller = new ApiCaller();
-    // console.log(props);
-    // apiCaller.postData({
-    //   url: 'template/get',
-    //   data: { category: props }
-    // }).then(data => {
-    //   if (data && data.status_code == '1') {
-    //     toast.success('get successfully');
-    //     setData(data.data);
-    //     console.log(data.data.length);
-    //   }
-    //   else
-    //     toast.error(data.status_message);
-    //   console.log(data);
-    // })
-    //   .catch(err => {
-    //     console.log(err);
-    //   })
+    let apiCaller = new ApiCaller();
+    console.log(props);
+    apiCaller.postData({
+      url: 'template/get',
+      data: { category: props }
+    }).then(data => {
+      if (data && data.status_code == '1') {
+        setData(data.data);
+        setLength(data.data.length);
+      }
+      else
+        toast.error(data.status_message);
+      console.log(data);
+    })
+      .catch(err => {
+        console.log(err);
+      })
     console.log(props);
 
   }
@@ -47,9 +46,9 @@ function Categoriespage() {
     <>
       <div className="categories">
         <input type='checkbox' id='toggle'></input>
-
         {/* <!-- Menu --> */}
         <aside className='category-sidebar'>
+        <span onClick={() => { category() }} style={{fontSize:"120%",listStyle:"none",color:"rebeccapurple",margin:"0 0 5px",cursor:"pointer"}} className='category-name'> All Templates</span> <span className="number"></span>
           <label for='toggle' className='exit'><i class="fad fa-times"></i></label>
           <h4 className='category-title'>Catagories</h4>
           <ul className="categories-list">
@@ -85,13 +84,18 @@ function Categoriespage() {
               <div className="search-input"><input type="search" name="tag" placeholder={"Search Templates..."} /></div>
             </div>
           </div>
+          {length==0?
+          <h5 style={{color:"rgb(75, 74, 74)"}}>No record Found</h5>
+          :
+          <>
+          <h5 style={{color:"rgb(75, 74, 74)"}}>{choose}</h5>
           <div className="card-scroller" style={{ margin: '1% 0 0 0' }}>
-            <div className="cards" style={{ width: "100%" }}>
+            {/* <div className="cards" style={{ width: "100%" }}> */}
               {
                 Data.map(details)
               }
-            </div>
-          </div>
+            {/* </div> */}
+          </div></>}
         </div>
       </div>
     </>

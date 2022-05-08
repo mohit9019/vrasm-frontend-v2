@@ -25,11 +25,12 @@
     width: 20%;
     height: 91vh;
     position: fixed;
-    padding: 4% 0 0 2%;
+    padding: 1% 0 0 2%;
     /* box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5); */
 }
 .categories-list li{
     list-style: none;
+    cursor: pointer;
     margin: 2% 0 0 5%;
     font-weight: 400;
     font-size: 15px;
@@ -68,6 +69,7 @@
     font-weight: 400;
     font-size: 15px;
     transition: all 0.2s;
+    cursor:pointer ;
     color: rgb(58, 57, 57);
 }
 .number{
