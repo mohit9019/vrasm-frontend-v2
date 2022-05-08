@@ -1,12 +1,13 @@
 import Card from "./Card";
 
 function details(val){
+  console.log('val',val);
     return(
       <>
         <div className="templetes">
         <Card 
           _id={val._id}
-          img='/Images/default.webp'
+          img={val.images[0]}
           title={val.name}
           desc={val.desc}
           review={val.rating}
