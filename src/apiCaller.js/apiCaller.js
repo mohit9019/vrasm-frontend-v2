@@ -42,7 +42,7 @@ class ApiCaller {
     return axios.post(this.site + url, data)
       .then(data => {
         // Loader.setLoader(0);
-        if (url == 'user/login' && data.data.status_code == '1') {
+        if ((url == 'user/login' || url == 'buyer/otp') && data.data.status_code == '1') {
           console.log('data inserted');
           ApiCaller.userData = { ...data.data.data };
           localStorage.setItem('userData', JSON.stringify(data.data.data));

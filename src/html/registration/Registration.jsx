@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 function toggle(value) {
   return !value;
@@ -10,6 +11,7 @@ function toggle(value) {
 var email = '';
 
 function Registration() {
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   // let email = '';
 
@@ -62,10 +64,14 @@ function Registration() {
       url: 'buyer/otp',
       data: body
     }).then(data => {
-      if (data && data.status_code == '1')
+      if (data && data.status_code == '1'){
         toast.success('Otp Verified', { autoClose: 2000 });
-      else
+        navigate('/');
+        window.location.reload("/");
+      }
+      else{
         toast.error("Otp doesn't Matched", { autoClose: 2000 });
+      }
       console.log(data);
     })
       .catch(err => {
