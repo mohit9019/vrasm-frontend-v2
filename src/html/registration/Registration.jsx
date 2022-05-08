@@ -21,7 +21,7 @@ function Registration() {
 
     email = e.target.email.value;
     let body = {
-      name: 'manav',
+      name: e.target.name.value,
       email: e.target.email.value,
       password: e.target.password.value,
       gender: e.target.gender.value,
@@ -110,6 +110,11 @@ function Registration() {
           <div className="regist">
 
             <form onSubmit={register}>
+            <div className="regist-col">
+                <label className="regist-label">name</label>
+                <input type="text" className="regist-input" name="name" placeholder="Enter email" required></input>
+              </div>
+
               <div className="regist-col">
                 <label className="regist-label">E-mail</label>
                 <input type="email" className="regist-input" name="email" placeholder="Enter email" required></input>
