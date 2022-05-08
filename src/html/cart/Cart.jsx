@@ -31,8 +31,12 @@ function Cart() {
         })
     }
     function cards(templates) { 
+        let img = templates?.images?.split[0];
+        if(img){
+            img = '/STORAGE/' + img;
+        }
         return <>
-            <CartCards onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
+            <CartCards image={img} onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
         </>;
     }
     const cart_total=0;
