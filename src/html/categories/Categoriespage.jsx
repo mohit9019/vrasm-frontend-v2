@@ -11,7 +11,7 @@ function Categoriespage() {
     let apiCaller = new ApiCaller();
     apiCaller.postData({
       url: 'template/get',
-      data: { user_id: '123456789101' } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+      data: { } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res => {
       if (res && res.status_code == '1') {
         setData(res.data);
@@ -25,7 +25,7 @@ function Categoriespage() {
     console.log(props);
     apiCaller.postData({
       url: 'template/get',
-      data: { category: props }
+      data: props
     }).then(data => {
       if (data && data.status_code == '1') {
         setData(data.data);
@@ -52,27 +52,27 @@ function Categoriespage() {
           <label for='toggle' className='exit'><i class="fad fa-times"></i></label>
           <h4 className='category-title'>Catagories</h4>
           <ul className="categories-list">
-            <li onClick={() => { category('Portfolio') }}><span className='category-name'><i class="far fa-user-alt"></i> Portfolio</span> <span className="number"></span></li>
-            <li onClick={() => { category('Business') }}><span className='category-name'><i class="far fa-briefcase"></i> Business</span><span className="number"></span></li>
-            <li onClick={() => { category('Sports') }}><span className='category-name'><i class="far fa-volleyball-ball"></i> Sports</span><span className="number"></span></li>
-            <li onClick={() => { category('Education') }}><span className='category-name'><i class="far fa-graduation-cap"></i> Education</span><span className="number"></span></li>
-            <li onClick={() => { category('Real-Estate') }}><span className='category-name'><i class="far fa-building"></i> Real-Estate</span><span className="number"></span></li>
-            <li onClick={() => { category('Restaurant') }}><span className='category-name'><i class="far fa-burger-soda"></i> Restaurant</span><span className="number"></span></li>
-            <li onClick={() => { category('Hospital') }}><span className='category-name'><i class="far fa-ambulance"></i> Hospital</span><span className="number"></span></li>
-            <li onClick={() => { category('Treavelling') }}><span className='category-name'><i class="far fa-map-marked"></i> Travelling</span><span className="number"></span></li>
-            <li onClick={() => { category('Others') }}><span className='category-name'><i class="far fa-caret-circle-down"></i> Others</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Portfolio'}) }}><span className='category-name'><i class="far fa-user-alt"></i> Portfolio</span> <span className="number"></span></li>
+            <li onClick={() => { category({category:'Business'}) }}><span className='category-name'><i class="far fa-briefcase"></i> Business</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Sports'}) }}><span className='category-name'><i class="far fa-volleyball-ball"></i> Sports</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Education'}) }}><span className='category-name'><i class="far fa-graduation-cap"></i> Education</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Real-Estate'}) }}><span className='category-name'><i class="far fa-building"></i> Real-Estate</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Restaurant'}) }}><span className='category-name'><i class="far fa-burger-soda"></i> Restaurant</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Hospital'}) }}><span className='category-name'><i class="far fa-ambulance"></i> Hospital</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Treavelling'}) }}><span className='category-name'><i class="far fa-map-marked"></i> Travelling</span><span className="number"></span></li>
+            <li onClick={() => { category({category:'Others'}) }}><span className='category-name'><i class="far fa-caret-circle-down"></i> Others</span><span className="number"></span></li>
           </ul>
           <hr />
           <h4 className='category-title'>Technologies</h4>
           <ul className="tech-list">
-            <li onClick={() => { category('HTML') }}><span className='category-name'><i class="fas fa-code"></i> HTML</span> <span className="number"></span></li>
-            <li onClick={() => { category('CSS') }}><span className='category-name'><i class="fab fa-css3-alt"></i> CSS</span> <span className="number"></span></li>
-            <li onClick={() => { category('Bootstrap') }}><span className='category-name'><i class="fab fa-bootstrap"></i> Bootstrap</span> <span className="number"></span></li>
-            <li onClick={() => { category('ReactJs') }}><span className='category-name'><i class="fab fa-react"></i> React Js</span> <span className="number"></span></li>
-            <li onClick={() => { category('Wordpress') }}><span className='category-name'><i class="fab fa-wordpress-simple"></i> Wordpress</span> <span className="number"></span></li>
-            <li onClick={() => { category('Responsive') }}><span className='category-name'><i class="fas fa-sync"></i> Responsive</span> <span className="number"></span></li>
-            <li onClick={() => { category('PPT') }}><span className='category-name'><i class="fas fa-presentation"></i> PPT</span> <span className="number"></span></li>
-            <li onClick={() => { category('PSD') }}><span className='category-name'><i class="far fa-file-image"></i> PSD</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'HTML'}) }}><span className='category-name'><i class="fas fa-code"></i> HTML</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'CSS'}) }}><span className='category-name'><i class="fab fa-css3-alt"></i> CSS</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'Bootstrap'}) }}><span className='category-name'><i class="fab fa-bootstrap"></i> Bootstrap</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'ReactJs'}) }}><span className='category-name'><i class="fab fa-react"></i> React Js</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'Wordpress'}) }}><span className='category-name'><i class="fab fa-wordpress-simple"></i> Wordpress</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'Responsive'}) }}><span className='category-name'><i class="fas fa-sync"></i> Responsive</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'PPT'}) }}><span className='category-name'><i class="fas fa-presentation"></i> PPT</span> <span className="number"></span></li>
+            <li onClick={() => { category({technology:'PSD'}) }}><span className='category-name'><i class="far fa-file-image"></i> PSD</span> <span className="number"></span></li>
           </ul>
         </aside>
 
@@ -81,7 +81,7 @@ function Categoriespage() {
           <div className="categories-search">
             <div className="searchbar">
               <div className="search-input"><input type="search" onChange={(e)=>setSearched(e.target.value)} placeholder={"Search Templates..."} /></div>
-              <div className="search-icon"><button style={{backgroundColor:"transparent",border:"none"}} onClick={() =>  { category(searched) } }><i class="fas fa-search"></i></button></div>
+              <div className="search-icon"><button style={{backgroundColor:"transparent",border:"none"}} onClick={() =>  { category({searchstring: searched}) } }><i class="fas fa-search"></i></button></div>
             </div>
           </div>
           {length==0?

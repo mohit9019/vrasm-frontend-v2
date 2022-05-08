@@ -11,7 +11,7 @@ class ApiCaller {
     }
   }
   static checkCreator(){
-    if(ApiCaller.userData && ApiCaller.userData.is_creator==2 ){
+    if(ApiCaller.userData && (ApiCaller.userData.is_creator==2 || ApiCaller.userData.is_creator == 1 )){
       return true;
     }
     else

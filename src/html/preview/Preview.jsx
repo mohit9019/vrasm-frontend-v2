@@ -16,7 +16,8 @@ function Preview() {
     const [templateData, setTemplateData] = useState({});
     const [downloadZippath, setDownloadZippath] = useState('');
     const [rating, setRating] = useState(0);
-
+    var tech=null;
+    var tags=null;
     function Ratings() {
 
         const [hover, setHover] = useState(null);
@@ -49,6 +50,8 @@ function Preview() {
             data: { template_id } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
         }).then(res => {
             if (res && res.status_code == '1') {
+                tech = templateData.technology?.split(',');
+                tags = templateData.tag?.split(' ');
                 setTemplateData(res.data[0]);
                 console.log(templateData);
             }
@@ -151,8 +154,6 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
-    var tech = templateData.technology?.split(',');
-    var tags = templateData.tag?.split(' ');
     const [download, setDownload] = useState(0);
     // function techbtn(props){
     //     <span className="tag">{props}</span>
@@ -196,13 +197,13 @@ function Preview() {
                     <div className="tags-cont">
                         <h5 className="features-title">Tags</h5>
                         <div className="tags-list">
-                            {tags==null?"....":tags?.map((props) => (<span className="tag">{props}</span>))}
+                            { !templateData.tags ? "...." : templateData.tags.split(" ")?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                     <div className="technologies-cont">
                         <h5 className="features-title">Technologies</h5>
                         <div className="tags-list">
-                            {tech==null?"....":tech?.map((props) => (<span className="tag">{props}</span>))}
+                            { !templateData.technology ? "...." : templateData.technology.split(",")?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                 </div>
