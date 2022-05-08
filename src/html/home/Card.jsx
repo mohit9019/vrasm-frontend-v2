@@ -50,7 +50,9 @@ const Card=(props)=>{
         <span className="card-name">{props.title}</span>
         <span className="disc">{props.desc==null?". . . . . . . . . . . . . . . . . .":props.desc}</span>
         <span className="card-stars"><RatedStars stars={props.rating}/></span>
-        <div className="card-about"><span className="card-sale">Sale: {props.sale==null?0:props.sale}</span><span className="card-price">{props.price} <i class="fal fa-rupee-sign"></i></span></div>
+        <div className="card-about">
+        {/* <span className="card-sale">Sale: {props.sale==null?0:props.sale}</span> */}
+        <span className="card-price">{props.price} <i class="fal fa-rupee-sign"></i></span></div>
         <div className="card-btns">
         <Link  to={{pathname:`/Preview/id?${props._id}`}}  style={{textDecoration:"none", color:"darkgray"}} >
           <button className="preview-btn"><i class="fas fa-eye"></i><span className="card-btn-title">Preview</span></button>

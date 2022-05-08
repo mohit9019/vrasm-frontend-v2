@@ -162,10 +162,10 @@ function Registration() {
                   <input type="text" name="course" className="regist-input" placeholder="Enter Course Name" required></input>
                 </div>
 
-                <div className="regist-col">
+                {/* <div className="regist-col">
                   <label className="regist-label">College ID</label>
                   <input type="file" className="regist-input"></input>
-                </div>
+                </div> */}
 
               </div> : null}
 

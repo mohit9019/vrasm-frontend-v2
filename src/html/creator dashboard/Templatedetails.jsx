@@ -51,7 +51,7 @@ function Tenmplatedetails() {
     return (
         <>
             {
-                Details_saved == 0 ?
+                Details_saved == 0   ?
                     <>
                         {/* designed image upload form */}
                         {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}
@@ -122,16 +122,20 @@ function Tenmplatedetails() {
                     </>
                     :
                     <>
+                    <h3 className="n">Template Details</h3>
+                        <div className="form1">
                         <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
-
-                            <input type="file" name="file"></input>
-                            <input type="file" name="file"></input>
-                            <input type="file" name="file"></input>
+                            <div className="doccol">
+                            <div className="doccol"><label className="doc-title">Promotional Image :</label><input className="doc-input" type="file" name="file"></input></div>
+                            <div className="doccol"><label className="doc-title">Other Image :</label><input className="doc-input" type="file" name="file"></input></div>
+                            <div className="doccol"><label className="doc-title">Zip File :</label><input className="doc-input" type="file" name="file"></input></div>
                             <input type="text" style={{ visibility: 'hidden' }} id="template_id" name="template_id" value={template_id}></input>
                             <input type="text" style={{ visibility: 'hidden' }} id="user_id" name="user_id" value={ApiCaller.userData.user_id}></input>
                             <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input>
-                            <button type="submit">submit</button>
+                            <button className="doc-button" type="submit">submit</button>
+                            </div>
                         </form>
+                        </div>
                         {/* <h3 className="n">Upload Documents</h3>
                         <div className="documents">
                             <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
