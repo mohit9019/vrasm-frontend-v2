@@ -38,7 +38,7 @@ function Home() {
     <div className="explore" onClick={ScrolltoTop}><div className="explore-icon"><i class="fad fa-chevron-up"></i></div><span className="explore-text">Explore</span></div> 
     {(ApiCaller.checkCreator())?<><Link to="/Creatordash/Uploadtemp/Templatedetails"><div className="upload-wraper"><div className="upload-btn"><div className="upload-icon"><i class="fas fa-cloud-upload"></i></div><span className="upload-text"> Upload Template </span></div></div></Link></>:null}
     <div className="home-slide">
-    <Searchbar />
+    {/* <Searchbar /> */}
     <Categories /> 
 
     <div className='trending'>Trending</div>
