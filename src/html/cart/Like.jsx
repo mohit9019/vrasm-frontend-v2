@@ -25,7 +25,7 @@ function Like(){
     }
     function cards(templates) {
         return <>
-            <Likecard onDelete={()=>handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></Likecard>
+            <Likecard image={templates.images[0]} onDelete={()=>handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></Likecard>
         </>;
     }
 
