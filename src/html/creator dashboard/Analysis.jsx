@@ -39,6 +39,9 @@ function Analysis() {
               rating += f.rating;
           })
           rating /= record.feedbacks?.length;
+          if(isNaN(rating)){
+            rating = 0;
+          }
           record['rating'] = rating;
           record['created_date'] = new Date(record.created_date).toLocaleDateString();
         })

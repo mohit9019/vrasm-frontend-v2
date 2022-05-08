@@ -7,8 +7,6 @@ import { toast } from "react-toastify";
 import RatedStars from "../preview/RatedStars";
 // import {cart} from "./Data";
 const Card=(props)=>{
-  let id = '6225a181ffb0259ddab852ba';
-  
   function addToCart(template_id){
     let apiCaller = new ApiCaller();
     apiCaller.postData({
@@ -49,7 +47,7 @@ const Card=(props)=>{
       <div className="card-content"> 
         <span className="card-name">{props.title}</span>
         <span className="disc">{props.desc==null?". . . . . . . . . . . . . . . . . .":props.desc}</span>
-        <span className="card-stars"><RatedStars stars={props.rating}/></span>
+        <span className="card-stars"><RatedStars rating={props.rating}/></span>
         <div className="card-about">
         {/* <span className="card-sale">Sale: {props.sale==null?0:props.sale}</span> */}
         <span className="card-price">{props.price} <i class="fal fa-rupee-sign"></i></span></div>
