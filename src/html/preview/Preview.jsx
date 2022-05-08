@@ -197,13 +197,13 @@ function Preview() {
                     <div className="tags-cont">
                         <h5 className="features-title">Tags</h5>
                         <div className="tags-list">
-                            {tags == null ? "...." : tags?.map((props) => (<span className="tag">{props}</span>))}
+                            { !templateData.tags ? "...." : templateData.tags.split(" ")?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                     <div className="technologies-cont">
                         <h5 className="features-title">Technologies</h5>
                         <div className="tags-list">
-                            {tech == null ? "...." : tech?.map((props) => (<span className="tag">{props}</span>))}
+                            { !templateData.technology ? "...." : templateData.technology.split(",")?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                 </div>
