@@ -31,8 +31,8 @@ function Personalinfo(){
     setAddress(data?.address);
     setPincode(data?.pincode);
     setCity(data?.city);
-    setCity(data?.college);
-    setCity(data?.course);
+    setCollege(data?.college);
+    setCourse(data?.course);
   } 
     return(
         <>

@@ -122,7 +122,7 @@ function Tenmplatedetails() {
                     </>
                     :
                     <>
-                        {/* <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
+                        <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
 
                             <input type="file" name="file"></input>
                             <input type="file" name="file"></input>
@@ -131,8 +131,8 @@ function Tenmplatedetails() {
                             <input type="text" style={{ visibility: 'hidden' }} id="user_id" name="user_id" value={ApiCaller.userData.user_id}></input>
                             <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input>
                             <button type="submit">submit</button>
-                        </form> */}
-                        <h3 className="n">Upload Documents</h3>
+                        </form>
+                        {/* <h3 className="n">Upload Documents</h3>
                         <div className="documents">
                             <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
                                 <Form.Group controlId="formFile" className="mb-3">
@@ -157,11 +157,11 @@ function Tenmplatedetails() {
                                     <i class="fas fa-arrow-circle-left"></i>
                                 </button></Link>
 
-                                <Link to=""><button className="dash-button" variant="primary" name="file" type="submit" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%', float: 'right' }}>
+                                <button className="dash-button" variant="primary" name="file" type="submit" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%', float: 'right' }}>
                                     Save & Next
-                                </button></Link>
+                                </button>
                             </form>
-                        </div>
+                        </div> */}
                     </>
             }
         </>);
