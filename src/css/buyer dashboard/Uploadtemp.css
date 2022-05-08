@@ -10,6 +10,30 @@
     margin: 15px 13% 0 13%;
     width: 70%;
 }
+.doccol{
+    display: flex;
+    flex-direction:column ;
+    margin: 3% 0 0;
+}
+.doccol input{
+    margin: 0 0 0 4%;
+}
+.docrow{
+    display:flex;
+    flex-direction: row;
+}
+.doc-title{
+    margin: 0 0 2%;
+    font-size: 110%;
+}
+.doc-button{
+    width: 12%;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    background-color: rebeccapurple;
+    padding: 1% 0;
+}
 .n{
     margin: 1% 0 2% 10%;
 }
