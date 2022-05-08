@@ -36,7 +36,7 @@ function Overview(){
                 <div className="preview-desc"><span>Grand Restauran is a beautiful HTML Template. We have carefully crafted each & demo to ensure that a clean and modern design is carried through. Great design and Powerful features makes Infinite is irresistible. What you see below are full fledged demos and features.</span></div>
                 
                 <div className="userinfo">
-                <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
+                <div className="user-dp"><img src="/Images/vprof.jpg" /></div><span className="user-name">Mohit Chauhan</span>
                 </div>
                 <div className="preview-stars"><RatedStars /></div>
                 <div className="preview-btns">

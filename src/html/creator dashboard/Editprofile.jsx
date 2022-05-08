@@ -87,7 +87,7 @@ function Editprofile(){
 
     <Form.Group as={Col} controlId="formGridCity">
       <Form.Label >Pincode</Form.Label>
-      <Form.Control type="text" placeholder="..." value={pincode} onChange={(e)=>setPincode(e.target.value)} />
+      <Form.Control type="text" min={6} max={6} placeholder="..." value={pincode} onChange={(e)=>setPincode(e.target.value)} />
     </Form.Group>
 
   </Row>

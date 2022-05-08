@@ -18,7 +18,7 @@
     flex-direction: row;
 }
 .userinfo{
-    margin:5% 0 0;
+    margin:3% 0 0;
     width: 100%;
     display: flex;
 }
@@ -38,7 +38,7 @@
 }
 .user-name{
     color: rgb(92, 91, 91);
-    font-size: 75%;
+    font-size: 95%;
     font-weight: 500;
     margin: 1% 0 0 3%;
 }
@@ -50,11 +50,11 @@
     width: 35%;
     word-break: break-all;
     word-wrap: break-word;
-    padding: 5% 0 0 ;
+    padding: 3% 0 0 ;
 }
 .preview-name{
     /* text-align: center; */
-    margin:1% 0 5%;
+    margin:3% 0 2%;
     color: rgb(70, 69, 69);
 }
 .preview-desc{

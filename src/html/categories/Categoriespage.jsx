@@ -41,12 +41,7 @@ function Categoriespage() {
     console.log(props);
 
   }
-  const [searched,setSearched]=useState("");
-  function handleChange(event) {    this.setState({value: event.target.value});  }
-  function handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
+  const [searched,setSearched]=useState();
   return (
     <>
       <div className="categories">
@@ -85,16 +80,15 @@ function Categoriespage() {
           <label for='toggle' className='button'><i class="fad fa-bars"></i></label>
           <div className="categories-search">
             <div className="searchbar">
-              <div className="search-icon"><i class="fas fa-search"></i></div>
-              <div className="search-input"><input type="search" placeholder={"Search Templates..."} /></div>
-              <p>{searched}</p>
+              <div className="search-input"><input type="search" onChange={(e)=>setSearched(e.target.value)} placeholder={"Search Templates..."} /></div>
+              <div className="search-icon"><button style={{backgroundColor:"transparent",border:"none"}} onClick={() =>  { category(searched) } }><i class="fas fa-search"></i></button></div>
             </div>
           </div>
           {length==0?
           <h5 style={{color:"rgb(75, 74, 74)"}}>No record Found</h5>
           :
           <>
-          <h5 style={{color:"rgb(75, 74, 74)"}}>{choose}</h5>
+          {/* <h5 style={{color:"rgb(75, 74, 74)"}}></h5> */}
           <div className="card-scroller" style={{ margin: '1% 0 0 0' }}>
             {/* <div className="cards" style={{ width: "100%" }}> */}
               {

@@ -53,14 +53,14 @@ function Navba() {
                   <i class="far fa-user-alt" onClick={()=>NavActive(1)} id={togglenav===1?"nav-active":null}></i>
                 </Link>
                 :
-                <div className="top-icon" onClick={() => setShow(toggleDropdown)}><div className="navbar-profile" for="toggle"><img src="/Images/profile.jpg" alt="profile" /></div>
+                <div className="top-icon" onClick={() => setShow(toggleDropdown)}><div className="navbar-profile" for="toggle"><img src="/Images/vprof.jpg" alt="profile" /></div>
 
                 <i id="down-arrow" class="far fa-caret-down"></i>
                   {show?
                     <div className="dropdown-content">
                   <ul className="dropdown-list">
-                    <Link to={ApiCaller.checkCreator()?"/creatordash/Personalinfo":"/Buyerdash/Personalinfo"} style={{textDecoration:"none",color:"rebeccapurple"}}><li>Dashboard</li></Link>
-                    <li onClick={()=>logout()}>Log-Out</li>
+                    <Link to={ApiCaller.checkCreator()?"/creatordash/Personalinfo":"/Buyerdash/Personalinfo"} style={{textDecoration:"none",color:"rebeccapurple"}}><li onClick={()=>NavActive(1)}>Dashboard</li></Link>
+                    <li onClick={()=>{logout(); NavActive(1)}}>Log-Out</li>
                   </ul> 
                 </div> :null} 
                 </div>

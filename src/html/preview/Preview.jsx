@@ -42,7 +42,7 @@ function Preview() {
         );
     };
 
-    function getDetails(){
+    function getDetails() {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
             url: 'template/get',
@@ -54,14 +54,14 @@ function Preview() {
             }
         })
     }
-    function ScrolltoTop(){
+    function ScrolltoTop() {
         window.scrollTo({
-          top: 0, 
-          behavior: 'smooth',
+            top: 0,
+            behavior: 'smooth',
         });
-      }
+    }
     useEffect(() => {
-        getDetails();   
+        getDetails();
         ScrolltoTop();
     }, []);
 
@@ -151,21 +151,22 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
-    // var techs=templateData.technology.split(',');
-    // console.log(technology[0]);
+    var tech = templateData.technology?.split(',');
+    var tags = templateData.tag?.split(' ');
     const [download, setDownload] = useState(0);
+    // function techbtn(props){
+    //     <span className="tag">{props}</span>
+    // }
     return (
         <>
-
             <div className="preview">
                 <div className="preview-details">
                     <div className="preview-title">
+                        <div className="userinfo">
+                            <div className="user-dp"><img src="/Images/vprof.jpg" /></div><span className="user-name">By: {templateData?.creator_id?.name}</span>
+                        </div>
                         <h3 className="preview-name">{templateData.name}</h3>
                         <div className="preview-desc"><span>{templateData.description}</span></div>
-
-                        <div className="userinfo">
-                            <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">{templateData?.creator_id?.name}</span>
-                        </div>
                         <div className="category"><span >Category: {templateData.category}</span></div>
                         <div className="preview-stars"><RatedStars /></div>
                         <div className="preview-btns">
@@ -173,6 +174,7 @@ function Preview() {
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
                             {downloadZippath == '' ? null : <a href={downloadZippath} download="template.zip"><button className="buy-btn"><i class="far fa-download"></i><span>Download zip</span></button></a>}
                         </div>
+                        {console.log(tech)}
                     </div>
                     <div className="image-carousel">
                         <div className="carousel-cont">
@@ -194,47 +196,29 @@ function Preview() {
                     <div className="tags-cont">
                         <h5 className="features-title">Tags</h5>
                         <div className="tags-list">
-                            {/* {tags.map(({tag }) =>( */}
-                            <span className="tag">HTML5</span>
-                            <span className="tag">CSS</span>
-                            <span className="tag">BOOTSTRAP</span>
-                            <span className="tag">TAILWIND</span>
-                            <span className="tag">HTML5</span>
-                            <span className="tag">CSS</span>
-                            <span className="tag">BOOTSTRAP</span>
-                            <span className="tag">TAILWIND</span>
-                            <span className="tag">HTML5</span>
-                            <span className="tag">CSS</span>
-                            <span className="tag">BOOTSTRAP</span>
-                            <span className="tag">TAILWIND</span>
-                            {/* ))} */}
+                            {tags==null?"....":tags?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                     <div className="technologies-cont">
                         <h5 className="features-title">Technologies</h5>
                         <div className="tags-list">
-                            {/* {tags.map(({tag }) =>( */}
-                            <span className="technology">HTML5</span>
-                            <span className="technology">CSS</span>
-                            <span className="technology">BOOTSTRAP</span>
-                            <span className="technology">TAILWIND</span>
-                            {/* ))} */}
+                            {tech==null?"....":tech?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                 </div>
                 <div className="review-cont">
                     <h5>Reviews</h5>
                     <div className="reviews">
-                    {templateData?.feedbacks?.length > 0 ? //aiyaa 0 kar deje integrate karya pa6i.
+                        {templateData?.feedbacks?.length > 0 ? //aiyaa 0 kar deje integrate karya pa6i.
 
-                        templateData.feedbacks.map(feedback => {
-                            return (<>
-                                
+                            templateData.feedbacks.map(feedback => {
+                                return (<>
+
                                     <FeedbackCard message={feedback.message} rating={feedback?.rating} buyer_id={feedback?.buyer_id} />
-                            </>);
-                        })
-                        : 'no reviews'}
-                        </div>
+                                </>);
+                            })
+                            : 'no reviews'}
+                    </div>
                     <div className="feedback-youtube">
                         <div className="feedback-form">
                             <h5 className="feedback-title">Your Opinion Matters !</h5>
