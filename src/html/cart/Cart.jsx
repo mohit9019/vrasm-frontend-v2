@@ -31,7 +31,7 @@ function Cart() {
         })
     }
     function cards(templates) { 
-        let img = templates?.images?.split[0];
+        let img = templates?.images?.split(",")[0];
         if(img){
             img = '/STORAGE/' + img;
         }
