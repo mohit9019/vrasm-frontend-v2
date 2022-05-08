@@ -71,10 +71,10 @@ function Personalinfo(){
       <Form.Control  type="text" placeholder="..." value={pincode} style={{backgroundColor:'white'}} readOnly />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridZip">
+    {/* <Form.Group as={Col} controlId="formGridZip">
       <Form.Label >Contact No.</Form.Label>
       <Form.Control  type="text" placeholder="..." style={{backgroundColor:'white'}} readOnly />
-    </Form.Group>
+    </Form.Group> */}
   </Row>
 
   <Row className="mb-3">

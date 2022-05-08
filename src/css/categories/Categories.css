@@ -20,6 +20,7 @@
     flex-direction: row;
     width: 100%;
     padding: 0 0 0 0;
+    text-transform: capitalize;
 }
 .category-sidebar{
     width: 20%;

@@ -7,7 +7,7 @@ function Myorder() {
     useEffect(() => {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url: 'buyer/my_orders',
+            url: 'buyer/my_orders', 
             data:{} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
         }).then(res => {
             if (res && res.status_code == '1') {
@@ -24,13 +24,14 @@ function Myorder() {
     return (
         <>
         {orders.length==0?
+            <div className="my-order">
             <h5>Oops! No Orders found...</h5>
+            </div>
         :
-            orders.map(cards)
+        <div className="my-order">
+            {orders.map(cards)}
+            </div>
         }
-            {/* {orders.map((item) => (
-                <Ordercard id={item._id} name={item.name} date={item.date} desc={item.description} price={item.price} />
-      ))} */}
         </>
     );
 }

@@ -2,6 +2,7 @@
     margin-top: 2%;
     height: auto;
     background: rgb(90, 45, 134);
+    text-transform: capitalize;
 }
 .tabs{
     /* color: white; */

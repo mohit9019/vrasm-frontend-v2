@@ -151,7 +151,8 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
-
+    // var techs=templateData.technology.split(',');
+    // console.log(technology[0]);
     const [download, setDownload] = useState(0);
     return (
         <>

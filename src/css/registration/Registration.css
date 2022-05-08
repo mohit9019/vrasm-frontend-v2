@@ -8,6 +8,7 @@
     margin:0 auto 0 auto;
     padding:2rem;
     background-color: white;
+    text-transform: capitalize;
     border: rgb(204, 203, 203) 1px solid;
     border-radius: 4px;
 }

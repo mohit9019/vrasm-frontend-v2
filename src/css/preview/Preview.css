@@ -9,6 +9,7 @@
     background-color: rgb(246, 244, 248);
     border-radius: 5px;
     padding: 0 0 2% 4%;
+    text-transform: capitalize;
 }
 .preview-details{
     width: 100%; 

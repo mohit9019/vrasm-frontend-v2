@@ -127,6 +127,7 @@
   background-color: white;
   padding-bottom:3%;
   border-radius: 2px;
+  text-transform: capitalize;
   box-shadow: 1px 1px 3px rgb(10, 10, 10,.25);
 }
 .card-cont:hover .save{
@@ -232,7 +233,7 @@
   font-size: 90%;
 }
 .card-price{
-  font-size: 120%;
+  font-size: 100%;
   line-height: 1rem;
   text-align: center;
   font-weight: 500;

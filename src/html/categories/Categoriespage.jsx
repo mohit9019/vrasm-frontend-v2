@@ -17,7 +17,7 @@ function Categoriespage() {
         setData(res.data);
       }
     })
-  }, []);
+  }, []); 
   const [length,setLength]=useState([1]);
   const [choose, setChoose] = useState();
   function category(props) {
@@ -41,7 +41,12 @@ function Categoriespage() {
     console.log(props);
 
   }
-
+  const [searched,setSearched]=useState("");
+  function handleChange(event) {    this.setState({value: event.target.value});  }
+  function handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
   return (
     <>
       <div className="categories">
@@ -81,7 +86,8 @@ function Categoriespage() {
           <div className="categories-search">
             <div className="searchbar">
               <div className="search-icon"><i class="fas fa-search"></i></div>
-              <div className="search-input"><input type="search" name="tag" placeholder={"Search Templates..."} /></div>
+              <div className="search-input"><input type="search" placeholder={"Search Templates..."} /></div>
+              <p>{searched}</p>
             </div>
           </div>
           {length==0?

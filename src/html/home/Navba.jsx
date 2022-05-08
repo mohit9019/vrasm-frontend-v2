@@ -34,8 +34,8 @@ function Navba() {
             Buyer</span>
           </Link> */}
             
-            <Link to="/login" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(5)} id={togglenav===5?"nav-active":null}>
-              Login</span> 
+            <Link to="/categoriespage" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(5)} id={togglenav===5?"nav-active":null}>
+              Templates</span> 
             </Link>
             <Link to="/Registration" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(4)} id={togglenav===4?"nav-active":null}>
               Register</span> 
