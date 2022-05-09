@@ -17,6 +17,7 @@ import { ToastContainer ,toast, Flip, Zoom, Slide} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "./html/other/Loader";
 import Payment from "./html/preview/Payment";
+import Terms from "./html/other/terms";
 import ApiCaller from "./apiCaller.js/apiCaller";
 function App() {
   function checkLogin(){ 
@@ -60,6 +61,8 @@ function App() {
       <Route exact path="/OtpVerification/*" element={<OtpVerification />} />
       <Route exact path="/Loader" element={<Loader />} />
       <Route exact path="/Payment" element={checkLogin() ? <Payment /> : <Login />} />
+      <Route exact path="/Payment" element={checkLogin() ? <Payment /> : <Login />} />
+      <Route exact path="/terms" element={<Terms />} />
     </Routes>
   </>);
 }

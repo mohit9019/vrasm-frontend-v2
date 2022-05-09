@@ -12,6 +12,15 @@ var email = '';
 
 function Registration() {
   const navigate = useNavigate();
+  function ScrolltoTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+}
+useEffect(() => {
+    ScrolltoTop();
+}, []);
   const [show, setShow] = useState(false);
   // let email = '';
 
@@ -112,7 +121,7 @@ function Registration() {
             <form onSubmit={register}>
             <div className="regist-col">
                 <label className="regist-label">name</label>
-                <input type="text" className="regist-input" name="name" placeholder="Enter email" required></input>
+                <input type="text" className="regist-input" name="name" placeholder="Enter Name" required></input>
               </div>
 
               <div className="regist-col">
@@ -174,6 +183,8 @@ function Registration() {
                     <input type="checkbox" name="register" className="radio-button" placeholder="Passwords" style={{ height: '1.01rem', marginTop: '5px' }} required></input>
                     <label className="regist-label">Agree with Terms & Conditions</label>
                   </div>
+        <div className="regist-col"><label className="regiter"><Link to="/terms" style={{fontSize:"85%",textDecoration:"none"}}>Terms and Condition</Link></label> </div> 
+
                 </div>
                 
               <button className="regist-button" type="submit" disabled={password != cpassword ? true : false} >

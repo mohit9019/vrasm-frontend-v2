@@ -8,3 +8,17 @@
     z-index: 14;
     overflow: hidden;
 }
+.terms-cont{
+    width: 85%;
+    margin: 1% auto;
+    padding: 3%;
+    background-color: rgb(242, 242, 255);
+    border-radius: 5px;
+}
+.term-title{
+    color: rgb(55, 55, 55);
+    margin: 0 0 3%;
+}
+.terms{
+    font-size: 80%;
+}
