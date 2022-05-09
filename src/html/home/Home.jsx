@@ -49,7 +49,7 @@ function Home() {
     } 
     </div>
     </div>
-    <div className="seemore"><Link to="/Loader" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more <i class="fad fa-angle-right"></i></p></Link></div>
+    <div className="seemore"><Link to="/Categoriespage" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more <i class="fad fa-angle-right"></i></p></Link></div>
     {/* <div className='trending'> Highest Ratings</div>
     <div className="card-scroller">
     <div className="cards">

@@ -37,7 +37,7 @@ function Registration() {
       data: body
     }).then(data => {
       if (data && data.status_code == '1') {
-        toast.success('Data Uploaded succesfully');
+        toast.success('Otp sent on your email');
         setTimeout(() => {
           setis_register(1);
         }, 500);
