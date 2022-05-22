@@ -1,5 +1,5 @@
 import "../../css/registration/Registration.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
@@ -25,8 +25,6 @@ useEffect(() => {
 
   function register(e) {
     e.preventDefault();
-    console.log("clicked");
-
     email = e.target.email.value;
     let body = {
       name: e.target.name.value,
@@ -52,7 +50,6 @@ useEffect(() => {
       }
       else
         toast.error(data.status_message);
-      console.log(data);
     })
       .catch(err => {
         console.log(err);
@@ -61,7 +58,6 @@ useEffect(() => {
 
   function otp(e) {
     e.preventDefault();
-    console.log(e.target.value);
     let otp = e.target[0].value + e.target[1].value + e.target[2].value + e.target[3].value;
     let body = {
       otp: otp,
@@ -80,7 +76,6 @@ useEffect(() => {
       else{
         toast.error("Otp doesn't Matched", { autoClose: 2000 });
       }
-      console.log(data);
     })
       .catch(err => {
         console.log(err);
