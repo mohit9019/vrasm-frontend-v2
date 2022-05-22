@@ -8,16 +8,12 @@ import RatedStars from "./RatedStars";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 
-
-const i = 0;
-
 function Preview() {
     let template_id = window.location.href.split('?')[1];
     const [templateData, setTemplateData] = useState({});
     const [downloadZippath, setDownloadZippath] = useState('');
     const [rating, setRating] = useState(0);
     var tech=null;
-    var tags=null;
     function Ratings() {
 
         const [hover, setHover] = useState(null);
@@ -49,11 +45,9 @@ function Preview() {
             url: 'template/get',
             data: { template_id } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
         }).then(res => {
-            if (res && res.status_code == '1') {
+            if (res && res.status_code === '1') {
                 let rating = 0;
-                res.data[0].feedbacks?.map(f => {
-                  rating += f.rating;
-                })
+                res.data[0].feedbacks?.map(f => rating += f.rating)
                 rating /= res.data[0].feedbacks?.length;
                 if (isNaN(rating)) {
                   rating = 0;
@@ -70,6 +64,7 @@ function Preview() {
             behavior: 'smooth',
         });
     }
+
     useEffect(() => {
         getDetails();
         ScrolltoTop();
@@ -88,7 +83,7 @@ function Preview() {
             url: 'template/feedback',
             data: body
         }).then(data => {
-            if (data && data.status_code == '1') {
+            if (data && data.status_code === '1') {
                 toast.success('Feedback sent successfully');
                 getDetails();
                 setTimeout(() => {
@@ -113,7 +108,7 @@ function Preview() {
                 action: 'add'
             }
         }).then(data => {
-            if (data && data.status_code == '1') {
+            if (data && data.status_code === '1') {
                 toast.success('template added to cart');
             }
         })
@@ -128,7 +123,7 @@ function Preview() {
             url: 'template/buy',
             data: body
         }).then(data => {
-            if (data && data.status_code == '1') {
+            if (data && data.status_code === '1') {
                 setTimeout(() => {
                     setDownloadZippath('/STORAGE/' + data.data.zip);
                     console.log('path', data.data);
@@ -161,7 +156,6 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
-    const [download, setDownload] = useState(0);
     // function techbtn(props){
     //     <span className="tag">{props}</span>
     // }
@@ -171,7 +165,7 @@ function Preview() {
                 <div className="preview-details">
                     <div className="preview-title">
                         <div className="userinfo">
-                            <div className="user-dp"><img src="/Images/vprof.jpg" /></div><span className="user-name">By: {templateData?.creator_id?.name}</span>
+                            <div className="user-dp"><img alt="profile" src="/Images/vprof.jpg" /></div><span className="user-name">By: {templateData?.creator_id?.name}</span>
                         </div>
                         <h3 className="preview-name">{templateData.name}</h3>
                         <div className="preview-desc"><span>{templateData.description}</span></div>
@@ -180,7 +174,7 @@ function Preview() {
                         <div className="preview-btns">
                             <button className="preview-cart" onClick={() => addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
-                            {downloadZippath == '' ? null : <a href={downloadZippath} download="template.zip"><button className="buy-btn"><i class="far fa-download"></i><span>Download zip</span></button></a>}
+                            {downloadZippath === '' ? null : <a href={downloadZippath} download="template.zip"><button className="buy-btn"><i class="far fa-download"></i><span>Download zip</span></button></a>}
                         </div>
                         {console.log(tech)}
                     </div>
@@ -191,7 +185,7 @@ function Preview() {
                                     <div className={idx === ImageIndex ? "activeslide" : "slide"}>
                                         <center>
                                             <div className="carousel-img-cont">
-                                                <img src={img} alt={img} />
+                                                <img src={img} alt="templates" />
                                             </div>
                                         </center>
                                     </div>
@@ -243,7 +237,7 @@ function Preview() {
                                 <h4 className="youtube-title">Need Help ?</h4>
                                 <p className="youtube-span">Don't know how to use These Templates ?  Watch our Tutorials and give some support..</p>
                             </div>
-                            <a href="https://www.youtube.com/c/VRASM"><img src="/Images/youtube-clip.png" /></a>
+                            <a href="https://www.youtube.com/c/VRASM"><img alt="youtube" src="/Images/youtube-clip.png" /></a>
                         </div>
                     </div>
                 </div>

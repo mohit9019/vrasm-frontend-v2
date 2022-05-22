@@ -9,7 +9,7 @@ function Sidebar(){
     }
     return(<> 
     <div className="dash-side-bar" >
-                    <div className="dash-profile"><center><img className="pic" src="/Images/vprof.jpg" alt="image" />
+                    <div className="dash-profile"><center><img className="pic" src="/Images/vprof.jpg" alt="test" />
                     <p className="dash-username">{ApiCaller.userData.name}</p></center></div>
                     <div className="mainbar"></div>
                     <div className="sidebar-pages">

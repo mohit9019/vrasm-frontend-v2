@@ -51,7 +51,7 @@ function Overview(){
                        <div className={idx===ImageIndex ? "activeslide" : "slide"}>
                             <center>
                             <div className="carousel-img-cont">
-                           <img src={img} alt={img} />
+                           <img src={img} alt="test" />
                            </div>
                            </center>
                        </div>
@@ -97,7 +97,7 @@ function Overview(){
             <div className="reviews">
                 <div className="review-card">
                     <div className="userinfo">
-                        <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
+                        <div className="user-dp"><img alt="profile" src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
                     </div>
                     <div className="feedback-stars"><RatedStars /></div>
                     <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
@@ -107,7 +107,7 @@ function Overview(){
                 </div>
                 <div className="review-card">
                     <div className="userinfo">
-                        <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
+                        <div className="user-dp"><img alt="test" src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
                     </div>
                     <div className="feedback-stars"><RatedStars /></div>
                     <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
@@ -117,7 +117,7 @@ function Overview(){
                 </div>
                 <div className="review-card">
                     <div className="userinfo">
-                        <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
+                        <div className="user-dp"><img alt="test" src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
                     </div>
                     <div className="feedback-stars"><RatedStars /></div>
                     <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>
@@ -127,7 +127,7 @@ function Overview(){
                 </div>
                 <div className="review-card">
                     <div className="userinfo">
-                        <div className="user-dp"><img src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
+                        <div className="user-dp"><img alt="test" src="/Images/profile.jpg" /></div><span className="user-name">Mohit Chauhan</span>
                     </div>
                     <div className="feedback-stars"><RatedStars /></div>
                     <div className="qoute-icon"><i class="fad fa-quote-left"></i></div>

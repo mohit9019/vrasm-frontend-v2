@@ -8,7 +8,7 @@ function Ordercard(props){
                 <div className="order-card">
                 <div className="order-date"><p>id: {date}</p></div>
                     <div className="order-cont ">
-                    <div className="order-img"><img src={'/STORAGE/'+props?.data?.template[0]?.images?.split(",")[0] } altlt="image" /></div>
+                    <div className="order-img"><img src={'/STORAGE/'+props?.data?.template[0]?.images?.split(",")[0] } alt="test" /></div>
                     <div className="order-details">
                         <span className="order-name">{props.data.template[0]['name']}</span>
                         <span className="order-desc">{props.data.template[0]['description']}</span>

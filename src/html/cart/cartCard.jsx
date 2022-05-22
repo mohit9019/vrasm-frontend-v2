@@ -23,7 +23,7 @@ export default function CartCards(props) {
             <div className="crt-order-card">
                 <div className="crt-order-cont ">
                     <Link to={{ pathname: `/Preview/id?${props._id}` }} style={{ textDecoration: "none", color: "black" }} className="crt-order-cont" >
-                        <div className="crt-order-img"><img src={props.image} alt="image" /></div>
+                        <div className="crt-order-img"><img src={props.image} alt="test" /></div>
                         <div className="crt-order-details">
                             <span className="crt-order-name">{props.title}</span>
                             <span className="crt-order-desc">{props.desc}</span>

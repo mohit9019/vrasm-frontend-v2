@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+
 
 function toggle(value) {
   return !value;
@@ -193,7 +195,7 @@ useEffect(() => {
         :
 
         <div className="otpcontainer">
-          <img src="/Images/otpclip.png" className="otp-img" />
+          <img src="/Images/otpclip.png" alt="otp" className="otp-img" />
           <h5 className="otp-title">Otp Verification</h5>
           <p className="yourmail">OTP sent on your Email@gmail.com</p>
           <form onSubmit={otp}>

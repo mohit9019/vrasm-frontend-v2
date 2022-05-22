@@ -3,7 +3,7 @@ function FeedbackCard(props) {
     return(
     <div className="review-card">
         <div className="userinfo">
-            <div className="user-dp"><img src="/Images/vprof.jpg" /></div><span className="user-name">{props?.buyer_id?.name}</span>
+            <div className="user-dp"><img alt="profile" src="/Images/vprof.jpg" /></div><span className="user-name">{props?.buyer_id?.name}</span>
         </div>
         {/* aa RatedStars ma ratings ni velue as a props pass karvanai */}
         <div className="feedback-stars"><RatedStars rating={props.rating}/></div> 

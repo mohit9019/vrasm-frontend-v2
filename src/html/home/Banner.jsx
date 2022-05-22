@@ -5,7 +5,7 @@ function Banner(){
         <>  
         <div className="banner">
             <div className="cover"></div>
-            <img src="/Images/clip.jpg" className="clip"></img>
+            <img alt="clip" src="/Images/clip.jpg" className="clip"></img>
             <div className="ban-text">
                 <h1 className="ban-title">Vrasm Templates</h1>
                 <p>Professional Themes & Website Templates for any project</p>
