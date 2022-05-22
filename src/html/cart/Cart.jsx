@@ -41,11 +41,10 @@ function Cart() {
             <CartCards image={img} onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
         </>;
     }
-    const cart_total=0;
     return ( 
         <>
             {
-                templates.length == 0 ? <> <div className="oops"><p className="oops-title">Oops... Your Cart is Empty</p>
+                templates.length === 0 ? <> <div className="oops"><p className="oops-title">Oops... Your Cart is Empty</p>
                     <Link to="/Categoriespage" style={{ textDecoration: "none" }}><p className="browse-option"><i class="far fa-file-search"></i> Browse Templates</p></Link>
                     <div className="oops-clip"><img alt="category" src="/Images/oops-clip.png" /></div>
                 </div>

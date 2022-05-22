@@ -1,14 +1,10 @@
 import "../../css/buyer dashboard/Buyerdash.css";
-import Navba from "../home/Navba";
 import Personalinfo from "./Personalinfo";
 import Editprofile from "./Editprofile"; 
 import Changepass from "../dashboard/Changepass";
-import Wallet from "../dashboard/Wallet";
 import React from "react";
-import { Link } from "react-router-dom";
 import {Routes, Route,} from 'react-router-dom';
 import Analysis from "./Analysis";
-import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Uploadtemp from "./Uploadtemp";
 import Myorder from "../dashboard/Myorder";

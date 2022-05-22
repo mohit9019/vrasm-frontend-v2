@@ -18,7 +18,7 @@ class ApiCaller {
 
     /** function to check if User is Creator or not. */
     static checkCreator() {
-        return (ApiCaller.userData && (ApiCaller.userData.is_creator == 2 || ApiCaller.userData.is_creator == 1)) ? true : false;
+        return (ApiCaller.userData && (ApiCaller.userData.is_creator === 2 || ApiCaller.userData.is_creator === 1)) ? true : false;
     }
 
     /** function to check if user is verified or not. */
@@ -38,7 +38,7 @@ class ApiCaller {
             data['accesstoken'] = userData.accesstoken;
         }
         console.log('open', this.open_access_apis.indexOf(url));
-        if (this.open_access_apis.indexOf(url) == -1) {
+        if (this.open_access_apis.indexOf(url) === -1) {
             if (!data['user_id']) {
                 toast.error("Login to perform this action");
                 return Promise.reject();
@@ -48,12 +48,12 @@ class ApiCaller {
         return axios.post(this.site + url, data)
             .then(data => {
                 // Loader.setLoader(0);
-                if ((url == 'user/login' || url == 'buyer/otp') && data.data.status_code == '1') {
+                if ((url === 'user/login' || url === 'buyer/otp') && data.data.status_code === '1') {
                     console.log('data inserted');
                     ApiCaller.userData = { ...data.data.data };
                     localStorage.setItem('userData', JSON.stringify(data.data.data));
                 }
-                if (data.data.status_code == '404') {
+                if (data.data.status_code === '404') {
                     localStorage.clear();
                     // redirect to login page.
                 }

@@ -31,7 +31,7 @@ function Like(){
 
     return(
         <>
-        {templates.length ==0 ? <div className="oops"><p className="oops-title">Oops... You Haven't liked any Templates</p>
+        {templates.length === 0 ? <div className="oops"><p className="oops-title">Oops... You Haven't liked any Templates</p>
                             <Link to="/Categoriespage" style={{textDecoration:"none"}}><p className="browse-option"><i class="far fa-file-search"></i> Browse Templates</p></Link>
                             <div className="oops-clip"><img alt="oops" src="/Images/oops-clip.png" /></div>
                             </div>

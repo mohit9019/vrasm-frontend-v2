@@ -13,9 +13,7 @@ function Editprofile() {
   const [address, setAddress] = useState('');
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
-  // const navigate = useNavigate();
   useEffect(() => {
-    console.log('in getp')
     let apiCaller = new ApiCaller();
     apiCaller.postData({
         url: 'user/get_profile',

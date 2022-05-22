@@ -1,5 +1,4 @@
 import "../../css/categories/Categories.css";
-import Searchbar from '../home/Searchbar';
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import details from "../home/Detailsmap";
 import { useState, useEffect } from "react";
@@ -19,7 +18,6 @@ function Categoriespage() {
     })
   }, []); 
   const [length,setLength]=useState([1]);
-  const [choose, setChoose] = useState();
   function category(props) {
     let apiCaller = new ApiCaller();
     console.log(props);
@@ -27,7 +25,7 @@ function Categoriespage() {
       url: 'template/get',
       data: props
     }).then(data => {
-      if (data && data.status_code == '1') {
+      if (apiCaller.validateResult(data)) {
         setData(data.data);
         setLength(data.data.length);
       }
@@ -84,7 +82,7 @@ function Categoriespage() {
               <div className="search-icon"><button style={{backgroundColor:"transparent",border:"none"}} onClick={() =>  { category({searchstring: searched}) } }><i class="fas fa-search"></i></button></div>
             </div>
           </div>
-          {length==0?
+          {length===0?
           <h5 style={{color:"rgb(75, 74, 74)"}}>No record Found</h5>
           :
           <>
