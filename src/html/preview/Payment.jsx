@@ -15,9 +15,9 @@ export default function Payment() {
             <h4 className="pay-title">Pay with</h4>
           </div>
             <ul className="method-list">
-              <li className="methods" onClick={()=>PayActive(0)} id={togglepay==0?"active-pay":null}><i class="far fa-credit-card"></i> Credit Card</li>
-              <li className="methods" onClick={()=>PayActive(1)} id={togglepay==1?"active-pay":null}><i class="far fa-university"></i> Netbanking</li>
-              <li className="methods" onClick={()=>PayActive(2)} id={togglepay==2?"active-pay":null}><i class="far fa-rupee-sign"></i> UPI</li>
+              <li className="methods" onClick={()=>PayActive(0)} id={togglepay===0?"active-pay":null}><i class="far fa-credit-card"></i> Credit Card</li>
+              <li className="methods" onClick={()=>PayActive(1)} id={togglepay===1?"active-pay":null}><i class="far fa-university"></i> Netbanking</li>
+              <li className="methods" onClick={()=>PayActive(2)} id={togglepay===2?"active-pay":null}><i class="far fa-rupee-sign"></i> UPI</li>
             </ul>
             <div className="backtopreview"><Link to="/Preview" style={{textDecoration:"none",color:"rebeccapurple"}}><i class="fad fa-arrow-left"></i>Back to Preview</Link></div>
         </div>
@@ -28,7 +28,7 @@ export default function Payment() {
   
           <div className="payment-mode">
 
-           <div className="creditcard" id={togglepay==0?"active-page":null}>
+           <div className="creditcard" id={togglepay===0?"active-page":null}>
             <div className="credit-inputs">
               <label className="input-label" htmlFor="">Card Number :</label>
               <input className="payment-input" type="text" name="" id="cardnumber" />
@@ -78,7 +78,7 @@ export default function Payment() {
 
           {/* Netbanking  */}
   
-           <div className="netbanking" id={togglepay==1?"active-page":null}>
+           <div className="netbanking" id={togglepay===1?"active-page":null}>
             <div className="pay-column">
               <label for="year" className="input-label">Bank :</label>
               <select name="cars" id="year" className="payment-input">
@@ -99,7 +99,7 @@ export default function Payment() {
           </div>
 
            {/* UPI  */}
-          <div className="upiid" id={togglepay==2?"active-page":null}>
+          <div className="upiid" id={togglepay===2?"active-page":null}>
             <label className="input-label">UPI ID : </label>
             <input type="text" className="payment-input" />
           </div>
@@ -111,7 +111,7 @@ export default function Payment() {
           <button  className="pay-button">
             Pay Now
           </button>
-          <button className="pay-button" disabled={paid==1? false: true } onClick={console.log("file downloaded")}>Download Zip</button>
+          <button className="pay-button" disabled={paid===1? false: true } onClick={console.log("file downloaded")}>Download Zip</button>
           </div>
         </div>
       </div>      

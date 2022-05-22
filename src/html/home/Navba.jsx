@@ -16,7 +16,6 @@ function Navba() {
     return !value;
   }
     const [show, setShow] = useState(false);
-  const [is_verified,setIs_verified]=useState(1);
 
     return (
       <>
@@ -41,14 +40,14 @@ function Navba() {
               Register</span> 
             </Link>
             <Link to="/Cart" className="top-icon">
-              <i class="far fa-shopping-cart" onClick={()=>NavActive(3)} id={togglenav===3?"nav-active":null}>{is_cart==0?null:<span className="cart-strength">{is_cart}</span>}</i>
+              <i class="far fa-shopping-cart" onClick={()=>NavActive(3)} id={togglenav===3?"nav-active":null}>{is_cart===0?null:<span className="cart-strength">{is_cart}</span>}</i>
             </Link>
             <Link to="/Like" className="top-icon">
               <i class="far fa-heart" onClick={()=>NavActive(2)} id={togglenav===2?"nav-active":null}></i>
             </Link>
 
             { 
-              ApiCaller.checkUser() ==0?
+              ApiCaller.checkUser() ===0?
                 <Link to="/Login" className="top-icon" >
                   <i class="far fa-user-alt" onClick={()=>NavActive(1)} id={togglenav===1?"nav-active":null}></i>
                 </Link>

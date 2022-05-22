@@ -16,7 +16,7 @@ const Card=(props)=>{
             action:'add'
         }
     }).then(data=>{
-        if(data && data.status_code == '1'){
+        if(data && data.status_code === '1'){
             toast.success('template added to cart');
         }
     })
@@ -30,7 +30,7 @@ const Card=(props)=>{
             action:'like'
         }
     }).then(data=>{
-        if(data && data.status_code == '1'){
+        if(data && data.status_code === '1'){
         }
     })
   }
@@ -43,7 +43,7 @@ const Card=(props)=>{
     <div className="card-cont">
       <div className="image_div">
       <div className="save" style={liked?{display:"block"}:null} ><div className="save-round" style={liked?{color:"rgb(153, 11, 248)"}:{color:"rgb(213, 181, 238)"}}><AiFillHeart className="save-icon" onClick={()=>{addToLike(props._id); setLiked(toggleSave)}} /></div></div>
-      <img src={props.img} className="img" alt="test"/></div>
+      <img src={props.img} className="img" alt="template"/></div>
       <div className="card-content"> 
         <span className="card-name">{props.title}</span>
         <span className="disc">{props.desc==null?". . . . . . . . . . . . . . . . . .":props.desc}</span>

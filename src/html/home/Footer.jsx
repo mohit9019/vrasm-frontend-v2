@@ -30,8 +30,8 @@ function Footer(){
                     <li className="column"><Link style={{textDecoration:"none",color:"white"}} to="terms">Terms and Conditions *</Link></li>
                 </ul>
                 <div className="row" id="ico"><div class="column"><a href="https://www.youtube.com/c/VRASM"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a><i class="fab fa-instagram"></i></a>
+                <a><i class="fas fa-envelope"></i></a>
                 </div>
                     </div>
             </div> 

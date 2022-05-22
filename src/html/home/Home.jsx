@@ -15,8 +15,6 @@ function ScrolltoTop(){
   });
 }
 
-const is_creator=1;
-
 function Home() { 
   // const [isLoading, setIsLoading] = useState(true);
   const [Data, setData] = useState([]);
@@ -27,7 +25,7 @@ function Home() {
       url: 'template/get',
       data:{} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res=>{
-      if(res && res.status_code == '1'){
+      if(res && res.status_code === '1'){
         setData(res.data);
       }
     })

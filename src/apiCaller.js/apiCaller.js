@@ -10,21 +10,26 @@ class ApiCaller {
       ApiCaller.userData = JSON.parse(localStorage.getItem('userData'));
     }
   }
-  static checkCreator(){
-    if(ApiCaller.userData && (ApiCaller.userData.is_creator==2 || ApiCaller.userData.is_creator == 1 )){
+
+  /** function to validate API Response */
+  validateResult(res) {
+    return (res && res.status_code === '1') ? true : false;
+  }
+  static checkCreator() {
+    if (ApiCaller.userData && (ApiCaller.userData.is_creator == 2 || ApiCaller.userData.is_creator == 1)) {
       return true;
     }
     else
       return false;
   }
-  static checkUser(){
-    if(ApiCaller.userData && ApiCaller.userData.is_verified!=null){
+  static checkUser() {
+    if (ApiCaller.userData && ApiCaller.userData.is_verified != null) {
       return true;
     }
     else
       return false;
   }
-  
+
   postData({ url, data }) {
     if (localStorage.getItem('userData') && localStorage.getItem('userData').length > 0) {
       let userData = JSON.parse(localStorage.getItem('userData'));
@@ -32,8 +37,8 @@ class ApiCaller {
       data['accesstoken'] = userData.accesstoken;
     }
     console.log('open', this.open_access_apis.indexOf(url));
-    if(this.open_access_apis.indexOf(url) == -1) {
-      if(!data['user_id']){
+    if (this.open_access_apis.indexOf(url) == -1) {
+      if (!data['user_id']) {
         toast.error("Login to perform this action");
         return Promise.reject();
       }

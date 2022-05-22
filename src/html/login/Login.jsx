@@ -17,7 +17,7 @@ function Login(){
       url:'user/login',
       data:body
     }).then(data=>{
-      if(data && data.status_code=='1'){
+      if(data && data.status_code==='1'){
         toast.success('Log-in successfully',{autoClose:2000});
         navigate('/');
         window.location.reload("/");
