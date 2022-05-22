@@ -1,6 +1,5 @@
 import "../../css/registration/Registration.css";
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
@@ -36,7 +35,7 @@ function Registration() {
       url: 'buyer/register',
       data: body
     }).then(data => {
-      if (data && data.status_code == '1') {
+      if (data && data.status_code === '1') {
         toast.success('Data Uploaded succesfully');
         setTimeout(() => {
           setis_register(1);
@@ -64,7 +63,7 @@ function Registration() {
       url: 'buyer/otp',
       data: body
     }).then(data => {
-      if (data && data.status_code == '1'){
+      if (data && data.status_code === '1'){
         toast.success('Otp Verified', { autoClose: 2000 });
         navigate('/');
         window.location.reload("/");
@@ -84,7 +83,7 @@ function Registration() {
   const handleChange = (element, index) => {
     if (isNaN(element.value))
       return false;
-    else if (element.value.key == 8) {
+    else if (element.value.key === 8) {
       element.previousSibling.focus();
     }
     setOtp([...Otp.map((d, idx) => (idx === index) ? element.value : d)]);
@@ -105,7 +104,7 @@ function Registration() {
   const [is_register, setis_register] = useState(0);
   return (
     <>
-      {is_register == 0 ?
+      {is_register === 0 ?
         <div className="background">
           <div className="regist">
 
@@ -128,7 +127,7 @@ function Registration() {
               <div className="regist-col">
                 <label className="regist-label">Confirm Password</label>
                 <input type="password" value={cpassword} onChange={(e) => setcPassword(e.target.value)} className="regist-input" placeholder="Enter Confirm Password" id="comform" required></input>
-                {password != cpassword ? <span className="password-caution"><i class="fal fa-exclamation-circle"></i> password doesn't matched</span> : null}
+                {password !== cpassword ? <span className="password-caution"><i class="fal fa-exclamation-circle"></i> password doesn't matched</span> : null}
               </div>
 
               <div className="regist-col">
@@ -176,7 +175,7 @@ function Registration() {
                   </div>
                 </div>
                 
-              <button className="regist-button" type="submit" disabled={password != cpassword ? true : false} >
+              <button className="regist-button" type="submit" disabled={password !== cpassword ? true : false} >
                 Submit
               </button>
 

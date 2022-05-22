@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import './App.css';
 import Home from "./html/home/Home";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -13,11 +13,10 @@ import Buyerdash from "./html/dashboard/Buyerdash";
 import Creatordash from "./html/creator dashboard/Creatordash";
 import OtpVerification from "./html/registration/OtpVerification";
 import Categoriespage from "./html/categories/Categoriespage";
-import { ToastContainer ,toast, Flip, Zoom, Slide} from "react-toastify";
+import { ToastContainer, Slide} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "./html/other/Loader";
 import Payment from "./html/preview/Payment";
-import ApiCaller from "./apiCaller.js/apiCaller";
 function App() {
   function checkLogin(){ 
     let userData = localStorage.getItem('userData');
@@ -29,8 +28,6 @@ function App() {
     }
   }
 
-  const [templates, setTempaltes] = useState([]);
-  const [selectedTemlate, setSelectedTemplate] = useState({});
   return (<>
 {/* <Loader /> */}
     <Navba />

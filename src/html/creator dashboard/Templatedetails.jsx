@@ -48,6 +48,10 @@ function Tenmplatedetails() {
                 console.log(err);
             })
     };
+
+    function uploadImages(e){
+        console.log('e', e);
+    }
     return (
         <>
             {
@@ -124,7 +128,7 @@ function Tenmplatedetails() {
                     <>
                     <h3 className="n">Template Details</h3>
                         <div className="form1">
-                        <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
+                        <form onSubmit={uploadImages} enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
                             <div className="doccol">
                             <div className="doccol"><label className="doc-title">Promotional Image :</label><input className="doc-input" type="file" name="file"></input></div>
                             <div className="doccol"><label className="doc-title">Other Image :</label><input className="doc-input" type="file" name="file"></input></div>

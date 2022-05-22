@@ -5,7 +5,6 @@ import Categories from "../categories/Categories";
 import "../../css/home/Card.css";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import details from "./Detailsmap";
-import Searchbar from "./Searchbar";
 import {Link } from 'react-router-dom';
 import Aboutus from "./Aboutus";
 function ScrolltoTop(){
