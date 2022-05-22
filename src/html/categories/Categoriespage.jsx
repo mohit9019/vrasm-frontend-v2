@@ -48,7 +48,7 @@ function Categoriespage() {
         <input type='checkbox' id='toggle'></input>
         {/* <!-- Menu --> */}
         <aside className='category-sidebar'>
-        <span onClick={() => { category() }} style={{fontSize:"120%",listStyle:"none",color:"rebeccapurple",margin:"0 0 5px",cursor:"pointer"}} className='category-name'> All Templates</span> <span className="number"></span>
+        {/* <span onClick={() => { category({category:''}) }} style={{fontSize:"120%",listStyle:"none",color:"rebeccapurple",margin:"0 0 5px",cursor:"pointer"}} className='category-name'> All Templates</span> <span className="number"></span> */}
           <label for='toggle' className='exit'><i class="fad fa-times"></i></label>
           <h4 className='category-title'>Catagories</h4>
           <ul className="categories-list">

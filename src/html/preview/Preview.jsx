@@ -50,8 +50,15 @@ function Preview() {
             data: { template_id } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
         }).then(res => {
             if (res && res.status_code == '1') {
-                tech = templateData.technology?.split(',');
-                tags = templateData.tag?.split(' ');
+                let rating = 0;
+                res.data[0].feedbacks?.map(f => {
+                  rating += f.rating;
+                })
+                rating /= res.data[0].feedbacks?.length;
+                if (isNaN(rating)) {
+                  rating = 0;
+                }
+                res.data[0].rating = rating;
                 setTemplateData(res.data[0]);
                 console.log(templateData);
             }
@@ -169,7 +176,7 @@ function Preview() {
                         <h3 className="preview-name">{templateData.name}</h3>
                         <div className="preview-desc"><span>{templateData.description}</span></div>
                         <div className="category"><span >Category: {templateData.category}</span></div>
-                        <div className="preview-stars"><RatedStars /></div>
+                        <div className="preview-stars"><RatedStars rating={templateData.rating} /></div>
                         <div className="preview-btns">
                             <button className="preview-cart" onClick={() => addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
