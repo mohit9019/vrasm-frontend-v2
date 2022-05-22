@@ -45,7 +45,7 @@ function Preview() {
             url: 'template/get',
             data: { template_id } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
         }).then(res => {
-            if (res && res.status_code === '1') {
+            if (apiCaller.validateResult(res)) {
                 let rating = 0;
                 res.data[0].feedbacks?.map(f => rating += f.rating)
                 rating /= res.data[0].feedbacks?.length;

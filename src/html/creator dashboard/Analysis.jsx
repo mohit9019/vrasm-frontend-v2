@@ -32,7 +32,7 @@ function Analysis() {
         creator_id: ApiCaller.userData.user_id
       } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res => {
-      if (res && res.status_code == '1') {
+      if (apiCaller.validateResult(res)) {
         res.data.map(record=>{
           let rating = 0;
           record.feedbacks?.map(f=>{

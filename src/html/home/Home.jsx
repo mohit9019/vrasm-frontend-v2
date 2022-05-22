@@ -25,7 +25,7 @@ function Home() {
       url: 'template/get',
       data:{} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res=>{
-      if(res && res.status_code === '1'){
+      if(apiCaller.validateResult(res)){
         setData(res.data);
       }
     })

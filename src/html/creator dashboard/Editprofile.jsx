@@ -21,7 +21,7 @@ function Editprofile(){
         url: 'user/get_profile',
         data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res => {
-        if (res && res.status_code == '1') {
+        if (apiCaller.validateResult(res)) {
             setUserProfile(res.data);
         }
         else {
@@ -45,7 +45,7 @@ function Editprofile(){
         url: 'user/set_profile',
         data: {name : firstname+" "+lastname, address, city, pincode, college, course} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
     }).then(res => {
-        if (res && res.status_code == '1') {
+        if (apiCaller.validateResult(res)) {
             ApiCaller.userData.name = firstname + " " + lastname;
             localStorage.setItem('userData',JSON.stringify(ApiCaller.userData));
             toast.success("Profile Updated Successfully");
