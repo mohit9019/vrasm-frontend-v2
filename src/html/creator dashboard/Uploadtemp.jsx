@@ -1,7 +1,5 @@
 import Tenmplatedetails from "./Templatedetails";
 import "../../css/buyer dashboard/Uploadtemp.css";
-import {Routes, Route,} from 'react-router-dom';
-import Documents from "./Documents";
 function Uploadtemp(){
     return(
         <>

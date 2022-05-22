@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Form, Col, MenuItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Form } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { toast } from "react-toastify";
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
@@ -8,10 +7,6 @@ import ApiCaller from "../../apiCaller.js/apiCaller";
 // import { ToastContainer, toast, Flip, Zoom, Slide } from "react-toastify";
 
 function Tenmplatedetails() {
-    const [value, setValue] = useState('');
-    const handleSelect = (e) => {
-        setValue(e)
-    }
     const [Details_saved, setDetails_saved] = useState(0);
     const [template_id, setTemplateId] = useState('');
     const [tech, setTech] = useState([]);
@@ -34,7 +29,7 @@ function Tenmplatedetails() {
             url: 'template/upload',
             data: body
         }).then(data => {
-            if (data && data.status_code == '1') {
+            if (apiCaller.validateResult(data)) {
                 toast.success('Data Uploaded succesfully');
                 setDetails_saved(1);
                 setTemplateId(data.data);
@@ -55,7 +50,7 @@ function Tenmplatedetails() {
     return (
         <>
             {
-                Details_saved == 0   ?
+                Details_saved === 0   ?
                     <>
                         {/* designed image upload form */}
                         {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}

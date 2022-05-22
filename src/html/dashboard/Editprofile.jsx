@@ -1,7 +1,7 @@
 import "../../css/buyer dashboard/Editprofile.css";
 import "../../css/buyer dashboard/Personalinfo.css";
 import { Form, Col, Row } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";

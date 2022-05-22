@@ -14,7 +14,6 @@ function Editprofile(){
   const [city, setCity] = useState('');
   const [college, setCollege] = useState('');
   const [course, setCourse] = useState('');
-  const navigate = useNavigate();
   useEffect(() => {
     let apiCaller = new ApiCaller();
     apiCaller.postData({
