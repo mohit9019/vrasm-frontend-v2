@@ -4,16 +4,44 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { toast } from "react-toastify";
 import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 import ApiCaller from "../../apiCaller.js/apiCaller";
-// import { ToastContainer, toast, Flip, Zoom, Slide } from "react-toastify";
 
 function Tenmplatedetails() {
     const [Details_saved, setDetails_saved] = useState(0);
     const [template_id, setTemplateId] = useState('');
     const [tech, setTech] = useState([]);
+    // const [images, setImages] = useState([]);
+    let images = { 0: '', 1: '' };
+    let zip = '';
+
+    /**
+     * function to read images.
+     * @param {} e 
+     * @param {*} key 
+     */
+    function onImageChange(e, key) {
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onloadend = () => {
+            images[key] = reader.result;
+        }
+    }
+
+    /**
+     * function to read zip file
+     * @param {} e 
+     */
+    function onZipChange(e) {
+        let reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onloadend = () => {
+            zip = reader.result;
+        }
+    }
+
     function techSelect(selectedValue) {
         setTech(selectedValue);
     }
-    function templateupload(e) { 
+    function templateupload(e) {
         e.preventDefault();
         let body = {
             creator_id: ApiCaller.userData.user_id, // this is sample creator_id of nandita mam for testing, you have to pass the creator_id when user comes
@@ -44,13 +72,20 @@ function Tenmplatedetails() {
             })
     };
 
-    function uploadImages(e){
-        console.log('e', e);
+    function imageUpload() {
+        // integrate image upload api call here.
+        let formdata = new FormData();
+        formdata.set('images', [images['0'], images['1']]);
+        formdata.set('zip', zip);
+        formdata.set('user_id', ApiCaller?.userData?.user_id);
+        formdata.set('accesstoken', ApiCaller?.userData?.accesstoken);
+        formdata.set('template_id', template_id);
     }
+
     return (
         <>
             {
-                Details_saved === 0   ?
+                false ?
                     <>
                         {/* designed image upload form */}
                         {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}
@@ -121,50 +156,21 @@ function Tenmplatedetails() {
                     </>
                     :
                     <>
-                    <h3 className="n">Template Details</h3>
+                        <h3 className="n">Template Details</h3>
                         <div className="form1">
-                        <form onSubmit={uploadImages} enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
-                            <div className="doccol">
-                            <div className="doccol"><label className="doc-title">Promotional Image :</label><input className="doc-input" type="file" name="file"></input></div>
-                            <div className="doccol"><label className="doc-title">Other Image :</label><input className="doc-input" type="file" name="file"></input></div>
-                            <div className="doccol"><label className="doc-title">Zip File :</label><input className="doc-input" type="file" name="file"></input></div>
-                            <input type="text" style={{ visibility: 'hidden' }} id="template_id" name="template_id" value={template_id}></input>
-                            <input type="text" style={{ visibility: 'hidden' }} id="user_id" name="user_id" value={ApiCaller.userData.user_id}></input>
-                            <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input>
-                            <button className="doc-button" type="submit">submit</button>
-                            </div>
-                        </form>
-                        </div>
-                        {/* <h3 className="n">Upload Documents</h3>
-                        <div className="documents">
-                            <form enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image">
-                                <Form.Group controlId="formFile" className="mb-3">
-                                    <Form.Label>Promotional Image</Form.Label>
-                                    <Form.Control type="file" />
-                                    <input type="text" style={{ visibility: 'hidden' }} id="template_id" name="template_id" value={template_id}></input>
-                                </Form.Group>
-
-                                <Form.Group controlId="formFileMultiple" className="mb-3">
-                                    <Form.Label>Other Images</Form.Label>
-                                    <Form.Control type="file" />
+                            {/* <form onSubmit={uploadImages} enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image"> */}
+                            <form onSubmit={imageUpload}>
+                                <div className="doccol">
+                                    <div className="doccol"><label className="doc-title">Promotional Image :</label><input className="doc-input" onChange={(e)=>onImageChange(e,'0')} type="file" name="file"></input></div>
+                                    <div className="doccol"><label className="doc-title">Other Image :</label><input className="doc-input" onChange={(e)=>onImageChange(e,'1')} type="file" name="file"></input></div>
+                                    <div className="doccol"><label className="doc-title">Zip File :</label><input className="doc-input" onChange={onZipChange} type="file" name="file"></input></div>
+                                    {/* <input type="text" style={{ visibility: 'hidden' }} id="template_id" name="template_id" value={template_id}></input>
                                     <input type="text" style={{ visibility: 'hidden' }} id="user_id" name="user_id" value={ApiCaller.userData.user_id}></input>
-                                </Form.Group>
-
-                                <Form.Group controlId="formFileMultiple" className="mb-3">
-                                    <Form.Label>Zip File</Form.Label>
-                                    <Form.Control type="file" />
-                                    <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input>
-                                </Form.Group>
-
-                                <Link to="/Creatordash/Uploadtemp/Templatedetails"><button className="dash-button" variant="primary" name="file" type="submit" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%' }}>
-                                    <i class="fas fa-arrow-circle-left"></i>
-                                </button></Link>
-
-                                <button className="dash-button" variant="primary" name="file" type="submit" style={{ marginTop: "10px", padding: '1.5% 2% 1.5% 2%', float: 'right' }}>
-                                    Save & Next
-                                </button>
+                                    <input type="text" style={{ visibility: 'hidden' }} id="accesstoken" name="accesstoken" value={ApiCaller.userData.accesstoken}></input> */}
+                                    <button className="doc-button" type="submit">submit</button>
+                                </div>
                             </form>
-                        </div> */}
+                        </div>
                     </>
             }
         </>);
