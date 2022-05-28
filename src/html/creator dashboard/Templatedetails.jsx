@@ -80,6 +80,20 @@ function Tenmplatedetails() {
         formdata.set('user_id', ApiCaller?.userData?.user_id);
         formdata.set('accesstoken', ApiCaller?.userData?.accesstoken);
         formdata.set('template_id', template_id);
+        // console.log('formdata',formdata)
+        let body = {
+            images:[images['0'], images['1']],
+            zip,
+            template_id,
+        }
+
+        let apiCaller = new ApiCaller();
+        apiCaller.postData({
+            url: 'template/upload_image',
+            data: body
+        }).then(data => { 
+
+        });
     }
 
     return (
