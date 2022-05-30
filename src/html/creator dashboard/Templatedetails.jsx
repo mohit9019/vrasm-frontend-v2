@@ -99,7 +99,7 @@ function Tenmplatedetails() {
     return (
         <>
             {
-                false ?
+                Details_saved === 0 ?
                     <>
                         {/* designed image upload form */}
                         {/*  <form  enctype="multipart/form-data" onSubmit={ImageUpload}> */}

@@ -4,7 +4,7 @@ import CartCards from "./cartCard";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 function Cart() {
-    const [templates, setTemplates] = useState([1]);
+    const [templates, setTemplates] = useState([]);
     useEffect(() => {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
@@ -31,12 +31,13 @@ function Cart() {
         })
     }
     function cards(templates) { 
-        let img = templates?.images?.split(",")[0];
-        if(img){
-            img = '/STORAGE/' + img;
-        } else {
-            img = '/STORAGE/default.jpg';
-        }
+        // console.log('template', templates)
+        let img = templates?.images[0];
+        // if(img){
+        //     img = '/STORAGE/' + img;
+        // } else {
+        //     img = '/STORAGE/default.jpg';
+        // }    
         return <>
             <CartCards image={img} onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
         </>;
