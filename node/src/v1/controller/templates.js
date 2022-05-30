@@ -34,20 +34,29 @@ router.post('/upload_image', async function (req, res) {
 
     /* Upload images to Cloudinary, and push their paths into array. */
     let imagesPathArray = [];
-    req.body?.images?.map(async (image) => {
-        let result = await functionsObj.uploadFileToCloudinary(image, 'template_images');
+    for(let i = 0; i < req.body?.images?.length; i++) {
+        let result = await functionsObj.uploadFileToCloudinary(req.body.images[i], 'template_images');
+        console.log(result);
         if (!result.error) {
             imagesPathArray.push(result.path);
         }
-    })
+    }
+    // req.body?.images?.map(async (image) => {
+    //     let result = await functionsObj.uploadFileToCloudinary(image, 'template_images');
+    //     console.log(result);
+    //     if (!result.error) {
+    //         imagesPathArray.push(result.path);
+    //     }
+    // })
 
     /* Upload zip file to Cloudinary. */
     let zipPath = '';
     // let result = await functionsObj.uploadFileToCloudinary(req.body.zip, 'zip_files');
-    if(!result.error) {
-        zipPath = result.path;
-    }
+    // if(!result.error) {
+    //     zipPath = result.path;
+    // }
     
+    console.log('template_id', imagesPathArray);
     if(imagesPathArray.length == 0 ) { return false; }
 
     /* upadte image and zip paths in the database. */
