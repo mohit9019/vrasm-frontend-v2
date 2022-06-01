@@ -51,10 +51,10 @@ router.post('/upload_image', async function (req, res) {
 
     /* Upload zip file to Cloudinary. */
     let zipPath = '';
-    // let result = await functionsObj.uploadFileToCloudinary(req.body.zip, 'zip_files');
-    // if(!result.error) {
-    //     zipPath = result.path;
-    // }
+    let result = await functionsObj.uploadFileToCloudinary(req.body.zip, 'zip_files', 'raw');
+    if(!result.error) {
+        zipPath = result.path;
+    }
     
     console.log('template_id', imagesPathArray);
     if(imagesPathArray.length == 0 ) { return false; }
@@ -62,7 +62,6 @@ router.post('/upload_image', async function (req, res) {
     /* upadte image and zip paths in the database. */
     let id = Types.ObjectId(req.body.template_id);
     await templates.findByIdAndUpdate(id, { images: imagesPathArray, zip: zipPath});
-    
     res.send('success');
     return false;
     if (req && req.files) {

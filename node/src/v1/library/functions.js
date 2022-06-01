@@ -26,7 +26,7 @@ class functions {
      * @param folder folder name in cloudinary.
      * @returns path of the uploaded image.
      */
-    async uploadFileToCloudinary(file, folder) {
+    async uploadFileToCloudinary(file, folder, resource_type='') {
         
         let return_data = { error: true, path: ''};
 
@@ -41,7 +41,11 @@ class functions {
         if (CONSTANTS.CLOUDINARY_FOLDERS.indexOf(folder) == -1) { return return_data; }
 
         /* promise upload to cloudinary. */
-        return cloudinary.v2.uploader.upload(file, { folder })
+        let options = { folder };
+        if(resource_type) {
+            options['resource_type'] = resource_type;
+        }
+        return cloudinary.v2.uploader.upload(file, options)
             .then(res => {
                 return_data.error = false;
                 return_data.path = res.secure_url;
