@@ -41,13 +41,6 @@ router.post('/upload_image', async function (req, res) {
             imagesPathArray.push(result.path);
         }
     }
-    // req.body?.images?.map(async (image) => {
-    //     let result = await functionsObj.uploadFileToCloudinary(image, 'template_images');
-    //     console.log(result);
-    //     if (!result.error) {
-    //         imagesPathArray.push(result.path);
-    //     }
-    // })
 
     /* Upload zip file to Cloudinary. */
     let zipPath = '';
@@ -62,54 +55,7 @@ router.post('/upload_image', async function (req, res) {
     /* upadte image and zip paths in the database. */
     let id = Types.ObjectId(req.body.template_id);
     await templates.findByIdAndUpdate(id, { images: imagesPathArray, zip: zipPath});
-    res.send('success');
-    return false;
-    if (req && req.files) {
-        let file = req.files.file;
-        let functionsObj = new functions();
-        let images_arr = [];
-
-        res.send(1, 'success');
-        return false;
-        for (let i = 0; i < file.length; i++) {
-            // console.log('file', file[i]);
-            let randomName = functionsObj.createRandomPassword(8) + '.' + file[i].name.split('.')[file[i].name.split('.').length - 1];
-            if (file[i].name.split('.')[1] == 'zip') {
-                let newpath = process.env.ZIP_FILES + randomName;
-                let id = Types.ObjectId(req.body.template_id);
-                let zipUpload = await templates.findByIdAndUpdate(id, { 'zip': randomName });
-                functionsObj.uploadFileToCloudinary(file[i].data.toString('base64'));
-                fs.writeFile(newpath, file[i].data, function (err) {
-                    if (err) {
-                        res.send(functionsObj.output(0, 'some error occured while uploading'));
-                    }
-                });
-            }
-            else {
-                let newpath = process.env.ZIP_FILES + randomName;
-                images_arr.push(randomName);
-                fs.writeFile(newpath, file[i].data, function (err) {
-                    if (err) {
-                        res.send(functionsObj.output(0, 'some error occured while uploading'));
-                    }
-                    // res.end();
-                });
-            }
-        }
-
-        // to entry in database.
-        if (images_arr.length > 0) {
-            let id = Types.ObjectId(req.body.template_id)
-            images_arr.join(',');
-            let data = await templates.findByIdAndUpdate(id, { images: images_arr.join(',') });
-        }
-        // res.write("<script>alert('template uploaded successfully');</script>");
-        // res.redirect('http://localhost:3000');
-        res.send(functionsObj.output(1,'success'));
-    }
-    else {
-        res.send('nothing');
-    }
+    res.send(functionsObj.output(1, 'success'));
 });
 
 function uploadSchema(req, res, next) {

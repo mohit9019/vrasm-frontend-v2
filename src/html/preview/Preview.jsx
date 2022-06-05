@@ -14,9 +14,8 @@ function Preview() {
     const [templateData, setTemplateData] = useState({});
     const [downloadZippath, setDownloadZippath] = useState('');
     const [rating, setRating] = useState(0);
-    var tech=null;
-    function Ratings() {
 
+    function Ratings() {
         const [hover, setHover] = useState(null);
         return (
             <>
@@ -44,14 +43,14 @@ function Preview() {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
             url: 'template/get',
-            data: { template_id } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+            data: { template_id }
         }).then(res => {
             if (apiCaller.validateResult(res)) {
                 let rating = 0;
                 res.data[0].feedbacks?.map(f => rating += f.rating)
                 rating /= res.data[0].feedbacks?.length;
                 if (isNaN(rating)) {
-                  rating = 0;
+                    rating = 0;
                 }
                 res.data[0].rating = rating;
                 setTemplateData(res.data[0]);
@@ -59,6 +58,7 @@ function Preview() {
             }
         })
     }
+
     function ScrolltoTop() {
         window.scrollTo({
             top: 0,
@@ -159,9 +159,7 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
-    // function techbtn(props){
-    //     <span className="tag">{props}</span>
-    // }
+    
     return (
         <>
             <div className="preview">
@@ -177,7 +175,7 @@ function Preview() {
                         <div className="preview-btns">
                             <button className="preview-cart" onClick={() => addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
-                            {downloadZippath === '' ? null : <button className="buy-btn" onClick={()=>downloadFile(downloadZippath)}><i class="far fa-download"></i><span>Download zip</span></button>}
+                            {downloadZippath === '' ? null : <button className="buy-btn" onClick={() => downloadFile(downloadZippath)}><i class="far fa-download"></i><span>Download zip</span></button>}
                         </div>
                     </div>
                     <div className="image-carousel">
@@ -200,13 +198,13 @@ function Preview() {
                     <div className="tags-cont">
                         <h5 className="features-title">Tags</h5>
                         <div className="tags-list">
-                            { !templateData.tags ? "...." : templateData.tags.split(" ")?.map((props) => (<span className="tag">{props}</span>))}
+                            {!templateData.tags ? "...." : templateData.tags.split(" ")?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                     <div className="technologies-cont">
                         <h5 className="features-title">Technologies</h5>
                         <div className="tags-list">
-                            { !templateData.technology ? "...." : templateData.technology.split(",")?.map((props) => (<span className="tag">{props}</span>))}
+                            {!templateData.technology ? "...." : templateData.technology.split(",")?.map((props) => (<span className="tag">{props}</span>))}
                         </div>
                     </div>
                 </div>

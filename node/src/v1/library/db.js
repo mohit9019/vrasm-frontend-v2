@@ -11,14 +11,11 @@ connection.on('error', () => console.log('Error connecting to Database'))
 /* models */
 const users = model('users', schema.users);
 const templates = model('templates', schema.templates);
-// const template_technologies = model('template_technologies', schema.template_technologies);
-// const template_images = model('template_images', schema.template_images);
 const orders = model('orders', schema.orders);
 const order_items = model('order_items', schema.order_items);
 const transactions = model('transactions', schema.transactions);
 const feedbacks = model('feedbacks', schema.feedbacks);
 const cart = model('cart', schema.cart);
-// const tags = model('tags', schema.tags);
 const likes = model('likes', schema.likes);
 
 
