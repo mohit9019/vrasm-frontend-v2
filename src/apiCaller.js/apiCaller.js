@@ -37,7 +37,6 @@ class ApiCaller {
             data['user_id'] = userData.user_id;
             data['accesstoken'] = userData.accesstoken;
         }
-        console.log('open', this.open_access_apis.indexOf(url));
         if (this.open_access_apis.indexOf(url) === -1) {
             if (!data['user_id']) {
                 toast.error("Login to perform this action");
@@ -49,7 +48,6 @@ class ApiCaller {
             .then(data => {
                 // Loader.setLoader(0);
                 if ((url === 'user/login' || url === 'buyer/otp') && data.data.status_code === '1') {
-                    console.log('data inserted');
                     ApiCaller.userData = { ...data.data.data };
                     localStorage.setItem('userData', JSON.stringify(data.data.data));
                 }

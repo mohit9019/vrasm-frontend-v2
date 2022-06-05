@@ -73,14 +73,6 @@ function Tenmplatedetails() {
     };
 
     function imageUpload() {
-        // integrate image upload api call here.
-        // let formdata = new FormData();
-        // formdata.set('images', [images['0'], images['1']]);
-        // formdata.set('zip', zip);
-        // formdata.set('user_id', ApiCaller?.userData?.user_id);
-        // formdata.set('accesstoken', ApiCaller?.userData?.accesstoken);
-        // formdata.set('template_id', template_id);
-        // console.log('formdata',formdata)
         let body = {
             images:[images['0'], images['1']],
             zip,

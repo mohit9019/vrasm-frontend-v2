@@ -1,8 +1,6 @@
 import "../../css/buyer dashboard/Myorder.css";
 function Ordercard(props){
-    console.log(props);
     let date = Date.parse(props.data.created_date);
-    console.log(date);
     return( 
         <>
                 <div className="order-card">

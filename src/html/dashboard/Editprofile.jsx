@@ -7,7 +7,6 @@ import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 
 function Editprofile() {
-  console.log('in edit profile');
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [address, setAddress] = useState('');

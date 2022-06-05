@@ -111,7 +111,7 @@ export default function Payment() {
           <button  className="pay-button">
             Pay Now
           </button>
-          <button className="pay-button" disabled={paid===1? false: true } onClick={console.log("file downloaded")}>Download Zip</button>
+          <button className="pay-button" disabled={paid===1? false: true }>Download Zip</button>
           </div>
         </div>
       </div>      

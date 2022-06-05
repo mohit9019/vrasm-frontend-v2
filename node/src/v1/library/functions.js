@@ -1,10 +1,8 @@
 const { users } = require("./db.js");
 const { sign, verify } = require("jsonwebtoken");
-var https = require('follow-redirects').https;
 var dateFormat = require("date-format");
 var nodemailer = require("nodemailer");
 var cloudinary = require("cloudinary");
-const { template_images } = require("./schema.js");
 const CONSTANTS = require('../library/constants.js');
 
 class functions {
@@ -26,9 +24,9 @@ class functions {
      * @param folder folder name in cloudinary.
      * @returns path of the uploaded image.
      */
-    async uploadFileToCloudinary(file, folder, resource_type='') {
-        
-        let return_data = { error: true, path: ''};
+    async uploadFileToCloudinary(file, folder, resource_type = '') {
+
+        let return_data = { error: true, path: '' };
 
         /* preparing Cloudinary config variable. */
         cloudinary.config({
@@ -40,11 +38,16 @@ class functions {
         /* if folder name is wrong, then return. */
         if (CONSTANTS.CLOUDINARY_FOLDERS.indexOf(folder) == -1) { return return_data; }
 
-        /* promise upload to cloudinary. */
         let options = { folder };
-        if(resource_type) {
+        /* if resource type is raw, then assign random name and extension manually to public_id. */
+        if (resource_type === 'raw') {
+            let extension = this.getExtensionFromBase64(file);
+            let public_id = this.createRandomPassword(20) + '.' + extension;
             options['resource_type'] = resource_type;
+            options['public_id'] = public_id;
         }
+
+        /* promise upload to cloudinary. */
         return cloudinary.v2.uploader.upload(file, options)
             .then(res => {
                 return_data.error = false;
@@ -55,6 +58,14 @@ class functions {
                 console.log("error", err);
                 return return_data;
             })
+    }
+
+    /**
+     * to get extension from the base64 data.
+     * @param {*} base64 
+     */
+    getExtensionFromBase64(base64) {
+        return !base64 ? '' : base64.split(';')[0].split('/')[1];
     }
 
     /**

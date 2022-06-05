@@ -6,16 +6,11 @@ export default function OtpVerification() {
 
   function otp(e) {
     e.preventDefault();
-    console.log(e.target.value);
     let otp = e.target[0].value + e.target[1].value + e.target[2].value + e.target[3].value;
-    let body = {
-      otp: otp,
-      // email:
-    }
     let apiCaller = new ApiCaller();
     apiCaller.postData({
       url: 'buyer/otp',
-      data: body
+      data: { otp }
     }).then(data => {
       if (data && data.status_code === '1')
         toast.success('Otp Verified', { autoClose: 2000 });
@@ -48,10 +43,6 @@ export default function OtpVerification() {
     const timer = counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
     return () => clearInterval(timer);
   }, [counter]);
-
-  //for otp verified toaster
-  // const otpVerified = () =>{ toast(<><i class="fas fa-check-circle" id="right-icon"></i><text className="toaster-text"> Otp Matched</text></>);}
-  // const wrongOtp=()=>{toast (<><i class="fas fa-times-circle" id="wrong-icon"></i><text className="toaster-text"> Otp Doesn't Matched</text></>)}
 
   return (
     <>

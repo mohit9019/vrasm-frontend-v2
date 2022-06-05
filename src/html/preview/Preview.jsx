@@ -7,6 +7,7 @@ import { FaStar } from "react-icons/fa";
 import RatedStars from "./RatedStars";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
+import { saveAs } from "file-saver";
 
 function Preview() {
     let template_id = window.location.href.split('?')[1];
@@ -72,7 +73,6 @@ function Preview() {
 
     function feedback(e) {
         e.preventDefault();
-        console.log("clicked");
         let body = {
             rating: e.target.rating.value,
             message: e.target.message.value,
@@ -99,7 +99,6 @@ function Preview() {
     }
 
     function addToCart() {
-        console.log('add to cart');
         let apiCaller = new ApiCaller();
         apiCaller.postData({
             url: 'template/add_to_cart',
@@ -114,6 +113,10 @@ function Preview() {
         })
     }
 
+    function downloadFile(url) {
+        saveAs(url, 'template.zip');
+    }
+
     function downloadzip() {
         let body = {
             template_id: templateData._id
@@ -125,7 +128,7 @@ function Preview() {
         }).then(data => {
             if (data && data.status_code === '1') {
                 setTimeout(() => {
-                    setDownloadZippath('/STORAGE/' + data.data.zip);
+                    setDownloadZippath(data.data.zip);
                     console.log('path', data.data);
                     toast.success('template bought succesfully', { autoClose: 2000 });
                 }, 2000);
@@ -174,9 +177,8 @@ function Preview() {
                         <div className="preview-btns">
                             <button className="preview-cart" onClick={() => addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
-                            {downloadZippath === '' ? null : <a href={downloadZippath} download="template.zip"><button className="buy-btn"><i class="far fa-download"></i><span>Download zip</span></button></a>}
+                            {downloadZippath === '' ? null : <button className="buy-btn" onClick={()=>downloadFile(downloadZippath)}><i class="far fa-download"></i><span>Download zip</span></button>}
                         </div>
-                        {console.log(tech)}
                     </div>
                     <div className="image-carousel">
                         <div className="carousel-cont">
