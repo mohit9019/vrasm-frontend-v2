@@ -17,7 +17,7 @@ function Cart() {
         })
     }, []);
 
-    function handleCallback(){
+    function handleCallback() {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
             url: 'template/get_cart',
@@ -28,13 +28,13 @@ function Cart() {
             }
         })
     }
-    function cards(templates) { 
+    function cards(templates) {
         let img = templates?.images[0];
         return <>
             <CartCards image={img} onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
         </>;
     }
-    return ( 
+    return (
         <>
             {
                 templates.length === 0 ? <> <div className="oops"><p className="oops-title">Oops... Your Cart is Empty</p>

@@ -3,41 +3,70 @@ import ApiCaller from "../../apiCaller.js/apiCaller";
 import details from "../home/Detailsmap";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { getTemplate } from "../../redux/actions/templateAction";
+import Loader from '../other/Loader';
+import Error from '../other/Error';
 function Categoriespage() {
-
-     const [Data, setData] = useState([]);
-     useEffect(() => {
-          let apiCaller = new ApiCaller();
-          apiCaller.postData({
-               url: 'template/get',
-               data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
-          }).then(res => {
-               if (apiCaller.validateResult(res)) {
-                    setData(res.data);
-               }
-          })
-     }, []);
+     const [Data, setData] = useState();
      const [length, setLength] = useState([1]);
+     const templates = useSelector(state => state.getTemplateReducer);
+     const { loading, state, error } = templates;
+     // console.log(templates);
+     const dispatch = useDispatch();
+     useEffect(() => {
+          setData(state);
+          setLength(state?.length);
+          // setLength(state.length);
+          // console.log(Data);
+          //   let apiCaller = new ApiCaller();
+          //   apiCaller.postData({
+          //     url: 'template/get',
+          //     data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+          //   }).then(res => {
+          //     if (apiCaller.validateResult(res)) {
+          //       setData(res.data);
+          //     }
+          //   })
+     }, [state]);
+
+     // const [Data, setData] = useState([]);
+     // useEffect(() => {
+     //      let apiCaller = new ApiCaller();
+     //      apiCaller.postData({
+     //           url: 'template/get',
+     //           data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+     //      }).then(res => {
+     //           if (apiCaller.validateResult(res)) {
+     //                setData(res.data);
+     //                console.log(res);
+     //           }
+     //      })
+     // }, []);
+
      function category(props) {
-          let apiCaller = new ApiCaller();
-          apiCaller.postData({
-               url: 'template/get',
-               data: props
-          }).then(data => {
-               if (apiCaller.validateResult(data)) {
-                    setData(data.data);
-                    setLength(data.data.length);
-               }
-               else
-                    toast.error(data.status_message);
-          })
-               .catch(err => {
-                    console.log(err);
-               })
+          dispatch(getTemplate(props));
+          //      let apiCaller = new ApiCaller();
+          //      apiCaller.postData({
+          //           url: 'template/get',
+          //           data: props
+          //      }).then(data => {
+          //           if (apiCaller.validateResult(data)) {
+          //                setData(data.data);
+          //                setLength(data.data.length);
+          //           }
+          //           else
+          //                toast.error(data.status_message);
+          //      }).catch(err => {
+          //           console.log(err);
+          //      })
      }
+
      const [searched, setSearched] = useState();
      return (
           <>
+               {loading && <Loader></Loader>}
+               {error && <Error></Error>}
                <div className="categories">
                     <input type='checkbox' id='toggle'></input>
                     {/* <!-- Menu --> */}
@@ -86,7 +115,7 @@ function Categoriespage() {
                                    <div className="card-scroller" style={{ margin: '1% 0 0 0' }}>
                                         {/* <div className="cards" style={{ width: "100%" }}> */}
                                         {
-                                             Data.map(details)
+                                             Data?.map(details)
                                         }
                                         {/* </div> */}
                                    </div></>}
