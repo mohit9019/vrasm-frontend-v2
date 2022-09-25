@@ -2,7 +2,7 @@ const functions = require("../library/functions");
 const { users, transactions } = require("../library/db");
 const req = require("express/lib/request");
 const mongoose = require("mongoose");
-const { ReturnDocument } = require("mongodb");
+import { generateOtp } from "../library/functions";
 
 class dbusers {
     constructor() { }
@@ -58,8 +58,10 @@ class dbusers {
 
     async register(data, is_creator = false) {
         let functionsObj = new functions();
-        console.log(data);
-        let otp = await functionsObj.getOtp();
+        let otp = generateOtp();
+
+        let userData = await users.findOne({"email": data.email});
+        console.log(userData)
 
         let user = {
             name: data.name,
