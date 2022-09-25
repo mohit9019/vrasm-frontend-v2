@@ -5,17 +5,17 @@ var nodemailer = require("nodemailer");
 var cloudinary = require("cloudinary");
 const CONSTANTS = require('../library/constants.js');
 
-function generateOtp(length = 4) {
-    let otp = String(Math.ceil(Math.random() * 10000));
-    return otp.length == length ? otp : generateOtp();
-}
 
 class functions {
     constructor() { }
-
+    
     /** function to get 4 digit otp.
      * @returns returns 4 digit random number.
      */
+    generateOtp(length = 4) {
+        let otp = String(Math.ceil(Math.random() * 10000));
+        return otp.length == length ? otp : this.generateOtp();
+    }
 
 
     /**

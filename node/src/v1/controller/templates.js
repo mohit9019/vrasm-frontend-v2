@@ -1,7 +1,7 @@
 var express = require("express");
 const router = express.Router();
 const validations = require("../library/validations");
-const Joi = require("Joi");
+const Joi = require("joi");
 const functions = require("../library/functions");
 const dbtemplates = require("../model/dbtemplates");
 const { templates } = require('../library/db');
@@ -34,7 +34,7 @@ router.post('/upload_image', async function (req, res) {
 
     /* Upload images to Cloudinary, and push their paths into array. */
     let imagesPathArray = [];
-    for(let i = 0; i < req.body?.images?.length; i++) {
+    for(let i = 0; i < req.body.images.length; i++) {
         let result = await functionsObj.uploadFileToCloudinary(req.body.images[i], 'template_images');
         console.log(result);
         if (!result.error) {

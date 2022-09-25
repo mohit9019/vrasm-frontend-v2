@@ -1,7 +1,8 @@
 import {FaStar} from 'react-icons/fa';
 function RatedStars(props){
-    const ratings = props.rating;
-    const unrate= 5 - (props.rating ? props.rating : 0);
+    const ratings =  0;
+    const unrate= 5 ;
+    console.log(ratings, unrate)
     return(
         <>
                     {[...Array(ratings)].map(()=>{

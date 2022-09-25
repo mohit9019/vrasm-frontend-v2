@@ -2,7 +2,6 @@ const functions = require("../library/functions");
 const { users, transactions } = require("../library/db");
 const req = require("express/lib/request");
 const mongoose = require("mongoose");
-import { generateOtp } from "../library/functions";
 
 class dbusers {
     constructor() { }
@@ -10,10 +9,10 @@ class dbusers {
     async login(email, password) {
         let functionsObj = new functions();
         let result = await users.findOne({ email, password }).exec();
-        if (result != null){
+        if (result != null) {
             delete result._doc['password'];
             result._doc['user_id'] = result._doc['_id'];
-            return { error: false, data: {...result._doc,accesstoken: functionsObj.generateToken(result._doc._id)} }
+            return { error: false, data: { ...result._doc, accesstoken: functionsObj.generateToken(result._doc._id) } }
         }
         else
             return { error: true }
@@ -21,11 +20,11 @@ class dbusers {
 
     async getProfile(user_id) {
         let functionsObj = new functions();
-        let result = await users.findOne({ _id: mongoose.Types.ObjectId(user_id)}).exec();
-        if (result != null){
+        let result = await users.findOne({ _id: mongoose.Types.ObjectId(user_id) }).exec();
+        if (result != null) {
             delete result._doc['password'];
             result._doc['user_id'] = result._doc['_id'];
-            return { error: false, data: {...result._doc,accesstoken: functionsObj.generateToken(result._doc._id)} }
+            return { error: false, data: { ...result._doc, accesstoken: functionsObj.generateToken(result._doc._id) } }
         }
         else
             return { error: true }
@@ -33,12 +32,12 @@ class dbusers {
 
     async setProfile(user_id, name, city, address, pincode) {
         let functionsObj = new functions();
-        console.log( city, address);
-        let result = await users.findByIdAndUpdate({ _id: mongoose.Types.ObjectId(user_id)},{name, city, address, pincode});
-        if (result != null){
+        console.log(city, address);
+        let result = await users.findByIdAndUpdate({ _id: mongoose.Types.ObjectId(user_id) }, { name, city, address, pincode });
+        if (result != null) {
             delete result._doc['password'];
             result._doc['user_id'] = result._doc['_id'];
-            return { error: false, data: {...result._doc,accesstoken: functionsObj.generateToken(result._doc._id)} }
+            return { error: false, data: { ...result._doc, accesstoken: functionsObj.generateToken(result._doc._id) } }
         }
         else
             return { error: true }
@@ -46,11 +45,11 @@ class dbusers {
 
     async changePassword(user_id, old_password, new_password) {
         let functionsObj = new functions();
-        let result = await users.findOneAndUpdate({_id: mongoose.Types.ObjectId(user_id), password: old_password}, {password: new_password});
-        if (result != null){
+        let result = await users.findOneAndUpdate({ _id: mongoose.Types.ObjectId(user_id), password: old_password }, { password: new_password });
+        if (result != null) {
             delete result._doc['password'];
             result._doc['user_id'] = result._doc['_id'];
-            return { error: false, message:'Password Updated successfully', data: {...result._doc,accesstoken: functionsObj.generateToken(result._doc._id)} }
+            return { error: false, message: 'Password Updated successfully', data: { ...result._doc, accesstoken: functionsObj.generateToken(result._doc._id) } }
         }
         else
             return { error: true, message: 'Wrong Old Password' }
@@ -58,12 +57,10 @@ class dbusers {
 
     async register(data, is_creator = false) {
         let functionsObj = new functions();
-        let otp = generateOtp();
+        let otp = functionsObj.generateOtp();
 
-        let userData = await users.findOne({"email": data.email});
-        console.log(userData)
 
-        let user = {
+        let data1 = {
             name: data.name,
             email: data.email,
             gender: data.gender,
@@ -74,18 +71,31 @@ class dbusers {
             created_date: new Date()
         };
 
+        console.log(otp)
         if (is_creator) {
             user['is_creator'] = 1;
             user['course'] = data.course;
             user['college'] = data.college;
         }
 
+
+        // check if user is already exists or not.
+        let userData = await users.findOne({ "email": data.email });
+        if (userData) {
+            if (userData.is_verified == false) {
+                await users.deleteOne({ "email": data.email, is_verified: false });
+            } else {
+                return { error: true, message: "Email already exists" }
+            }
+        }
+
+
         let return_data = {
             error: false,
             message: 'success'
         };
 
-        user = new users(user);
+        let user = new users(data1);
         return user.save()
             .then(async () => {
 
@@ -95,11 +105,12 @@ class dbusers {
                 return return_data;
             })
             .catch((err) => {
-                console.log('err',err);
-                return_data.message = err.errors?.email ? 'duplicate_email' : 'something_broken';
+                console.log('err', err);
+                return_data.message = err.errors.email ? 'duplicate_email' : 'something_broken';
                 return_data.error = true;
                 return return_data;
             })
+
     }
 
     async users() {
@@ -121,21 +132,21 @@ class dbusers {
             })
     }
 
-    async verifyOtp(email, otp){
+    async verifyOtp(email, otp) {
         let return_data = {
-            error:false,
-            message:'otp verified successfully',
+            error: false,
+            message: 'otp verified successfully',
             data: {}
         }
         let functionsObj = new functions();
-        return users.findOneAndUpdate({email:email, otp:otp},{is_verified:true})
-            .then(data=>{
-                if(data==null){
+        return users.findOneAndUpdate({ email: email, otp: otp }, { is_verified: true })
+            .then(data => {
+                if (data == null) {
                     return_data.error = true;
                     return_data.message = 'wrong otp';
                     return return_data;
                 }
-                else{
+                else {
                     delete data._doc['password'];
                     data._doc['user_id'] = data._doc['_id'];
                     data._doc['accesstoken'] = functionsObj.generateToken(data._doc._id);
@@ -143,38 +154,38 @@ class dbusers {
                     return return_data;
                 }
             })
-            .catch(err=>{
-                console.log('err',err);
+            .catch(err => {
+                console.log('err', err);
                 return_data.error = true;
                 return_data.message = 'something_broken';
                 return return_data;
             })
     }
 
-    async myOrders(user_id){
+    async myOrders(user_id) {
         let return_data = {
-            error:false,
-            message:'success',
-            data:[]
+            error: false,
+            message: 'success',
+            data: []
         };
         // let result = transactions.find({user_id: mongoose.Types.ObjectId(user_id)});
         let result = await transactions.aggregate([
             {
-                $lookup:{
-                    from:'templates',
+                $lookup: {
+                    from: 'templates',
                     localField: 'template_id',
                     foreignField: '_id',
-                    as:'template'
+                    as: 'template'
                 }
             },
             {
-                $match:{
-                    user_id:mongoose.Types.ObjectId(user_id)
+                $match: {
+                    user_id: mongoose.Types.ObjectId(user_id)
                 }
             }
         ])
 
-        if(!result){
+        if (!result) {
             return_data.error = true;
             return_data.message = 'no record found';
         }
