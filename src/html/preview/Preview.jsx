@@ -8,12 +8,20 @@ import RatedStars from "./RatedStars";
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 import { saveAs } from "file-saver";
+import { useDispatch, useSelector } from "react-redux";
+import { getTemplate } from "../../redux/actions/templateAction";
+import { addToCart } from "../../redux/actions/cartAction";
+import { feedback } from '../../redux/actions/templateAction';
 
 function Preview() {
+    const templates = useSelector(state => state.getTemplateReducer)
+    const { loading, state, error } = templates;
+    const userLogin = useSelector((state) => state.loginReducer);
     let template_id = window.location.href.split('?')[1];
     const [templateData, setTemplateData] = useState({});
     const [downloadZippath, setDownloadZippath] = useState('');
     const [rating, setRating] = useState(0);
+    const dispatch = useDispatch();
 
     function Ratings() {
         const [hover, setHover] = useState(null);
@@ -54,7 +62,6 @@ function Preview() {
                 }
                 res.data[0].rating = rating;
                 setTemplateData(res.data[0]);
-                console.log(templateData);
             }
         })
     }
@@ -71,7 +78,7 @@ function Preview() {
         ScrolltoTop();
     }, []);
 
-    function feedback(e) {
+    function handleFeedback(e) {
         e.preventDefault();
         let body = {
             rating: e.target.rating.value,
@@ -84,6 +91,8 @@ function Preview() {
             data: body
         }).then(data => {
             if (data && data.status_code === '1') {
+                console.log("feedback data");
+                console.log(data);
                 toast.success('Feedback sent successfully');
                 getDetails();
                 setTimeout(() => {
@@ -92,25 +101,18 @@ function Preview() {
             else
                 toast.error(data.status_message);
             console.log(data);
+        }).catch(err => {
+            console.log(err);
         })
-            .catch(err => {
-                console.log(err);
-            })
+        // const { _id, name, gender, email } = userInfo;
+        // const { rating, message } = body;
+        // dispatch(feedback(body));
+        // state.map((temp) => temp._id === template_id ? { ...temp, feedbacks: [temp.feedbacks, { buyer_id: { _id, name, gender, email }, template_id, rating, message }] } : null);
+        // state.map((temp) => temp._id === template_id ? { ...temp, } : '');
     }
 
-    function addToCart() {
-        let apiCaller = new ApiCaller();
-        apiCaller.postData({
-            url: 'template/add_to_cart',
-            data: {
-                template_id,
-                action: 'add'
-            }
-        }).then(data => {
-            if (data && data.status_code === '1') {
-                toast.success('template added to cart');
-            }
-        })
+    function handleAddToCart() {
+        dispatch(addToCart(template_id));
     }
 
     function downloadFile(url) {
@@ -159,7 +161,7 @@ function Preview() {
         prevArrow: <PrevArrow />,
         beforeChange: (current, next) => setImageIndex(next),
     };
-    
+
     return (
         <>
             <div className="preview">
@@ -173,7 +175,7 @@ function Preview() {
                         <div className="category"><span >Category: {templateData.category}</span></div>
                         <div className="preview-stars"><RatedStars rating={templateData.rating} /></div>
                         <div className="preview-btns">
-                            <button className="preview-cart" onClick={() => addToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
+                            <button className="preview-cart" onClick={() => handleAddToCart()}><i class="far fa-shopping-cart"></i><span>Add to Cart</span></button>
                             <button className="buy-btn" onClick={() => downloadzip()}><i class="far fa-shopping-bag"></i><span>Buy Now</span></button>
                             {downloadZippath === '' ? null : <button className="buy-btn" onClick={() => downloadFile(downloadZippath)}><i class="far fa-download"></i><span>Download zip</span></button>}
                         </div>
@@ -224,7 +226,7 @@ function Preview() {
                     <div className="feedback-youtube">
                         <div className="feedback-form">
                             <h5 className="feedback-title">Your Opinion Matters !</h5>
-                            <form onSubmit={feedback} className="feedback-inputs">
+                            <form onSubmit={handleFeedback} className="feedback-inputs">
                                 <Ratings />
                                 <input name="rating" value={rating} style={{ visibility: "hidden", height: "1px" }} />
                                 <textarea rows={5} name="message" className="feedback-text" placeholder="Leave a Feedback" />

@@ -18,21 +18,11 @@ function ScrolltoTop() {
 }
 
 function Home() {
-  // const [isLoading, setIsLoading] = useState(true);
   const [Data, setData] = useState();
   const templates = useSelector(state => state.getTemplateReducer)
   const { loading, state, error } = templates;
   useEffect(() => {
     setData(state);
-    //   let apiCaller = new ApiCaller();
-    //   apiCaller.postData({
-    //     url: 'template/get',
-    //     data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
-    //   }).then(res => {
-    //     if (apiCaller.validateResult(res)) {
-    //       setData(res.data);
-    //     }
-    //   })
   }, [state]);
   return (<>
     <Banner />
@@ -51,16 +41,6 @@ function Home() {
         </div>
       </div>
       <div className="seemore"><Link to="/Categoriespage" style={{ textDecoration: 'none', color: 'rebeccapurple' }}><p>see more <i class="fad fa-angle-right"></i></p></Link></div>
-      {/* <div className='trending'> Highest Ratings</div>
-    <div className="card-scroller">
-    <div className="cards">
-    {
-      Data.map(details)
-    } 
-    </div>
-    </div>
-    <div className="seemore"><Link to="/categoriespage" style={{textDecoration:'none',color:'rebeccapurple'}}><p>see more <i class="fad fa-angle-right"></i></p></Link></div> */}
-
       <Aboutus />
       <Footer />
     </div>

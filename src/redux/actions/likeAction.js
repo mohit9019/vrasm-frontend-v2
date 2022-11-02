@@ -1,33 +1,34 @@
 import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
-import { ADD_TO_CART, GET_CART_ITEMS, DELETE_FROM_CART } from '../constants/constant'
+import { ADD_TO_LIKE, DELETE_FROM_LIKE, GET_LIKE_ITEMS } from '../constants/constant'
 
-export const getCartItems = () => async (dispatch) => {
+export const getLikeItems = () => async (dispatch) => {
     try {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url: 'template/get_cart',
-            data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass
+            url: 'template/get',
+            data: {
+                type: 'like'
+            } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
         }).then(res => {
             if (apiCaller.validateResult(res)) {
-                dispatch({ type: GET_CART_ITEMS, payload: res.data.data });
+                dispatch({ type: GET_LIKE_ITEMS, payload: res.data })
             }
         })
     } catch (error) {
-        console.log(error);
+        console.log(error)
 
     }
 }
 
-
-export const addToCart = (template_id) => async (dispatch) => {
+export const addToLike = (template_id) => async (dispatch) => {
     try {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url: 'template/add_to_cart',
+            url: 'template/like',
             data: {
                 template_id,
-                action: 'add'
+                action: 'like'
             }
         }).then(data => {
             if (data && data.status_code === '1') {
@@ -36,8 +37,7 @@ export const addToCart = (template_id) => async (dispatch) => {
                     data: { template_id } // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
                 }).then(res => {
                     if (apiCaller.validateResult(res)) {
-                        dispatch({ type: ADD_TO_CART, payload: res.data[0] })
-                        toast.success('template added to cart');
+                        dispatch({ type: ADD_TO_LIKE, payload: res.data[0] })
                     } else {
                         toast.error(res.status_message);
                     }
@@ -49,19 +49,18 @@ export const addToCart = (template_id) => async (dispatch) => {
     }
 }
 
-export const deleteFromCart = (template_id) => async (dispatch) => {
+export const deleteFromLike = (template_id) => async (dispatch) => {
     try {
         let apiCaller = new ApiCaller();
         apiCaller.postData({
-            url: 'template/add_to_cart',
+            url: 'template/like',
             data: {
                 template_id,
-                action: 'delete'
+                action: 'unlike',
             }
         }).then(data => {
             if (apiCaller.validateResult(data)) {
-                dispatch({ type: DELETE_FROM_CART, payload: { _id: template_id } })
-                toast.success('Template deleted from cart');
+                dispatch({ type: DELETE_FROM_LIKE, payload: { _id: template_id } })
             }
         })
     } catch (error) {

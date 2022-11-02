@@ -74,7 +74,7 @@ function Tenmplatedetails() {
 
     function imageUpload() {
         let body = {
-            images:[images['0'], images['1']],
+            images: [images['0'], images['1']],
             zip,
             template_id,
         }
@@ -83,7 +83,7 @@ function Tenmplatedetails() {
         apiCaller.postData({
             url: 'template/upload_image',
             data: body
-        }).then(data => { 
+        }).then(data => {
 
         });
     }
@@ -167,8 +167,8 @@ function Tenmplatedetails() {
                             {/* <form onSubmit={uploadImages} enctype="multipart/form-data" method="POST" action="http://localhost:4000/v1/template/upload_image"> */}
                             <form onSubmit={imageUpload}>
                                 <div className="doccol">
-                                    <div className="doccol"><label className="doc-title">Promotional Image :</label><input className="doc-input" onChange={(e)=>onImageChange(e,'0')} type="file" name="file"></input></div>
-                                    <div className="doccol"><label className="doc-title">Other Image :</label><input className="doc-input" onChange={(e)=>onImageChange(e,'1')} type="file" name="file"></input></div>
+                                    <div className="doccol"><label className="doc-title">Promotional Image :</label><input className="doc-input" onChange={(e) => onImageChange(e, '0')} type="file" name="file"></input></div>
+                                    <div className="doccol"><label className="doc-title">Other Image :</label><input className="doc-input" onChange={(e) => onImageChange(e, '1')} type="file" name="file"></input></div>
                                     <div className="doccol"><label className="doc-title">Zip File :</label><input className="doc-input" onChange={onZipChange} type="file" name="file"></input></div>
                                     {/* <input type="text" style={{ visibility: 'hidden' }} id="template_id" name="template_id" value={template_id}></input>
                                     <input type="text" style={{ visibility: 'hidden' }} id="user_id" name="user_id" value={ApiCaller.userData.user_id}></input>

@@ -8,15 +8,9 @@ import { userLogout } from "../../redux/actions/registAction";
 function Navba() {
   const userLogin = useSelector((state) => state.loginReducer);
   const { userInfo } = userLogin;
-  console.log(userLogin);
   const dispatch = useDispatch();
   const is_cart = 0;
   const logout = () => {
-    // console.log("Hello")
-    // localStorage.clear();
-    // window.location.reload();
-
-    // const dispatch = useDispatch();
     NavActive(1);
     dispatch(userLogout());
   }
@@ -38,13 +32,6 @@ function Navba() {
           </Link>
         </div>
         <div className="top-cont">
-          {/* <Link to="/Creatordash/Personalinfo" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(6)} id={togglenav===6?"nav-active":null}>
-            Creator</span>
-          </Link>
-          <Link to="/Buyerdash/Personalinfo" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={()=>NavActive(5)} id={togglenav===5?"nav-active":null} >
-            Buyer</span>
-          </Link> */}
-
           <Link to="/categoriespage" className="top-icon" style={{ textDecoration: "none" }}><span className="reg-but" onClick={() => NavActive(5)} id={togglenav === 5 ? "nav-active" : null}>
             Templates</span>
           </Link>
@@ -57,10 +44,8 @@ function Navba() {
           <Link to="/Like" className="top-icon">
             <i class="far fa-heart" onClick={() => NavActive(2)} id={togglenav === 2 ? "nav-active" : null}></i>
           </Link>
-
           {
             !userInfo ?
-              /* ApiCaller.checkUser() === 0 ? */
               <Link to="/Login" className="top-icon" >
                 <i class="far fa-user-alt" onClick={() => NavActive(1)} id={togglenav === 1 ? "nav-active" : null}></i>
               </Link>
@@ -71,7 +56,7 @@ function Navba() {
                 {show ?
                   <div className="dropdown-content">
                     <ul className="dropdown-list">
-                      <Link to={ApiCaller.checkCreator() ? "/creatordash/Personalinfo" : "/Buyerdash/Personalinfo"} style={{ textDecoration: "none", color: "rebeccapurple" }}><li onClick={() => NavActive(1)}>Dashboard</li></Link>
+                      <Link to={"/Dashboard/Personalinfo"} style={{ textDecoration: "none", color: "rebeccapurple" }}><li onClick={() => NavActive(1)}>Dashboard</li></Link>
                       <li onClick={logout}>Log-Out</li>
                     </ul>
                   </div> : null}

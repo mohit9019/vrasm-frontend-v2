@@ -75,6 +75,7 @@ function Categoriespage() {
                          <label for='toggle' className='exit'><i class="fad fa-times"></i></label>
                          <h4 className='category-title'>Catagories</h4>
                          <ul className="categories-list">
+                              {/* <li onClick={() => { category({ category: 'Portfolio' }) }}><span className='category-name'><i class="far fa-user-alt"></i> All</span> <span className="number"></span></li> */}
                               <li onClick={() => { category({ category: 'Portfolio' }) }}><span className='category-name'><i class="far fa-user-alt"></i> Portfolio</span> <span className="number"></span></li>
                               <li onClick={() => { category({ category: 'Business' }) }}><span className='category-name'><i class="far fa-briefcase"></i> Business</span><span className="number"></span></li>
                               <li onClick={() => { category({ category: 'Sports' }) }}><span className='category-name'><i class="far fa-volleyball-ball"></i> Sports</span><span className="number"></span></li>
@@ -88,6 +89,7 @@ function Categoriespage() {
                          <hr />
                          <h4 className='category-title'>Technologies</h4>
                          <ul className="tech-list">
+                              {/* <li onClick={() => { category({ technology: 'HTML' }) }}><span className='category-name'><i class="fas fa-code"></i> All</span> <span className="number"></span></li> */}
                               <li onClick={() => { category({ technology: 'HTML' }) }}><span className='category-name'><i class="fas fa-code"></i> HTML</span> <span className="number"></span></li>
                               <li onClick={() => { category({ technology: 'CSS' }) }}><span className='category-name'><i class="fab fa-css3-alt"></i> CSS</span> <span className="number"></span></li>
                               <li onClick={() => { category({ technology: 'Bootstrap' }) }}><span className='category-name'><i class="fab fa-bootstrap"></i> Bootstrap</span> <span className="number"></span></li>

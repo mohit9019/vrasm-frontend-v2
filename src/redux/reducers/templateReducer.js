@@ -1,4 +1,4 @@
-import { GET_TEMPLATE_FAIL, GET_TEMPLATE_REQUEST, GET_TEMPLATE_SUCCESS } from "../constants/constant"
+import { GET_TEMPLATE_FAIL, GET_TEMPLATE_REQUEST, GET_TEMPLATE_ERROR, GET_TEMPLATE_SUCCESS } from "../constants/constant"
 
 export const getTemplateReducer = (state = [], action) => {
     switch (action.type) {
@@ -6,6 +6,8 @@ export const getTemplateReducer = (state = [], action) => {
             return { loading: true, state: [] }
         case GET_TEMPLATE_SUCCESS:
             return { loading: false, state: action.payload }
+        case GET_TEMPLATE_ERROR:
+            return { loading: false, state: [] }
         case GET_TEMPLATE_FAIL:
             return { loading: false, error: action.payload }
         default:
