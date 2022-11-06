@@ -1,179 +1,181 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-.templetes{
-    width: 22%;
-    display: inline-flex;
-    flex-direction: row;
-    margin:2% 1.5% 2% 1.5%; 
- }
-.banner{
+.templetes {
+  width: 22%;
+  display: inline-flex;
+  flex-direction: row;
+  margin: 2% 1.5% 2% 1.5%;
+}
+.banner {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  margin: 0 0 2% 0;
+  z-index: 9;
+  text-transform: capitalize;
+}
+.cover {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  /* border: 1px solid black; */
+  margin-top: -50px;
+  position: fixed;
+  z-index: 10;
+}
+.clip {
+  width: 60%;
+  height: auto;
+  position: fixed;
+  transform: translateY(0px);
+  animation: float 3.5s ease-in-out infinite;
+}
+.ban-text {
+  width: 40%;
+  margin-top: 4%;
+  margin-left: auto;
+  padding: 3% 0 4% 0;
+  color: rgb(202, 69, 202);
+  position: relative;
+  text-align: center;
+  z-index: 7;
+}
+.ban-text button {
+  border: rgb(202, 69, 202, 0.9) 2px solid;
+  color: rgb(202, 69, 202);
+  background-color: transparent;
+  border-radius: 25px;
+  font-size: larger;
+  margin-top: 4%;
+  padding: 2% 3% 2% 3%;
+  float: bottom;
+  font-weight: bold;
+  width: 40%;
+  height: 20%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.typing {
+  width: auto;
+  height: 25px;
+  overflow: hidden;
+  border-right: rgb(202, 69, 202) 2px solid;
+  position: relative;
+  animation: blink 1s ease-in-out infinite, type 7s steps(17) infinite;
+}
+.typing p {
+  position: relative;
+  width: 160px;
+  top: -2px;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+  word-break: break-all;
+}
+.ban-text button:hover {
+  border: none;
+  background-color: rgb(202, 69, 202);
+  border: rgb(202, 69, 202, 0.9) 2px solid;
+  color: white;
+}
+.ban-title {
+  margin: 17% 0 4% 0;
+  font-weight: bold;
+}
+@keyframes type {
+  0%,
+  80%,
+  100% {
+    width: 0;
+  }
+  20%,
+  40%,
+  60% {
     width: 100%;
-    height: 100%;
-    display: inline-flex;
-    flex-direction: row;
-    margin: 0 0 2% 0;
-    z-index: 9;
-    text-transform: capitalize;
+  }
 }
-.cover{
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    /* border: 1px solid black; */
-    margin-top: -50px;
-    position: fixed;
-    z-index: 10;
-}
- .clip{
-     width: 60%;
-     height: auto;
-     position: fixed;
-     transform: translateY(0px);
-     animation: float 3.5s ease-in-out infinite;
- }
- .ban-text{
-     width: 40%;
-    margin-top: 4%;
-    margin-left: auto;
-    padding:3% 0 4% 0 ;
-    color:rgb(202, 69, 202);
-    position: relative  ;
-    text-align: center;
-    z-index: 7;
- }
- .ban-text button{
-     border: rgb(202, 69, 202,.9) 2px solid;
-     color:rgb(202, 69, 202);
-     background-color: transparent;
-     border-radius:25px;
-     font-size: larger;
-     margin-top: 4%;
-     padding:2% 3% 2% 3%;
-     float: bottom;
-     font-weight: bold;
-     width: 40%;
-     height: 20%;
-     transition: all .3s ease;
-     overflow: hidden;
- }
- .typing{
-     width: auto;
-     height: 25px;
-     overflow: hidden;
-     border-right:rgb(202, 69, 202) 2px solid ;
-     position: relative;
-     animation: blink 1s ease-in-out infinite, type 7s steps(17) infinite;
- }
- .typing p{
-     position: relative;
-     width: 160px;
-     top: -2px;
-     overflow: hidden;
-     margin: 0 auto 0 auto;
-     word-break: break-all;
- }
- .ban-text button:hover{
-     border: none;
-    background-color: rgb(202, 69, 202) ;
-    border: rgb(202, 69, 202,.9) 2px solid;
-    color: white;
- }
- .ban-title{
-     margin: 17% 0 4% 0 ;
-     font-weight: bold;
- }
-@keyframes type{
-    0%,80%,100%{
-        width: 0;
-    }   
-    20%,40%,60%{
-        width: 100%;
-    } 
-}
-@keyframes blink{
-    from{
-        border: none;
-    }
-    to{
-        border-right:rgb(202, 69, 202) 2px solid ;
-    }
+@keyframes blink {
+  from {
+    border: none;
+  }
+  to {
+    border-right: rgb(202, 69, 202) 2px solid;
+  }
 }
 @keyframes float {
-    0%{
-        transform: translateY(0px);
-    }
-    50%{
-        transform: translateY(15px);
-    }
-    100%{
-        transform: translateY(0px);
-    }
-
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
-  @media only screen and (max-width: 480px) {
-    .typing{
-        height: 15px;
-    }
-    .typing p{
-        width: 130px;
-    }
-    .banner{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .templetes{
-        margin:1% 0 1% 0;
-        width: 100%;
-       
-    }
-    .clip{
-        width: 100%;
-        margin-top: 3%;
-        z-index: 9;
-    }
-    .ban-text{
-        width: 100%;
-        margin-top: 80%;
-        font-size: smaller;
-        z-index: 8;
-    }
-    .ban-title{
-        margin-top:0 ;
-        font-size:  large;
-    }
-    .ban-text button{
-        font-size: small;
-    }
-    .cover{
-       margin-top: -15px;
-    }
+@media only screen and (max-width: 480px) {
+  .typing {
+    height: 15px;
   }
-  @media only screen and (min-width:480px) and (max-width:768px){
-    .ban-text button{
-        width: 75%;
-    }
-    .banner{
-        width: 100%;
-        margin-top: 9%;
-        display:    flex;
-        flex-direction: column;
-    }
-    .ban-text{
-        margin-top: 8%;
-        font-size: smaller;
-    }
-    .ban-title{
-        margin-top:0 ;
-        font-size: x-large;
-    }
-    .templetes{
-        width: 40%;
-        margin:5% 0 0 7%;
-    }
-    .typing p{
-        width: 140px;
-    }
+  .typing p {
+    width: 130px;
   }
+  .banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .templetes {
+    margin: 1% 0 1% 0;
+    width: 100%;
+  }
+  .clip {
+    width: 100%;
+    margin-top: 3%;
+    z-index: 9;
+  }
+  .ban-text {
+    width: 100%;
+    margin-top: 80%;
+    font-size: smaller;
+    z-index: 8;
+  }
+  .ban-title {
+    margin-top: 0;
+    font-size: large;
+  }
+  .ban-text button {
+    font-size: small;
+  }
+  .cover {
+    margin-top: -15px;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .ban-text button {
+    width: 75%;
+  }
+  .banner {
+    width: 100%;
+    margin-top: 9%;
+    display: flex;
+    flex-direction: column;
+  }
+  .ban-text {
+    margin-top: 8%;
+    font-size: smaller;
+  }
+  .ban-title {
+    margin-top: 0;
+    font-size: x-large;
+  }
+  .templetes {
+    width: 40%;
+    margin: 5% 0 0 7%;
+  }
+  .typing p {
+    width: 140px;
+  }
+}

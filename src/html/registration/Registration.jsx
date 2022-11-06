@@ -4,7 +4,10 @@ import ApiCaller from "../../apiCaller.js/apiCaller";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-
+import { registration, verifyOtp } from "../../redux/actions/registAction";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from '../other/Loader';
+import Error from '../other/Error';
 
 function toggle(value) {
   return !value;
@@ -12,18 +15,26 @@ function toggle(value) {
 var email = '';
 
 function Registration() {
+  const regist = useSelector((state) => state.registReducer);
+  let { loading, error, is_register } = regist;
+  // if (is_register === undefined) {
+  //   is_register = 0;
+  // }
+  // console.log(regist);
   const navigate = useNavigate();
   function ScrolltoTop() {
     window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
+      top: 0,
+      behavior: 'smooth',
     });
-}
-useEffect(() => {
+  }
+  useEffect(() => {
     ScrolltoTop();
-}, []);
+  }, []);
   const [show, setShow] = useState(false);
   // let email = '';
+
+  const dispatch = useDispatch();
 
   function register(e) {
     e.preventDefault();
@@ -39,23 +50,25 @@ useEffect(() => {
       body.college = e.target.college.value;
       body.course = e.target.course.value;
     }
-    let apiCaller = new ApiCaller();
-    apiCaller.postData({
-      url: 'buyer/register',
-      data: body
-    }).then(data => {
-      if (data && data.status_code === '1') {
-        toast.success('Otp sent on your email');
-        setTimeout(() => {
-          setis_register(1);
-        }, 500);
-      }
-      else
-        toast.error(data.status_message);
-    })
-      .catch(err => {
-        console.log(err);
-      })
+
+    dispatch(registration(body));
+    // let apiCaller = new ApiCaller();
+    // apiCaller.postData({
+    //   url: 'buyer/register',
+    //   data: body
+    // }).then(data => {
+    //   if (data && data.status_code === '1') {
+    //     toast.success('Otp sent on your email');
+    //     setTimeout(() => {
+    //       setis_register(1);
+    //     }, 500);
+    //   }
+    //   else
+    //     toast.error(data.status_message);
+    // })
+    //   .catch(err => {
+    //     console.log(err);
+    //   })
   }
 
   function otp(e) {
@@ -65,23 +78,24 @@ useEffect(() => {
       otp: otp,
       email
     }
-    let apiCaller = new ApiCaller();
-    apiCaller.postData({
-      url: 'buyer/otp',
-      data: body
-    }).then(data => {
-      if (data && data.status_code === '1'){
-        toast.success('Otp Verified', { autoClose: 2000 });
-        navigate('/');
-        window.location.reload("/");
-      }
-      else{
-        toast.error("Otp doesn't Matched", { autoClose: 2000 });
-      }
-    })
-      .catch(err => {
-        console.log(err);
-      })
+    dispatch(verifyOtp(body, navigate));
+    // let apiCaller = new ApiCaller();
+    // apiCaller.postData({
+    //   url: 'buyer/otp',
+    //   data: body
+    // }).then(data => {
+    //   if (data && data.status_code === '1') {
+    //     toast.success('Otp Verified', { autoClose: 2000 });
+    //     navigate('/');
+    //     window.location.reload("/");
+    //   }
+    //   else {
+    //     toast.error("Otp doesn't Matched", { autoClose: 2000 });
+    //   }
+    // })
+    //   .catch(err => {
+    //     console.log(err);
+    //   })
   }
 
   // for otp inputs
@@ -107,15 +121,21 @@ useEffect(() => {
 
   const [password, setPassword] = useState(null);
   const [cpassword, setcPassword] = useState(null);
-  const [is_register, setis_register] = useState(0);
+  // const [is_register, setis_register] = useState(0);
   return (
     <>
-      {is_register === 0 ?
+      {
+        loading && <Loader />
+      }
+      {
+        error && <Error />
+      }
+      {is_register !== 1 ?
         <div className="background">
           <div className="regist">
 
             <form onSubmit={register}>
-            <div className="regist-col">
+              <div className="regist-col">
                 <label className="regist-label">name</label>
                 <input type="text" className="regist-input" name="name" placeholder="Enter Name" required></input>
               </div>
@@ -175,14 +195,14 @@ useEffect(() => {
               </div> : null}
 
               <div className="regist-col">
-                  <div className="regist-row">
-                    <input type="checkbox" name="register" className="radio-button" placeholder="Passwords" style={{ height: '1.01rem', marginTop: '5px' }} required></input>
-                    <label className="regist-label">Agree with Terms & Conditions</label>
-                  </div>
-        <div className="regist-col"><label className="regiter"><Link to="/terms" style={{fontSize:"85%",textDecoration:"none"}}>Terms and Condition</Link></label> </div> 
-
+                <div className="regist-row">
+                  <input type="checkbox" name="register" className="radio-button" placeholder="Passwords" style={{ height: '1.01rem', marginTop: '5px' }} required></input>
+                  <label className="regist-label">Agree with Terms & Conditions</label>
                 </div>
-                
+                <div className="regist-col"><label className="regiter"><Link to="/terms" style={{ fontSize: "85%", textDecoration: "none" }}>Terms and Condition</Link></label> </div>
+
+              </div>
+
               <button className="regist-button" type="submit" disabled={password !== cpassword ? true : false} >
                 Submit
               </button>

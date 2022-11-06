@@ -34,7 +34,7 @@ router.post('/upload_image', async function (req, res) {
 
     /* Upload images to Cloudinary, and push their paths into array. */
     let imagesPathArray = [];
-    for(let i = 0; i < req.body.images.length; i++) {
+    for (let i = 0; i < req.body?.images?.length; i++) {
         let result = await functionsObj.uploadFileToCloudinary(req.body.images[i], 'template_images');
         console.log(result);
         if (!result.error) {
@@ -45,16 +45,16 @@ router.post('/upload_image', async function (req, res) {
     /* Upload zip file to Cloudinary. */
     let zipPath = '';
     let result = await functionsObj.uploadFileToCloudinary(req.body.zip, 'zip_files', 'raw');
-    if(!result.error) {
+    if (!result.error) {
         zipPath = result.path;
     }
-    
+
     console.log('template_id', imagesPathArray);
-    if(imagesPathArray.length == 0 ) { return false; }
+    if (imagesPathArray.length == 0) { return false; }
 
     /* upadte image and zip paths in the database. */
     let id = Types.ObjectId(req.body.template_id);
-    await templates.findByIdAndUpdate(id, { images: imagesPathArray, zip: zipPath});
+    await templates.findByIdAndUpdate(id, { images: imagesPathArray, zip: zipPath });
     res.send(functionsObj.output(1, 'success'));
 });
 
@@ -65,8 +65,8 @@ function uploadSchema(req, res, next) {
         creator_id: Joi.string().lowercase().required(),
         description: Joi.string(),
         price: Joi.number().required(),
-        technology:Joi.string().lowercase(),
-        tags:Joi.string().lowercase()
+        technology: Joi.string().lowercase(),
+        tags: Joi.string().lowercase()
     })
     let validationObj = new validations();
     if (!validationObj.validateRequest(req, res, next, schema))
@@ -76,11 +76,11 @@ async function upload(req, res) {
     let dbtemplatesObj = new dbtemplates();
     let functionObj = new functions();
     let data = {
-        name:req.body.name,
-        category:req.body.category,
+        name: req.body.name,
+        category: req.body.category,
         creator_id: req.body.creator_id,
         description: req.body.description,
-        price:req.body.price,
+        price: req.body.price,
         technology: req.body.technology,
         tags: req.body.tags
     }
@@ -97,8 +97,8 @@ function getTemplateSchema(req, res, next) {
         user_id: Joi.string().default(''),
         creator_id: Joi.string().default(''),
         category: Joi.string().lowercase().default(''),
-        searchstring:Joi.string().lowercase().default(''),
-        technology:Joi.string().lowercase().default('')
+        searchstring: Joi.string().lowercase().default(''),
+        technology: Joi.string().lowercase().default('')
     })
     let validationObj = new validations();
     if (!validationObj.validateRequest(req, res, next, schema))
@@ -152,8 +152,9 @@ async function addToCart(req, res) {
     let templateObj = new dbtemplates();
     let functionObj = new functions();
     let result = templateObj.addToCart(req.body.user_id, req.body.template_id, req.body.action, req.ip);
-    if (result)
+    if (result) {
         res.send(functionObj.output(1, 'success'.toUpperCase()));
+    }
     else
         res.send(functionObj.output(0, 'something_broken'.toUpperCase()));
 }
@@ -206,7 +207,6 @@ function feedbackSchema(req, res, next) {
     let validationObj = new validations();
     if (!validationObj.validateRequest(req, res, next, schema))
         return false;
-
 }
 
 async function feedback(req, res) {

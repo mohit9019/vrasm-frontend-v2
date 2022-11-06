@@ -1,12 +1,12 @@
 import "../../css/buyer dashboard/Myorder.css";
-function Ordercard(props){
+function OrderCard(props) {
     let date = Date.parse(props.data.created_date);
-    return( 
+    return (
         <>
-                <div className="order-card">
+            <div className="order-card">
                 <div className="order-date"><p>id: {date}</p></div>
-                    <div className="order-cont ">
-                    <div className="order-img"><img src={'/STORAGE/'+props?.data?.template[0]?.images?.split(",")[0] } alt="test" /></div>
+                <div className="order-cont ">
+                    <div className="order-img"><img src={'/STORAGE/' + props?.data?.template[0]?.images?.split(",")[0]} alt="test" /></div>
                     <div className="order-details">
                         <span className="order-name">{props.data.template[0]['name']}</span>
                         <span className="order-desc">{props.data.template[0]['description']}</span>
@@ -14,9 +14,9 @@ function Ordercard(props){
                         <span className="order-desc">technology: {props.data.template[0]['technology']}</span>
                     </div>
                     <div className="order-price">{props.data.amount} <i class="fal fa-rupee-sign"></i></div>
-                    </div>
                 </div>
+            </div>
         </>
     );
 }
-export default Ordercard;
+export default OrderCard;

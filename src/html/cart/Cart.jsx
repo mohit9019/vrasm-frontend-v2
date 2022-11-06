@@ -3,38 +3,50 @@ import { Link } from "react-router-dom";
 import CartCards from "./cartCard";
 import { useEffect, useState } from "react";
 import ApiCaller from "../../apiCaller.js/apiCaller";
+import { getCartItems } from '../../redux/actions/cartAction';
+import { useSelector, useDispatch } from "react-redux";
 function Cart() {
     const [templates, setTemplates] = useState([]);
+    const cartReducer = useSelector(state => state.cartReducer);
+    const { cartItems } = cartReducer;
+    // console.log(state);
+    const dispatch = useDispatch();
     useEffect(() => {
-        let apiCaller = new ApiCaller();
-        apiCaller.postData({
-            url: 'template/get_cart',
-            data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
-        }).then(res => {
-            if (apiCaller.validateResult(res)) {
-                setTemplates(res.data.data);
-            }
-        })
-    }, []);
+        // let apiCaller = new ApiCaller();
+        // apiCaller.postData({
+        //     url: 'template/get_cart',
+        //     data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+        // }).then(res => {
+        //     if (apiCaller.validateResult(res)) {
+        //         setTemplates(res.data.data);
+        //         console.log(res.data.data);
+        //     }
+        // })
+        // dispatch(getCartItems());
+        setTemplates(cartItems);
+    }, [cartItems]);
 
-    function handleCallback(){
-        let apiCaller = new ApiCaller();
-        apiCaller.postData({
-            url: 'template/get_cart',
-            data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
-        }).then(res => {
-            if (apiCaller.validateResult(res)) {
-                setTemplates(res.data.data);
-            }
-        })
-    }
-    function cards(templates) { 
-        let img = templates?.images[0];
+    // function handleCallback() {
+    //     let apiCaller = new ApiCaller();
+    //     apiCaller.postData({
+    //         url: 'template/get_cart',
+    //         data: {} // put any 12 char string here for testing, when user comes, the 12 chars user_id you have to pass  
+    //     }).then(res => {
+    //         if (apiCaller.validateResult(res)) {
+    //             setTemplates(res.data.data);
+    //         }
+    //     })
+    // }
+    function cards(templates) {
+        // console.log(templates);
+        let img = templates.images[0];
         return <>
-            <CartCards image={img} onDelete={handleCallback} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
+            {/* <CartCards image={img} onDelete={handleCallback} _id={templates?._id} title={templates?.name} desc={templates?.description} price={templates?.price}></CartCards> */}
+            <CartCards image={img} id={templates._id} title={templates.name} desc={templates.description} price={templates.price}></CartCards>
+            {/* onDelete={handleCallback} */}
         </>;
     }
-    return ( 
+    return (
         <>
             {
                 templates.length === 0 ? <> <div className="oops"><p className="oops-title">Oops... Your Cart is Empty</p>
@@ -49,7 +61,7 @@ function Cart() {
                             <div className="crt">
                                 <div className="crt-my-order">
                                     {
-                                        templates.map(cards)
+                                        templates?.map(cards)
                                     }
                                 </div>
                             </div>

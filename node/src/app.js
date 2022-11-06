@@ -21,7 +21,7 @@ app.use(fileUpload({
  * env variables Configuration for backend, when you want to include frontend then change
  * path ./ to ../
  */
-var result = dotenv.config({ path: path.join(__dirname,'../','.env')});
+var result = dotenv.config({ path: path.join(__dirname, '../', '.env') });
 if (result.error)
     throw result.error;
 /**

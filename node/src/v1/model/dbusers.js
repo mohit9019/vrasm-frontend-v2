@@ -33,7 +33,8 @@ class dbusers {
     async setProfile(user_id, name, city, address, pincode) {
         let functionsObj = new functions();
         console.log(city, address);
-        let result = await users.findByIdAndUpdate({ _id: mongoose.Types.ObjectId(user_id) }, { name, city, address, pincode });
+        // let result = await users.findByIdAndUpdate({ _id: mongoose.Types.ObjectId(user_id) }, { name, city, address, pincode });
+        let result = await users.findByIdAndUpdate({ _id: mongoose.Types.ObjectId(user_id) }, { name, city, address, pincode }, { new: true });
         if (result != null) {
             delete result._doc['password'];
             result._doc['user_id'] = result._doc['_id'];
@@ -98,7 +99,6 @@ class dbusers {
         let user = new users(data1);
         return user.save()
             .then(async () => {
-
                 let text = `Dear ${data.name}, Here is your OTP to register on VRASM Templates is ${otp}`;
                 let result = await functionsObj.sendEmail(data.email, "OTP from VRASM", text);
                 console.log(result);
@@ -106,7 +106,7 @@ class dbusers {
             })
             .catch((err) => {
                 console.log('err', err);
-                return_data.message = err.errors.email ? 'duplicate_email' : 'something_broken';
+                return_data.message = err.errors?.email ? 'duplicate_email' : 'something_broken';
                 return_data.error = true;
                 return return_data;
             })

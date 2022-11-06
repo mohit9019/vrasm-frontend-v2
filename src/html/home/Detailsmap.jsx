@@ -13,6 +13,7 @@ function details(val) {
     <>
       <div className="templetes">
         <Card
+          key={val._id}
           _id={val._id}
           img={val.images[0]}
           title={val.name}
@@ -21,6 +22,7 @@ function details(val) {
           sale={val.sale}
           price={val.price}
           rating={rating}
+          isLiked={val.is_liked}
         />
       </div>
     </>

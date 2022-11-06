@@ -7,7 +7,7 @@ const dbusers = require("../model/dbusers");
 
 
 router.post('/register', registerSchema, register);
-router.post('/otp',otpSchema, otp);
+router.post('/otp', otpSchema, otp);
 router.post('/my_orders', myOrders);
 
 
@@ -58,17 +58,17 @@ async function register(req, res) {
         res.send(functionObj.output(0, result.message.toUpperCase()));
 }
 
-function otpSchema(req, res, next){
+function otpSchema(req, res, next) {
     let schema = Joi.object({
-        email:Joi.string().required(),
-        otp:Joi.number().integer().min(1000).max(9999).required(),
+        email: Joi.string().required(),
+        otp: Joi.number().integer().min(1000).max(9999).required(),
     })
     let validationObj = new validations();
-    if(!validationObj.validateRequest(req, res, next, schema))
+    if (!validationObj.validateRequest(req, res, next, schema))
         return false;
 }
 
-async function otp(req, res){
+async function otp(req, res) {
     let dbuserObj = new dbusers();
     let functionObj = new functions();
     let result = await dbuserObj.verifyOtp(req.body.email, req.body.otp);
@@ -78,7 +78,7 @@ async function otp(req, res){
         res.send(functionObj.output(0, result.message.toUpperCase()));
 }
 
-async function myOrders(req, res){
+async function myOrders(req, res) {
     let dbuserObj = new dbusers();
     let functionObj = new functions();
     let result = await dbuserObj.myOrders(req.body.user_id);
