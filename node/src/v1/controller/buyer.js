@@ -1,7 +1,7 @@
 var express = require("express");
 const router = express.Router();
 const validations = require("../library/validations");
-const Joi = require("Joi");
+const Joi = require("joi");
 const functions = require("../library/functions");
 const dbusers = require("../model/dbusers");
 

@@ -2,7 +2,6 @@ const functions = require("../library/functions");
 const { users, transactions } = require("../library/db");
 const req = require("express/lib/request");
 const mongoose = require("mongoose");
-const { ReturnDocument } = require("mongodb");
 
 class dbusers {
     constructor() { }
@@ -59,10 +58,10 @@ class dbusers {
 
     async register(data, is_creator = false) {
         let functionsObj = new functions();
-        console.log(data);
-        let otp = await functionsObj.getOtp();
+        let otp = functionsObj.generateOtp();
 
-        let user = {
+
+        let data1 = {
             name: data.name,
             email: data.email,
             gender: data.gender,
@@ -73,19 +72,31 @@ class dbusers {
             created_date: new Date()
         };
 
+        console.log(otp)
         if (is_creator) {
             user['is_creator'] = 1;
             user['course'] = data.course;
             user['college'] = data.college;
         }
 
+
+        // check if user is already exists or not.
+        let userData = await users.findOne({ "email": data.email });
+        if (userData) {
+            if (userData.is_verified == false) {
+                await users.deleteOne({ "email": data.email, is_verified: false });
+            } else {
+                return { error: true, message: "Email already exists" }
+            }
+        }
+
+
         let return_data = {
             error: false,
             message: 'success'
         };
 
-        user = new users(user);
-
+        let user = new users(data1);
         return user.save()
             .then(async () => {
                 let text = `Dear ${data.name}, Here is your OTP to register on VRASM Templates is ${otp}`;
@@ -99,6 +110,7 @@ class dbusers {
                 return_data.error = true;
                 return return_data;
             })
+
     }
 
     async users() {
